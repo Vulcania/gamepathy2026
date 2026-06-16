@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	print_debug('Start pressed')
+	get_tree().change_scene_to_file("res://level/test_level.tscn")
 
 
 func _on_options_button_pressed() -> void:

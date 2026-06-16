@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://76ay80ih27k7"]
+
+[ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="1_dsqel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s65ib"]
+size = Vector2(145, 18)
+
+[node name="TestLevel" type="Node2D" unique_id=929540585]
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=479025941]
+position = Vector2(283, 362)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=2042948042]
+shape = SubResource("RectangleShape2D_s65ib")
+
+[node name="Polygon2D" type="Polygon2D" parent="Platform" unique_id=1036498418]
+position = Vector2(-173, -62)
+color = Color(0.32156864, 0.56078434, 0.38431373, 1)
+polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 101, 71)
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=369817433]
+position = Vector2(496, 311)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=578129618]
+shape = SubResource("RectangleShape2D_s65ib")
+
+[node name="Polygon2D" type="Polygon2D" parent="Platform2" unique_id=1411072597]
+position = Vector2(-173, -62)
+color = Color(0.32156864, 0.56078434, 0.38431373, 1)
+polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 101, 71)
+
+[node name="Player" parent="." unique_id=166332311 instance=ExtResource("1_dsqel")]
+position = Vector2(284, 332)
