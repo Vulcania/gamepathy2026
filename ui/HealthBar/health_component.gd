@@ -22,3 +22,5 @@ func increase_health(amount : int):
 	if current_health > max_health:
 		current_health = max_health
 		full_health_restored.emit()
+	else:
+		health_changed.emit(current_health)
