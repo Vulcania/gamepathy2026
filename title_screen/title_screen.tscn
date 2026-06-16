@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://px7xfu6q40ti"]
+
+[ext_resource type="Script" uid="uid://1qvu1srtnjaq" path="res://title_screen/title_screen.gd" id="1_g2mvh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3agr5"]
+font_size = 72
+
+[node name="TitleScreen" type="Control" unique_id=478416240]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g2mvh")
+
+[node name="GameTitle" type="Label" parent="." unique_id=1736463983]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.5
+offset_top = 50.0
+offset_right = 229.5
+offset_bottom = 149.0
+grow_horizontal = 2
+text = "Excuse me...?"
+label_settings = SubResource("LabelSettings_3agr5")
+
+[node name="MenuVBox" type="VBoxContainer" parent="." unique_id=880997464]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -68.0
+offset_right = 100.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MenuVBox" unique_id=1381709838]
+layout_mode = 2
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="MenuVBox" unique_id=2128414081]
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="MenuVBox" unique_id=272313658]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="MenuVBox" unique_id=413750501]
+layout_mode = 2
+text = "Quit"
+
+[node name="OptionsVBox" type="VBoxContainer" parent="." unique_id=1680103998]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -45.0
+offset_right = 100.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicSliderLabel" type="Label" parent="OptionsVBox" unique_id=844906832]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="OptionsVBox" unique_id=1090681387]
+layout_mode = 2
+
+[node name="SfxSliderLabel" type="Label" parent="OptionsVBox" unique_id=1072170440]
+layout_mode = 2
+text = "Sfx"
+
+[node name="SfxSlider" type="HSlider" parent="OptionsVBox" unique_id=439086396]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="OptionsVBox" unique_id=1921447636]
+layout_mode = 2
+text = "Back"
+
+[node name="CreditsVBox" type="VBoxContainer" parent="." unique_id=1127990577]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -142.5
+offset_right = 100.0
+offset_bottom = 142.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ThxForPlayingLabel" type="Label" parent="CreditsVBox" unique_id=99909993]
+layout_mode = 2
+text = "Thank you for playing!"
+
+[node name="SpecialThxLabel" type="Label" parent="CreditsVBox" unique_id=1225055131]
+layout_mode = 2
+text = "Special Thanks to
+- GamePathy
+- Gamescom
+- Marion & Benni"
+
+[node name="CreditsLabel" type="Label" parent="CreditsVBox" unique_id=1124701771]
+layout_mode = 2
+text = "GRL PWR
+- Elena Speier
+- Iman Öztürk
+- Imke Schrigten
+- Níke
+- Kimi
+- Anastasia Haberling"
+
+[node name="BackButton2" type="Button" parent="CreditsVBox" unique_id=1042725106]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="MenuVBox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuVBox/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MenuVBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="OptionsVBox/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsVBox/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="OptionsVBox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CreditsVBox/BackButton2" to="." method="_on_back_button_pressed"]
