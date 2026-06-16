@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://i3akofxem4v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ldhjh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldhjh"]
+radius = 24.0
+
+[node name="YeeteeEnemy" type="RigidBody2D" unique_id=764007780]
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_ldhjh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1684742141]
+shape = SubResource("CircleShape2D_ldhjh")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1865549866]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-16, -24, 0, -24, 16, -24, 24, -16, 24, 16, 16, 24, -16, 24, -24, 16, -24, 8, -16, 16, 16, 16, 6.8352814, 12.945091, -8, 8, 0, -8, 0, -16, -8, -16, -8, -8, 0, -8, -8, 8, -16, 0, -16, 8, -24, -8)
