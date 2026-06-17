@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://csu5w0vfgfkjt"]
 
+[ext_resource type="Script" uid="uid://bw0is5qapth2e" path="res://enemy/paper_clip_deer/paper_clip_deer.gd" id="1_rrkc6"]
+[ext_resource type="Texture2D" uid="uid://uchg8la348qp" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_01.png" id="2_up443"]
+[ext_resource type="PackedScene" uid="uid://b8pbr6khyr1xh" path="res://health/Healthbar.tscn" id="3_up443"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apqnp"]
+size = Vector2(127, 154)
+
 [sub_resource type="Animation" id="Animation_du747"]
 resource_name = "Attack"
 
 [sub_resource type="Animation" id="Animation_8je4g"]
 resource_name = "Hit"
+
+[sub_resource type="Animation" id="Animation_up443"]
+resource_name = "Idle"
 
 [sub_resource type="Animation" id="Animation_rrkc6"]
 resource_name = "Walk"
@@ -13,12 +23,19 @@ resource_name = "Walk"
 _data = {
 &"Attack": SubResource("Animation_du747"),
 &"Hit": SubResource("Animation_8je4g"),
+&"Idle": SubResource("Animation_up443"),
 &"Walk": SubResource("Animation_rrkc6")
 }
 
-[node name="PaperClipDeer" type="CharacterBody2D" unique_id=1517736822]
+[node name="PaperClipDeer" type="CharacterBody2D" unique_id=1517736822 groups=["Enemies"]]
+script = ExtResource("1_rrkc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=812317567]
+position = Vector2(59.5, 18)
+shape = SubResource("RectangleShape2D_apqnp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=621271643]
+texture = ExtResource("2_up443")
 
 [node name="DetectPlayer" type="Area2D" parent="." unique_id=1441070350]
 
@@ -36,3 +53,7 @@ _data = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1680425517]
 libraries/ = SubResource("AnimationLibrary_up443")
+
+[node name="healthbar" parent="." unique_id=1949715438 instance=ExtResource("3_up443")]
+
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]

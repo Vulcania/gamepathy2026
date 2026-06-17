@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 # movement
 @export var base_speed: float = 300.0
