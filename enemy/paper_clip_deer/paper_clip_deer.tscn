@@ -6,6 +6,14 @@
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1680425517]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1441070350]
+[node name="DetectPlayer" type="Area2D" parent="." unique_id=1441070350]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1289455631]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer" unique_id=1289455631]
+
+[node name="HitBox" type="Area2D" parent="." unique_id=844124993]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=814050474]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=328601166]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2101300065]
