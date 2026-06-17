@@ -13,6 +13,9 @@ var max_health = 2
 var health 
 var hit = false 
 var can_attack = true 
+var attacking = false
+
+var walk_count = 0
 
 func _ready():
 	health = max_health
@@ -70,8 +73,12 @@ func die():
 	speed = 0
 	$AnimationPlayer.play("Dead")
 
-
 func _on_attack_area_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Player:
+	if area.get_parent() is Player && !hit:
 		$AnimationPlayer.play("Attack")
 		await get_tree().create_timer(2).timeout
+
+func is_idle():
+	speed = 0
+	await get_tree().create_timer(2.3).timeout
+	speed = 120
