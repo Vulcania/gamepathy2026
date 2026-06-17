@@ -3,15 +3,25 @@
 [ext_resource type="Script" uid="uid://bw0is5qapth2e" path="res://enemy/paper_clip_deer/paper_clip_deer.gd" id="1_rrkc6"]
 [ext_resource type="Texture2D" uid="uid://uchg8la348qp" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_01.png" id="2_up443"]
 [ext_resource type="Texture2D" uid="uid://c8nw1gjje2lv3" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_02.png" id="3_3ut8w"]
+[ext_resource type="Texture2D" uid="uid://cw7t0fnw7uw2q" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_01.png" id="3_nu1yx"]
 [ext_resource type="PackedScene" uid="uid://b8pbr6khyr1xh" path="res://health/Healthbar.tscn" id="3_up443"]
 [ext_resource type="Texture2D" uid="uid://dwde64xw08a0j" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_03.png" id="4_atoje"]
+[ext_resource type="Texture2D" uid="uid://dlye8k46d65p2" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_02.png" id="4_ba4od"]
 [ext_resource type="Texture2D" uid="uid://bcbrbmpau6j8a" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_04.png" id="5_2rbhp"]
+[ext_resource type="Texture2D" uid="uid://cuxh68ul1jipd" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_03.png" id="5_u3s3c"]
 [ext_resource type="Texture2D" uid="uid://dq3n7trpghitd" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_05.png" id="6_o3c86"]
+[ext_resource type="Texture2D" uid="uid://dehe2tx2ieenp" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_04.png" id="6_qo12u"]
+[ext_resource type="Texture2D" uid="uid://ckvlr4xuvbean" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_05.png" id="7_02wt1"]
 [ext_resource type="Texture2D" uid="uid://dhe5sb0u5lgoq" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_06.png" id="7_nmmr5"]
+[ext_resource type="Texture2D" uid="uid://c2a2115j5ss3m" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_06.png" id="8_b4ubc"]
 [ext_resource type="Texture2D" uid="uid://c0kca8q6u1vhv" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_01.png" id="8_tsgjs"]
 [ext_resource type="Texture2D" uid="uid://dkcrhs1f415ai" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_02.png" id="9_5j3qd"]
+[ext_resource type="Texture2D" uid="uid://cvwes63vl75t2" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_07.png" id="9_mln6g"]
+[ext_resource type="Texture2D" uid="uid://b0ulivpxn1xff" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_08.png" id="10_43y14"]
 [ext_resource type="Texture2D" uid="uid://w8cm08ksyqtk" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_03.png" id="10_ptjkb"]
 [ext_resource type="Texture2D" uid="uid://bjatkrd8uhnl0" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_04.png" id="11_f8poy"]
+[ext_resource type="Texture2D" uid="uid://cnjxjk1u3e5k1" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_09.png" id="11_xn7wl"]
+[ext_resource type="Texture2D" uid="uid://c7yjhrpb4ixo8" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_10.png" id="12_fkp05"]
 [ext_resource type="Texture2D" uid="uid://evpbn0f82kps" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_05.png" id="12_hfv6u"]
 [ext_resource type="Texture2D" uid="uid://c02qdkmplkism" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_06.png" id="13_nu1yx"]
 [ext_resource type="Texture2D" uid="uid://cy1y0gl1h2qht" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_07.png" id="14_ba4od"]
@@ -19,8 +29,38 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apqnp"]
 size = Vector2(127, 154)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nu1yx"]
+radius = 94.0
+height = 254.0
+
 [sub_resource type="Animation" id="Animation_du747"]
 resource_name = "Attack"
+length = 2.3666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6666667, 0.9, 1.1, 1.3000001, 1.5000001, 1.7333332, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_nu1yx"), ExtResource("4_ba4od"), ExtResource("5_u3s3c"), ExtResource("6_qo12u"), ExtResource("7_02wt1"), ExtResource("8_b4ubc"), ExtResource("9_mln6g"), ExtResource("10_43y14"), ExtResource("11_xn7wl"), ExtResource("12_fkp05")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackArea:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 1.0666667, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_3ut8w"]
 resource_name = "Dead"
@@ -73,6 +113,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_up443")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackArea:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_rrkc6"]
 resource_name = "Walk"
@@ -123,6 +175,8 @@ texture = ExtResource("2_up443")
 [node name="AttackArea" type="Area2D" parent="." unique_id=328601166]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2101300065]
+position = Vector2(-13, -27)
+shape = SubResource("CapsuleShape2D_nu1yx")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1484122301]
 position = Vector2(-138, 0)
