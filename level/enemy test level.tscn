@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://dl2akcggsov3b"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tb46"]
+size = Vector2(1163, 132)
+
 [node name="EnemyTestLevel" type="Node2D" unique_id=1831692061]
+
+[node name="Platform" type="ColorRect" parent="." unique_id=1204062583]
+offset_left = 309.0
+offset_top = 906.0
+offset_right = 1470.0
+offset_bottom = 1047.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform" unique_id=1129715987]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/StaticBody2D" unique_id=2101629362]
+position = Vector2(581.5, 66)
+shape = SubResource("RectangleShape2D_7tb46")

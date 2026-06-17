@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://csu5w0vfgfkjt"]
 
+[sub_resource type="Animation" id="Animation_du747"]
+resource_name = "Attack"
+
+[sub_resource type="Animation" id="Animation_8je4g"]
+resource_name = "Hit"
+
+[sub_resource type="Animation" id="Animation_rrkc6"]
+resource_name = "Walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_up443"]
+_data = {
+&"Attack": SubResource("Animation_du747"),
+&"Hit": SubResource("Animation_8je4g"),
+&"Walk": SubResource("Animation_rrkc6")
+}
+
 [node name="PaperClipDeer" type="CharacterBody2D" unique_id=1517736822]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=621271643]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1680425517]
 
 [node name="DetectPlayer" type="Area2D" parent="." unique_id=1441070350]
 
@@ -17,3 +31,8 @@
 [node name="AttackArea" type="Area2D" parent="." unique_id=328601166]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2101300065]
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1484122301]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1680425517]
+libraries/ = SubResource("AnimationLibrary_up443")
