@@ -17,13 +17,21 @@
 [ext_resource type="Texture2D" uid="uid://bb345ca3rer71" path="res://player/player assets/attack/frame_14.png" id="15_jbx34"]
 [ext_resource type="Texture2D" uid="uid://dlw3lwjxeoe6q" path="res://player/player assets/attack/frame_15.png" id="16_s3g0c"]
 [ext_resource type="Texture2D" uid="uid://ceflg16rkrop3" path="res://player/player assets/attack/frame_16.png" id="17_35wys"]
+[ext_resource type="Texture2D" uid="uid://dymenh8fbc4op" path="res://player/player assets/block/frame_01.png" id="18_or4qq"]
 [ext_resource type="Texture2D" uid="uid://jg6qd31pqql3" path="res://player/player assets/dead/frame_01.png" id="18_pjwc4"]
+[ext_resource type="Texture2D" uid="uid://bsd0kw1fql11e" path="res://player/player assets/block/frame_02.png" id="19_hggc2"]
 [ext_resource type="Texture2D" uid="uid://bihffm0jbsa6u" path="res://player/player assets/dead/frame_02.png" id="19_or4qq"]
+[ext_resource type="Texture2D" uid="uid://plxunvbwfmno" path="res://player/player assets/block/frame_03.png" id="20_b2j0d"]
 [ext_resource type="Texture2D" uid="uid://rv2fqwuh8g2n" path="res://player/player assets/dead/frame_03.png" id="20_hggc2"]
+[ext_resource type="Texture2D" uid="uid://bad57kip2m7ve" path="res://player/player assets/dash/frame_01.png" id="21_7l6ig"]
 [ext_resource type="Texture2D" uid="uid://ctmd7kktey4h" path="res://player/player assets/dead/frame_04.png" id="21_b2j0d"]
 [ext_resource type="Texture2D" uid="uid://tqet6wqa00fn" path="res://player/player assets/dead/frame_05.png" id="22_7l6ig"]
+[ext_resource type="Texture2D" uid="uid://60x5lkwopbhs" path="res://player/player assets/dash/frame_02.png" id="22_j3r50"]
 [ext_resource type="Texture2D" uid="uid://dle5c4q1x8xqg" path="res://player/player assets/dead/frame_06.png" id="23_j3r50"]
+[ext_resource type="Texture2D" uid="uid://bcsw14fmgrqhn" path="res://player/player assets/dash/frame_03.png" id="23_utr5e"]
+[ext_resource type="Texture2D" uid="uid://dvyhr41kp8hnb" path="res://player/player assets/dash/frame_04.png" id="24_kewli"]
 [ext_resource type="Texture2D" uid="uid://dfiv804x03fw6" path="res://player/player assets/dead/frame_07.png" id="24_utr5e"]
+[ext_resource type="Texture2D" uid="uid://sxvuw1os7n3o" path="res://player/player assets/dash/frame_05.png" id="25_do7qw"]
 [ext_resource type="Texture2D" uid="uid://dx3f2dhjiiv1m" path="res://player/player assets/dead/frame_08.png" id="25_kewli"]
 [ext_resource type="Texture2D" uid="uid://bdlhewje6jhyn" path="res://player/player assets/dead/frame_09.png" id="26_do7qw"]
 [ext_resource type="Texture2D" uid="uid://de38p3kh8ul4g" path="res://player/player assets/dead/frame_10.png" id="27_2h6tc"]
@@ -36,9 +44,13 @@
 [ext_resource type="Texture2D" uid="uid://ckjj7q3gfjqtm" path="res://player/player assets/idle/frame_03.png" id="34_qavcc"]
 [ext_resource type="Texture2D" uid="uid://janh62skom63" path="res://player/player assets/idle/frame_04.png" id="35_bd26m"]
 [ext_resource type="Texture2D" uid="uid://d206welq1rnfq" path="res://player/player assets/idle/frame_05.png" id="36_lufic"]
+[ext_resource type="Texture2D" uid="uid://ct2t0cpuaajvk" path="res://player/player assets/fall/frame_01.png" id="37_2h6tc"]
 [ext_resource type="Texture2D" uid="uid://d3gyo07pmh6dt" path="res://player/player assets/idle/frame_07.png" id="37_nxclr"]
+[ext_resource type="Texture2D" uid="uid://c1hrjb56lrtf5" path="res://player/player assets/fall/frame_02.png" id="38_8rogd"]
 [ext_resource type="Texture2D" uid="uid://ep2i8ojbw6jk" path="res://player/player assets/idle/frame_08.png" id="38_onxu2"]
+[ext_resource type="Texture2D" uid="uid://b67cfco75p7i8" path="res://player/player assets/fall/frame_03.png" id="39_48p26"]
 [ext_resource type="Texture2D" uid="uid://csm3pykp1kpe8" path="res://player/player assets/run/frame_01.png" id="39_gci7n"]
+[ext_resource type="Texture2D" uid="uid://bervwgiuoma4a" path="res://player/player assets/fall/frame_04.png" id="40_anp34"]
 [ext_resource type="Texture2D" uid="uid://b1k1m7o1f6myl" path="res://player/player assets/run/frame_02.png" id="40_tcwf7"]
 [ext_resource type="Texture2D" uid="uid://c2njxtnsqlvkj" path="res://player/player assets/run/frame_03.png" id="41_20bc7"]
 [ext_resource type="Texture2D" uid="uid://n04tbqad22i4" path="res://player/player assets/run/frame_04.png" id="42_jfgxe"]
@@ -49,6 +61,10 @@
 [ext_resource type="Texture2D" uid="uid://bqmxxygcsr84v" path="res://player/player assets/idle to run/frame_01.png" id="47_pgo6y"]
 [ext_resource type="Texture2D" uid="uid://bnldb7wgobn3e" path="res://player/player assets/run to idle/frame_01.png" id="48_qm6yy"]
 [ext_resource type="Texture2D" uid="uid://5nla85ma3gok" path="res://player/player assets/run to idle/frame_02.png" id="49_gcmgo"]
+[ext_resource type="Texture2D" uid="uid://q1lda6qhxf05" path="res://player/player assets/jump/frame_01.png" id="51_jdjat"]
+[ext_resource type="Texture2D" uid="uid://dl0tuahigx67a" path="res://player/player assets/jump/frame_02.png" id="52_j420s"]
+[ext_resource type="Texture2D" uid="uid://b3quklas1160a" path="res://player/player assets/jump/frame_03.png" id="53_kcq4v"]
+[ext_resource type="Texture2D" uid="uid://vnshco3kurkg" path="res://player/player assets/jump/frame_04.png" id="54_qavcc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
 
@@ -78,6 +94,36 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bd26m"]
+length = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_or4qq"), ExtResource("19_hggc2"), ExtResource("20_b2j0d")]
+}
+
+[sub_resource type="Animation" id="Animation_lufic"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_7l6ig"), ExtResource("22_j3r50"), ExtResource("23_utr5e"), ExtResource("24_kewli"), ExtResource("25_do7qw")]
 }
 
 [sub_resource type="Animation" id="Animation_nj2w7"]
@@ -145,6 +191,22 @@ tracks/4/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_nxclr"]
+length = 0.53333336
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("37_2h6tc"), ExtResource("38_8rogd"), ExtResource("39_48p26"), ExtResource("40_anp34")]
+}
+
 [sub_resource type="Animation" id="Animation_iojyt"]
 length = 0.3
 tracks/0/type = "value"
@@ -187,6 +249,21 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-48, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_onxu2"]
+length = 0.43333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.2, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("51_jdjat"), ExtResource("52_j420s"), ExtResource("53_kcq4v"), ExtResource("54_qavcc")]
 }
 
 [sub_resource type="Animation" id="Animation_hrakr"]
@@ -301,9 +378,13 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ig2t1"]
 _data = {
 &"Attack": SubResource("Animation_rnncm"),
+&"Block": SubResource("Animation_bd26m"),
+&"Dash": SubResource("Animation_lufic"),
 &"Dead": SubResource("Animation_nj2w7"),
+&"Fall": SubResource("Animation_nxclr"),
 &"Hit": SubResource("Animation_iojyt"),
 &"Idle": SubResource("Animation_vhicv"),
+&"Jump": SubResource("Animation_onxu2"),
 &"RESET": SubResource("Animation_hrakr"),
 &"Run": SubResource("Animation_wsa1w"),
 &"idle-to-run": SubResource("Animation_2s0vo"),
