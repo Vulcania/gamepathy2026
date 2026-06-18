@@ -188,16 +188,42 @@ _data = {
 &"run-to-idle": SubResource("Animation_hgm8h")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pxes"]
+size = Vector2(22, 109)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8pxes"]
+radius = 86.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1980571954]
 script = ExtResource("1_oul6g")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=210136726]
-shape = SubResource("CapsuleShape2D_rkbax")
-
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=835250144]
+visible = false
 polygon = PackedVector2Array(-4, -14, 0, -16, 4, -14, 5, -11, 4, -9, 3, -8, 1, -8, 1, -6, 4, -4, 9, -7, 9, -6, 4, -3, 2, -4, 3, 4, 7, 12, 3, 14, 0, 7, -3, 14, -7, 12, -3, 4, -2, -4, -4, -3, -10, -6, -9, -7, -4, -4, -1, -6, -1, -8, -3, -8, -4, -9, -5, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Polygon2D" unique_id=210136726]
+shape = SubResource("CapsuleShape2D_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=94848369]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1248370147]
 libraries/ = SubResource("AnimationLibrary_ig2t1")
+autoplay = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1725338669]
+position = Vector2(-49, -1.5)
+shape = SubResource("RectangleShape2D_8pxes")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1143861468]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2060181973]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=825963861]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1701210703]
+
+[node name="MonitorArea" type="Area2D" parent="." unique_id=1363402120]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MonitorArea" unique_id=50398872]
+position = Vector2(-52, -14)
+shape = SubResource("CircleShape2D_8pxes")

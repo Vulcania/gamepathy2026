@@ -75,10 +75,19 @@ func die():
 
 func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player && !hit:
-		$AnimationPlayer.play("Attack")
-		await get_tree().create_timer(2).timeout
+		can_attack = true
+		if can_attack:
+			$AnimationPlayer.play("Attack")
+			can_attack = false
+			await get_tree().create_timer(2).timeout
+			can_attack = true
+
+func increase_walk_count():
+	walk_count += 1
 
 func is_idle():
-	speed = 0
-	await get_tree().create_timer(2.3).timeout
-	speed = 120
+	if walk_count == 3:
+		speed = 0
+		$AnimationPlayer.play("Idle")
+		await get_tree().create_timer(2.3).timeout
+		speed = 120
