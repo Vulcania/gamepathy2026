@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = -80.0
+@export var speed = 120.0
 @export var current_speed = 0.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
