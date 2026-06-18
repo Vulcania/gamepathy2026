@@ -195,20 +195,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("8_tsgjs"), ExtResource("9_5j3qd"), ExtResource("10_ptjkb"), ExtResource("11_f8poy"), ExtResource("12_hfv6u"), ExtResource("13_nu1yx"), ExtResource("14_ba4od"), ExtResource("3_3ut8w"), ExtResource("8_tsgjs")]
 }
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2.3),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"increase_walk_count"
-}]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_up443"]
 _data = {

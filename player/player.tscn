@@ -67,6 +67,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_8pxes"), ExtResource("3_fmu53"), ExtResource("4_w7j2h"), ExtResource("5_n0b8q"), ExtResource("6_jfgyi"), ExtResource("7_237xx"), ExtResource("8_wpyo2"), ExtResource("9_7crtr"), ExtResource("10_vgvch"), ExtResource("11_a1u5o"), ExtResource("12_3dxkp"), ExtResource("13_6wior"), ExtResource("14_p5tca"), ExtResource("15_jbx34"), ExtResource("16_s3g0c"), ExtResource("17_35wys")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackArea:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23333333, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_nj2w7"]
 length = 1.5333333
@@ -128,6 +140,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackArea:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_wsa1w"]
@@ -191,6 +215,14 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pxes"]
 size = Vector2(22, 109)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmu53"]
+radius = 14.0
+height = 116.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8pxes"]
+radius = 90.0
+height = 290.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_8pxes"]
 radius = 86.0
 
@@ -217,13 +249,18 @@ shape = SubResource("RectangleShape2D_8pxes")
 [node name="HitBox" type="Area2D" parent="." unique_id=1143861468]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2060181973]
+position = Vector2(-49, -1)
+shape = SubResource("CapsuleShape2D_fmu53")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=825963861]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1701210703]
+position = Vector2(6, -16)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_8pxes")
 
 [node name="MonitorArea" type="Area2D" parent="." unique_id=1363402120]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MonitorArea" unique_id=50398872]
-position = Vector2(-52, -14)
+position = Vector2(-50, -16)
 shape = SubResource("CircleShape2D_8pxes")

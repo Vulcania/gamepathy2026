@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dl2akcggsov3b"]
 
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="1_ewf1m"]
-[ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="2_e5fnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tb46"]
 size = Vector2(1163, 132)
@@ -22,8 +21,3 @@ shape = SubResource("RectangleShape2D_7tb46")
 
 [node name="PaperClipDeer" parent="Platform" unique_id=1517736822 instance=ExtResource("1_ewf1m")]
 position = Vector2(333, -134)
-
-[node name="Player" parent="." unique_id=1980571954 instance=ExtResource("2_e5fnx")]
-position = Vector2(433, 766)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1897090758]
