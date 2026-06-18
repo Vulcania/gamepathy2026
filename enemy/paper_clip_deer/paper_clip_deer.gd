@@ -75,6 +75,7 @@ func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player && !hit:
 		can_attack = true
 		if can_attack:
+			attacking = true
 			$AnimationPlayer.play("Attack")
 			can_attack = false
 			await get_tree().create_timer(2).timeout

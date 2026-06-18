@@ -177,3 +177,6 @@ func _apply_movement(delta:float) -> void:
 			print('YEET: %s' % yeet_direction)
 			collider.apply_central_impulse(yeet_direction)
 		
+
+func die():
+	pass

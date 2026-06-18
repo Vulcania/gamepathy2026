@@ -245,4 +245,6 @@ offset_top = -136.0
 offset_right = 56.0
 offset_bottom = -136.0
 
+[node name="IdleTimer" type="Timer" parent="." unique_id=171518536]
+
 [connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
