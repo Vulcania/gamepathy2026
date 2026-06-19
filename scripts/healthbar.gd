@@ -1,4 +1,4 @@
-extends Control
+extends Area2D
 
 @onready var max_bar_fill = $ColorRect.size.x
 var bar_fill_amount : float

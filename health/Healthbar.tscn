@@ -1,20 +1,10 @@
 [gd_scene format=3 uid="uid://b8pbr6khyr1xh"]
 
-[ext_resource type="Script" uid="uid://bie4wu05xnn2b" path="res://health/healthbar.gd" id="1_dn7v2"]
+[ext_resource type="Script" uid="uid://bie4wu05xnn2b" path="res://scripts/healthbar.gd" id="1_dn7v2"]
 
-[node name="healthbar" type="Control" unique_id=1949715438]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Healthbar" type="Node2D" unique_id=112998173]
 script = ExtResource("1_dn7v2")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=895126413]
-layout_mode = 0
-offset_left = -50.0
-offset_top = -2.0
-offset_right = 50.0
-offset_bottom = 2.0
+offset_bottom = 1080.0
 color = Color(0.60686415, 0.19815129, 0.09666056, 1)

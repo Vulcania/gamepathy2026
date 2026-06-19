@@ -17,7 +17,6 @@ var attacking = false
 
 func _ready():
 	health = max_health
-	$AnimationPlayer.play("Walk")
 
 func _physics_process(delta):
 	if not is_on_floor():

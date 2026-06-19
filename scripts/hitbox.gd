@@ -1,15 +1,15 @@
 extends Area2D
 class_name Hitbox
 
-@export var damage_dealt : int
-@export var hitbox_shape : CollisionShape2D
-@export var hitbox_lifetime : float
+var damage_dealt : int
+var hitbox_shape : CollisionShape2D
+var hitbox_lifetime : float
 
-# Initialize variables
-#func _init(_damage_dealt : int, _hitbox_shape : CollisionShape2D, _hitbox_lifetime : float) -> void:
-	#damage_dealt = _damage_dealt
-	#hitbox_shape = _hitbox_shape
-	#hitbox_lifetime = _hitbox_lifetime
+#Initialize variables
+func _init(_damage_dealt : int, _hitbox_shape : CollisionShape2D, _hitbox_lifetime : float) -> void:
+	damage_dealt = _damage_dealt
+	hitbox_shape = _hitbox_shape
+	hitbox_lifetime = _hitbox_lifetime
 	
 func _ready() -> void:
 	monitorable = false # Can't be detected by other shapes
@@ -26,7 +26,8 @@ func _ready() -> void:
 		collision_shape.shape = hitbox_shape
 		add_child(collision_shape)
 	
-	# TODO set collision layers and masks
+	collision_layer = 2
+	collision_mask = 0
 	
 func _on_area_entered(area: Area2D) -> void:
 	if not area.has_method("receive_hit"):

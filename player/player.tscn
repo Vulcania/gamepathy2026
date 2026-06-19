@@ -433,7 +433,7 @@ shape = SubResource("CapsuleShape2D_fmu53")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=825963861]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1701210703]
+[node name="player_attack" type="CollisionShape2D" parent="AttackArea" unique_id=1701210703]
 position = Vector2(6, -16)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_8pxes")

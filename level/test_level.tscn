@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="1_dsqel"]
 [ext_resource type="PackedScene" uid="uid://i3akofxem4v" path="res://enemy/yeetee_enemy.tscn" id="1_s65ib"]
+[ext_resource type="PackedScene" uid="uid://cx7pkpfryvs2h" path="res://enemy/paper_clip_deer/paper_clip_deer_alt/paper_clip_deer_alt.tscn" id="3_w72v2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s65ib"]
 size = Vector2(145, 18)
@@ -166,10 +167,11 @@ polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 101, 71)
 position = Vector2(1299, 836)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform16" unique_id=43581420]
+position = Vector2(9, -78)
 shape = SubResource("RectangleShape2D_s65ib")
 
 [node name="Polygon2D" type="Polygon2D" parent="Platform16" unique_id=1927290005]
-position = Vector2(-173, -62)
+position = Vector2(-165, -140)
 color = Color(0.32156864, 0.56078434, 0.38431373, 1)
 polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 101, 71)
 
@@ -212,5 +214,8 @@ position = Vector2(733, 990)
 mass = 0.005
 
 [node name="Player" parent="." unique_id=166332311 instance=ExtResource("1_dsqel")]
-position = Vector2(303, 994)
+position = Vector2(387, 908)
 scale = Vector2(2, 2)
+
+[node name="PaperClipDeerAlt" parent="." unique_id=23731481 instance=ExtResource("3_w72v2")]
+position = Vector2(1139, 925)

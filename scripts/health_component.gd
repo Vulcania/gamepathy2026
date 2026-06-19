@@ -1,13 +1,13 @@
 class_name HealthComponent
-extends Node2D
+extends Control
 
 
-@export var max_health : int = 100
+@export var max_health : int = 10
 
 var current_health : int = max_health
 
 signal depleted_health
-signal health_changed(current_health)
+signal health_changed(current_health : int)
 signal full_health_restored
 
 # Take Damage
