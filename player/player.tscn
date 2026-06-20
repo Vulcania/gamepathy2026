@@ -66,6 +66,8 @@
 [ext_resource type="Texture2D" uid="uid://b3quklas1160a" path="res://player/player assets/jump/frame_03.png" id="53_kcq4v"]
 [ext_resource type="Texture2D" uid="uid://vnshco3kurkg" path="res://player/player assets/jump/frame_04.png" id="54_qavcc"]
 [ext_resource type="PackedScene" uid="uid://dc5k83g31j3su" path="res://health/HealthComponent.tscn" id="66_or4qq"]
+[ext_resource type="Script" uid="uid://e74kf2cearsk" path="res://player/hud.gd" id="67_b2j0d"]
+[ext_resource type="PackedScene" uid="uid://buvakl6wq0bod" path="res://ui/pause_menu/pause_menu.tscn" id="67_hggc2"]
 
 [sub_resource type="Animation" id="Animation_rnncm"]
 length = 1.6
@@ -442,9 +444,24 @@ shape = SubResource("CircleShape2D_8pxes")
 [node name="HealthComponent" parent="." unique_id=1032837444 instance=ExtResource("66_or4qq")]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=749907556]
+script = ExtResource("67_b2j0d")
 
 [node name="PlayerHealthBar" type="Control" parent="HUD" unique_id=40551718]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="PauseMenu" parent="HUD" unique_id=700370192 instance=ExtResource("67_hggc2")]
+visible = false
+
+[node name="OpenPause" type="Button" parent="HUD" unique_id=1501449008]
+offset_left = 1745.0
+offset_top = 952.0
+offset_right = 1875.0
+offset_bottom = 1042.0
+text = "press P
+for Pause"
+
+[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
+[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_button_pressed"]

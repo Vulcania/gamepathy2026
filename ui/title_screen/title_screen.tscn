@@ -57,36 +57,27 @@ text = "Credits"
 layout_mode = 2
 text = "Quit"
 
-[node name="OptionsVBox" type="VBoxContainer" parent="." unique_id=1680103998]
+[node name="OptionsVBox" type="VBoxContainer" parent="." unique_id=1356479431]
 visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -45.0
-offset_right = 100.0
-offset_bottom = 45.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 90.0
 
-[node name="MusicSliderLabel" type="Label" parent="OptionsVBox" unique_id=844906832]
+[node name="MusicSliderLabel" type="Label" parent="OptionsVBox" unique_id=1687499172]
 layout_mode = 2
 text = "Music"
 
-[node name="MusicSlider" type="HSlider" parent="OptionsVBox" unique_id=1090681387]
+[node name="MusicSlider" type="HSlider" parent="OptionsVBox" unique_id=737446236]
 layout_mode = 2
 
-[node name="SfxSliderLabel" type="Label" parent="OptionsVBox" unique_id=1072170440]
+[node name="SfxSliderLabel" type="Label" parent="OptionsVBox" unique_id=1330748542]
 layout_mode = 2
 text = "Sfx"
 
-[node name="SfxSlider" type="HSlider" parent="OptionsVBox" unique_id=439086396]
+[node name="SfxSlider" type="HSlider" parent="OptionsVBox" unique_id=421204896]
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="OptionsVBox" unique_id=1921447636]
+[node name="BackButton" type="Button" parent="OptionsVBox" unique_id=1529389511]
 layout_mode = 2
 text = "Back"
 
@@ -134,7 +125,6 @@ text = "Back"
 [connection signal="pressed" from="MenuVBox/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuVBox/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="value_changed" from="OptionsVBox/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="OptionsVBox/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="OptionsVBox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="OptionsVBox/MusicSlider" to="OptionsVBox" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsVBox/SfxSlider" to="OptionsVBox" method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="CreditsVBox/BackButton2" to="." method="_on_back_button_pressed"]

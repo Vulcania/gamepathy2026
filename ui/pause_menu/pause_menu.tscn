@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://buvakl6wq0bod"]
+
+[ext_resource type="Script" uid="uid://dxhtb0cebwdri" path="res://ui/pause_menu/pause_menu.gd" id="1_mnjdh"]
+
+[node name="PauseMenu" type="Control" unique_id=700370192]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mnjdh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1849053230]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 79.0
+offset_right = 1473.0
+offset_bottom = 982.0
+color = Color(0.6859696, 0.8030075, 0.8954853, 1)
+
+[node name="PanelSound" type="ColorRect" parent="." unique_id=1384176311]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 616.0
+offset_right = 1417.0
+offset_bottom = 878.0
+color = Color(0.5174083, 0.6862915, 0.8128412, 1)
+
+[node name="ClosePause" type="Button" parent="." unique_id=1412257940]
+layout_mode = 0
+offset_left = 1397.0
+offset_top = 106.0
+offset_right = 1441.0
+offset_bottom = 151.0
+text = "x"
+
+[node name="Pause" type="Label" parent="." unique_id=993706785]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 106.0
+offset_right = 839.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 69
+text = "PAUSE"
+
+[node name="SoundOptions" type="Control" parent="." unique_id=1580034800]
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 289.0
+offset_right = 49.0
+offset_bottom = 329.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SoundOptions" unique_id=1632070797]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 380.0
+offset_right = 1139.0
+offset_bottom = 707.0
+
+[node name="Music" type="Label" parent="SoundOptions/VBoxContainer" unique_id=1872690662]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicHSlider" type="HSlider" parent="SoundOptions/VBoxContainer" unique_id=571521292]
+layout_mode = 2
+
+[node name="sfx" type="Label" parent="SoundOptions/VBoxContainer" unique_id=717492906]
+layout_mode = 2
+text = "sfx"
+
+[node name="sfxHSlider" type="HSlider" parent="SoundOptions/VBoxContainer" unique_id=270981091]
+layout_mode = 2
+
+[node name="CollectedBuffs" type="Control" parent="." unique_id=1787114514]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CollectedBuffs" unique_id=519542254]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 243.0
+offset_right = 1407.0
+offset_bottom = 573.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CollectedBuffs/ScrollContainer" unique_id=1180199327]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="ColorRect" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=680116092]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=1697130718]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=22992520]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=487517063]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=82503104]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ColorRect6" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=1826413581]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ColorRect7" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=676768936]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Buffs" type="Label" parent="CollectedBuffs" unique_id=596683145]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 208.0
+offset_right = 640.0
+offset_bottom = 231.0
+theme_override_colors/font_color = Color(0.21358404, 0.20115808, 0.46880728, 1)
+theme_override_font_sizes/font_size = 27
+text = "Buffs"
+
+[node name="Quit Run" type="Button" parent="." unique_id=2017299980]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 920.0
+offset_right = 1015.0
+offset_bottom = 951.0
+text = "Quit Run"
+
+[node name="DoYouWantToQuit" type="CanvasLayer" parent="." unique_id=599112639]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="DoYouWantToQuit" unique_id=1763139440]
+offset_left = 618.0
+offset_top = 376.0
+offset_right = 1296.0
+offset_bottom = 679.0
+color = Color(0.70380783, 0.70380783, 0.70380783, 1)
+
+[node name="Question" type="Label" parent="DoYouWantToQuit/ColorRect" unique_id=1787722943]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 45.0
+offset_right = 536.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 29
+text = "Do You Really Want To Quit?"
+
+[node name="Text" type="Label" parent="DoYouWantToQuit/ColorRect" unique_id=1475107846]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 106.0
+offset_right = 427.0
+offset_bottom = 129.0
+text = "You Progress Will Be Lost"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DoYouWantToQuit/ColorRect" unique_id=1853743709]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 170.0
+offset_right = 454.0
+offset_bottom = 210.0
+theme_override_constants/separation = 19
+
+[node name="Yes" type="Button" parent="DoYouWantToQuit/ColorRect/HBoxContainer" unique_id=2051560854]
+layout_mode = 2
+text = "Yes, I quit"
+
+[node name="No" type="Button" parent="DoYouWantToQuit/ColorRect/HBoxContainer" unique_id=1393030310]
+layout_mode = 2
+text = "No, I want to stay"
+
+[connection signal="pressed" from="ClosePause" to="." method="_on_close_pause_pressed"]
+[connection signal="value_changed" from="SoundOptions/VBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="SoundOptions/VBoxContainer/sfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]
+[connection signal="pressed" from="Quit Run" to="." method="_on_quit_run_pressed"]
+[connection signal="pressed" from="DoYouWantToQuit/ColorRect/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="DoYouWantToQuit/ColorRect/HBoxContainer/No" to="." method="_on_no_pressed"]

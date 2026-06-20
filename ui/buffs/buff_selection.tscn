@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://djseq43ja7gho"]
+
+[node name="BuffSelection" type="Control" unique_id=783345293]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2089575171]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1125757766]
+layout_mode = 2
