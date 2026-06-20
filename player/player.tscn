@@ -475,12 +475,16 @@ process_mode = 1
 [node name="Sounds" type="Node" parent="." unique_id=1379984318]
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1247237844]
+bus = &"Effects"
 
 [node name="Attack" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1434482597]
+bus = &"Effects"
 
 [node name="Block" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1745908090]
+bus = &"Effects"
 
 [node name="Talk" type="AudioStreamPlayer2D" parent="Sounds" unique_id=397134613]
+bus = &"Effects"
 
 [connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
 [connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_button_pressed"]
