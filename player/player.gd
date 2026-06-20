@@ -112,6 +112,8 @@ func _get_state() -> State:
 		return State.RUN
 	if move_input != 0.0:
 		return State.WALK
+	if is_attacking:
+		return State.ATTACK
 	return State.IDLE
 
 
@@ -151,8 +153,7 @@ func _update_animation()->void:
 		State.ATTACK:
 			animation.play("Attack")
 			return
-	
-		
+
 func _apply_movement(delta:float) -> void:
 	var target_speed: float
 	if not is_on_floor():

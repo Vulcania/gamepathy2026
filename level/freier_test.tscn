@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6socivh6s8em"]
+
+[ext_resource type="PackedScene" uid="uid://cjwuxv0uo7p7l" path="res://level/test_tile.tscn" id="1_5tduv"]
+[ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="1_dpym0"]
+
+[node name="FreierTest" type="Node2D" unique_id=149505143]
+
+[node name="Player" parent="." unique_id=1980571954 instance=ExtResource("1_dpym0")]
+
+[node name="TestTile" parent="." unique_id=829263317 instance=ExtResource("1_5tduv")]
