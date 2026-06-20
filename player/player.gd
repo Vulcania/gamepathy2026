@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+var in_safe_room = true
+
 # movement
 @export var base_speed: float = 300.0
 @export var run_speed_factor: float = 1.67
@@ -206,3 +208,8 @@ func die():
 
 func return_to_foyer():
 	pass
+
+func pause_timer():
+	if in_safe_room:
+		$HUD/Timer/Timer.paused = true
+		

@@ -463,5 +463,24 @@ offset_bottom = 1042.0
 text = "press P
 for Pause"
 
+[node name="Timer" type="Control" parent="HUD" unique_id=556560597]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="HUD/Timer" unique_id=1917067557]
+process_mode = 1
+
+[node name="Sounds" type="Node" parent="." unique_id=1379984318]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1247237844]
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1434482597]
+
+[node name="Block" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1745908090]
+
+[node name="Talk" type="AudioStreamPlayer2D" parent="Sounds" unique_id=397134613]
+
 [connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
 [connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_button_pressed"]
