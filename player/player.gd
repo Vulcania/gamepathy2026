@@ -211,18 +211,19 @@ func return_to_foyer():
 	pass
 
 func open_pause():
-	if Input.is_action_pressed("pause"):
+	if Input.is_action_just_pressed("pause"):
 		$HUD/PauseMenu.visible = true
 		pause_menu_open = true
-	else:
+		$HUD/TimerOptions/Timer.paused = true
+	if not $HUD/PauseMenu.visible:
 		pause_menu_open = false
+		$HUD/TimerOptions/Timer.paused = false
 
-func start_timer_in_level():
-	#if not in_safe_room:
+func entered_safe_room():
+	in_safe_room = true
+	$HUD/TimerOptions/Timer.paused = true
+
+func start_timer_in_level_one():
+	if not in_safe_room:
 		$HUD/TimerOptions/Timer.start()
-
-#func pause_timer():
-#	if in_safe_room && pause_menu_open:
-#		$HUD/Timer/Timer.paused = true
-#	else:
-#		$HUD/Timer/Timer.paused = false
+		$HUD/TimerOptions/Timer.paused = false
