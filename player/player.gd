@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 var in_safe_room = true
+var pause_menu_open = false
 
 # movement
 @export var base_speed: float = 300.0
@@ -209,7 +210,19 @@ func die():
 func return_to_foyer():
 	pass
 
-func pause_timer():
-	if in_safe_room:
-		$HUD/Timer/Timer.paused = true
-		
+func open_pause():
+	if Input.is_action_pressed("pause"):
+		$HUD/PauseMenu.visible = true
+		pause_menu_open = true
+	else:
+		pause_menu_open = false
+
+func start_timer_in_level():
+	#if not in_safe_room:
+		$HUD/TimerOptions/Timer.start()
+
+#func pause_timer():
+#	if in_safe_room && pause_menu_open:
+#		$HUD/Timer/Timer.paused = true
+#	else:
+#		$HUD/Timer/Timer.paused = false

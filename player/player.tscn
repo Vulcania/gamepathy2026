@@ -68,6 +68,7 @@
 [ext_resource type="PackedScene" uid="uid://dc5k83g31j3su" path="res://health/HealthComponent.tscn" id="66_or4qq"]
 [ext_resource type="Script" uid="uid://e74kf2cearsk" path="res://player/hud.gd" id="67_b2j0d"]
 [ext_resource type="PackedScene" uid="uid://buvakl6wq0bod" path="res://ui/pause_menu/pause_menu.tscn" id="67_hggc2"]
+[ext_resource type="Script" uid="uid://ciot0edarbaup" path="res://player/timer_options.gd" id="69_7l6ig"]
 
 [sub_resource type="Animation" id="Animation_rnncm"]
 length = 1.6
@@ -463,14 +464,24 @@ offset_bottom = 1042.0
 text = "press P
 for Pause"
 
-[node name="Timer" type="Control" parent="HUD" unique_id=556560597]
+[node name="TimerOptions" type="Control" parent="HUD" unique_id=556560597]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("69_7l6ig")
 
-[node name="Timer" type="Timer" parent="HUD/Timer" unique_id=1917067557]
+[node name="Timer" type="Timer" parent="HUD/TimerOptions" unique_id=1917067557]
 process_mode = 1
+wait_time = 300.0
+one_shot = true
+autostart = true
+
+[node name="TimeLeft" type="Label" parent="HUD/TimerOptions" unique_id=911187428]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "00:00"
 
 [node name="Sounds" type="Node" parent="." unique_id=1379984318]
 
@@ -486,5 +497,6 @@ bus = &"Effects"
 [node name="Talk" type="AudioStreamPlayer2D" parent="Sounds" unique_id=397134613]
 bus = &"Effects"
 
-[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
 [connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_button_pressed"]
+[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
+[connection signal="timeout" from="HUD/TimerOptions/Timer" to="HUD/TimerOptions" method="_on_timer_timeout"]
