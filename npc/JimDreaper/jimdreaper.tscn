@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://eeqal4l4v82u"]
+
+[sub_resource type="Animation" id="Animation_lgwdp"]
+resource_name = "jim_idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ls6ks"]
+_data = {
+&"jim_idle": SubResource("Animation_lgwdp")
+}
+
+[node name="Jimdreaper" type="Sprite2D" unique_id=1482423081]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=841821658]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1171577396]
+
+[node name="pressE" type="Label" parent="." unique_id=756940419]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=512288185]
+libraries/ = SubResource("AnimationLibrary_ls6ks")
