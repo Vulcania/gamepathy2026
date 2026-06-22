@@ -1,5 +1,115 @@
 [gd_scene format=3 uid="uid://cb75wlk3vw31d"]
 
+[ext_resource type="Texture2D" uid="uid://dfd1pmf06npkd" path="res://enemy/toad_enemy/attack/frame_06.png" id="1_6ov3y"]
+[ext_resource type="Texture2D" uid="uid://bj2fkq7k4vif6" path="res://enemy/toad_enemy/attack/frame_07.png" id="2_iau0b"]
+[ext_resource type="Texture2D" uid="uid://dgb0wo24tn4hd" path="res://enemy/toad_enemy/attack/frame_08.png" id="3_1sx5g"]
+[ext_resource type="Texture2D" uid="uid://doj0n0rr0wewb" path="res://enemy/toad_enemy/attack/frame_09.png" id="4_rohq6"]
+[ext_resource type="Texture2D" uid="uid://bkp4nf4uaqbfc" path="res://enemy/toad_enemy/attack/frame_10.png" id="5_2s37a"]
+[ext_resource type="Texture2D" uid="uid://bj605up53t20r" path="res://enemy/toad_enemy/attack/frame_11.png" id="6_8wfx3"]
+[ext_resource type="Texture2D" uid="uid://bmeaawhguqxlt" path="res://enemy/toad_enemy/attack/frame_12.png" id="7_owxc5"]
+[ext_resource type="Texture2D" uid="uid://bvewbss6sqeyb" path="res://enemy/toad_enemy/attack/frame_13.png" id="8_bwvlg"]
+[ext_resource type="Texture2D" uid="uid://bwkrmaat16r15" path="res://enemy/toad_enemy/death/frame_24.png" id="9_dbqam"]
+[ext_resource type="Texture2D" uid="uid://badhmnuwcj2v3" path="res://enemy/toad_enemy/death/frame_25.png" id="10_qfrs4"]
+[ext_resource type="Texture2D" uid="uid://bnh2ipichw1wq" path="res://enemy/toad_enemy/death/frame_26.png" id="11_7nyr8"]
+[ext_resource type="Texture2D" uid="uid://4r7b3mwbkqtq" path="res://enemy/toad_enemy/death/frame_27.png" id="12_adfjp"]
+[ext_resource type="Texture2D" uid="uid://s15q1cq76kef" path="res://enemy/toad_enemy/death/frame_28.png" id="13_3g51t"]
+[ext_resource type="Texture2D" uid="uid://qtbswb10xj24" path="res://enemy/toad_enemy/death/frame_29.png" id="14_kw6sy"]
+[ext_resource type="Texture2D" uid="uid://bv1f3adsnxm81" path="res://enemy/toad_enemy/death/frame_30.png" id="15_bhtwh"]
+[ext_resource type="Texture2D" uid="uid://gs13viiceyeb" path="res://enemy/toad_enemy/death/frame_31.png" id="16_4c4y7"]
+[ext_resource type="Texture2D" uid="uid://cpjsow4l53vhg" path="res://enemy/toad_enemy/hit/frame_17.png" id="17_ofxh8"]
+[ext_resource type="Texture2D" uid="uid://ca8fbqlfrexo1" path="res://enemy/toad_enemy/hit/frame_18.png" id="18_loi0w"]
+[ext_resource type="Texture2D" uid="uid://ce286k7g2ktj4" path="res://enemy/toad_enemy/hit/frame_19.png" id="19_r7i2l"]
+[ext_resource type="Texture2D" uid="uid://dowoydagou4g6" path="res://enemy/toad_enemy/idle/frame_01.png" id="20_0rdyf"]
+[ext_resource type="Texture2D" uid="uid://kygdk0c2b4c2" path="res://enemy/toad_enemy/idle/frame_05.png" id="21_ikfm8"]
+[ext_resource type="Texture2D" uid="uid://mh5g6c7tcou3" path="res://enemy/toad_enemy/idle/frame_02.png" id="22_l12v1"]
+[ext_resource type="Texture2D" uid="uid://dso5srsyh8d6l" path="res://enemy/toad_enemy/idle/frame_03.png" id="23_8f6nq"]
+[ext_resource type="Texture2D" uid="uid://dw5usms4x4nqq" path="res://enemy/toad_enemy/idle/frame_04.png" id="24_qnk1i"]
+
+[sub_resource type="Animation" id="Animation_vo5ka"]
+resource_name = "Attack"
+length = 0.8666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.70000005, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_6ov3y"), ExtResource("2_iau0b"), ExtResource("3_1sx5g"), ExtResource("4_rohq6"), ExtResource("5_2s37a"), ExtResource("6_8wfx3"), ExtResource("7_owxc5"), ExtResource("8_bwvlg")]
+}
+
+[sub_resource type="Animation" id="Animation_iug6n"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_dbqam"), ExtResource("10_qfrs4"), ExtResource("11_7nyr8"), ExtResource("12_adfjp"), ExtResource("13_3g51t"), ExtResource("14_kw6sy"), ExtResource("15_bhtwh"), ExtResource("16_4c4y7")]
+}
+
+[sub_resource type="Animation" id="Animation_bdyw3"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_ofxh8"), ExtResource("18_loi0w"), ExtResource("19_r7i2l")]
+}
+
+[sub_resource type="Animation" id="Animation_tbx5k"]
+length = 1.8666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.20000002, 0.3, 0.39001653, 0.49001652, 0.56666666, 0.6666667, 0.7666667, 0.8566832, 0.9566833, 1.0666667, 1.1666666, 1.2666668, 1.3666667, 1.4666667, 1.5666667, 1.6566832, 1.7566832),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_0rdyf"), ExtResource("21_ikfm8"), ExtResource("20_0rdyf"), ExtResource("22_l12v1"), ExtResource("20_0rdyf"), ExtResource("22_l12v1"), ExtResource("21_ikfm8"), ExtResource("20_0rdyf"), ExtResource("22_l12v1"), ExtResource("20_0rdyf"), ExtResource("21_ikfm8"), ExtResource("20_0rdyf"), ExtResource("22_l12v1"), ExtResource("23_8f6nq"), ExtResource("24_qnk1i"), ExtResource("21_ikfm8"), ExtResource("22_l12v1"), ExtResource("20_0rdyf"), ExtResource("22_l12v1")]
+}
+
+[sub_resource type="Animation" id="Animation_w8lhm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbst5"]
+_data = {
+&"Attack": SubResource("Animation_vo5ka"),
+&"Death": SubResource("Animation_iug6n"),
+&"Hit": SubResource("Animation_bdyw3"),
+&"Idle": SubResource("Animation_tbx5k"),
+&"RESET": SubResource("Animation_w8lhm")
+}
+
 [node name="AngryToad" type="CharacterBody2D" unique_id=998602934]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1214464403]
@@ -7,6 +117,7 @@
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435181989]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1302543764]
+libraries/ = SubResource("AnimationLibrary_pbst5")
 
 [node name="DetectPlayer" type="Area2D" parent="." unique_id=1501656087]
 
