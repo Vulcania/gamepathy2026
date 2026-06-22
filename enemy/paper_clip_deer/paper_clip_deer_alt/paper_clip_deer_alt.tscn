@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cy1y0gl1h2qht" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_07.png" id="28_hott6"]
 [ext_resource type="Texture2D" uid="uid://2d2agsfpfqve" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_08.png" id="29_m7606"]
 [ext_resource type="Script" uid="uid://cl1qdh4hd1gyn" path="res://scripts/hitbox.gd" id="30_1eldf"]
-[ext_resource type="Script" uid="uid://rivf4at1c0yd" path="res://scripts/hurtbox.gd" id="30_8de6b"]
+[ext_resource type="Script" uid="uid://rivf4at1c0yd" path="res://scripts/hurtbox.gd" id="33_fw8ep"]
 [ext_resource type="PackedScene" uid="uid://dc5k83g31j3su" path="res://health/HealthComponent.tscn" id="33_xxc5o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_018v0"]
@@ -148,46 +148,49 @@ animations = [{
 size = Vector2(165, 209)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxc5o"]
-size = Vector2(162, 159)
+size = Vector2(163, 162)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skc85"]
-size = Vector2(222, 203)
+size = Vector2(79, 203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fw8ep"]
 size = Vector2(21, 251)
 
-[node name="PaperClipDeerAlt" type="CharacterBody2D" unique_id=1792961073]
+[node name="PaperClipDeerAlt" type="CharacterBody2D" unique_id=1792961073 node_paths=PackedStringArray("hitbox")]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_8de6b")
+hitbox = NodePath("EnemyHitbox/enemy_hitbox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=972077978]
 position = Vector2(-63, 0)
 sprite_frames = SubResource("SpriteFrames_018v0")
-animation = &"idle"
+animation = &"attack"
 
 [node name="BoundaryShape" type="CollisionShape2D" parent="." unique_id=633684332]
-light_mask = 0
 position = Vector2(-3.5, -7.5)
 shape = SubResource("RectangleShape2D_8de6b")
+debug_color = Color(0.28115708, 0.6185126, 0.37153143, 0.41960785)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1027721801]
 position = Vector2(-227, 55)
 
-[node name="EnemyHurtbox" type="Area2D" parent="." unique_id=1610434346]
-position = Vector2(-0.5, 17.5)
-script = ExtResource("30_8de6b")
+[node name="EnemyHurtbox" type="Area2D" parent="." unique_id=924007324]
+script = ExtResource("33_fw8ep")
+metadata/_custom_type_script = "uid://rivf4at1c0yd"
 
-[node name="enemy_hurtbox" type="CollisionShape2D" parent="EnemyHurtbox" unique_id=1981601472]
-position = Vector2(-11.5, -7)
+[node name="enemy_hurtbox" type="CollisionShape2D" parent="EnemyHurtbox" unique_id=1097326903]
+position = Vector2(-3.5, 16)
 shape = SubResource("RectangleShape2D_xxc5o")
 
 [node name="EnemyHitbox" type="Area2D" parent="." unique_id=964855716]
 script = ExtResource("30_1eldf")
 
 [node name="enemy_hitbox" type="CollisionShape2D" parent="EnemyHitbox" unique_id=188447874]
-position = Vector2(-58, -35.5)
+position = Vector2(-129.5, -35.5)
 shape = SubResource("RectangleShape2D_skc85")
+disabled = true
+debug_color = Color(0.93235874, 0.22394478, 0.34970945, 0.41960785)
 
 [node name="HealthComponent" parent="." unique_id=1032837444 instance=ExtResource("33_xxc5o")]
 metadata/_edit_use_anchors_ = true
@@ -198,8 +201,9 @@ position = Vector2(-229, -3)
 [node name="vertical_collision" type="CollisionShape2D" parent="VerticalCollision" unique_id=899164876]
 position = Vector2(2.5, -18)
 shape = SubResource("RectangleShape2D_fw8ep")
+debug_color = Color(1, 1, 1, 0.41960785)
 
-[connection signal="body_entered" from="EnemyHurtbox" to="." method="_on_boundary_shape_body_entered"]
+[connection signal="area_entered" from="EnemyHurtbox" to="EnemyHurtbox" method="_on_area_entered"]
 [connection signal="depleted_health" from="HealthComponent" to="." method="_on_health_component_depleted_health"]
 [connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="body_entered" from="VerticalCollision" to="." method="_on_vertical_collision_body_entered"]

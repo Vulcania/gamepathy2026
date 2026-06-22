@@ -1,14 +1,15 @@
-extends Area2D
 class_name Hurtbox
+extends Area2D
 
-@onready var owner_health_component : HealthComponent 
+@export var own_hitbox : CollisionShape2D
 
-func _ready() -> void:
-	monitoring = false # Doesn't detect other shapes
-	
+func _init() -> void:
 	collision_layer = 0
 	collision_mask = 2
 
-
-func receive_hit(damage : int) -> void:
-	owner_health_component.decrease_health(damage)
+func _on_area_entered(hitbox : Hitbox) -> void:
+	if hitbox == null:
+		return
+	
+	if owner.has_method("take_damage"):
+		owner.take_damage(hitbox.damage)

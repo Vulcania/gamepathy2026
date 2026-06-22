@@ -145,7 +145,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HitBox:visible")
+tracks/1/path = NodePath("PlayerHitbox:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -309,7 +309,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitBox:visible")
+tracks/3/path = NodePath("PlayerHitbox:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -423,9 +423,9 @@ autoplay = &"Idle"
 position = Vector2(-2, 31)
 shape = SubResource("RectangleShape2D_8pxes")
 
-[node name="HitBox" type="Area2D" parent="." unique_id=1143861468]
+[node name="PlayerHitbox" type="Area2D" parent="." unique_id=1143861468]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2060181973]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=2060181973]
 position = Vector2(-49, -1)
 shape = SubResource("CapsuleShape2D_fmu53")
 
@@ -497,6 +497,6 @@ bus = &"Effects"
 [node name="Talk" type="AudioStreamPlayer2D" parent="Sounds" unique_id=397134613]
 bus = &"Effects"
 
-[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_button_pressed"]
 [connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
+[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_button_pressed"]
 [connection signal="timeout" from="HUD/TimerOptions/Timer" to="HUD/TimerOptions" method="_on_timer_timeout"]

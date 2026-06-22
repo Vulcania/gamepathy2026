@@ -71,13 +71,13 @@ func flip():
 		if !hit:
 			sprite.scale.x = abs(sprite.scale.x) * -1
 			$AttackArea.scale.x = abs($AttackArea.scale.x) * -1
-			$HitBox.scale.x = abs($HitBox.scale.x) * -1
+			$PlayerHitbox.scale.x = abs($PlayerHitbox.scale.x) * -1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * -1
 	if Input.is_action_pressed("move_right"):
 		if !hit:
 			sprite.scale.x = abs(sprite.scale.x) * 1
 			$AttackArea.scale.x = abs($AttackArea.scale.x) * 1
-			$HitBox.scale.x = abs($HitBox.scale.x) * 1
+			$PlayerHitbox.scale.x = abs($PlayerHitbox.scale.x) * 1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * 1
 
 func _update_state()->void:

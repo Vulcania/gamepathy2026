@@ -6,6 +6,8 @@ var strength : int = 2
 var facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@export var hitbox : CollisionShape2D
+
 @onready var ray_cast = $RayCast2D
 @onready var vert_collision = $VerticalCollision
 
@@ -14,6 +16,8 @@ signal enemy_was_hit
 
 func _ready() -> void:
 	health = $HealthComponent.max_health
+	$EnemyHitbox/enemy_hitbox.hide()
+	scale.x = abs(scale.x)*-1
 
 func _physics_process(delta):
 	move_and_slide()
@@ -28,7 +32,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 func flip():
-	$AnimatedSprite2D.play("idle")
+	# $AnimatedSprite2D.play("idle")
+	# timer?
 	facing_right = !facing_right
 	scale.x = abs(scale.x)*-1
 	
@@ -36,9 +41,6 @@ func flip():
 		speed = abs(speed)
 	else:
 		speed = abs(speed)*-1
-
-func detect_environment():
-	pass
 
 func _on_boundary_shape_body_entered(body: Node2D):
 	if (body.name == "Player"):
@@ -51,12 +53,21 @@ func _on_health_component_depleted_health() -> void:
 	queue_free()
 
 # when player target detected, approach and attack if close enough
+func attack():
+	$AnimatedSprite2D.play("attack")
+	
+	if $EnemyHitbox/enemy_hitbox.hide():
+		$EnemyHitbox/enemy_hitbox.show()
 
-func _on_health_component_health_changed(health: int):
-	pass # change healthbar?
+func take_damage(damage : int):
+	$HealthComponent.decrease_health(damage)
 
-func _on_vertical_collision_body_entered(body: Node2D) -> void:
-	if (body.name == "Player"):
-		return
+func _on_health_component_health_changed(new_health: int):
+	health = new_health
+	# affect healthbar
+
+func _on_vertical_collision_body_entered(body: Area2D) -> void:
+	if (body.name == "PlayerHitbox"):
+		attack()
 	else:
 		flip()
