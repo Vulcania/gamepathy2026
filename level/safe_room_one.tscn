@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bsld2jtbnfbmq" path="res://level/safe_room_one.gd" id="1_bd1u2"]
 [ext_resource type="Texture2D" uid="uid://bfe57e0n6kfdm" path="res://level/placeholder tile.png" id="2_fdjj2"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="3_fdjj2"]
+[ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="4_ccrhc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccrhc"]
 texture = ExtResource("2_fdjj2")
@@ -36,11 +37,12 @@ _data = {
 script = ExtResource("1_bd1u2")
 
 [node name="TestTile" type="TileMapLayer" parent="." unique_id=829263317]
+position = Vector2(-1, -810)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA0AAAAAAAAAAAABAA0AAAAAAAAAAAACAA0AAAAAAAAAAAADAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAAKAAwAAAAAAAAAAAALAAwAAAAAAAAAAAALAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAAQAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAbAAEAAAAAAAAAAAAbAAUAAAAAAAAAAAAbAA0AAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAUAAAAAAAAAAAAcAA0AAAAAAAAAAAAdAAUAAAAAAAAAAAAdAA0AAAAAAAAAAAAeAP//AAAAAAAAAAAeAA0AAAAAAAAAAAAfAP//AAAAAAAAAAAfAAcAAAAAAAAAAAAfAA0AAAAAAAAAAAAgAP//AAAAAAAAAAAgAAcAAAAAAAAAAAAgAA0AAAAAAAAAAAAhAP//AAAAAAAAAAAhAAcAAAAAAAAAAAAhAA0AAAAAAAAAAAAiAP3/AAAAAAAAAAAiAP7/AAAAAAAAAAAiAP//AAAAAAAAAAAiAAAAAAAAAAAAAAAiAAEAAAAAAAAAAAAiAAIAAAAAAAAAAAAiAAMAAAAAAAAAAAAiAAQAAAAAAAAAAAAiAAUAAAAAAAAAAAAiAAYAAAAAAAAAAAAiAAcAAAAAAAAAAAAiAAgAAAAAAAAAAAAiAAkAAAAAAAAAAAAiAAoAAAAAAAAAAAAiAAsAAAAAAAAAAAAiAAwAAAAAAAAAAAAiAA0AAAAAAAAAAAATAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAXAA0AAAAAAAAAAAAYAA0AAAAAAAAAAAAZAA0AAAAAAAAAAAAaAA0AAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAAAPb/AAAAAAAAAAAAAPf/AAAAAAAAAAABAPb/AAAAAAAAAAACAPb/AAAAAAAAAAADAPb/AAAAAAAAAAAEAPb/AAAAAAAAAAAFAPb/AAAAAAAAAAAGAPb/AAAAAAAAAAAHAPb/AAAAAAAAAAAIAPb/AAAAAAAAAAAJAPb/AAAAAAAAAAAKAPb/AAAAAAAAAAALAPb/AAAAAAAAAAAMAPb/AAAAAAAAAAANAPb/AAAAAAAAAAAOAPb/AAAAAAAAAAAPAPb/AAAAAAAAAAAQAPb/AAAAAAAAAAARAPb/AAAAAAAAAAASAPb/AAAAAAAAAAATAPb/AAAAAAAAAAAUAPb/AAAAAAAAAAAVAPb/AAAAAAAAAAAWAPb/AAAAAAAAAAAXAPb/AAAAAAAAAAAYAPb/AAAAAAAAAAAZAPb/AAAAAAAAAAAaAPb/AAAAAAAAAAAbAPb/AAAAAAAAAAAcAPb/AAAAAAAAAAAdAPb/AAAAAAAAAAAeAPb/AAAAAAAAAAAfAPb/AAAAAAAAAAAgAPb/AAAAAAAAAAAhAPb/AAAAAAAAAAAiAPb/AAAAAAAAAAAiAPf/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAAiAPn/AAAAAAAAAAAiAPr/AAAAAAAAAAAiAPv/AAAAAAAAAAAiAPz/AAAAAAAAAAAiAPj/AAAAAAAAAAAQAP3/AAAAAAAAAAARAP3/AAAAAAAAAAASAP3/AAAAAAAAAAATAP3/AAAAAAAAAAAUAP3/AAAAAAAAAAAVAP3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_6exqy")
 
 [node name="AgathasDesk" type="AnimatedSprite2D" parent="." unique_id=469498782]
-position = Vector2(4036, -312)
+position = Vector2(4035, -1122)
 sprite_frames = SubResource("SpriteFrames_fdjj2")
 
 [node name="AgathaArea" type="Area2D" parent="AgathasDesk" unique_id=1051028172]
@@ -55,6 +57,7 @@ offset_right = 119.0
 offset_bottom = -150.0
 theme_override_font_sizes/font_size = 53
 text = "press E"
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="AgathasDesk" unique_id=1182252388]
 offset_left = -43.0
@@ -62,9 +65,10 @@ offset_top = 49.0
 offset_right = 267.0
 offset_bottom = 183.0
 color = Color(0.70980394, 0.5058824, 0.5058824, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Door" type="Sprite2D" parent="." unique_id=467976559]
-position = Vector2(2428, -605)
+position = Vector2(2427, -1415)
 
 [node name="DoorArea" type="Area2D" parent="Door" unique_id=875189229]
 
@@ -77,21 +81,25 @@ offset_left = -100.0
 offset_top = -100.0
 offset_right = 103.0
 offset_bottom = 220.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
-position = Vector2(451, 1352)
+position = Vector2(450, 542)
 collision_layer = 1
 collision_mask = 1
 jump_speed_factor = -4.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=394667123]
 limit_left = 0
-limit_top = -1280
+limit_top = -2100
 limit_right = 4480
-limit_bottom = 1792
+limit_bottom = 986
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=397617716]
 libraries/ = SubResource("AnimationLibrary_ccrhc")
+
+[node name="PaperClipDeer" parent="." unique_id=1517736822 instance=ExtResource("4_ccrhc")]
+position = Vector2(3326, 737)
 
 [connection signal="area_entered" from="AgathasDesk/AgathaArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="AgathasDesk/AgathaArea" to="." method="_on_agatha_area_area_entered"]

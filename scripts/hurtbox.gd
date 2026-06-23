@@ -1,7 +1,7 @@
 class_name Hurtbox
 extends Area2D
 
-@export var own_hitbox : CollisionShape2D
+signal take_damage
 
 func _init() -> void:
 	collision_layer = 0
@@ -12,4 +12,4 @@ func _on_area_entered(hitbox : Hitbox) -> void:
 		return
 	
 	if owner.has_method("take_damage"):
-		owner.take_damage(hitbox.damage)
+		take_damage.emit(hitbox.damage)

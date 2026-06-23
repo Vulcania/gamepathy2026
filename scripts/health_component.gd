@@ -1,7 +1,7 @@
 class_name HealthComponent
 extends Control
 
-@export var max_health : int = 10
+@export var max_health : int = 5
 
 var current_health : int = max_health
 

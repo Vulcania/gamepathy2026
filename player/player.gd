@@ -1,8 +1,13 @@
 extends CharacterBody2D
 class_name Player
 
+
+@onready var hearts_container = $HUD/HeartsContainer
+
 var in_safe_room = true
 var pause_menu_open = false
+
+@export var max_health = 5
 
 # movement
 @export var base_speed: float = 300.0
@@ -46,6 +51,9 @@ var hit = false
 
 signal state_updated(state:State)
 
+func _ready() -> void:
+	hearts_container.set_max_hearts(max_health)
+
 func _on_ready():
 	hit = false
 
@@ -71,13 +79,13 @@ func flip():
 		if !hit:
 			sprite.scale.x = abs(sprite.scale.x) * -1
 			$AttackArea.scale.x = abs($AttackArea.scale.x) * -1
-			$PlayerHitbox.scale.x = abs($PlayerHitbox.scale.x) * -1
+			$PlayerHurtbox.scale.x = abs($PlayerHurtbox.scale.x) * -1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * -1
 	if Input.is_action_pressed("move_right"):
 		if !hit:
 			sprite.scale.x = abs(sprite.scale.x) * 1
 			$AttackArea.scale.x = abs($AttackArea.scale.x) * 1
-			$PlayerHitbox.scale.x = abs($PlayerHitbox.scale.x) * 1
+			$PlayerHurtbox.scale.x = abs($PlayerHurtbox.scale.x) * 1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * 1
 
 func _update_state()->void:
@@ -86,7 +94,6 @@ func _update_state()->void:
 	if previous_state != current_state:
 		state_updated.emit(current_state)
 		_update_animation()
-
 
 func _get_state() -> State:
 	if current_state == State.DASH and boost_time_left >= 0:
@@ -156,6 +163,9 @@ func _update_animation()->void:
 		State.ATTACK:
 			animation.play("Attack")
 			return
+
+func _on_hurtbox_take_damage(damage) -> void:
+	$HealthComponent.decrease_health(damage)
 
 func _apply_movement(delta:float) -> void:
 	var target_speed: float
@@ -227,3 +237,6 @@ func start_timer_in_level_one():
 	if not in_safe_room:
 		$HUD/TimerOptions/Timer.start()
 		$HUD/TimerOptions/Timer.paused = false
+
+func _on_health_component_health_changed(new_health) -> void:
+	hearts_container.update_hearts(new_health)

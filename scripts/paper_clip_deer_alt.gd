@@ -67,7 +67,7 @@ func _on_health_component_health_changed(new_health: int):
 	# affect healthbar
 
 func _on_vertical_collision_body_entered(body: Area2D) -> void:
-	if (body.name == "PlayerHitbox"):
+	if (body.name == "MonitorArea"):
 		attack()
 	else:
 		flip()

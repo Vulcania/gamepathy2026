@@ -65,10 +65,13 @@
 [ext_resource type="Texture2D" uid="uid://dl0tuahigx67a" path="res://player/player assets/jump/frame_02.png" id="52_j420s"]
 [ext_resource type="Texture2D" uid="uid://b3quklas1160a" path="res://player/player assets/jump/frame_03.png" id="53_kcq4v"]
 [ext_resource type="Texture2D" uid="uid://vnshco3kurkg" path="res://player/player assets/jump/frame_04.png" id="54_qavcc"]
+[ext_resource type="Script" uid="uid://cl1qdh4hd1gyn" path="res://scripts/hitbox.gd" id="66_kewli"]
 [ext_resource type="PackedScene" uid="uid://dc5k83g31j3su" path="res://health/HealthComponent.tscn" id="66_or4qq"]
+[ext_resource type="Script" uid="uid://rivf4at1c0yd" path="res://scripts/hurtbox.gd" id="66_utr5e"]
 [ext_resource type="Script" uid="uid://e74kf2cearsk" path="res://player/hud.gd" id="67_b2j0d"]
 [ext_resource type="PackedScene" uid="uid://buvakl6wq0bod" path="res://ui/pause_menu/pause_menu.tscn" id="67_hggc2"]
 [ext_resource type="Script" uid="uid://ciot0edarbaup" path="res://player/timer_options.gd" id="69_7l6ig"]
+[ext_resource type="PackedScene" uid="uid://3mgwi13a1xe1" path="res://ui/hearts_container.tscn" id="70_j3r50"]
 
 [sub_resource type="Animation" id="Animation_rnncm"]
 length = 1.6
@@ -145,7 +148,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerHitbox:visible")
+tracks/1/path = NodePath("PlayerHurtbox:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -309,7 +312,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerHitbox:visible")
+tracks/3/path = NodePath("PlayerHurtbox:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -423,13 +426,19 @@ autoplay = &"Idle"
 position = Vector2(-2, 31)
 shape = SubResource("RectangleShape2D_8pxes")
 
-[node name="PlayerHitbox" type="Area2D" parent="." unique_id=1143861468]
+[node name="PlayerHurtbox" type="Area2D" parent="." unique_id=1143861468]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("66_utr5e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=2060181973]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtbox" unique_id=2060181973]
 position = Vector2(-49, -1)
 shape = SubResource("CapsuleShape2D_fmu53")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=825963861]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("66_kewli")
 
 [node name="player_attack" type="CollisionShape2D" parent="AttackArea" unique_id=1701210703]
 position = Vector2(6, -16)
@@ -446,12 +455,6 @@ shape = SubResource("CircleShape2D_8pxes")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=749907556]
 script = ExtResource("67_b2j0d")
-
-[node name="PlayerHealthBar" type="Control" parent="HUD" unique_id=40551718]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="PauseMenu" parent="HUD" unique_id=700370192 instance=ExtResource("67_hggc2")]
 visible = false
@@ -483,6 +486,15 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "00:00"
 
+[node name="HeartsContainer" parent="HUD" unique_id=1877649860 instance=ExtResource("70_j3r50")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="Sounds" type="Node" parent="." unique_id=1379984318]
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1247237844]
@@ -497,6 +509,7 @@ bus = &"Effects"
 [node name="Talk" type="AudioStreamPlayer2D" parent="Sounds" unique_id=397134613]
 bus = &"Effects"
 
-[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
+[connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_button_pressed"]
+[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
 [connection signal="timeout" from="HUD/TimerOptions/Timer" to="HUD/TimerOptions" method="_on_timer_timeout"]

@@ -9,7 +9,7 @@ var facing_right = false
 
 var dead = false
 
-var max_health = 2
+var max_health = 3
 var health 
 var hit = false 
 var can_attack = true 
@@ -38,28 +38,22 @@ func flip():
 	else:
 		speed = abs(speed) * -1
 
-func _on_hitbox_area_entered(area):
-	if area.get_parent() is Player && !dead && can_attack:
-		area.get_parent().take_damage(1)
-
 func take_damage(damage_amount):
 	if !dead:
-		
 		health -= damage_amount
-		
-		get_node("healthbar").update_healthbar()
-		
 		if health <= 0:
 			die()
+	get_node("Healthbar").update_healthbar(health, max_health)
 
-func get_hit():
+func get_hit(damage):
 	hit = !hit
 	
 	if hit:
 		current_speed = speed
-		speed = 0
 		can_attack = false
 		$AnimationPlayer.play("Hit")
+		hit = !hit
+		take_damage(damage)
 	else:
 		speed = current_speed
 		can_attack = true
@@ -70,7 +64,10 @@ func die():
 	speed = 0
 	$AnimationPlayer.play("Dead")
 
-func _on_attack_area_area_entered(area: Area2D) -> void:
+#func _on_hit_box_area_entered(body: Hurtbox) -> void:
+	#if body.get_parent() is Player && body.visible && !dead:
+
+func _on_detect_environment_area_entered(area):
 	if area.get_parent() is Player && !hit:
 		can_attack = true
 		if can_attack:
@@ -78,4 +75,8 @@ func _on_attack_area_area_entered(area: Area2D) -> void:
 			$AnimationPlayer.play("Attack")
 			can_attack = false
 			await get_tree().create_timer(2).timeout
-			can_attack = true
+	else:
+		flip()
+
+func _on_hurtbox_take_damage(damage) -> void:
+	get_hit(damage)
