@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx58ihha8j6yx"
-path="res://.godot/imported/frame_3.png-0efb2719b700c71651d265801888a453.ctex"
+uid="uid://c3f5356mxo8wi"
+path="res://.godot/imported/frame_1.png-87df1cb00c659f4fdfed11b2647a2425.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/files_enemy/frame_3.png"
-dest_files=["res://.godot/imported/frame_3.png-0efb2719b700c71651d265801888a453.ctex"]
+source_file="res://enemy/ring-binder/frame_1.png"
+dest_files=["res://.godot/imported/frame_1.png-87df1cb00c659f4fdfed11b2647a2425.ctex"]
 
 [params]
 

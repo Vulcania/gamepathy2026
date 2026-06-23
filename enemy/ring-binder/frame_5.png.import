@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs0383dj8rubm"
-path="res://.godot/imported/frame_5.png-51354c3be2636350bcfb18280b51a4e2.ctex"
+path="res://.godot/imported/frame_5.png-157c6a4304203702e189b120f9fc70bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/files_enemy/frame_5.png"
-dest_files=["res://.godot/imported/frame_5.png-51354c3be2636350bcfb18280b51a4e2.ctex"]
+source_file="res://enemy/ring-binder/frame_5.png"
+dest_files=["res://.godot/imported/frame_5.png-157c6a4304203702e189b120f9fc70bc.ctex"]
 
 [params]
 
