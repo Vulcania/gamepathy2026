@@ -1,10 +1,47 @@
 [gd_scene format=3 uid="uid://eeqal4l4v82u"]
 
+[ext_resource type="Texture2D" uid="uid://bc5c7pv7wndwi" path="res://npc/JimDreaper/frame_03.png" id="1_y6dky"]
+[ext_resource type="Texture2D" uid="uid://di310h508e4y0" path="res://npc/JimDreaper/frame_04.png" id="2_worfg"]
+[ext_resource type="Texture2D" uid="uid://ducoyl3krl5nx" path="res://npc/JimDreaper/frame_05.png" id="3_nibwc"]
+[ext_resource type="Texture2D" uid="uid://by2xw0frkiwro" path="res://npc/JimDreaper/frame_06.png" id="4_up0bj"]
+[ext_resource type="Texture2D" uid="uid://dpdbin5cdghi3" path="res://npc/JimDreaper/frame_07.png" id="5_vjfiv"]
+[ext_resource type="Texture2D" uid="uid://da0ac5iawyktc" path="res://npc/JimDreaper/frame_08.png" id="6_ssy11"]
+
+[sub_resource type="Animation" id="Animation_1lw7e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
 [sub_resource type="Animation" id="Animation_lgwdp"]
 resource_name = "jim_idle"
+length = 1.1333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.53333336, 0.73333335, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_y6dky"), ExtResource("2_worfg"), ExtResource("3_nibwc"), ExtResource("4_up0bj"), ExtResource("5_vjfiv"), ExtResource("6_ssy11")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ls6ks"]
 _data = {
+&"RESET": SubResource("Animation_1lw7e"),
 &"jim_idle": SubResource("Animation_lgwdp")
 }
 
@@ -20,3 +57,5 @@ offset_bottom = 23.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=512288185]
 libraries/ = SubResource("AnimationLibrary_ls6ks")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=95187513]
