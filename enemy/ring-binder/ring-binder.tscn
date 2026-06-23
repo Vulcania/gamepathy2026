@@ -2,21 +2,79 @@
 
 [ext_resource type="Texture2D" uid="uid://c3f5356mxo8wi" path="res://enemy/ring-binder/frame_1.png" id="1_gqtpm"]
 [ext_resource type="Texture2D" uid="uid://dif1872ehe54" path="res://enemy/ring-binder/frame_2.png" id="2_15hdn"]
+[ext_resource type="Texture2D" uid="uid://qyamfs1uib7x" path="res://enemy/ring-binder/attack/frame_13.png" id="2_cssm5"]
 [ext_resource type="Texture2D" uid="uid://cx58ihha8j6yx" path="res://enemy/ring-binder/frame_3.png" id="3_2k0mc"]
+[ext_resource type="Texture2D" uid="uid://bupliyy0hexti" path="res://enemy/ring-binder/attack/frame_14.png" id="3_lihf5"]
 [ext_resource type="Texture2D" uid="uid://djk5pyyyimhoo" path="res://enemy/ring-binder/frame_4.png" id="4_ampu4"]
+[ext_resource type="Texture2D" uid="uid://bmf6qqxjto86h" path="res://enemy/ring-binder/attack/frame_15.png" id="4_ifvnn"]
+[ext_resource type="Texture2D" uid="uid://bjx0suujip4nd" path="res://enemy/ring-binder/attack/frame_16.png" id="5_4oa4u"]
 [ext_resource type="Texture2D" uid="uid://cs0383dj8rubm" path="res://enemy/ring-binder/frame_5.png" id="5_qi30n"]
 [ext_resource type="Texture2D" uid="uid://rgwj4gawlopw" path="res://enemy/ring-binder/frame_6.png" id="6_ormyd"]
+[ext_resource type="Texture2D" uid="uid://d0nfkogfg2pa6" path="res://enemy/ring-binder/attack/frame_17.png" id="6_q88an"]
+[ext_resource type="Texture2D" uid="uid://cs0wkl6ufrtqn" path="res://enemy/ring-binder/attack/frame_18.png" id="7_fht7q"]
 [ext_resource type="Texture2D" uid="uid://ewpqnlrifd2i" path="res://enemy/ring-binder/frame_7.png" id="7_j2vrf"]
 [ext_resource type="Texture2D" uid="uid://b1hpdmrrvcne0" path="res://enemy/ring-binder/frame_8.png" id="8_mbor5"]
+[ext_resource type="Texture2D" uid="uid://g4o5tdsy0fj5" path="res://enemy/ring-binder/attack/frame_19.png" id="8_mqerg"]
+[ext_resource type="Texture2D" uid="uid://iaxa4kx51381" path="res://enemy/ring-binder/death/frame_21.png" id="9_qvsbj"]
+[ext_resource type="Texture2D" uid="uid://b1777hxvgy251" path="res://enemy/ring-binder/death/frame_22.png" id="10_56oou"]
+[ext_resource type="Texture2D" uid="uid://orkwcy1o7eng" path="res://enemy/ring-binder/death/frame_23.png" id="11_22hjt"]
+[ext_resource type="Texture2D" uid="uid://8jtrc70j7ray" path="res://enemy/ring-binder/death/frame_24.png" id="12_hkgvm"]
+[ext_resource type="Texture2D" uid="uid://bdtackqwvil4m" path="res://enemy/ring-binder/death/frame_25.png" id="13_06l5c"]
+[ext_resource type="Texture2D" uid="uid://dbmmrklog2878" path="res://enemy/ring-binder/death/frame_26.png" id="14_uojgp"]
+[ext_resource type="Texture2D" uid="uid://nwb8856ep7b8" path="res://enemy/ring-binder/death/frame_27.png" id="15_ygju7"]
+[ext_resource type="Texture2D" uid="uid://de2jdlcv00sf3" path="res://enemy/ring-binder/death/frame_28.png" id="16_cx64e"]
+[ext_resource type="Texture2D" uid="uid://emwxmhmxujl8" path="res://enemy/ring-binder/hit/frame_09.png" id="17_x4a01"]
+[ext_resource type="Texture2D" uid="uid://wtlcm22ty7bw" path="res://enemy/ring-binder/hit/frame_10.png" id="18_kb3br"]
+[ext_resource type="Texture2D" uid="uid://djtpijuojf0m4" path="res://enemy/ring-binder/hit/frame_11.png" id="19_n7i7i"]
+[ext_resource type="Texture2D" uid="uid://bbry6i8moidwc" path="res://enemy/ring-binder/hit/frame_12.png" id="20_r7iey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1atwq"]
 size = Vector2(185, 171)
 
 [sub_resource type="Animation" id="Animation_nuy3n"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_cssm5"), ExtResource("3_lihf5"), ExtResource("4_ifvnn"), ExtResource("5_4oa4u"), ExtResource("6_q88an"), ExtResource("7_fht7q"), ExtResource("8_mqerg")]
+}
 
 [sub_resource type="Animation" id="Animation_8cxo2"]
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3, 0.46666667, 0.6333333, 0.8, 0.96666664, 1.1333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_qvsbj"), ExtResource("10_56oou"), ExtResource("11_22hjt"), ExtResource("12_hkgvm"), ExtResource("13_06l5c"), ExtResource("14_uojgp"), ExtResource("15_ygju7"), ExtResource("16_cx64e")]
+}
 
 [sub_resource type="Animation" id="Animation_e5gjq"]
+length = 0.6333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_x4a01"), ExtResource("18_kb3br"), ExtResource("19_n7i7i"), ExtResource("20_r7iey")]
+}
 
 [sub_resource type="Animation" id="Animation_6dl7e"]
 resource_name = "idle"
