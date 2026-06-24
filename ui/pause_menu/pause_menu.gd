@@ -5,7 +5,7 @@ extends Control
 func _ready() -> void:
 	quit.visible = false
 	hide()
-	if Input.is_action_pressed("pause"):
+	if Input.is_action_pressed("pausemenu"):
 		show()
 
 func _on_music_h_slider_value_changed(value: float) -> void:

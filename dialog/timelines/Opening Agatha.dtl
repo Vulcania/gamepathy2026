@@ -1,0 +1,12 @@
+join agatha center
+join Player center
+agatha: Hi there! You're late.
+agatha: The boss wants to see you.
+- oh no
+	agatha: oh yes.
+	agatha: take a buff and go.
+- can i stay here?
+	agatha: haha
+	agatha: no.
+	agatha: now take a buff and leave.
+Player: thanks...

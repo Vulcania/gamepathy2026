@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cte4y4nchebs6"]
 
+[ext_resource type="Script" uid="uid://cs0qs67d8ovnp" path="res://npc/BoneyToney/boney.gd" id="1_tisdm"]
+
 [sub_resource type="Animation" id="Animation_2i8w7"]
 resource_name = "noey_idle"
 
@@ -9,6 +11,7 @@ _data = {
 }
 
 [node name="Boney" type="Sprite2D" unique_id=1981898663]
+script = ExtResource("1_tisdm")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1976000067]
 
@@ -20,3 +23,5 @@ libraries/ = SubResource("AnimationLibrary_tisdm")
 [node name="pressE" type="Label" parent="." unique_id=644861900]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

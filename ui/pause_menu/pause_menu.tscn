@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://buvakl6wq0bod"]
 
 [ext_resource type="Script" uid="uid://dxhtb0cebwdri" path="res://ui/pause_menu/pause_menu.gd" id="1_mnjdh"]
+[ext_resource type="Texture2D" uid="uid://coiefrw5780b8" path="res://ui/pausenscreen.png" id="2_jbgdu"]
 
 [node name="PauseMenu" type="Control" unique_id=700370192]
 process_mode = 3
@@ -12,78 +13,84 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mnjdh")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1849053230]
+[node name="ColorRect" type="TextureRect" parent="." unique_id=393419362]
 layout_mode = 0
-offset_left = 459.0
-offset_top = 79.0
-offset_right = 1473.0
-offset_bottom = 982.0
-color = Color(0.6859696, 0.8030075, 0.8954853, 1)
+offset_left = -301.0
+offset_top = -61.0
+offset_right = 2309.0
+offset_bottom = 1341.0
+texture = ExtResource("2_jbgdu")
 
 [node name="PanelSound" type="ColorRect" parent="." unique_id=1384176311]
 layout_mode = 0
-offset_left = 509.0
-offset_top = 616.0
-offset_right = 1417.0
-offset_bottom = 878.0
-color = Color(0.5174083, 0.6862915, 0.8128412, 1)
+offset_left = 699.0
+offset_top = 633.0
+offset_right = 1385.0
+offset_bottom = 854.0
+scale = Vector2(0.83, 0.83)
+color = Color(0.46666667, 0.3647059, 0.34901962, 1)
+
+[node name="SoundOptions" type="Control" parent="PanelSound" unique_id=1580034800]
+anchors_preset = 0
+offset_left = 72.0
+offset_top = 42.0
+offset_right = 173.0
+offset_bottom = 124.0
+scale = Vector2(1.46, 1.46)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelSound/SoundOptions" unique_id=1632070797]
+layout_mode = 0
+offset_right = 373.0
+offset_bottom = 327.0
+
+[node name="Music" type="Label" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=1872690662]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="MusicHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=571521292]
+layout_mode = 2
+
+[node name="sfx" type="Label" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=717492906]
+layout_mode = 2
+text = "sfx"
+horizontal_alignment = 1
+
+[node name="sfxHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=270981091]
+layout_mode = 2
 
 [node name="ClosePause" type="Button" parent="." unique_id=1412257940]
 layout_mode = 0
-offset_left = 1397.0
-offset_top = 106.0
-offset_right = 1441.0
-offset_bottom = 151.0
+offset_left = 1451.0
+offset_top = 190.0
+offset_right = 1495.0
+offset_bottom = 235.0
 text = "x"
 
 [node name="Pause" type="Label" parent="." unique_id=993706785]
 layout_mode = 0
-offset_left = 502.0
-offset_top = 106.0
-offset_right = 839.0
-offset_bottom = 243.0
+offset_left = 803.0
+offset_top = 171.0
+offset_right = 1140.0
+offset_bottom = 308.0
 theme_override_font_sizes/font_size = 69
 text = "PAUSE"
-
-[node name="SoundOptions" type="Control" parent="." unique_id=1580034800]
-anchors_preset = 0
-offset_left = 9.0
-offset_top = 289.0
-offset_right = 49.0
-offset_bottom = 329.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SoundOptions" unique_id=1632070797]
-layout_mode = 0
-offset_left = 766.0
-offset_top = 380.0
-offset_right = 1139.0
-offset_bottom = 707.0
-
-[node name="Music" type="Label" parent="SoundOptions/VBoxContainer" unique_id=1872690662]
-layout_mode = 2
-text = "Music"
-
-[node name="MusicHSlider" type="HSlider" parent="SoundOptions/VBoxContainer" unique_id=571521292]
-layout_mode = 2
-
-[node name="sfx" type="Label" parent="SoundOptions/VBoxContainer" unique_id=717492906]
-layout_mode = 2
-text = "sfx"
-
-[node name="sfxHSlider" type="HSlider" parent="SoundOptions/VBoxContainer" unique_id=270981091]
-layout_mode = 2
+horizontal_alignment = 1
 
 [node name="CollectedBuffs" type="Control" parent="." unique_id=1787114514]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 530.0
+offset_top = 265.0
+offset_right = 570.0
+offset_bottom = 305.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CollectedBuffs" unique_id=519542254]
 layout_mode = 0
-offset_left = 531.0
-offset_top = 243.0
-offset_right = 1407.0
-offset_bottom = 573.0
+offset_left = 11.999992
+offset_top = 25.999998
+offset_right = 963.6483
+offset_bottom = 356.0
+scale = Vector2(0.91, 0.91)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CollectedBuffs/ScrollContainer" unique_id=1180199327]
 custom_minimum_size = Vector2(200, 300)
@@ -120,20 +127,20 @@ layout_mode = 2
 
 [node name="Buffs" type="Label" parent="CollectedBuffs" unique_id=596683145]
 layout_mode = 0
-offset_left = 531.0
-offset_top = 208.0
-offset_right = 640.0
-offset_bottom = 231.0
-theme_override_colors/font_color = Color(0.21358404, 0.20115808, 0.46880728, 1)
+offset_left = 14.0
+offset_top = -19.0
+offset_right = 123.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 27
 text = "Buffs"
 
 [node name="Quit Run" type="Button" parent="." unique_id=2017299980]
 layout_mode = 0
-offset_left = 938.0
-offset_top = 920.0
-offset_right = 1015.0
-offset_bottom = 951.0
+offset_left = 951.0
+offset_top = 856.0
+offset_right = 1028.0
+offset_bottom = 887.0
 text = "Quit Run"
 
 [node name="DoYouWantToQuit" type="CanvasLayer" parent="." unique_id=599112639]
@@ -179,9 +186,9 @@ text = "Yes, I quit"
 layout_mode = 2
 text = "No, I want to stay"
 
+[connection signal="value_changed" from="PanelSound/SoundOptions/VBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="PanelSound/SoundOptions/VBoxContainer/sfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]
 [connection signal="pressed" from="ClosePause" to="." method="_on_close_pause_pressed"]
-[connection signal="value_changed" from="SoundOptions/VBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
-[connection signal="value_changed" from="SoundOptions/VBoxContainer/sfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]
 [connection signal="pressed" from="Quit Run" to="." method="_on_quit_run_pressed"]
 [connection signal="pressed" from="DoYouWantToQuit/ColorRect/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="DoYouWantToQuit/ColorRect/HBoxContainer/No" to="." method="_on_no_pressed"]
