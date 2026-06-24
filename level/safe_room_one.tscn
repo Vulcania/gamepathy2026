@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsld2jtbnfbmq" path="res://level/safe_room_one.gd" id="1_bd1u2"]
 [ext_resource type="Texture2D" uid="uid://bfe57e0n6kfdm" path="res://level/placeholder tile.png" id="2_fdjj2"]
+[ext_resource type="PackedScene" uid="uid://wljl3dhyu2rb" path="res://npc/AgathaToad/agatha.tscn" id="3_6exqy"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="3_fdjj2"]
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="4_ccrhc"]
 
@@ -46,11 +47,13 @@ position = Vector2(4035, -1122)
 sprite_frames = SubResource("SpriteFrames_fdjj2")
 
 [node name="AgathaArea" type="Area2D" parent="AgathasDesk" unique_id=1051028172]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgathasDesk/AgathaArea" unique_id=174723470]
 shape = SubResource("CapsuleShape2D_l3wt5")
 
 [node name="press E" type="Label" parent="AgathasDesk" unique_id=1588669476]
+visible = false
 offset_left = -62.0
 offset_top = -223.0
 offset_right = 119.0
@@ -66,6 +69,9 @@ offset_right = 267.0
 offset_bottom = 183.0
 color = Color(0.70980394, 0.5058824, 0.5058824, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Agatha" parent="AgathasDesk" unique_id=840079881 instance=ExtResource("3_6exqy")]
+position = Vector2(128, 15)
 
 [node name="Door" type="Sprite2D" parent="." unique_id=467976559]
 position = Vector2(2427, -1415)
