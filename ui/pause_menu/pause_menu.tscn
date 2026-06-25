@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://buvakl6wq0bod"]
 
 [ext_resource type="Script" uid="uid://dxhtb0cebwdri" path="res://ui/pause_menu/pause_menu.gd" id="1_mnjdh"]
-[ext_resource type="Texture2D" uid="uid://coiefrw5780b8" path="res://ui/pausenscreen.png" id="2_jbgdu"]
+[ext_resource type="Texture2D" uid="uid://coiefrw5780b8" path="res://ui/ui_assets/pausenscreen.png" id="2_jbgdu"]
 
 [node name="PauseMenu" type="Control" unique_id=700370192]
 process_mode = 3
@@ -50,6 +50,7 @@ horizontal_alignment = 1
 
 [node name="MusicHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=571521292]
 layout_mode = 2
+value = 100.0
 
 [node name="sfx" type="Label" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=717492906]
 layout_mode = 2
@@ -58,6 +59,7 @@ horizontal_alignment = 1
 
 [node name="sfxHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=270981091]
 layout_mode = 2
+value = 100.0
 
 [node name="ClosePause" type="Button" parent="." unique_id=1412257940]
 layout_mode = 0
@@ -143,10 +145,14 @@ offset_right = 1028.0
 offset_bottom = 887.0
 text = "Quit Run"
 
-[node name="DoYouWantToQuit" type="CanvasLayer" parent="." unique_id=599112639]
+[node name="DoYouWantToQuit" type="Control" parent="." unique_id=1862183043]
 visible = false
+z_index = 5
+anchors_preset = 0
 
 [node name="ColorRect" type="ColorRect" parent="DoYouWantToQuit" unique_id=1763139440]
+z_index = 10
+layout_mode = 0
 offset_left = 618.0
 offset_top = 376.0
 offset_right = 1296.0

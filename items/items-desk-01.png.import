@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gm3iq0b2jjq"
-path="res://.godot/imported/wasted life.png-ddb9abc04d133928ad03cb00feb4c092.ctex"
+uid="uid://d3iquken7pcph"
+path="res://.godot/imported/items-desk-01.png-96f5ccc34a568e26e60a6400871f0bba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/wasted life.png"
-dest_files=["res://.godot/imported/wasted life.png-ddb9abc04d133928ad03cb00feb4c092.ctex"]
+source_file="res://items/items-desk-01.png"
+dest_files=["res://.godot/imported/items-desk-01.png-96f5ccc34a568e26e60a6400871f0bba.ctex"]
 
 [params]
 

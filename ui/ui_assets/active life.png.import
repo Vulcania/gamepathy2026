@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coiefrw5780b8"
-path="res://.godot/imported/pausenscreen.png-7718c0f67f349b8d5726d37ede145326.ctex"
+uid="uid://b83v7gfca0d2i"
+path="res://.godot/imported/active life.png-41d51a4cfd87288d85e2bbb80170f764.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/pausenscreen.png"
-dest_files=["res://.godot/imported/pausenscreen.png-7718c0f67f349b8d5726d37ede145326.ctex"]
+source_file="res://ui/ui_assets/active life.png"
+dest_files=["res://.godot/imported/active life.png-41d51a4cfd87288d85e2bbb80170f764.ctex"]
 
 [params]
 

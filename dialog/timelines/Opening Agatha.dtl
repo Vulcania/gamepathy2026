@@ -10,3 +10,4 @@ agatha: The boss wants to see you.
 	agatha: no.
 	agatha: now take a buff and leave.
 Player: thanks...
+do Global.open_buff_options()

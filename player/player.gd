@@ -1,9 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-
-@onready var hearts_container = $HUD/HeartsContainer
-
 var in_safe_room = true
 var pause_menu_open = false
 var can_move = true
@@ -13,8 +10,8 @@ var can_move = true
 # movement
 @export var base_speed: float = 300.0
 @export var run_speed_factor: float = 1.67
-@export var jump_speed_factor: float = -4
-@export var gravity_speed_factor: float = 4
+@export var jump_height = -750
+@export var gravity = 900
 @export var acceleration: float = 20.0
 @export var friction: float = 50.0
 
@@ -28,6 +25,7 @@ var can_move = true
 # names
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
+@onready var hearts_container = $HUD/HeartsContainer
 
 # input actions
 var move_input: float = 0.0
@@ -37,6 +35,7 @@ var is_ducking_just_pressed:bool = false
 var is_blocking: bool = false
 var is_jumping: bool = false
 var is_attacking: bool = false
+var is_interacting: bool = false
 var gravity_vector: Vector2 = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 
 # dash
@@ -44,7 +43,7 @@ var boost_time_left: float = 0.0
 var boost_cooldown_left: float = 0.0
 var dash_direction:float = 1.0
 
-enum State { IDLE, WALK, RUN, JUMP, FALL, DUCK, SLIDE, BLOCK, DASH, BRAKING, ATTACK }
+enum State { IDLE, WALK, RUN, JUMP, FALL, DUCK, SLIDE, BLOCK, DASH, BRAKING, ATTACK, INTERACTING }
 
 var current_state: State = State.IDLE
 
@@ -66,6 +65,7 @@ func _physics_process(delta: float) -> void:
 	is_blocking = Input.is_action_pressed("block")
 	is_jumping = Input.is_action_pressed("jump")
 	is_attacking = Input.is_action_pressed("attack")
+	is_interacting = Input.is_action_pressed("interact")
 	
 	_update_state()
 	flip()
@@ -77,17 +77,19 @@ func _physics_process(delta: float) -> void:
 
 func flip():
 	if Input.is_action_pressed("move_left"):
-		if !hit:
+		if !hit && can_move:
 			sprite.scale.x = abs(sprite.scale.x) * -1
 			$AttackArea.scale.x = abs($AttackArea.scale.x) * -1
 			$PlayerHurtbox.scale.x = abs($PlayerHurtbox.scale.x) * -1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * -1
+			$CollisionShape2D.scale.x = abs($CollisionShape2D.scale.x) * -1
 	if Input.is_action_pressed("move_right"):
-		if !hit:
+		if !hit && can_move:
 			sprite.scale.x = abs(sprite.scale.x) * 1
 			$AttackArea.scale.x = abs($AttackArea.scale.x) * 1
 			$PlayerHurtbox.scale.x = abs($PlayerHurtbox.scale.x) * 1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * 1
+			$CollisionShape2D.scale.x = abs($CollisionShape2D.scale.x) * 1
 
 func _update_state()->void:
 	var previous_state = current_state
@@ -125,6 +127,8 @@ func _get_state() -> State:
 		return State.WALK
 	if is_attacking:
 		return State.ATTACK
+	if is_interacting:
+		return State.INTERACTING
 	return State.IDLE
 
 
@@ -149,20 +153,14 @@ func _update_animation()->void:
 		State.BLOCK:
 			animation.play("Block")
 			return
-		#State.DUCK:
-			#animation.play()
-			#return
-		#State.SLIDE:
-			#animation.play()
-			#return
-		#State.BRAKING:
-			#animation.play()
-			#return
 		State.DASH:
 			animation.play("Dash")
 			return
 		State.ATTACK:
 			animation.play("Attack")
+			return
+		State.INTERACTING:
+			animation.play("Idle")
 			return
 
 func _on_hurtbox_take_damage(damage) -> void:
@@ -171,9 +169,9 @@ func _on_hurtbox_take_damage(damage) -> void:
 func _apply_movement(delta:float) -> void:
 	var target_speed: float
 	if not is_on_floor():
-		velocity.y += gravity_vector.y * base_speed * gravity_speed_factor * delta
+		velocity.y += gravity * delta
 	match current_state:
-		State.IDLE, State.BLOCK, State.DUCK:
+		State.IDLE, State.BLOCK, State.DUCK, State.INTERACTING:
 			target_speed = 0.0
 			velocity.x = move_toward(velocity.x, target_speed, friction)
 		State.BRAKING:
@@ -185,19 +183,9 @@ func _apply_movement(delta:float) -> void:
 		State.RUN:
 			target_speed = move_input * base_speed * run_speed_factor
 			velocity.x = move_toward(velocity.x, target_speed, acceleration)
-		#State.SLIDE:
-		#	if boost_time_left > 0:
-		#		target_speed = move_input * base_speed * slide_speed_factor
-		#		velocity.x = move_toward(velocity.x, target_speed, acceleration)
-		#	else:
-		#		target_speed = 0.0
-		#		velocity.x = move_toward(velocity.x, target_speed, friction*slide_friction_factor)
-		#	boost_time_left -= delta
-		#	if boost_time_left <= 0.0:
-		#		boost_cooldown_left = boost_cooldown
 		State.JUMP:
 			if is_on_floor():
-				velocity.y = base_speed * jump_speed_factor
+				velocity.y = jump_height
 			target_speed = move_input * base_speed
 			velocity.x = move_toward(velocity.x, target_speed, acceleration)
 		State.DASH:
@@ -218,11 +206,19 @@ func _apply_movement(delta:float) -> void:
 func die():
 	animation.play("Dead")
 
+func talking():
+	is_interacting = true
+	can_move = false
+
+func finished_talking():
+	is_interacting = false
+	can_move = true
+
 func return_to_foyer():
 	pass
 
 func open_pause():
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pausemenu"):
 		$HUD/PauseMenu.visible = true
 		pause_menu_open = true
 		$HUD/TimerOptions/Timer.paused = true

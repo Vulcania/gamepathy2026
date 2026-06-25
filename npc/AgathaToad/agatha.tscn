@@ -34,8 +34,12 @@ texture = ExtResource("1_iv2xl")
 script = ExtResource("1_210dv")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1829679753]
+light_mask = 3
+visibility_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=790354303]
+light_mask = 3
+visibility_layer = 3
 shape = SubResource("CircleShape2D_iv2xl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1133501965]
@@ -43,6 +47,7 @@ libraries/ = SubResource("AnimationLibrary_ow6p5")
 autoplay = &"agatha_idle"
 
 [node name="pressE" type="Label" parent="." unique_id=1258085477]
+visible = false
 offset_left = -78.0
 offset_top = -152.0
 offset_right = 62.0
