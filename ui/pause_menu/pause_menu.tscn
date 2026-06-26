@@ -82,6 +82,7 @@ text = "Music"
 horizontal_alignment = 1
 
 [node name="MusicHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=571521292]
+process_mode = 3
 layout_mode = 2
 value = 100.0
 
