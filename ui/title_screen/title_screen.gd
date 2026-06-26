@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var menu_vbox = $MenuVBox
+@onready var menu_vbox = $Menu
 @onready var options_vbox = $OptionsVBox
 @onready var credits_vbox = $CreditsVBox
 @onready var music_slider: HSlider = $OptionsVBox/MusicSlider
