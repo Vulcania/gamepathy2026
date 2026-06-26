@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2nwtpl77bik8"
-path="res://.godot/imported/Tileset_Floor.png-b15d9905e6bd64f94c9b4dcd7fe43017.ctex"
+uid="uid://cote0mvs8b4mk"
+path="res://.godot/imported/Brückending.png-c3447b3fdce609a4cdb1b36eb74bdf7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/Boden/Tileset_Floor.png"
-dest_files=["res://.godot/imported/Tileset_Floor.png-b15d9905e6bd64f94c9b4dcd7fe43017.ctex"]
+source_file="res://Tilesets/Boden/Brückending.png"
+dest_files=["res://.godot/imported/Brückending.png-c3447b3fdce609a4cdb1b36eb74bdf7e.ctex"]
 
 [params]
 
