@@ -45,7 +45,7 @@
 size = Vector2(127, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usyva"]
-size = Vector2(182, 220)
+size = Vector2(144, 220)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ee7k"]
 size = Vector2(151, 154)
@@ -249,12 +249,12 @@ texture = ExtResource("2_up443")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectEnvironment" unique_id=1289455631]
-position = Vector2(-114, -14)
+position = Vector2(-133, -14)
 shape = SubResource("RectangleShape2D_usyva")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=844124993]
-collision_layer = 2
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("3_8tp8l")
 
 [node name="hurtbox" type="CollisionShape2D" parent="Hurtbox" unique_id=814050474]
