@@ -2,6 +2,34 @@
 
 [ext_resource type="Script" uid="uid://dxhtb0cebwdri" path="res://ui/pause_menu/pause_menu.gd" id="1_mnjdh"]
 [ext_resource type="Texture2D" uid="uid://coiefrw5780b8" path="res://ui/ui_assets/pausenscreen.png" id="2_jbgdu"]
+[ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="3_b4b0p"]
+[ext_resource type="Texture2D" uid="uid://dhofruf3bpe1n" path="res://ui/ui_assets/close pause menu button.png" id="4_c3jo5"]
+[ext_resource type="Texture2D" uid="uid://6atvixy378x5" path="res://ui/ui_assets/close game.png" id="5_c3jo5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uraes"]
+texture = ExtResource("4_c3jo5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihaig"]
+texture = ExtResource("4_c3jo5")
+modulate_color = Color(0.8614566, 0.60208994, 0.5324527, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_umsyg"]
+texture = ExtResource("4_c3jo5")
+modulate_color = Color(0.8440604, 0.6886468, 0.6487342, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qrb2"]
+texture = ExtResource("4_c3jo5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b05md"]
+texture = ExtResource("5_c3jo5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f2x4c"]
+texture = ExtResource("5_c3jo5")
+modulate_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lhp7q"]
+texture = ExtResource("5_c3jo5")
+modulate_color = Color(0.84645385, 0.61869913, 0.58491474, 1)
 
 [node name="PauseMenu" type="Control" unique_id=700370192]
 process_mode = 3
@@ -40,11 +68,16 @@ scale = Vector2(1.46, 1.46)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelSound/SoundOptions" unique_id=1632070797]
 layout_mode = 0
-offset_right = 373.0
-offset_bottom = 327.0
+offset_left = 1.0232631
+offset_top = -4.835769
+offset_right = 374.02325
+offset_bottom = 103.26793
 
 [node name="Music" type="Label" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=1872690662]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8210712, 0.7373924, 0.7198376, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 24
 text = "Music"
 horizontal_alignment = 1
 
@@ -54,6 +87,9 @@ value = 100.0
 
 [node name="sfx" type="Label" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=717492906]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8210712, 0.7373924, 0.7198376, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 24
 text = "sfx"
 horizontal_alignment = 1
 
@@ -63,19 +99,24 @@ value = 100.0
 
 [node name="ClosePause" type="Button" parent="." unique_id=1412257940]
 layout_mode = 0
-offset_left = 1451.0
-offset_top = 190.0
-offset_right = 1495.0
-offset_bottom = 235.0
-text = "x"
+offset_left = 1457.0
+offset_top = 184.0
+offset_right = 1491.0
+offset_bottom = 229.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uraes")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ihaig")
+theme_override_styles/hover = SubResource("StyleBoxTexture_umsyg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_3qrb2")
 
 [node name="Pause" type="Label" parent="." unique_id=993706785]
 layout_mode = 0
-offset_left = 803.0
-offset_top = 171.0
-offset_right = 1140.0
-offset_bottom = 308.0
-theme_override_font_sizes/font_size = 69
+offset_left = 810.0
+offset_top = 183.0
+offset_right = 1147.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0.81960785, 0.7372549, 0.7254902, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 91
 text = "PAUSE"
 horizontal_alignment = 1
 
@@ -133,17 +174,27 @@ offset_left = 14.0
 offset_top = -19.0
 offset_right = 123.0
 offset_bottom = 18.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 27
+theme_override_colors/font_color = Color(0.8210712, 0.7373924, 0.7198376, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 35
 text = "Buffs"
 
 [node name="Quit Run" type="Button" parent="." unique_id=2017299980]
 layout_mode = 0
-offset_left = 951.0
-offset_top = 856.0
-offset_right = 1028.0
-offset_bottom = 887.0
-text = "Quit Run"
+offset_left = 934.0
+offset_top = 843.0
+offset_right = 1035.8387
+offset_bottom = 893.0
+theme_override_colors/font_color = Color(0.2045947, 0.124900185, 0.103204526, 1)
+theme_override_colors/font_pressed_color = Color(0.9536317, 0.832446, 0.7741755, 1)
+theme_override_colors/font_hover_color = Color(0.6114726, 0.41984028, 0.37133282, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_b05md")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f2x4c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lhp7q")
+text = "
+
+Quit Run"
 
 [node name="DoYouWantToQuit" type="Control" parent="." unique_id=1862183043]
 visible = false
