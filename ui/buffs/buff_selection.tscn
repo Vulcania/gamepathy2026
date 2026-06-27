@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://djseq43ja7gho"]
 
 [ext_resource type="Script" uid="uid://cmyu6pp3fa0tq" path="res://ui/buffs/buff_selection.gd" id="1_2s07i"]
+[ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="2_eo64k"]
 
-[node name="BuffSelection" type="Control" unique_id=783345293]
+[node name="BuffSelectionOne" type="Control" unique_id=783345293]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,25 +12,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2s07i")
 
-[node name="Control" type="Control" parent="." unique_id=1125757766]
-anchors_preset = 0
-offset_left = 251.0
-offset_top = 196.0
-offset_right = 251.0
-offset_bottom = 878.0
+[node name="Excuse Me" type="Label" parent="." unique_id=1305717303]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 136.0
+offset_right = 1406.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("2_eo64k")
+theme_override_font_sizes/font_size = 125
+text = "\"Excuse me, but...\""
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2089575171]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=377156826]
 layout_mode = 0
 offset_left = 251.0
-offset_top = 196.0
+offset_top = 407.0
 offset_right = 1649.0
-offset_bottom = 878.0
+offset_bottom = 850.0
 
-[node name="Option1" type="TextureRect" parent="HBoxContainer" unique_id=510431058]
+[node name="Option1" type="Button" parent="HBoxContainer" unique_id=402928383]
 layout_mode = 2
-
-[node name="Option2" type="TextureRect" parent="HBoxContainer" unique_id=721037158]
-layout_mode = 2
-
-[node name="Option3" type="TextureRect" parent="HBoxContainer" unique_id=1808589450]
-layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "I can't come. I have an appointment 
+to get my wisdom teeth removed."
