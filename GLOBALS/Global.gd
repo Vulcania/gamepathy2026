@@ -16,3 +16,12 @@ func long_talk():
 func short_talk():
 	pass
 	#lose less time
+
+func buff_one():
+	pass
+
+func buff_two():
+	pass
+
+func buff_three():
+	pass

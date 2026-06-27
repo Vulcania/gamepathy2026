@@ -1,4 +1,4 @@
 extends Resource
-class_name Inventory
+class_name Buffs
 
 #var items : Array[]

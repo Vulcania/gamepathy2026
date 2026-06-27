@@ -30,7 +30,9 @@ directories/dch_directory={
 "jim dreaper": "res://dialog/characters/jim dreaper.dch"
 }
 directories/dtl_directory={
-"Agatha Default": "res://dialog/timelines/Agatha Default.dtl",
+"Agatha_Option1": "res://dialog/timelines/Agatha_Option1.dtl",
+"Agatha_Option2": "res://dialog/timelines/Agatha_Option2.dtl",
+"Agatha_Option3": "res://dialog/timelines/Agatha_Option3.dtl",
 "Jim Default": "res://dialog/timelines/Jim Default.dtl",
 "Jim Main": "res://dialog/timelines/Jim Main.dtl",
 "Opening Agatha": "res://dialog/timelines/Opening Agatha.dtl"

@@ -28,9 +28,26 @@ offset_left = 251.0
 offset_top = 407.0
 offset_right = 1649.0
 offset_bottom = 850.0
+theme_override_constants/separation = 20
 
 [node name="Option1" type="Button" parent="HBoxContainer" unique_id=402928383]
 layout_mode = 2
 theme_override_font_sizes/font_size = 39
-text = "I can't come. I have an appointment 
-to get my wisdom teeth removed."
+text = "\"I can't come. I have an appointment 
+to get my wisdom teeth removed.\""
+
+[node name="Option2" type="Button" parent="HBoxContainer" unique_id=1869812957]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "\"I won't be there. It's 
+my pet rats birthday.\""
+
+[node name="Option3" type="Button" parent="HBoxContainer" unique_id=1472482025]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "\"I physically can't come. 
+I'm allergic to company events!\""
+
+[connection signal="pressed" from="HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option3" to="." method="_on_option_3_pressed"]
