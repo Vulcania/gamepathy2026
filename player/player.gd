@@ -79,15 +79,15 @@ func flip():
 	if Input.is_action_pressed("move_left"):
 		if !hit && can_move:
 			sprite.scale.x = abs(sprite.scale.x) * -1
-			$AttackArea.scale.x = abs($AttackArea.scale.x) * -1
-			$PlayerHurtbox.scale.x = abs($PlayerHurtbox.scale.x) * -1
+			$AttackBox.scale.x = abs($AttackBox.scale.x) * -1
+			$HitBox.scale.x = abs($HitBox.scale.x) * -1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * -1
 			$CollisionShape2D.scale.x = abs($CollisionShape2D.scale.x) * -1
 	if Input.is_action_pressed("move_right"):
 		if !hit && can_move:
 			sprite.scale.x = abs(sprite.scale.x) * 1
-			$AttackArea.scale.x = abs($AttackArea.scale.x) * 1
-			$PlayerHurtbox.scale.x = abs($PlayerHurtbox.scale.x) * 1
+			$AttackBox.scale.x = abs($AttackBox.scale.x) * 1
+			$HitBox.scale.x = abs($HitBox.scale.x) * 1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * 1
 			$CollisionShape2D.scale.x = abs($CollisionShape2D.scale.x) * 1
 
@@ -131,7 +131,6 @@ func _get_state() -> State:
 		return State.INTERACTING
 	return State.IDLE
 
-
 func _update_animation()->void:
 	rotation = 0
 	match current_state:
@@ -163,7 +162,7 @@ func _update_animation()->void:
 			animation.play("Idle")
 			return
 
-func _on_hurtbox_take_damage(damage) -> void:
+func take_damage(damage) -> void:
 	$HealthComponent.decrease_health(damage)
 
 func _apply_movement(delta:float) -> void:

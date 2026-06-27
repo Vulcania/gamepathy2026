@@ -65,10 +65,10 @@
 [ext_resource type="Texture2D" uid="uid://dl0tuahigx67a" path="res://player/player assets/jump/frame_02.png" id="52_j420s"]
 [ext_resource type="Texture2D" uid="uid://b3quklas1160a" path="res://player/player assets/jump/frame_03.png" id="53_kcq4v"]
 [ext_resource type="Texture2D" uid="uid://vnshco3kurkg" path="res://player/player assets/jump/frame_04.png" id="54_qavcc"]
-[ext_resource type="Script" uid="uid://cl1qdh4hd1gyn" path="res://scripts/attack_area.gd" id="66_kewli"]
+[ext_resource type="Script" uid="uid://d2qvfaqjiwl62" path="res://scripts/hit_box.gd" id="66_kewli"]
 [ext_resource type="PackedScene" uid="uid://dc5k83g31j3su" path="res://health/HealthComponent.tscn" id="66_or4qq"]
-[ext_resource type="Script" uid="uid://rivf4at1c0yd" path="res://scripts/hit_area.gd" id="66_utr5e"]
 [ext_resource type="Script" uid="uid://e74kf2cearsk" path="res://player/hud.gd" id="67_b2j0d"]
+[ext_resource type="Script" uid="uid://bgyk0ydx1rk7p" path="res://scripts/attack_box.gd" id="67_do7qw"]
 [ext_resource type="PackedScene" uid="uid://buvakl6wq0bod" path="res://ui/pause_menu/pause_menu.tscn" id="67_hggc2"]
 [ext_resource type="Script" uid="uid://ciot0edarbaup" path="res://player/timer_options.gd" id="69_7l6ig"]
 [ext_resource type="PackedScene" uid="uid://3mgwi13a1xe1" path="res://ui/hearts_container.tscn" id="70_j3r50"]
@@ -91,11 +91,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackArea:visible")
+tracks/1/path = NodePath("AttackBox:monitorable")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.23333333, 1.2),
+"times": PackedFloat32Array(0, 0.41, 1.01),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -148,7 +148,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerHurtbox:visible")
+tracks/1/path = NodePath("MonitorArea:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -157,37 +157,13 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AttackArea:visible")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MonitorArea:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(1.3333334),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -276,50 +252,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackArea:visible")
+tracks/1/path = NodePath("CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(-2, 31)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/path = NodePath("MonitorArea:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, 31)]
+"update": 1,
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerHurtbox:visible")
+tracks/3/path = NodePath("AttackBox:monitorable")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MonitorArea:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_wsa1w"]
@@ -409,11 +373,11 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pxes"]
-size = Vector2(22.5, 103.5)
+size = Vector2(53, 104)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmu53"]
-radius = 14.0
-height = 116.0
+radius = 19.0
+height = 112.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8pxes"]
 radius = 90.0
@@ -437,21 +401,24 @@ autoplay = &"Idle"
 position = Vector2(-2, 31)
 shape = SubResource("RectangleShape2D_8pxes")
 
-[node name="PlayerHurtbox" type="Area2D" parent="." unique_id=1143861468]
+[node name="HitBox" type="Area2D" parent="." unique_id=1811097177]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("66_utr5e")
+script = ExtResource("66_kewli")
+metadata/_custom_type_script = "uid://d2qvfaqjiwl62"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtbox" unique_id=2060181973]
-position = Vector2(1, 20)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2060181973]
+position = Vector2(-14, 23)
 shape = SubResource("CapsuleShape2D_fmu53")
 
-[node name="AttackArea" type="Area2D" parent="." unique_id=825963861]
+[node name="AttackBox" type="Area2D" parent="." unique_id=1145952830]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("66_kewli")
+monitorable = false
+script = ExtResource("67_do7qw")
+metadata/_custom_type_script = "uid://bgyk0ydx1rk7p"
 
-[node name="player_attack" type="CollisionShape2D" parent="AttackArea" unique_id=1701210703]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=1701210703]
 position = Vector2(6, -16)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_8pxes")
