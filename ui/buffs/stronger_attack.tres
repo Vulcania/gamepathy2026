@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Buffs" format=3 uid="uid://bdn1vdveqlkm8"]
+
+[ext_resource type="Script" uid="uid://ixvwpui5ohaq" path="res://GLOBALS/Buffs.gd" id="1_0nc50"]
+
+[resource]
+script = ExtResource("1_0nc50")
+metadata/_custom_type_script = "uid://ixvwpui5ohaq"
