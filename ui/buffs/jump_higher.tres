@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="Buffs" format=3 uid="uid://bqsl7ntkjjudv"]
 
 [ext_resource type="Script" uid="uid://ixvwpui5ohaq" path="res://GLOBALS/Buffs.gd" id="1_qfq0f"]
+[ext_resource type="Texture2D" uid="uid://8wdwxg6q3lfc" path="res://ui/buffs/buff_icon/jump_buff_icon.png" id="1_tfvt6"]
 
 [resource]
 script = ExtResource("1_qfq0f")
 id = "JumpHigher"
+icon = ExtResource("1_tfvt6")
 metadata/_custom_type_script = "uid://ixvwpui5ohaq"

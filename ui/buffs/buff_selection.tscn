@@ -28,10 +28,10 @@ script = ExtResource("1_2s07i")
 
 [node name="Excuse Me" type="Label" parent="." unique_id=1305717303]
 layout_mode = 0
-offset_left = 528.0
-offset_top = 56.0
-offset_right = 1380.0
-offset_bottom = 191.0
+offset_left = 544.0
+offset_top = 85.0
+offset_right = 1396.0
+offset_bottom = 220.0
 theme_override_colors/font_color = Color(0.88235295, 0.69411767, 0.64705884, 1)
 theme_override_fonts/font = ExtResource("2_eo64k")
 theme_override_font_sizes/font_size = 125
@@ -40,9 +40,9 @@ text = "\"Excuse me, but...\""
 [node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2071695082]
 layout_mode = 0
 offset_left = 488.0
-offset_top = 206.0
+offset_top = 268.0
 offset_right = 1425.0
-offset_bottom = 1013.0
+offset_bottom = 1075.0
 theme_override_constants/separation = 20
 
 [node name="Option1" type="Button" parent="HBoxContainer" unique_id=402928383]
