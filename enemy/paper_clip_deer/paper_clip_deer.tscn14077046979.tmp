@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://csu5w0vfgfkjt"]
 
-[ext_resource type="Script" uid="uid://buoca0o77h630" path="res://enemy/paper_clip_deer/paper_clip_deer.gd" id="1_rrkc6"]
+[ext_resource type="Script" uid="uid://bw0is5qapth2e" path="res://enemy/paper_clip_deer/paper_clip_deer.gd" id="1_rrkc6"]
 [ext_resource type="Texture2D" uid="uid://uchg8la348qp" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_01.png" id="2_up443"]
 [ext_resource type="Texture2D" uid="uid://c8nw1gjje2lv3" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_02.png" id="3_3ut8w"]
-[ext_resource type="Script" uid="uid://d2qvfaqjiwl62" path="res://scripts/hit_box.gd" id="3_8tp8l"]
+[ext_resource type="Script" uid="uid://rivf4at1c0yd" path="res://scripts/hit_area.gd" id="3_8tp8l"]
 [ext_resource type="Texture2D" uid="uid://cw7t0fnw7uw2q" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_01.png" id="3_nu1yx"]
 [ext_resource type="PackedScene" uid="uid://b8pbr6khyr1xh" path="res://health/Healthbar.tscn" id="3_up443"]
 [ext_resource type="Texture2D" uid="uid://dwde64xw08a0j" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_03.png" id="4_atoje"]
 [ext_resource type="Texture2D" uid="uid://dlye8k46d65p2" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_02.png" id="4_ba4od"]
-[ext_resource type="Script" uid="uid://bgyk0ydx1rk7p" path="res://scripts/attack_box.gd" id="4_y40wq"]
+[ext_resource type="Script" uid="uid://cl1qdh4hd1gyn" path="res://scripts/attack_area.gd" id="4_y40wq"]
 [ext_resource type="Texture2D" uid="uid://bcbrbmpau6j8a" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_04.png" id="5_2rbhp"]
 [ext_resource type="Texture2D" uid="uid://cuxh68ul1jipd" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_03.png" id="5_u3s3c"]
 [ext_resource type="Texture2D" uid="uid://dq3n7trpghitd" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_05.png" id="6_o3c86"]
@@ -73,26 +73,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:speed")
+tracks/1/path = NodePath("AttackArea:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.2666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 120.0]
+"times": PackedFloat32Array(0.033333335, 1.0666667, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AttackBox:monitorable")
+tracks/2/path = NodePath(".:speed")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.11, 1.8666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
+"times": PackedFloat32Array(0, 2.2666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 120.0]
 }
 
 [sub_resource type="Animation" id="Animation_3ut8w"]
@@ -185,26 +185,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:speed")
+tracks/1/path = NodePath("AttackArea:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-120.0]
+"update": 1,
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AttackBox:monitorable")
+tracks/2/path = NodePath(".:speed")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [-120.0]
 }
 
 [sub_resource type="Animation" id="Animation_rrkc6"]
@@ -235,7 +235,6 @@ _data = {
 }
 
 [node name="PaperClipDeer" type="CharacterBody2D" unique_id=1517736822 groups=["Enemies"]]
-collision_mask = 3
 script = ExtResource("1_rrkc6")
 speed = -120.0
 
@@ -253,24 +252,22 @@ collision_layer = 0
 position = Vector2(61, -21.5)
 shape = SubResource("RectangleShape2D_usyva")
 
-[node name="HitBox" type="Area2D" parent="." unique_id=2144717627]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=844124993]
 collision_layer = 0
 collision_mask = 2
+monitoring = false
 script = ExtResource("3_8tp8l")
-metadata/_custom_type_script = "uid://d2qvfaqjiwl62"
 
-[node name="hurtbox" type="CollisionShape2D" parent="HitBox" unique_id=814050474]
+[node name="hurtbox" type="CollisionShape2D" parent="Hurtbox" unique_id=814050474]
 position = Vector2(60.5, 14)
 shape = SubResource("RectangleShape2D_3ee7k")
 
-[node name="AttackBox" type="Area2D" parent="." unique_id=1939499035]
+[node name="AttackArea" type="Area2D" parent="." unique_id=328601166]
 collision_layer = 2
 collision_mask = 0
-monitorable = false
 script = ExtResource("4_y40wq")
-metadata/_custom_type_script = "uid://bgyk0ydx1rk7p"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=2101300065]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2101300065]
 position = Vector2(-13, -27)
 shape = SubResource("CapsuleShape2D_nu1yx")
 
@@ -289,6 +286,7 @@ position = Vector2(2, -128)
 
 [connection signal="body_entered" from="DetectEnvironment" to="." method="_on_detect_environment_body_entered"]
 [connection signal="body_exited" from="DetectEnvironment" to="." method="_on_detect_environment_body_exited"]
-[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
-[connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
-[connection signal="area_exited" from="AttackBox" to="." method="_on_attack_box_area_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="take_damage" from="Hurtbox" to="." method="_on_hurtbox_take_damage"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

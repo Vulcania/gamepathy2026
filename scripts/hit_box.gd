@@ -1,4 +1,4 @@
-class_name Hurtbox
+class_name HitBox
 extends Area2D
 
 signal take_damage
@@ -7,7 +7,7 @@ func _init() -> void:
 	collision_layer = 0
 	collision_mask = 2
 
-func _on_area_entered(hitbox : Hitbox) -> void:
+func _on_area_entered(hitbox : AttackBox) -> void:
 	if hitbox == null:
 		return
 	

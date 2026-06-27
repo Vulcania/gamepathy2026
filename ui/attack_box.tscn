@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bedb0sbkyvyil"]
+
+[ext_resource type="Script" uid="uid://bgyk0ydx1rk7p" path="res://scripts/attack_box.gd" id="1_df2pq"]
+
+[node name="AttackBox" type="Area2D" unique_id=108382753]
+script = ExtResource("1_df2pq")
