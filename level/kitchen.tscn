@@ -69,7 +69,7 @@ radius = 206.00243
 radius = 210.0
 height = 522.0
 
-[node name="kitchen" type="Node2D" unique_id=1335486273]
+[node name="kitchen one" type="Node2D" unique_id=1335486273]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1911320007]
 tile_set = SubResource("TileSet_puc82")
@@ -96,7 +96,7 @@ position = Vector2(1635, 657)
 position = Vector2(2274, 576)
 sprite_frames = SubResource("SpriteFrames_ta2iw")
 autoplay = "default"
-frame_progress = 0.09371376
+frame_progress = 0.48758936
 
 [node name="Area2D" type="Area2D" parent="CoffeeMaker" unique_id=1441728274]
 
