@@ -1,13 +1,31 @@
 join agatha center
 join Player center
-agatha: Hi there! You're late.
-agatha: The boss wants to see you.
-- oh no
-	agatha: oh yes.
-	agatha: take a buff and go.
-- can i stay here?
-	agatha: haha
-	agatha: no.
-	agatha: now take a buff and leave.
-Player: thanks...
-do Global.open_buff_options()
+agatha: Grimmy! It's so good to see you finally decided to show up!
+- Good morning, Agatha! I overslept. But now I'm here...
+	agatha: I was wondering when you were going to clock in today. It's quite late already. But that's alright.
+	- I know, I'm sorry....
+		agatha: That's alright.
+		- No worries!
+			agatha: And before you go\: Don't forget about the company's party tonight!
+			- The party?
+				agatha: My, my. So you did forget.
+				agatha: No worries, I can remind you.
+				- No need! I remember!
+					agatha: That's good!
+					do Global.short_talk()
+				- Sure, go ahead!
+					agatha: How could you forget! Usually only beings my age should start to have memory problems!
+					agatha: It's our yearly party to celebrate the passing of souls!
+					agatha: And to meet our shareholders. So make sure, you dress nicely and behave yourself in front of them.
+					agatha: We're going to that one restaurant where Jimmy had an allergic reaction to the shrimps. I'm sure he'll be more careful this time.
+					agatha: Make sure not to put anything suspicious in your mouth.
+					do Global.long_talk()
+		- Sorry, I have to go! I have a meeting!
+			agatha: I see. But before you go, I've been meaning to ask you something important...
+			agatha: What are you going to wear to the company's party?
+			agatha: If you haven't decided on anything we could go shopping together!
+			- Oh, the company's party....
+agatha: As a newer worker, you should be able to make a good impression!
+agatha: You will be there, right?
+- I'd love to go, but....
+	do Global.open_buff_options()

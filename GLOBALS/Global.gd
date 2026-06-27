@@ -8,3 +8,11 @@ func _ready():
 
 func open_buff_options():
 	pass
+
+func long_talk():
+	pass
+	#lose more time
+
+func short_talk():
+	pass
+	#lose less time
