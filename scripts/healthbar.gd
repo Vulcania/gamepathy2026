@@ -1,3 +1,4 @@
+class_name Healthbar
 extends Node2D
 
 @onready var max_bar_fill = $ColorRect.size.x

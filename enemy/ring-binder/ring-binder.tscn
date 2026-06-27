@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://baahl64mlxwx5"]
 
 [ext_resource type="Texture2D" uid="uid://c3f5356mxo8wi" path="res://enemy/ring-binder/frame_1.png" id="1_gqtpm"]
+[ext_resource type="Script" uid="uid://cafpo7h32wq3b" path="res://enemy/ring-binder/ring_binder.gd" id="1_lihf5"]
 [ext_resource type="Texture2D" uid="uid://dif1872ehe54" path="res://enemy/ring-binder/frame_2.png" id="2_15hdn"]
 [ext_resource type="Texture2D" uid="uid://qyamfs1uib7x" path="res://enemy/ring-binder/attack/frame_13.png" id="2_cssm5"]
 [ext_resource type="Texture2D" uid="uid://cx58ihha8j6yx" path="res://enemy/ring-binder/frame_3.png" id="3_2k0mc"]
@@ -27,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://wtlcm22ty7bw" path="res://enemy/ring-binder/hit/frame_10.png" id="18_kb3br"]
 [ext_resource type="Texture2D" uid="uid://djtpijuojf0m4" path="res://enemy/ring-binder/hit/frame_11.png" id="19_n7i7i"]
 [ext_resource type="Texture2D" uid="uid://bbry6i8moidwc" path="res://enemy/ring-binder/hit/frame_12.png" id="20_r7iey"]
+[ext_resource type="Script" uid="uid://bie4wu05xnn2b" path="res://scripts/healthbar.gd" id="29_ifvnn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cssm5"]
 radius = 60.551632
@@ -87,7 +89,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HitBox:visible")
+tracks/2/path = NodePath("HitArea:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -196,7 +198,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HitBox:visible")
+tracks/2/path = NodePath("HitArea:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -222,6 +224,7 @@ radius = 113.004425
 radius = 88.005684
 
 [node name="RingBinder" type="CharacterBody2D" unique_id=606483896]
+script = ExtResource("1_lihf5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1841305218]
 texture = ExtResource("1_gqtpm")
@@ -234,10 +237,10 @@ shape = SubResource("CircleShape2D_cssm5")
 libraries/ = SubResource("AnimationLibrary_xewdd")
 autoplay = &"Idle"
 
-[node name="HitBox" type="Area2D" parent="." unique_id=1952087068]
+[node name="HitArea" type="Area2D" parent="." unique_id=1952087068]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=709368692]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=709368692]
 position = Vector2(-22, 8)
 shape = SubResource("CircleShape2D_lihf5")
 
@@ -246,3 +249,7 @@ shape = SubResource("CircleShape2D_lihf5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1689796689]
 position = Vector2(-25, -2)
 shape = SubResource("CircleShape2D_ifvnn")
+
+[node name="Healthbar" type="Node2D" parent="." unique_id=897526776]
+script = ExtResource("29_ifvnn")
+metadata/_custom_type_script = "uid://bie4wu05xnn2b"

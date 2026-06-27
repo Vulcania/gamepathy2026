@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="1_dsqel"]
 [ext_resource type="PackedScene" uid="uid://i3akofxem4v" path="res://enemy/yeetee_enemy.tscn" id="1_s65ib"]
-[ext_resource type="PackedScene" uid="uid://cx7pkpfryvs2h" path="res://enemy/paper_clip_deer/paper_clip_deer_alt/paper_clip_deer_alt.tscn" id="3_w72v2"]
+[ext_resource type="PackedScene" uid="uid://cx7pkpfryvs2h" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/buggy_paper_clip_deer.tscn" id="3_w72v2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s65ib"]
 size = Vector2(145, 18)

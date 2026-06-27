@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjlcqod1h87h3"]
 
-[ext_resource type="Script" uid="uid://bg6yl3s2l3myx" path="res://ui/heart.gd" id="1_e44o4"]
+[ext_resource type="Script" uid="uid://bg6yl3s2l3myx" path="res://scripts/heart.gd" id="1_e44o4"]
 [ext_resource type="Texture2D" uid="uid://b83v7gfca0d2i" path="res://ui/ui_assets/active life.png" id="2_e44o4"]
 
 [node name="Heart" type="Panel" unique_id=850795517]
