@@ -23,18 +23,8 @@ Global="*uid://c3bu5o1pgdkfk"
 
 [dialogic]
 
-directories/dch_directory={
-"Player": "res://dialog/characters/Player.dch",
-"agatha": "res://dialog/characters/agatha.dch",
-"boney toney": "res://dialog/characters/boney toney.dch",
-"jim dreaper": "res://dialog/characters/jim dreaper.dch"
-}
-directories/dtl_directory={
-"Agatha Default": "res://dialog/timelines/Agatha Default.dtl",
-"Jim Default": "res://dialog/timelines/Jim Default.dtl",
-"Jim Main": "res://dialog/timelines/Jim Main.dtl",
-"Opening Agatha": "res://dialog/timelines/Opening Agatha.dtl"
-}
+directories/dch_directory={}
+directories/dtl_directory={}
 layout/style_directory={}
 
 [display]
