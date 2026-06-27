@@ -141,7 +141,7 @@ custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
 theme_override_constants/separation = 13
 
-[node name="ColorRect" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=680116092]
+[node name="BuffOne" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=680116092]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
