@@ -40,10 +40,10 @@ text = "\"Excuse me, but...\""
 [node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2071695082]
 layout_mode = 0
 offset_left = 488.0
-offset_top = 268.0
+offset_top = 244.0
 offset_right = 1425.0
 offset_bottom = 1075.0
-theme_override_constants/separation = 20
+theme_override_constants/separation = -9
 
 [node name="Option1" type="Button" parent="HBoxContainer" unique_id=402928383]
 layout_mode = 2
@@ -55,7 +55,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 text = "\"I can't come. I have an appointment 
-to get my wisdom teeth removed.\""
+to get my wisdom teeth removed.\"
+(Speed +5%)"
 
 [node name="Option2" type="Button" parent="HBoxContainer" unique_id=1115032660]
 layout_mode = 2
@@ -67,7 +68,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 text = "\"I won't be there. It's 
-my pet rats birthday.\""
+my pet rats birthday.\"
+(Block +1)"
 
 [node name="Option3" type="Button" parent="HBoxContainer" unique_id=795218139]
 layout_mode = 2
@@ -79,7 +81,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 text = "\"I physically can't come. I'm
-allergic to company events!\""
+allergic to company events!\"
+(Timer +10 Seconds)"
 
 [connection signal="pressed" from="HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/Option2" to="." method="_on_option_1_pressed"]
