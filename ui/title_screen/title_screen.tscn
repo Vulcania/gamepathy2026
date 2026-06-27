@@ -78,6 +78,10 @@ label_settings = SubResource("LabelSettings_3agr5")
 
 [node name="Menu" type="Control" parent="." unique_id=2059926244]
 anchors_preset = 0
+offset_left = -13.0
+offset_top = -13.0
+offset_right = -13.0
+offset_bottom = -13.0
 
 [node name="StartButton" type="Button" parent="Menu" unique_id=58243669]
 layout_mode = 0
