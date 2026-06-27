@@ -2,6 +2,20 @@
 
 [ext_resource type="Script" uid="uid://cmyu6pp3fa0tq" path="res://ui/buffs/buff_selection.gd" id="1_2s07i"]
 [ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="2_eo64k"]
+[ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="3_lmly5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h17sf"]
+texture = ExtResource("3_lmly5")
+texture_margin_left = 100.0
+texture_margin_top = 70.0
+texture_margin_right = 100.0
+texture_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybwrj"]
+texture = ExtResource("3_lmly5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twcsm"]
+texture = ExtResource("3_lmly5")
 
 [node name="BuffSelectionOne" type="Control" unique_id=783345293]
 layout_mode = 3
@@ -14,40 +28,59 @@ script = ExtResource("1_2s07i")
 
 [node name="Excuse Me" type="Label" parent="." unique_id=1305717303]
 layout_mode = 0
-offset_left = 554.0
-offset_top = 136.0
-offset_right = 1406.0
-offset_bottom = 271.0
+offset_left = 528.0
+offset_top = 56.0
+offset_right = 1380.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0.88235295, 0.69411767, 0.64705884, 1)
 theme_override_fonts/font = ExtResource("2_eo64k")
 theme_override_font_sizes/font_size = 125
 text = "\"Excuse me, but...\""
 
-[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=377156826]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2071695082]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 407.0
-offset_right = 1649.0
-offset_bottom = 850.0
+offset_left = 488.0
+offset_top = 206.0
+offset_right = 1425.0
+offset_bottom = 1013.0
 theme_override_constants/separation = 20
 
 [node name="Option1" type="Button" parent="HBoxContainer" unique_id=402928383]
 layout_mode = 2
-theme_override_font_sizes/font_size = 39
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 text = "\"I can't come. I have an appointment 
 to get my wisdom teeth removed.\""
 
-[node name="Option2" type="Button" parent="HBoxContainer" unique_id=1869812957]
+[node name="Option2" type="Button" parent="HBoxContainer" unique_id=1115032660]
 layout_mode = 2
-theme_override_font_sizes/font_size = 39
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 text = "\"I won't be there. It's 
 my pet rats birthday.\""
 
-[node name="Option3" type="Button" parent="HBoxContainer" unique_id=1472482025]
+[node name="Option3" type="Button" parent="HBoxContainer" unique_id=795218139]
 layout_mode = 2
-theme_override_font_sizes/font_size = 39
-text = "\"I physically can't come. 
-I'm allergic to company events!\""
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+text = "\"I physically can't come. I'm
+allergic to company events!\""
 
 [connection signal="pressed" from="HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
-[connection signal="pressed" from="HBoxContainer/Option3" to="." method="_on_option_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option2" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option3" to="." method="_on_option_1_pressed"]

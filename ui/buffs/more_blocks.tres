@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_1tonx")
+id = "MoreBlocks"
 metadata/_custom_type_script = "uid://ixvwpui5ohaq"
