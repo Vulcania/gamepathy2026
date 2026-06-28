@@ -163,11 +163,11 @@ libraries/ = SubResource("AnimationLibrary_c67a7")
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("5_4av7d")]
 position = Vector2(358, 689)
 
-<<<<<<< Updated upstream
+
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
-=======
+
 [node name="game musik" type="AudioStreamPlayer2D" parent="." unique_id=1562539695]
 stream = ExtResource("12_luhl6")
 autoplay = true
 bus = &"Music"
->>>>>>> Stashed changes
+
