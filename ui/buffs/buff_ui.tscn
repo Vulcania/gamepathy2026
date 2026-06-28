@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://brpdbegao7ice"]
+
+[node name="BuffUI" type="Control" unique_id=542069509]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Icon" type="ColorRect" parent="." unique_id=46436904]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 300.0
+
+[node name="Buff" type="Label" parent="." unique_id=740928783]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Effect" type="Label" parent="." unique_id=1042121992]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

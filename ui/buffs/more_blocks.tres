@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Buffs" format=3 uid="uid://cm2oh3qe303v2"]
+
+[ext_resource type="Script" uid="uid://ixvwpui5ohaq" path="res://GLOBALS/Buffs.gd" id="1_1tonx"]
+
+[resource]
+script = ExtResource("1_1tonx")
+id = "MoreBlocks"
+metadata/_custom_type_script = "uid://ixvwpui5ohaq"

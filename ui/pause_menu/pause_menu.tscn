@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dxhtb0cebwdri" path="res://ui/pause_menu/pause_menu.gd" id="1_mnjdh"]
 [ext_resource type="Texture2D" uid="uid://coiefrw5780b8" path="res://ui/ui_assets/pausenscreen.png" id="2_jbgdu"]
 [ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="3_b4b0p"]
+[ext_resource type="Texture2D" uid="uid://dlk8ewbf5q5hw" path="res://ui/ui_assets/sense einzeln.png" id="3_ihaig"]
 [ext_resource type="Texture2D" uid="uid://dhofruf3bpe1n" path="res://ui/ui_assets/close pause menu button.png" id="4_c3jo5"]
 [ext_resource type="Texture2D" uid="uid://6atvixy378x5" path="res://ui/ui_assets/close game.png" id="5_c3jo5"]
+[ext_resource type="PackedScene" uid="uid://brpdbegao7ice" path="res://ui/buffs/buff_ui.tscn" id="5_uraes"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uraes"]
 texture = ExtResource("4_c3jo5")
@@ -48,6 +50,12 @@ offset_top = -61.0
 offset_right = 2309.0
 offset_bottom = 1341.0
 texture = ExtResource("2_jbgdu")
+
+[node name="SenseEinzeln" type="Sprite2D" parent="." unique_id=2009260517]
+z_index = 40
+position = Vector2(1359.0399, 684.9972)
+scale = Vector2(1.4028571, 1.2972878)
+texture = ExtResource("3_ihaig")
 
 [node name="PanelSound" type="ColorRect" parent="." unique_id=1384176311]
 layout_mode = 0
@@ -141,32 +149,7 @@ custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
 theme_override_constants/separation = 13
 
-[node name="BuffOne" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=680116092]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="ColorRect2" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=1697130718]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="ColorRect3" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=22992520]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="ColorRect4" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=487517063]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="ColorRect5" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=82503104]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="ColorRect6" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=1826413581]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="ColorRect7" type="ColorRect" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=676768936]
-custom_minimum_size = Vector2(200, 0)
+[node name="BuffUI" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=542069509 instance=ExtResource("5_uraes")]
 layout_mode = 2
 
 [node name="Buffs" type="Label" parent="CollectedBuffs" unique_id=596683145]

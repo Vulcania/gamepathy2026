@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Buffs" format=3 uid="uid://cpkxk8lgjea7q"]
+
+[ext_resource type="Script" uid="uid://ixvwpui5ohaq" path="res://GLOBALS/Buffs.gd" id="1_reust"]
+
+[resource]
+script = ExtResource("1_reust")
+id = "LongerTimer"
+metadata/_custom_type_script = "uid://ixvwpui5ohaq"

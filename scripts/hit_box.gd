@@ -1,15 +1,12 @@
 class_name HitBox
 extends Area2D
 
-signal take_damage
+func _ready() -> void:
+	connect("area_entered", Callable(self, "_on_area_entered"))
 
-func _init() -> void:
-	collision_layer = 0
-	collision_mask = 2
-
-func _on_area_entered(hitbox : AttackBox) -> void:
-	if hitbox == null:
+func _on_area_entered(attack : AttackBox) -> void:
+	if attack == null:
 		return
 	
 	if owner.has_method("take_damage"):
-		take_damage.emit(hitbox.damage)
+		owner.take_damage(attack.damage)

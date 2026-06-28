@@ -1,5 +1,6 @@
 extends Control
 
+
 @onready var timelabel = $TimeLeft
 @onready var thetimer = $Timer
 
@@ -14,3 +15,6 @@ func _on_timer_timeout() -> void:
 
 func _process(delta):
 	timelabel.text = "%02d:%02d" % time_left_until_late()
+
+#func apply_timer_buff():
+#	time_left 
