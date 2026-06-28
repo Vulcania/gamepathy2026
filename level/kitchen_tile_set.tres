@@ -1,6 +1,12 @@
 [gd_resource type="TileSet" format=3 uid="uid://caeblaap8wmhj"]
 
 [ext_resource type="Texture2D" uid="uid://b05rsvus88j2q" path="res://Tilesets/tileset_kitchen.png" id="1_tmxvx"]
+[ext_resource type="Texture2D" uid="uid://dkbdmwlk17i8q" path="res://Tilesets/wand/Schränke/tile-1.png" id="2_8sa3a"]
+[ext_resource type="Texture2D" uid="uid://b81s4lhosgybj" path="res://Tilesets/wand/Schränke/tile-2.png" id="3_ggckv"]
+[ext_resource type="Texture2D" uid="uid://duv3xly6am8gq" path="res://Tilesets/wand/Schränke/tile-3.png" id="4_o25ag"]
+[ext_resource type="Texture2D" uid="uid://duhs8h0jjjetm" path="res://Tilesets/wand/Schränke/tile-4.png" id="5_b3y2g"]
+[ext_resource type="Texture2D" uid="uid://buxe285e38il8" path="res://Tilesets/wand/Schränke/tile-5.png" id="6_rf682"]
+[ext_resource type="Texture2D" uid="uid://6t3ebnr7jo62" path="res://Tilesets/wand/Schränke/tile-6.png" id="7_ovqls"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gapvt"]
 texture = ExtResource("1_tmxvx")
@@ -39,7 +45,43 @@ texture_region_size = Vector2i(128, 128)
 0:4/0 = 0
 2:4/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qktf"]
+texture = ExtResource("2_8sa3a")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hr0q0"]
+texture = ExtResource("3_ggckv")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1u6e6"]
+texture = ExtResource("4_o25ag")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8mky"]
+texture = ExtResource("5_b3y2g")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_igmo5"]
+texture = ExtResource("6_rf682")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82lxa"]
+texture = ExtResource("7_ovqls")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
 [resource]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gapvt")
+sources/1 = SubResource("TileSetAtlasSource_3qktf")
+sources/2 = SubResource("TileSetAtlasSource_hr0q0")
+sources/3 = SubResource("TileSetAtlasSource_1u6e6")
+sources/4 = SubResource("TileSetAtlasSource_b8mky")
+sources/5 = SubResource("TileSetAtlasSource_igmo5")
+sources/6 = SubResource("TileSetAtlasSource_82lxa")
