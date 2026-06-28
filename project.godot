@@ -28,6 +28,7 @@ BuffSelectionTwo="*uid://dd4axoax3k8fx"
 
 directories/dch_directory={
 "Player": "res://dialog/characters/Player.dch",
+"Sir Death": "res://dialog/characters/Sir Death.dch",
 "agatha": "res://dialog/characters/agatha.dch",
 "boney toney": "res://dialog/characters/boney toney.dch",
 "jim dreaper": "res://dialog/characters/jim dreaper.dch"
@@ -36,6 +37,7 @@ directories/dtl_directory={
 "Agatha_Option1": "res://dialog/timelines/Agatha_Option1.dtl",
 "Agatha_Option2": "res://dialog/timelines/Agatha_Option2.dtl",
 "Agatha_Option3": "res://dialog/timelines/Agatha_Option3.dtl",
+"Ending Temp": "res://dialog/timelines/Ending Temp.dtl",
 "Jim Default": "res://dialog/timelines/Jim Default.dtl",
 "Jim Main": "res://dialog/timelines/Jim Main.dtl",
 "Opening Agatha": "res://dialog/timelines/Opening Agatha.dtl"

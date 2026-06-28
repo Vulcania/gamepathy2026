@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bc4p53er7q3xa" path="res://ui/title_screen/title.png" id="3_ca08b"]
 [ext_resource type="Texture2D" uid="uid://dttfvhp7rhes6" path="res://ui/ui_assets/menu tile.png" id="5_2er51"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="6_2er51"]
+[ext_resource type="Texture2D" uid="uid://bdx82784d5yid" path="res://ui/title_screen/credits/crow.png" id="6_c8lgs"]
+[ext_resource type="Texture2D" uid="uid://j8p31dcryge1" path="res://ui/title_screen/credits/image.png" id="7_533ah"]
+[ext_resource type="Texture2D" uid="uid://cwbt7itwp145y" path="res://ui/title_screen/credits/elli.png" id="8_qua4x"]
+[ext_resource type="Texture2D" uid="uid://belyptr0vk67i" path="res://ui/title_screen/credits/portrait_imke.png" id="9_hhwne"]
+[ext_resource type="Texture2D" uid="uid://bycqe7ixg0b8h" path="res://ui/title_screen/credits/portrait_anni.png" id="10_objlv"]
+[ext_resource type="Texture2D" uid="uid://dfwjc8om3vtbm" path="res://ui/title_screen/credits/Unbenanntes_Projekt-1.png" id="11_h0jpi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3agr5"]
 font_size = 72
@@ -46,6 +52,20 @@ modulate_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
 texture = ExtResource("5_2er51")
 modulate_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2er51"]
+texture = ExtResource("5_2er51")
+texture_margin_left = 20.0
+texture_margin_top = 30.0
+texture_margin_right = 20.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ca08b"]
+texture = ExtResource("5_2er51")
+modulate_color = Color(0.960846, 0.748253, 0.6364539, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0jpi"]
+texture = ExtResource("5_2er51")
+
 [node name="TitleScreen" type="Control" unique_id=478416240]
 layout_mode = 3
 anchors_preset = 15
@@ -56,12 +76,9 @@ grow_vertical = 2
 script = ExtResource("1_g2mvh")
 
 [node name="BgVar2" type="Sprite2D" parent="." unique_id=55827916]
+z_index = -2
 position = Vector2(960, 540)
 texture = ExtResource("2_2er51")
-
-[node name="Title" type="Sprite2D" parent="." unique_id=1752684508]
-position = Vector2(1307, 223)
-texture = ExtResource("3_ca08b")
 
 [node name="GameTitle" type="Label" parent="." unique_id=1736463983]
 visible = false
@@ -83,6 +100,10 @@ offset_left = -13.0
 offset_top = -13.0
 offset_right = -13.0
 offset_bottom = -13.0
+
+[node name="Title" type="Sprite2D" parent="Menu" unique_id=1752684508]
+position = Vector2(1320, 236)
+texture = ExtResource("3_ca08b")
 
 [node name="StartButton" type="Button" parent="Menu" unique_id=58243669]
 layout_mode = 0
@@ -162,34 +183,55 @@ value = 50.0
 layout_mode = 2
 text = "Back"
 
-[node name="CreditsVBox" type="VBoxContainer" parent="." unique_id=1127990577]
+[node name="Credits" type="Control" parent="." unique_id=625954100]
 visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=1586235410]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.5294118)
+
+[node name="CreditsVBox" type="VBoxContainer" parent="Credits" unique_id=1127990577]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -142.5
-offset_right = 100.0
-offset_bottom = 142.5
+offset_left = 782.0
+offset_top = 791.0
+offset_right = 1151.0
+offset_bottom = 1004.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 33
 
-[node name="ThxForPlayingLabel" type="Label" parent="CreditsVBox" unique_id=99909993]
+[node name="ThxForPlayingLabel" type="Label" parent="Credits/CreditsVBox" unique_id=99909993]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 44
 text = "Thank you for playing!"
+horizontal_alignment = 1
 
-[node name="SpecialThxLabel" type="Label" parent="CreditsVBox" unique_id=1225055131]
+[node name="SpecialThxLabel" type="Label" parent="Credits/CreditsVBox" unique_id=1225055131]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 24
 text = "Special Thanks to
 - GamePathy
 - Gamescom
 - Marion & Benni"
+horizontal_alignment = 1
 
-[node name="CreditsLabel" type="Label" parent="CreditsVBox" unique_id=1124701771]
+[node name="CreditsLabel" type="Label" parent="Credits/CreditsVBox" unique_id=1124701771]
+visible = false
 layout_mode = 2
 text = "GRL PWR
 - Elena Speier
@@ -199,9 +241,183 @@ text = "GRL PWR
 - Kimi
 - Anastasia Haberling"
 
-[node name="BackButton2" type="Button" parent="CreditsVBox" unique_id=1042725106]
+[node name="BackButton2" type="Button" parent="Credits/CreditsVBox" unique_id=1042725106]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_2er51")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ca08b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h0jpi")
 text = "Back"
+
+[node name="Portraits" type="Control" parent="Credits" unique_id=477496049]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="crow" type="VBoxContainer" parent="Credits/Portraits" unique_id=1982377975]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 379.0
+offset_right = 276.0
+offset_bottom = 816.0
+
+[node name="picture" type="TextureRect" parent="Credits/Portraits/crow" unique_id=1513477366]
+layout_mode = 2
+texture = ExtResource("6_c8lgs")
+
+[node name="name" type="Label" parent="Credits/Portraits/crow" unique_id=1888459500]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 50
+text = "artisticrow"
+horizontal_alignment = 1
+
+[node name="work" type="Label" parent="Credits/Portraits/crow" unique_id=1134978583]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 36
+text = "Programming"
+horizontal_alignment = 1
+
+[node name="kimi" type="VBoxContainer" parent="Credits/Portraits" unique_id=37047531]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 114.0
+offset_right = 567.0
+offset_bottom = 551.0
+
+[node name="picture" type="TextureRect" parent="Credits/Portraits/kimi" unique_id=2100309072]
+layout_mode = 2
+texture = ExtResource("7_533ah")
+
+[node name="name" type="Label" parent="Credits/Portraits/kimi" unique_id=1107226347]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 50
+text = "PikaKimi30"
+horizontal_alignment = 1
+
+[node name="work" type="Label" parent="Credits/Portraits/kimi" unique_id=1861425237]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 36
+text = "Art"
+horizontal_alignment = 1
+
+[node name="elli" type="VBoxContainer" parent="Credits/Portraits" unique_id=1506923996]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 117.0
+offset_right = 1206.0
+offset_bottom = 595.0
+
+[node name="picture" type="TextureRect" parent="Credits/Portraits/elli" unique_id=1958504789]
+layout_mode = 2
+texture = ExtResource("8_qua4x")
+
+[node name="name" type="Label" parent="Credits/Portraits/elli" unique_id=1020145128]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 50
+text = "Arcct1cc"
+horizontal_alignment = 1
+
+[node name="work" type="Label" parent="Credits/Portraits/elli" unique_id=284401281]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 36
+text = "Art
+Sound"
+horizontal_alignment = 1
+
+[node name="imke" type="VBoxContainer" parent="Credits/Portraits" unique_id=177388638]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 307.0
+offset_right = 889.0
+offset_bottom = 744.0
+
+[node name="picture" type="TextureRect" parent="Credits/Portraits/imke" unique_id=1267542939]
+layout_mode = 2
+texture = ExtResource("9_hhwne")
+
+[node name="name" type="Label" parent="Credits/Portraits/imke" unique_id=199777535]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 50
+text = "Vulcania"
+horizontal_alignment = 1
+
+[node name="work" type="Label" parent="Credits/Portraits/imke" unique_id=459362033]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 36
+text = "Programming"
+horizontal_alignment = 1
+
+[node name="änni" type="VBoxContainer" parent="Credits/Portraits" unique_id=1259212357]
+layout_mode = 0
+offset_left = 1272.0
+offset_top = 351.0
+offset_right = 1535.0
+offset_bottom = 815.0
+
+[node name="picture" type="TextureRect" parent="Credits/Portraits/änni" unique_id=674025253]
+layout_mode = 2
+texture = ExtResource("10_objlv")
+
+[node name="name" type="Label" parent="Credits/Portraits/änni" unique_id=28309840]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 50
+text = "ceinyx"
+horizontal_alignment = 1
+
+[node name="work" type="Label" parent="Credits/Portraits/änni" unique_id=330928043]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 36
+text = "Art"
+horizontal_alignment = 1
+
+[node name="niki" type="VBoxContainer" parent="Credits/Portraits" unique_id=299855353]
+layout_mode = 0
+offset_left = 1592.0
+offset_top = 140.0
+offset_right = 1822.0
+offset_bottom = 577.0
+
+[node name="picture" type="TextureRect" parent="Credits/Portraits/niki" unique_id=1968729185]
+layout_mode = 2
+texture = ExtResource("11_h0jpi")
+
+[node name="name" type="Label" parent="Credits/Portraits/niki" unique_id=1347787946]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 50
+text = "solarcrow"
+horizontal_alignment = 1
+
+[node name="work" type="Label" parent="Credits/Portraits/niki" unique_id=1939396997]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 36
+text = "Programming"
+horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=411395990]
 stream = ExtResource("6_2er51")
@@ -215,4 +431,4 @@ bus = &"Music"
 [connection signal="value_changed" from="OptionsVBox/MusicSlider" to="OptionsVBox" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="OptionsVBox/SfxSlider" to="OptionsVBox" method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="OptionsVBox/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="CreditsVBox/BackButton2" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits/CreditsVBox/BackButton2" to="." method="_on_back_button_pressed"]

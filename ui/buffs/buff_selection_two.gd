@@ -4,6 +4,8 @@ signal option_one
 signal option_two
 signal option_three
 
+@onready var jim = preload("res://npc/JimDreaper/jimdreaper.tscn")
+
 func _ready() -> void:
 	hide()
 	Dialogic.timeline_ended.connect(_on_timeline_ended)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://fk57lkbciy0f"]
+
+[ext_resource type="Texture2D" uid="uid://bxnuxxgtadav5" path="res://ui/title_screen/bg var2.png" id="1_g8lik"]
+[ext_resource type="Script" uid="uid://c8afquy8ok25w" path="res://level/ending.gd" id="1_xpvqc"]
+[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="3_qwt3v"]
+
+[node name="Ending" type="Node2D" unique_id=1423783354]
+script = ExtResource("1_xpvqc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1433466207]
+position = Vector2(961, 541)
+texture = ExtResource("1_g8lik")
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1660220083]
+stream = ExtResource("3_qwt3v")
+autoplay = true
+bus = &"Music"
