@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://u16j6gdvhmra"]
+
+[sub_resource type="Animation" id="Animation_dt60f"]
+resource_name = "animatic"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qp30b"]
+_data = {
+&"animatic": SubResource("Animation_dt60f")
+}
+
+[node name="OpeningAnimatic" type="Sprite2D" unique_id=2097503744]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=725800429]
+libraries/ = SubResource("AnimationLibrary_qp30b")
