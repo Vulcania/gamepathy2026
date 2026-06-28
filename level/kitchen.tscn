@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://mp735w6bgq38"]
 
 [ext_resource type="Script" uid="uid://uepjwdf4ig6p" path="res://level/kitchen.gd" id="1_luhl6"]
-[ext_resource type="Texture2D" uid="uid://b05rsvus88j2q" path="res://Tilesets/tileset_kitchen.png" id="1_qumte"]
 [ext_resource type="PackedScene" uid="uid://eeqal4l4v82u" path="res://npc/JimDreaper/jimdreaper.tscn" id="2_gapvt"]
+[ext_resource type="TileSet" uid="uid://caeblaap8wmhj" path="res://level/kitchen_tile_set.tres" id="2_luhl6"]
 [ext_resource type="PackedScene" uid="uid://bfqhlqksjd4mu" path="res://items/coffee_maker.tscn" id="4_luhl6"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="5_4av7d"]
 [ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="5_ta2iw"]
@@ -12,48 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="9_tgev6"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="10_5q01i"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="12_luhl6"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gapvt"]
-texture = ExtResource("1_qumte")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -42, 64, -42, 64, 64, -64, 64)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -42, 64, -42, 64, 64, -64, 64)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -42, 64, -42, 64, 64, -64, 64)
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-4:3/0 = 0
-0:4/0 = 0
-2:4/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_puc82"]
-tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_gapvt")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3nfk"]
 radius = 245.0
@@ -98,7 +56,7 @@ _data = {
 script = ExtResource("1_luhl6")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1911320007]
-tile_set = SubResource("TileSet_puc82")
+tile_set = ExtResource("2_luhl6")
 rendering_quadrant_size = 128
 format = 2
 layer_0/name = "Main Platform"

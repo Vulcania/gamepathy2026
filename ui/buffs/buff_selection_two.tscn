@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://chqwe0yjmhbef"]
+
+[ext_resource type="Script" uid="uid://dd4axoax3k8fx" path="res://ui/buffs/buff_selection_two.gd" id="1_e0ave"]
+[ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="2_aqn1d"]
+[ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="3_pdt6l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h17sf"]
+texture = ExtResource("3_pdt6l")
+texture_margin_left = 100.0
+texture_margin_top = 50.0
+texture_margin_right = 100.0
+texture_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybwrj"]
+texture = ExtResource("3_pdt6l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twcsm"]
+texture = ExtResource("3_pdt6l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lmly5"]
+texture = ExtResource("3_pdt6l")
+texture_margin_left = 100.0
+texture_margin_top = 70.0
+texture_margin_right = 100.0
+texture_margin_bottom = 70.0
+modulate_color = Color(0.4871179, 0.6643872, 0.74482286, 1)
+
+[node name="BuffSelectionTwo" type="CanvasLayer" unique_id=323398453]
+script = ExtResource("1_e0ave")
+
+[node name="Excuse Me" type="Label" parent="." unique_id=1305717303]
+offset_left = 544.0
+offset_top = 85.0
+offset_right = 1396.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0.88235295, 0.69411767, 0.64705884, 1)
+theme_override_fonts/font = ExtResource("2_aqn1d")
+theme_override_font_sizes/font_size = 125
+text = "\"Excuse me, but...\""
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2071695082]
+offset_left = 488.0
+offset_top = 244.0
+offset_right = 1425.0
+offset_bottom = 1075.0
+theme_override_constants/separation = -12
+
+[node name="Option1" type="Button" parent="HBoxContainer" unique_id=402928383]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+text = "\"I don’t have time for that. I’ve gotten called 
+up because of my stunning quota. 
+I bet I’ll get a promotion.\"
+(Speed +5%)"
+
+[node name="Option2" type="Button" parent="HBoxContainer" unique_id=1115032660]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+text = "\"I really can’t talk right now.
+I had taco hell for dinner yesterday
+if you know what I mean…\"
+(Block +1)"
+
+[node name="Option3" type="Button" parent="HBoxContainer" unique_id=795218139]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lmly5")
+text = "\"did you also hear someone call for me?
+Let me check on it!\"
+(Timer +10 Seconds)"
+
+[connection signal="pressed" from="HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option3" to="." method="_on_option_3_pressed"]

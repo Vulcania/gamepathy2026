@@ -9,6 +9,7 @@ anchors_preset = 0
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 300.0
+color = Color(1, 0.74700534, 0.7051328, 1)
 
 [node name="Buff" type="Label" parent="." unique_id=740928783]
 layout_mode = 0

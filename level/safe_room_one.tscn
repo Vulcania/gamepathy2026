@@ -199,7 +199,7 @@ tracks/0/path = NodePath("Door:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.33333334, 0.46666667, 0.6666667, 0.8666667),
+"times": PackedFloat32Array(0.008333325, 0.20833333, 0.34166667, 0.475, 0.675, 0.8666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("5_vxcw3"), ExtResource("7_eefxu"), ExtResource("8_xegi8"), ExtResource("9_dsajg"), ExtResource("10_gor4a"), ExtResource("11_ba8y2")]
@@ -310,15 +310,14 @@ shape = SubResource("CapsuleShape2D_vxcw3")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(3222, -1194)
+position = Vector2(395, 697)
 collision_layer = 1
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=394667123]
-visible = false
 limit_left = 0
-limit_top = -2100
-limit_right = 4480
+limit_top = -3100
+limit_right = 5780
 limit_bottom = 1110
 
 [node name="BuffSelectionOne" parent="Player" unique_id=783345293 instance=ExtResource("11_6je0e")]
@@ -326,10 +325,6 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=397617716]
 libraries/ = SubResource("AnimationLibrary_ccrhc")
-
-[node name="PaperClipDeer" parent="." unique_id=1517736822 instance=ExtResource("4_ccrhc")]
-z_index = 1
-position = Vector2(2933, 748)
 
 [node name="Trapping the Player" type="StaticBody2D" parent="." unique_id=282739034]
 
@@ -347,12 +342,28 @@ color = Color(0.45011634, 0.29126328, 0.17479175, 1)
 energy = 0.15
 blend_mode = 1
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1942401457]
+[node name="Lights" type="Node2D" parent="." unique_id=1942401457]
 
-[node name="CandleLight" type="PointLight2D" parent="Node2D" unique_id=236341513]
+[node name="CandleLight" type="PointLight2D" parent="Lights" unique_id=236341513]
 position = Vector2(2237, -1360)
 scale = Vector2(2.8671885, 2.8671885)
 color = Color(1, 0.8235294, 0.5058824, 1)
 texture = SubResource("GradientTexture2D_m7wlf")
+
+[node name="CandleLight2" type="PointLight2D" parent="Lights" unique_id=1755769275]
+position = Vector2(2616, -1362.9999)
+scale = Vector2(2.8671885, 2.8671885)
+color = Color(1, 0.8235294, 0.5058824, 1)
+texture = SubResource("GradientTexture2D_m7wlf")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=286173373]
+
+[node name="PaperClipDeer" parent="Enemies" unique_id=1517736822 instance=ExtResource("4_ccrhc")]
+z_index = 1
+position = Vector2(2933, 748)
+
+[node name="PaperClipDeer2" parent="Enemies" unique_id=823125165 instance=ExtResource("4_ccrhc")]
+z_index = 1
+position = Vector2(3700, 504)
 
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]

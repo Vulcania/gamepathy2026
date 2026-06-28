@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dlk8ewbf5q5hw" path="res://ui/ui_assets/sense einzeln.png" id="3_ihaig"]
 [ext_resource type="Texture2D" uid="uid://dhofruf3bpe1n" path="res://ui/ui_assets/close pause menu button.png" id="4_c3jo5"]
 [ext_resource type="Texture2D" uid="uid://6atvixy378x5" path="res://ui/ui_assets/close game.png" id="5_c3jo5"]
-[ext_resource type="PackedScene" uid="uid://brpdbegao7ice" path="res://ui/buffs/buff_ui.tscn" id="5_uraes"]
 [ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="8_umsyg"]
 [ext_resource type="FontFile" uid="uid://bpn6t6wv6nq7y" path="res://ui/font/CreatoDisplay-Regular.otf" id="9_b05md"]
 [ext_resource type="Texture2D" uid="uid://dttfvhp7rhes6" path="res://ui/ui_assets/menu tile.png" id="10_f2x4c"]
@@ -179,9 +178,6 @@ scale = Vector2(0.91, 0.91)
 custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
 theme_override_constants/separation = 13
-
-[node name="BuffUI" parent="CollectedBuffs/ScrollContainer/HBoxContainer" unique_id=542069509 instance=ExtResource("5_uraes")]
-layout_mode = 2
 
 [node name="Buffs" type="Label" parent="CollectedBuffs" unique_id=596683145]
 layout_mode = 0
