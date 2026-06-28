@@ -344,13 +344,14 @@ bus = &"Music"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1731960316]
 color = Color(0.45011634, 0.29126328, 0.17479175, 1)
+energy = 0.15
 blend_mode = 1
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1942401457]
 
 [node name="PointLight2D" type="PointLight2D" parent="Node2D" unique_id=236341513]
-position = Vector2(2238, -1368)
-scale = Vector2(1.828125, 1.828125)
+position = Vector2(2237, -1360)
+scale = Vector2(2.8671885, 2.8671885)
 color = Color(1, 0.8235294, 0.5058824, 1)
 texture = SubResource("GradientTexture2D_m7wlf")
 
