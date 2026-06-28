@@ -143,7 +143,7 @@ limit_top = -384
 limit_right = 3328
 limit_bottom = 1150
 
-[node name="game musik" type="AudioStreamPlayer2D" parent="." unique_id=1562539695]
+[node name="game musik" type="AudioStreamPlayer" parent="." unique_id=2048672444]
 stream = ExtResource("12_luhl6")
 autoplay = true
 bus = &"Music"

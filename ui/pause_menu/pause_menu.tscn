@@ -65,6 +65,7 @@ texture = ExtResource("10_f2x4c")
 
 [node name="PauseMenu" type="Control" unique_id=700370192]
 process_mode = 3
+z_index = 20
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

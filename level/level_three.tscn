@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cwppy08wiskmp"]
+[gd_scene format=3 uid="uid://03d6hpmx562n"]
 
 [ext_resource type="TileSet" uid="uid://8fsnnxewsflr" path="res://level/base_tile_set.tres" id="1_do2xk"]
-[ext_resource type="Script" path="res://level/level_three.gd" id="1_x7wke"]
+[ext_resource type="Script" uid="uid://vcig4yjbvaok" path="res://level/level_three.gd" id="1_x7wke"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="2_8wfkq"]
 [ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="3_j8omg"]
 [ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="4_ba0s7"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="6_2ibb3"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="7_4s1t8"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="8_odo28"]
-[ext_resource type="AudioStream" uid="uid://u6a66fyjaru7" path="res://ui/mittelguter game song.mp3" id="10_j8omg"]
+[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="10_j8omg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_do2xk"]
 radius = 193.0
@@ -90,7 +90,7 @@ libraries/ = SubResource("AnimationLibrary_2bqh7")
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("2_8wfkq")]
 position = Vector2(446, 708)
 
-[node name="musik" type="AudioStreamPlayer2D" parent="." unique_id=2131263350]
+[node name="musik" type="AudioStreamPlayer" parent="." unique_id=1714583761]
 stream = ExtResource("10_j8omg")
 autoplay = true
 bus = &"Music"

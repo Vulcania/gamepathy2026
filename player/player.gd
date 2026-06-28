@@ -217,7 +217,7 @@ func return_to_foyer():
 	pass
 
 func open_pause():
-	if Input.is_action_just_pressed("pausemenu"):
+	if Input.is_action_pressed("pausemenu"):
 		$HUD/PauseMenu.visible = true
 		pause_menu_open = true
 		$HUD/TimerOptions/Timer.paused = true

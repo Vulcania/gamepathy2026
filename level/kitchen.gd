@@ -11,4 +11,5 @@ func enter_level_two():
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		if Input.is_action_just_pressed("interact"):
+			print("is trying to interact")
 			$Door/AnimationPlayer.play("door_opened")

@@ -237,7 +237,7 @@ position = Vector2(191, -9)
 position = Vector2(-88, -7)
 sprite_frames = SubResource("SpriteFrames_m7wlf")
 autoplay = "default"
-frame_progress = 0.88295263
+frame_progress = 0.3454733
 
 [node name="Door" type="Sprite2D" parent="." unique_id=467976559]
 position = Vector2(2426, -1386)
@@ -272,7 +272,7 @@ position = Vector2(2933, 748)
 position = Vector2(-51, 461.5)
 shape = SubResource("RectangleShape2D_vxcw3")
 
-[node name="musik" type="AudioStreamPlayer2D" parent="." unique_id=821609679]
+[node name="musik" type="AudioStreamPlayer" parent="." unique_id=1545390943]
 stream = ExtResource("7_jnkt6")
 autoplay = true
 bus = &"Music"
