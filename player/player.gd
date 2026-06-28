@@ -250,3 +250,4 @@ func _on_option_1():
 
 func _on_option_2():
 	max_block_count += 1
+	current_block_count += 1

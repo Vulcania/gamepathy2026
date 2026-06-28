@@ -81,7 +81,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_lmly5")
-disabled = true
 text = "\"I physically can't come. I'm
 allergic to company events!\"
 (Timer +10 Seconds)"

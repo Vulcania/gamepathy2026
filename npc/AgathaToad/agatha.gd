@@ -12,8 +12,8 @@ var is_in_area = false
 func _ready():
 	$pressE.hide()
 	BuffSelectionOne.option_one.connect(_on_option_1)
-	BuffSelectionOne.option_one.connect(_on_option_2)
-	BuffSelectionOne.option_one.connect(_on_option_3)
+	BuffSelectionOne.option_two.connect(_on_option_2)
+	BuffSelectionOne.option_three.connect(_on_option_3)
 
 func _input(event):
 	if event.is_action_pressed("interact"):
@@ -33,7 +33,6 @@ func _input(event):
 				return
 
 func _on_option_1():
-	Dialogic.start("res://dialog/timelines/Agatha_Option1.dtl")
 	option_one = true
 
 func _on_option_2():

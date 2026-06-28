@@ -21,6 +21,7 @@ Options="*uid://c6hw1pwomiwrq"
 Dialogic="*uid://ds2q0uclmolvu"
 Global="*uid://c3bu5o1pgdkfk"
 BuffSelectionOne="*uid://cmyu6pp3fa0tq"
+PauseMenu="*uid://dxhtb0cebwdri"
 
 [dialogic]
 
@@ -39,6 +40,9 @@ directories/dtl_directory={
 "Opening Agatha": "res://dialog/timelines/Opening Agatha.dtl"
 }
 layout/style_directory={}
+variables={
+"OpeningAgathaEnd": true
+}
 
 [display]
 

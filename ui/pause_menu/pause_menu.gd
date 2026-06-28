@@ -1,12 +1,19 @@
 extends Control
+#class_name PauseMenu 
+
+signal game_paused
+signal game_resumed
 
 @onready var quit = $DoYouWantToQuit
 
 func _ready() -> void:
-	quit.visible = false
+	#quit.visible = false
 	hide()
-	if Input.is_action_just_pressed("pausemenu"):
+
+func _input(event):
+	if event.is_action_pressed("pausemenu"):
 		show()
+		game_paused.emit()
 
 func _on_music_h_slider_value_changed(value: float) -> void:
 	Options.change_music_volume(value)
@@ -16,6 +23,7 @@ func _on_sfx_h_slider_value_changed(value: float) -> void:
 
 func _on_close_pause_pressed() -> void:
 	hide()
+	game_resumed.emit()
 
 func _on_quit_run_pressed() -> void:
 	quit.visible = true
