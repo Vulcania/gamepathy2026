@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="4_ccrhc"]
 [ext_resource type="Texture2D" uid="uid://d3iquken7pcph" path="res://items/items-desk-01.png" id="5_gor4a"]
 [ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="5_vxcw3"]
+[ext_resource type="PackedScene" uid="uid://bfqhlqksjd4mu" path="res://items/coffee_maker.tscn" id="6_6je0e"]
 [ext_resource type="Texture2D" uid="uid://c7dj1tpwvei3x" path="res://items/monitor/item_monitor-01.png" id="6_ba8y2"]
 [ext_resource type="Texture2D" uid="uid://4ey8h3qo47gy" path="res://items/monitor/item_monitor-02.png" id="7_6je0e"]
 [ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="7_eefxu"]
@@ -229,11 +230,14 @@ rotation = -1.5707964
 scale = Vector2(0.41040462, 0.8333333)
 texture = ExtResource("5_gor4a")
 
+[node name="CoffeeMaker" parent="Agatha" unique_id=1907298632 instance=ExtResource("6_6je0e")]
+position = Vector2(191, -9)
+
 [node name="monitor" type="AnimatedSprite2D" parent="Agatha" unique_id=1436178165]
 position = Vector2(-88, -7)
 sprite_frames = SubResource("SpriteFrames_m7wlf")
 autoplay = "default"
-frame_progress = 0.9694896
+frame_progress = 0.88295263
 
 [node name="Door" type="Sprite2D" parent="." unique_id=467976559]
 position = Vector2(2426, -1386)

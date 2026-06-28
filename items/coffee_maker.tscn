@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bfqhlqksjd4mu"]
+
+[ext_resource type="Texture2D" uid="uid://chla52niocxh8" path="res://items/kitchen/coffee-mashine/frame_1.png" id="1_sul8d"]
+[ext_resource type="Texture2D" uid="uid://cmiknsetol3qs" path="res://items/kitchen/coffee-mashine/frame_2.png" id="2_3lc6x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta2iw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sul8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3lc6x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a3nfk"]
+radius = 206.00243
+
+[node name="CoffeeMaker" type="AnimatedSprite2D" unique_id=1907298632]
+sprite_frames = SubResource("SpriteFrames_ta2iw")
+autoplay = "default"
+frame_progress = 0.48758936
+
+[node name="Area2D" type="Area2D" parent="." unique_id=942789524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2044147915]
+shape = SubResource("CircleShape2D_a3nfk")
