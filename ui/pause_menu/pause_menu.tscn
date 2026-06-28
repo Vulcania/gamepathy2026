@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dhofruf3bpe1n" path="res://ui/ui_assets/close pause menu button.png" id="4_c3jo5"]
 [ext_resource type="Texture2D" uid="uid://6atvixy378x5" path="res://ui/ui_assets/close game.png" id="5_c3jo5"]
 [ext_resource type="PackedScene" uid="uid://brpdbegao7ice" path="res://ui/buffs/buff_ui.tscn" id="5_uraes"]
+[ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="8_umsyg"]
+[ext_resource type="FontFile" uid="uid://bpn6t6wv6nq7y" path="res://ui/font/CreatoDisplay-Regular.otf" id="9_b05md"]
+[ext_resource type="Texture2D" uid="uid://dttfvhp7rhes6" path="res://ui/ui_assets/menu tile.png" id="10_f2x4c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uraes"]
 texture = ExtResource("4_c3jo5")
@@ -32,6 +35,33 @@ modulate_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lhp7q"]
 texture = ExtResource("5_c3jo5")
 modulate_color = Color(0.84645385, 0.61869913, 0.58491474, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j11rl"]
+texture = ExtResource("10_f2x4c")
+texture_margin_left = 60.0
+texture_margin_right = 60.0
+expand_margin_left = 30.0
+expand_margin_right = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pu65w"]
+texture = ExtResource("10_f2x4c")
+modulate_color = Color(0.88147783, 0.70841235, 0.61458635, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkwjh"]
+texture = ExtResource("10_f2x4c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdlyj"]
+texture = ExtResource("10_f2x4c")
+texture_margin_left = 30.0
+texture_margin_right = 30.0
+expand_margin_left = 30.0
+expand_margin_right = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfo3w"]
+texture = ExtResource("10_f2x4c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8cp71"]
+texture = ExtResource("10_f2x4c")
 
 [node name="PauseMenu" type="Control" unique_id=700370192]
 process_mode = 3
@@ -185,51 +215,66 @@ visible = false
 z_index = 5
 anchors_preset = 0
 
-[node name="ColorRect" type="ColorRect" parent="DoYouWantToQuit" unique_id=1763139440]
+[node name="Panel" type="TextureRect" parent="DoYouWantToQuit" unique_id=159205207]
 z_index = 10
 layout_mode = 0
 offset_left = 618.0
 offset_top = 376.0
 offset_right = 1296.0
 offset_bottom = 679.0
-color = Color(0.70380783, 0.70380783, 0.70380783, 1)
+texture = ExtResource("8_umsyg")
 
-[node name="Question" type="Label" parent="DoYouWantToQuit/ColorRect" unique_id=1787722943]
+[node name="Question" type="Label" parent="DoYouWantToQuit/Panel" unique_id=1787722943]
 layout_mode = 0
-offset_left = 139.0
-offset_top = 45.0
-offset_right = 536.0
-offset_bottom = 85.0
-theme_override_font_sizes/font_size = 29
+offset_left = 155.0
+offset_top = 82.0
+offset_right = 552.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 34
 text = "Do You Really Want To Quit?"
+horizontal_alignment = 1
 
-[node name="Text" type="Label" parent="DoYouWantToQuit/ColorRect" unique_id=1475107846]
+[node name="Text" type="Label" parent="DoYouWantToQuit/Panel" unique_id=1475107846]
 layout_mode = 0
-offset_left = 232.0
-offset_top = 106.0
-offset_right = 427.0
-offset_bottom = 129.0
+offset_left = 244.0
+offset_top = 124.0
+offset_right = 457.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.88147783, 0.70841235, 0.61458635, 1)
+theme_override_fonts/font = ExtResource("9_b05md")
+theme_override_font_sizes/font_size = 19
 text = "You Progress Will Be Lost"
+horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DoYouWantToQuit/ColorRect" unique_id=1853743709]
+[node name="HBoxContainer" type="HBoxContainer" parent="DoYouWantToQuit/Panel" unique_id=1853743709]
 layout_mode = 0
-offset_left = 223.0
-offset_top = 170.0
-offset_right = 454.0
-offset_bottom = 210.0
+offset_left = 172.0
+offset_top = 177.0
+offset_right = 537.0
+offset_bottom = 245.0
 theme_override_constants/separation = 19
 
-[node name="Yes" type="Button" parent="DoYouWantToQuit/ColorRect/HBoxContainer" unique_id=2051560854]
+[node name="Yes" type="Button" parent="DoYouWantToQuit/Panel/HBoxContainer" unique_id=2051560854]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_j11rl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pu65w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nkwjh")
 text = "Yes, I quit"
 
-[node name="No" type="Button" parent="DoYouWantToQuit/ColorRect/HBoxContainer" unique_id=1393030310]
+[node name="No" type="Button" parent="DoYouWantToQuit/Panel/HBoxContainer" unique_id=1393030310]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wdlyj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tfo3w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8cp71")
 text = "No, I want to stay"
 
 [connection signal="value_changed" from="PanelSound/SoundOptions/VBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
 [connection signal="value_changed" from="PanelSound/SoundOptions/VBoxContainer/sfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]
 [connection signal="pressed" from="ClosePause" to="." method="_on_close_pause_pressed"]
 [connection signal="pressed" from="Quit Run" to="." method="_on_quit_run_pressed"]
-[connection signal="pressed" from="DoYouWantToQuit/ColorRect/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="DoYouWantToQuit/ColorRect/HBoxContainer/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="DoYouWantToQuit/Panel/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="DoYouWantToQuit/Panel/HBoxContainer/No" to="." method="_on_no_pressed"]
