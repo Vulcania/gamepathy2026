@@ -428,6 +428,8 @@ position = Vector2(-2, 31)
 shape = SubResource("RectangleShape2D_8pxes")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1811097177]
+light_mask = 2
+visibility_layer = 2
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("66_kewli")
@@ -438,6 +440,8 @@ position = Vector2(-14, 23)
 shape = SubResource("CapsuleShape2D_fmu53")
 
 [node name="AttackBox" type="Area2D" parent="." unique_id=1145952830]
+light_mask = 4
+visibility_layer = 4
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("67_do7qw")
