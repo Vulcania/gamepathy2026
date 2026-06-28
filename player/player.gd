@@ -10,6 +10,7 @@ var can_move = true
 # movement
 @export var base_speed: float = 300.0
 @export var run_speed_factor: float = 1.67
+@export var speed_buff_factor: float = 1.05
 @export var jump_height = -750
 @export var gravity = 900
 @export var acceleration: float = 20.0
@@ -21,6 +22,10 @@ var can_move = true
 @export var boost_cooldown: float = 1
 @export var slide_speed_factor = 2.5
 @export var slide_friction_factor = 0.25
+
+#block
+@export var max_block_count = 3
+@export var current_block_count = 3
 
 # names
 @onready var animation = $AnimationPlayer
