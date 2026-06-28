@@ -53,6 +53,8 @@ signal state_updated(state:State)
 
 func _ready() -> void:
 	hearts_container.set_max_hearts(max_health)
+	BuffSelectionOne.option_one.connect(_on_option_1)
+	BuffSelectionOne.option_one.connect(_on_option_2)
 
 func _on_ready():
 	hit = false
@@ -77,14 +79,14 @@ func _physics_process(delta: float) -> void:
 
 func flip():
 	if Input.is_action_pressed("move_left"):
-		if !hit && can_move:
+		if !hit && !is_interacting:
 			sprite.scale.x = abs(sprite.scale.x) * -1
 			$AttackBox.scale.x = abs($AttackBox.scale.x) * -1
 			$HitBox.scale.x = abs($HitBox.scale.x) * -1
 			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * -1
 			$CollisionShape2D.scale.x = abs($CollisionShape2D.scale.x) * -1
 	if Input.is_action_pressed("move_right"):
-		if !hit && can_move:
+		if !hit && !is_interacting:
 			sprite.scale.x = abs(sprite.scale.x) * 1
 			$AttackBox.scale.x = abs($AttackBox.scale.x) * 1
 			$HitBox.scale.x = abs($HitBox.scale.x) * 1
@@ -236,3 +238,9 @@ func start_timer_in_level_one():
 
 func _on_health_component_health_changed(new_health) -> void:
 	hearts_container.update_hearts(new_health)
+
+func _on_option_1():
+	pass
+
+func _on_option_2():
+	pass

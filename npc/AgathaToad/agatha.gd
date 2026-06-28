@@ -6,35 +6,48 @@ var option_one = false
 var option_two = false
 var option_three = false
 
+var is_in_area = false
+
+
 func _ready():
 	$pressE.hide()
+	BuffSelectionOne.option_one.connect(_on_option_1)
+	BuffSelectionOne.option_one.connect(_on_option_2)
+	BuffSelectionOne.option_one.connect(_on_option_3)
 
-func option_1():
+func _input(event):
+	if event.is_action_pressed("interact"):
+		if is_in_area:
+			if !talked_once:
+				talked_once = true
+				Dialogic.start("res://dialog/timelines/Opening Agatha.dtl")
+				return
+			if talked_once && option_one:
+				Dialogic.start("res://dialog/timelines/Agatha_Option1.dtl")
+				return
+			if talked_once && option_two:
+				Dialogic.start("res://dialog/timelines/Agatha_Option2.dtl")
+				return
+			if talked_once && option_three:
+				Dialogic.start("res://dialog/timelines/Agatha_Option3.dtl")
+				return
+
+func _on_option_1():
+	Dialogic.start("res://dialog/timelines/Agatha_Option1.dtl")
 	option_one = true
 
-func option_2():
+func _on_option_2():
 	option_two = true
 
-func option_3():
+func _on_option_3():
 	option_three = true
-	
+
 func _on_area_2d_area_entered(area):
-	if area.get_parent() is Player && !talked_once:
+	if area.get_parent() is Player:
 		$pressE.show()
-		if Input.is_action_just_pressed("interact"):
-			talked_once = true
-			Dialogic.start("res://dialog/timelines/Opening Agatha.dtl")
-	if area.get_parent() is Player && talked_once && option_one:
-		$pressE.show()
-		if Input.is_action_just_pressed("interact"):
-			Dialogic.start("res://dialog/timelines/Agatha_Option1.dtl")
-	if area.get_parent() is Player && talked_once && option_two:
-		$pressE.show()
-		if Input.is_action_just_pressed("interact"):
-			Dialogic.start("res://dialog/timelines/Agatha_Option2.dtl")
-	if area.get_parent() is Player && talked_once && option_three:
-		$pressE.show()
-		if Input.is_action_just_pressed("interact"):
-			Dialogic.start("res://dialog/timelines/Agatha_Option3.dtl")
-	else:
+		is_in_area = true
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.get_parent() is Player:
+		is_in_area = false
 		$pressE.hide()

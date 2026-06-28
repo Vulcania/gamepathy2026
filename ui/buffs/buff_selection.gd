@@ -1,24 +1,35 @@
-extends Control
-class_name BuffSelection
+extends CanvasLayer
+#class_name BuffSelection
 
-var agatha
-var player
+
+@onready var agatha = preload("res://npc/AgathaToad/agatha.tscn")
+@onready var player : Player
+
+signal option_one
+signal option_two
+signal option_three
 
 func _ready() -> void:
+	hide()
 	agatha = get_node("res://npc/AgathaToad/agatha.tscn")
 	player = get_node("res://player/player.tscn")
 	#timer = get_node()
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
+
+func _on_timeline_ended():
+	show()
 
 func _on_option_1_pressed() -> void:
 	Dialogic.start("res://dialog/timelines/Agatha_Option1.dtl")
-	agatha.option_1()
-	player.apply_speed_buff()
+	option_one.emit()
+	visible = false
 
 func _on_option_2_pressed() -> void:
 	Dialogic.start("res://dialog/timelines/Agatha_Option2.dtl")
-	agatha.option_2()
-	player.apply_block_buff()
+	option_two.emit()
+	visible = false
 
 func _on_option_3_pressed() -> void:
 	Dialogic.start("res://dialog/timelines/Agatha_Option3.dtl")
-	agatha.option_3()
+	option_three.emit()
+	visible = false

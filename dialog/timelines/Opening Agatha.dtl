@@ -26,4 +26,4 @@ agatha: Grimmy! It's so good to see you finally decided to show up!
 agatha: As a newer worker, you should be able to make a good impression!
 agatha: You will be there, right?
 - I'd love to go, but....
-	do Global.open_buff_options()
+	do Dialogic.end_timeline()

@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dyj4wscmmr02l" path="res://items/door/door02.png" id="8_xegi8"]
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="9_dsajg"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="10_gor4a"]
+[ext_resource type="PackedScene" uid="uid://djseq43ja7gho" path="res://ui/buffs/buff_selection.tscn" id="11_6je0e"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="11_ba8y2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccrhc"]
@@ -250,15 +251,19 @@ position = Vector2(9, -4)
 shape = SubResource("CapsuleShape2D_vxcw3")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
-position = Vector2(450, 542)
+position = Vector2(3222, -1194)
 collision_layer = 1
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=394667123]
+visible = false
 limit_left = 0
 limit_top = -2100
 limit_right = 4480
 limit_bottom = 1110
+
+[node name="BuffSelectionOne" parent="Player" unique_id=783345293 instance=ExtResource("11_6je0e")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=397617716]
 libraries/ = SubResource("AnimationLibrary_ccrhc")

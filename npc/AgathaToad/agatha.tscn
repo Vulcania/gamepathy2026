@@ -55,3 +55,4 @@ offset_bottom = -129.0
 text = "press E to interact"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

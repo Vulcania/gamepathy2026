@@ -17,17 +17,10 @@ texture = ExtResource("3_lmly5")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twcsm"]
 texture = ExtResource("3_lmly5")
 
-[node name="BuffSelectionOne" type="Control" unique_id=783345293]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="BuffSelectionOne" type="CanvasLayer" unique_id=323398453]
 script = ExtResource("1_2s07i")
 
 [node name="Excuse Me" type="Label" parent="." unique_id=1305717303]
-layout_mode = 0
 offset_left = 544.0
 offset_top = 85.0
 offset_right = 1396.0
@@ -38,7 +31,6 @@ theme_override_font_sizes/font_size = 125
 text = "\"Excuse me, but...\""
 
 [node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2071695082]
-layout_mode = 0
 offset_left = 488.0
 offset_top = 244.0
 offset_right = 1425.0
@@ -85,5 +77,5 @@ allergic to company events!\"
 (Timer +10 Seconds)"
 
 [connection signal="pressed" from="HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="HBoxContainer/Option2" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="HBoxContainer/Option3" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option3" to="." method="_on_option_3_pressed"]
