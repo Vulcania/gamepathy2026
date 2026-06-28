@@ -92,7 +92,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1.0061046, 1.4127532),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_3ut8w"]
@@ -201,10 +201,10 @@ tracks/2/path = NodePath("AttackBox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [false]
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_rrkc6"]
@@ -309,3 +309,5 @@ position = Vector2(2, -128)
 [connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
 [connection signal="area_exited" from="AttackBox" to="." method="_on_attack_box_area_exited"]
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
