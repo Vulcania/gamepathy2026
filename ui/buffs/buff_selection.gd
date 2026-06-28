@@ -11,8 +11,8 @@ signal option_three
 
 func _ready() -> void:
 	hide()
-	agatha = get_node("res://npc/AgathaToad/agatha.tscn")
-	player = get_node("res://player/player.tscn")
+#	agatha = get_node("res://npc/AgathaToad/agatha.tscn")
+#	player = get_node("res://player/player.tscn")
 	#timer = get_node()
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 

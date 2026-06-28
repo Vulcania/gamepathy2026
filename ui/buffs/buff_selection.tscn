@@ -17,6 +17,14 @@ texture = ExtResource("3_lmly5")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twcsm"]
 texture = ExtResource("3_lmly5")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lmly5"]
+texture = ExtResource("3_lmly5")
+texture_margin_left = 100.0
+texture_margin_top = 70.0
+texture_margin_right = 100.0
+texture_margin_bottom = 70.0
+modulate_color = Color(0.4871179, 0.6643872, 0.74482286, 1)
+
 [node name="BuffSelectionOne" type="CanvasLayer" unique_id=323398453]
 script = ExtResource("1_2s07i")
 
@@ -72,6 +80,8 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lmly5")
+disabled = true
 text = "\"I physically can't come. I'm
 allergic to company events!\"
 (Timer +10 Seconds)"

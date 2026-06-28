@@ -10,7 +10,7 @@ var can_move = true
 # movement
 @export var base_speed: float = 300.0
 @export var run_speed_factor: float = 1.67
-@export var speed_buff_factor: float = 1.05
+@export var speed_buff_factor: float = 1
 @export var jump_height = -750
 @export var gravity = 900
 @export var acceleration: float = 20.0
@@ -123,7 +123,8 @@ func _get_state() -> State:
 			boost_time_left = boost_duration
 		return State.SLIDE
 	if is_blocking:
-		return State.BLOCK
+		if current_block_count > 0:
+			return State.BLOCK
 	if is_ducking:
 		return State.DUCK
 	if sign(move_input) != sign(velocity.x):
@@ -181,21 +182,21 @@ func _apply_movement(delta:float) -> void:
 			target_speed = 0.0
 			velocity.x = move_toward(velocity.x, target_speed, friction)
 		State.BRAKING:
-			target_speed = move_input * base_speed
+			target_speed = move_input * base_speed * speed_buff_factor
 			velocity.x = move_toward(velocity.x, target_speed, friction)
 		State.WALK:
-			target_speed = move_input * base_speed
+			target_speed = move_input * base_speed * speed_buff_factor
 			velocity.x = move_toward(velocity.x, target_speed, acceleration)
 		State.RUN:
-			target_speed = move_input * base_speed * run_speed_factor
+			target_speed = move_input * base_speed * run_speed_factor * speed_buff_factor
 			velocity.x = move_toward(velocity.x, target_speed, acceleration)
 		State.JUMP:
 			if is_on_floor():
 				velocity.y = jump_height
-			target_speed = move_input * base_speed
+			target_speed = move_input * base_speed * speed_buff_factor
 			velocity.x = move_toward(velocity.x, target_speed, acceleration)
 		State.DASH:
-			velocity.x = dash_direction * base_speed * dash_speed_factor
+			velocity.x = dash_direction * base_speed * dash_speed_factor * speed_buff_factor
 			boost_time_left -= delta
 			if boost_time_left <= 0.0:
 				boost_cooldown_left = boost_cooldown
@@ -245,7 +246,7 @@ func _on_health_component_health_changed(new_health) -> void:
 	hearts_container.update_hearts(new_health)
 
 func _on_option_1():
-	pass
+	speed_buff_factor = 1.05
 
 func _on_option_2():
-	pass
+	max_block_count += 1
