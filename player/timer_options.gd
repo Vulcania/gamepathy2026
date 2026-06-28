@@ -8,8 +8,8 @@ extends Control
 
 func _ready() -> void:
 	BuffSelectionOne.option_one.connect(_on_option_3)
-	PauseMenu.game_paused.connect(timer_paused)
-	PauseMenu.game_resumed.connect(timer_unpaused)
+#	PauseMenu.game_paused.connect(timer_paused)
+#	PauseMenu.game_resumed.connect(timer_unpaused)
 
 func time_left_until_late():
 	var time_left = thetimer.time_left
