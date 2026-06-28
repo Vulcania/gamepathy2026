@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://d1ykyhdu85ya8"]
+[gd_scene format=3 uid="uid://cyi8kmoviaup2"]
 
-[ext_resource type="Script" uid="uid://carpqlbcj81gk" path="res://level/level_two.gd" id="1_aoff5"]
-[ext_resource type="TileSet" uid="uid://bg30h0rjcf6i4" path="res://level/base_tile_set.tres" id="1_biva1"]
+[ext_resource type="Script" path="res://level/level_two.gd" id="1_aoff5"]
+[ext_resource type="TileSet" uid="uid://8fsnnxewsflr" path="res://level/base_tile_set.tres" id="1_biva1"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="2_p6hxi"]
 [ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="2_ytbjg"]
 [ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="3_aoff5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="5_v51nt"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="6_adiw7"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="7_3a3bi"]
+[ext_resource type="AudioStream" uid="uid://u6a66fyjaru7" path="res://ui/mittelguter game song.mp3" id="10_6qftm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0gof"]
 radius = 231.0
@@ -57,5 +58,10 @@ libraries/ = SubResource("AnimationLibrary_3n8xi")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("2_p6hxi")]
 position = Vector2(664, 716)
+
+[node name="fantastische game musik" type="AudioStreamPlayer2D" parent="." unique_id=1971315337]
+stream = ExtResource("10_6qftm")
+autoplay = true
+bus = &"Music"
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]

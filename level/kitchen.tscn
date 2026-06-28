@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://mp735w6bgq38"]
+[gd_scene format=3 uid="uid://dk14epaowsxbf"]
 
 [ext_resource type="Script" uid="uid://uepjwdf4ig6p" path="res://level/kitchen.gd" id="1_luhl6"]
 [ext_resource type="Texture2D" uid="uid://b05rsvus88j2q" path="res://Tilesets/tileset_kitchen.png" id="1_qumte"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="8_27wkt"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="9_tgev6"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="10_5q01i"]
+[ext_resource type="AudioStream" uid="uid://u6a66fyjaru7" path="res://ui/mittelguter game song.mp3" id="12_luhl6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gapvt"]
 texture = ExtResource("1_qumte")
@@ -162,4 +163,11 @@ libraries/ = SubResource("AnimationLibrary_c67a7")
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("5_4av7d")]
 position = Vector2(358, 689)
 
+<<<<<<< Updated upstream
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
+=======
+[node name="game musik" type="AudioStreamPlayer2D" parent="." unique_id=1562539695]
+stream = ExtResource("12_luhl6")
+autoplay = true
+bus = &"Music"
+>>>>>>> Stashed changes

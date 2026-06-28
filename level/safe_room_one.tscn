@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="3_fdjj2"]
 [ext_resource type="Texture2D" uid="uid://d0hc7fsl8m7l2" path="res://Tilesets/tileset_level.png" id="3_l3wt5"]
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="4_ccrhc"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="5_vxcw3"]
 [ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="7_eefxu"]
 [ext_resource type="Texture2D" uid="uid://dyj4wscmmr02l" path="res://items/door/door02.png" id="8_xegi8"]
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="9_dsajg"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="10_gor4a"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="11_ba8y2"]
+=======
+[ext_resource type="AudioStream" uid="uid://u6a66fyjaru7" path="res://ui/mittelguter game song.mp3" id="7_jnkt6"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccrhc"]
 texture = ExtResource("2_fdjj2")
@@ -244,6 +248,7 @@ libraries/ = SubResource("AnimationLibrary_ccrhc")
 [node name="PaperClipDeer" parent="." unique_id=1517736822 instance=ExtResource("4_ccrhc")]
 position = Vector2(2933, 748)
 
+<<<<<<< Updated upstream
 [node name="Trapping the Player" type="StaticBody2D" parent="." unique_id=282739034]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trapping the Player" unique_id=943433742]
@@ -253,6 +258,14 @@ shape = SubResource("RectangleShape2D_vxcw3")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=652085651]
 stream = SubResource("AudioStream_vxcw3")
 
+=======
+[node name="musik" type="AudioStreamPlayer2D" parent="." unique_id=821609679]
+stream = ExtResource("7_jnkt6")
+autoplay = true
+bus = &"Music"
+
+[connection signal="area_entered" from="AgathasDesk/AgathaArea" to="." method="_on_agatha_area_area_entered"]
+>>>>>>> Stashed changes
 [connection signal="area_entered" from="AgathasDesk/AgathaArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="AgathasDesk/AgathaArea" to="." method="_on_agatha_area_area_entered"]
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
