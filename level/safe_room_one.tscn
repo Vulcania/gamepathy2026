@@ -349,7 +349,7 @@ blend_mode = 1
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1942401457]
 
-[node name="PointLight2D" type="PointLight2D" parent="Node2D" unique_id=236341513]
+[node name="CandleLight" type="PointLight2D" parent="Node2D" unique_id=236341513]
 position = Vector2(2237, -1360)
 scale = Vector2(2.8671885, 2.8671885)
 color = Color(1, 0.8235294, 0.5058824, 1)

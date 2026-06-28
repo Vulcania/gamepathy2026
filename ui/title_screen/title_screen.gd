@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://level/safe_room_one.tscn")
+	get_tree().change_scene_to_file("res://level/opening_animatic.tscn")
 	#get_tree().change_scene_to_file("res://level/test_level.tscn")
 
 
