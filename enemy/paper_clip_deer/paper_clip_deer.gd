@@ -117,14 +117,6 @@ func _on_detect_environment_body_exited(body: Node2D) -> void:
 		target = null
 		state_changed.emit(State.WALK)
 
-func _on_attack_box_area_entered(area: Node2D) -> void:
-	if area is HitBox:
-		state_changed.emit(State.ATTACK)
-
-func _on_attack_box_area_exited(area: Node2D) -> void:
-	if area is HitBox:
-		state_changed.emit(State.WALK)
-
 func _on_state_changed(new_state: State) -> void:
 	_update_animation(new_state)
 	_update_behaviour(new_state)
@@ -134,3 +126,11 @@ func _on_state_changed(new_state: State) -> void:
 func _on_detect_behind_body_entered(body: Node2D) -> void:
 	if body is Player:
 		flip()
+
+func _on_range_body_entered(body: Node2D) -> void:
+	if body is HitBox:
+		state_changed.emit(State.ATTACK)
+
+func _on_range_body_exited(body: Node2D) -> void:
+	if body is HitBox:
+		state_changed.emit(State.WALK)
