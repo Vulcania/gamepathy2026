@@ -23,11 +23,11 @@ func _on_timer_timeout() -> void:
 func _process(delta):
 	timelabel.text = "%02d:%02d" % time_left_until_late()
 
-func timer_paused():
-	thetimer.pause = true
+#func timer_paused():
+#	thetimer.pause = true
 
-func timer_unpaused():
-	thetimer.pause = false
+#func timer_unpaused():
+#	thetimer.pause = false
 
 func _on_option_3():
 	thetimer.wait_time += 10

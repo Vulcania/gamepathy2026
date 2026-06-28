@@ -166,25 +166,106 @@ offset_top = 265.0
 offset_right = 570.0
 offset_bottom = 305.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CollectedBuffs" unique_id=519542254]
+[node name="HBoxContainer" type="HBoxContainer" parent="CollectedBuffs" unique_id=1180199327]
 layout_mode = 0
-offset_left = 11.999992
-offset_top = 25.999998
-offset_right = 963.6483
-offset_bottom = 356.0
-scale = Vector2(0.91, 0.91)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CollectedBuffs/ScrollContainer" unique_id=1180199327]
-custom_minimum_size = Vector2(200, 300)
-layout_mode = 2
+offset_left = 44.0
+offset_top = 32.0
+offset_right = 846.0
+offset_bottom = 338.0
 theme_override_constants/separation = 13
+
+[node name="SpeedBuffData" type="ColorRect" parent="CollectedBuffs/HBoxContainer" unique_id=1289687594]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.81960785, 0.7372549, 0.7254902, 1)
+
+[node name="speedlabel" type="Label" parent="CollectedBuffs/HBoxContainer/SpeedBuffData" unique_id=1925262788]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 261.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.31764707, 0.22745098, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 59
+text = "Speed"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CollectedBuffs/HBoxContainer/SpeedBuffData" unique_id=1148672375]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 118.0
+offset_right = 261.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.31764707, 0.22745098, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 59
+text = "+0%"
+horizontal_alignment = 1
+
+[node name="BlockBuffData" type="ColorRect" parent="CollectedBuffs/HBoxContainer" unique_id=1925976235]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+
+[node name="blocklabel" type="Label" parent="CollectedBuffs/HBoxContainer/BlockBuffData" unique_id=593058858]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 35.0
+offset_right = 262.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.31764707, 0.22745098, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 59
+text = "Blocks"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CollectedBuffs/HBoxContainer/BlockBuffData" unique_id=1266991091]
+layout_mode = 0
+offset_top = 118.0
+offset_right = 259.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.31764707, 0.22745098, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 59
+text = "+0"
+horizontal_alignment = 1
+
+[node name="TimerBuffData" type="ColorRect" parent="CollectedBuffs/HBoxContainer" unique_id=335434545]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.81957304, 0.7372073, 0.72544104, 1)
+
+[node name="timelabel" type="Label" parent="CollectedBuffs/HBoxContainer/TimerBuffData" unique_id=1991669347]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 36.0
+offset_right = 258.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.31764707, 0.22745098, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 59
+text = "Time"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CollectedBuffs/HBoxContainer/TimerBuffData" unique_id=623966979]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 118.0
+offset_right = 261.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.31764707, 0.22745098, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_b4b0p")
+theme_override_font_sizes/font_size = 59
+text = "+0s"
+horizontal_alignment = 1
 
 [node name="Buffs" type="Label" parent="CollectedBuffs" unique_id=596683145]
 layout_mode = 0
-offset_left = 14.0
-offset_top = -19.0
-offset_right = 123.0
-offset_bottom = 18.0
+offset_left = 42.0
+offset_top = -15.0
+offset_right = 151.0
+offset_bottom = 22.0
 theme_override_colors/font_color = Color(0.8210712, 0.7373924, 0.7198376, 1)
 theme_override_fonts/font = ExtResource("3_b4b0p")
 theme_override_font_sizes/font_size = 35

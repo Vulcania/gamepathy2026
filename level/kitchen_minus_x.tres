@@ -1,0 +1,19 @@
+[gd_resource type="TileSet" format=3 uid="uid://bvwbx8wttd2r1"]
+
+[ext_resource type="Texture2D" uid="uid://dqokcj7sajkic" path="res://Tilesets/wand/Schränke/tile-end1.png" id="1_psyxt"]
+[ext_resource type="Texture2D" uid="uid://cjrjp6xwjk1r7" path="res://Tilesets/wand/Schränke/tile-end2.png" id="2_rijnq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6vxl"]
+texture = ExtResource("1_psyxt")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ec8dv"]
+texture = ExtResource("2_rijnq")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_q6vxl")
+sources/1 = SubResource("TileSetAtlasSource_ec8dv")

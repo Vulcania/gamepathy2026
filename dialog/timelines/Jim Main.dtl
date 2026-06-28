@@ -1,0 +1,7 @@
+"jim dreaper": Grimmy! Just the little guy I’ve been waiting on.
+"jim dreaper": Guess what?
+"jim dreaper": Yours truly has a stunning soul quota.
+"jim dreaper": I bet you can’t keep up eh? How is your quota looking? You should show me!
+"jim dreaper": As two good pals would, right?
+set {JimEnd} = true
+do Dialogic.end_timeline()

@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://duhs8h0jjjetm" path="res://Tilesets/wand/Schränke/tile-4.png" id="5_b3y2g"]
 [ext_resource type="Texture2D" uid="uid://buxe285e38il8" path="res://Tilesets/wand/Schränke/tile-5.png" id="6_rf682"]
 [ext_resource type="Texture2D" uid="uid://6t3ebnr7jo62" path="res://Tilesets/wand/Schränke/tile-6.png" id="7_ovqls"]
+[ext_resource type="Texture2D" uid="uid://dqokcj7sajkic" path="res://Tilesets/wand/Schränke/tile-end1.png" id="8_o25ag"]
+[ext_resource type="Texture2D" uid="uid://cjrjp6xwjk1r7" path="res://Tilesets/wand/Schränke/tile-end2.png" id="9_b3y2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gapvt"]
 texture = ExtResource("1_tmxvx")
@@ -75,6 +77,16 @@ texture = ExtResource("7_ovqls")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rf682"]
+texture = ExtResource("8_o25ag")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ovqls"]
+texture = ExtResource("9_b3y2g")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
 [resource]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
@@ -85,3 +97,5 @@ sources/3 = SubResource("TileSetAtlasSource_1u6e6")
 sources/4 = SubResource("TileSetAtlasSource_b8mky")
 sources/5 = SubResource("TileSetAtlasSource_igmo5")
 sources/6 = SubResource("TileSetAtlasSource_82lxa")
+sources/7 = SubResource("TileSetAtlasSource_rf682")
+sources/8 = SubResource("TileSetAtlasSource_ovqls")
