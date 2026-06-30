@@ -95,7 +95,6 @@ func _update_animation(new_state: State):
 			# TODO timer
 			# queue_free()
 			# das queue_free und der timer( also die zeit wegzugehen, wenn animation zuende ist) sind im AnimationPlayer
-			return
 
 func take_damage(damage_amount):
 	state_changed.emit(State.HIT)
