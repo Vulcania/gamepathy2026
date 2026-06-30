@@ -31,6 +31,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_ah3ca"), ExtResource("3_bxc86"), ExtResource("4_6k22j"), ExtResource("5_84ti7"), ExtResource("6_ekjd4"), ExtResource("7_7a6hf")]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"enter_next_room"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vj0se"]
 _data = {

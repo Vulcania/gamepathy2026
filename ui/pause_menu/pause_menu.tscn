@@ -271,7 +271,7 @@ theme_override_fonts/font = ExtResource("3_b4b0p")
 theme_override_font_sizes/font_size = 35
 text = "Buffs"
 
-[node name="Quit Run" type="Button" parent="." unique_id=2017299980]
+[node name="QuitRun" type="Button" parent="." unique_id=2017299980]
 layout_mode = 0
 offset_left = 934.0
 offset_top = 843.0
@@ -323,7 +323,7 @@ offset_bottom = 148.0
 theme_override_colors/font_color = Color(0.88147783, 0.70841235, 0.61458635, 1)
 theme_override_fonts/font = ExtResource("9_b05md")
 theme_override_font_sizes/font_size = 19
-text = "You Progress Will Be Lost"
+text = "Your Progress Will Be Lost"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="DoYouWantToQuit/Panel" unique_id=1853743709]
@@ -353,6 +353,6 @@ text = "No, I want to stay"
 [connection signal="value_changed" from="PanelSound/SoundOptions/VBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
 [connection signal="value_changed" from="PanelSound/SoundOptions/VBoxContainer/sfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]
 [connection signal="pressed" from="ClosePause" to="." method="_on_close_pause_pressed"]
-[connection signal="pressed" from="Quit Run" to="." method="_on_quit_run_pressed"]
+[connection signal="pressed" from="QuitRun" to="." method="_on_quit_run_pressed"]
 [connection signal="pressed" from="DoYouWantToQuit/Panel/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="DoYouWantToQuit/Panel/HBoxContainer/No" to="." method="_on_no_pressed"]
