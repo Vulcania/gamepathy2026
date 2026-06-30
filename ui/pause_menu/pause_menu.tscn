@@ -191,7 +191,7 @@ theme_override_font_sizes/font_size = 59
 text = "Speed"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CollectedBuffs/HBoxContainer/SpeedBuffData" unique_id=1148672375]
+[node name="CurrentSpeedData" type="Label" parent="CollectedBuffs/HBoxContainer/SpeedBuffData" unique_id=1148672375]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 118.0
@@ -220,7 +220,7 @@ theme_override_font_sizes/font_size = 59
 text = "Blocks"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="CollectedBuffs/HBoxContainer/BlockBuffData" unique_id=1266991091]
+[node name="CurrentBlockData" type="Label" parent="CollectedBuffs/HBoxContainer/BlockBuffData" unique_id=1266991091]
 layout_mode = 0
 offset_top = 118.0
 offset_right = 259.0
@@ -248,7 +248,7 @@ theme_override_font_sizes/font_size = 59
 text = "Time"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="CollectedBuffs/HBoxContainer/TimerBuffData" unique_id=623966979]
+[node name="CurrentTimerData" type="Label" parent="CollectedBuffs/HBoxContainer/TimerBuffData" unique_id=623966979]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 118.0
