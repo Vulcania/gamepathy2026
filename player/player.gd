@@ -5,6 +5,7 @@ var in_safe_room = true
 var pause_menu_open = false
 var can_move = true
 
+#health and attack
 @export var max_health = 5
 
 # movement

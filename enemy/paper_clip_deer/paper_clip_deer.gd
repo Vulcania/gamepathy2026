@@ -12,6 +12,7 @@ var facing_right = false
 var health: int
 var target: Player
 var direction: Vector2
+var dead = false
 
 enum State { IDLE, PURSUING, WALK, ATTACK, HIT, DYING, DEAD }
 
@@ -34,6 +35,7 @@ func _physics_process(delta):
 	if !$RayCast2D.is_colliding() && is_on_floor():
 		flip()
 	
+	velocity.x = speed 
 	move_and_slide()
 
 func flip():
@@ -74,24 +76,26 @@ func _update_animation(new_state: State):
 	match new_state:
 		State.IDLE:
 			animation.play("Idle")
-			
+			return
 		State.WALK:
 			animation.play("Walk")
-			
+			return
 		State.HIT:
 			animation.play("Hit")
-			
+			return
 		State.ATTACK:
 			animation.play("Attack")
-			
+			return
 		State.PURSUING:
 			animation.play("Walk")
-			
+			return
 		State.DYING:
 			speed = 0
 			animation.play("Dead")
 			# TODO timer
 			# queue_free()
+			# das queue_free und der timer( also die zeit wegzugehen, wenn animation zuende ist) sind im AnimationPlayer
+			return
 
 func take_damage(damage_amount):
 	state_changed.emit(State.HIT)
