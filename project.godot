@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Global="*uid://c3bu5o1pgdkfk"
 Options="*uid://c6hw1pwomiwrq"
 Dialogic="*uid://ds2q0uclmolvu"
-Global="*uid://c3bu5o1pgdkfk"
-BuffSelectionOne="*uid://cmyu6pp3fa0tq"
 PauseMenu="*uid://dxhtb0cebwdri"
+BuffSelectionOne="*uid://cmyu6pp3fa0tq"
 BuffSelectionTwo="*uid://dd4axoax3k8fx"
 
 [dialogic]

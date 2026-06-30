@@ -35,7 +35,7 @@ func _physics_process(delta):
 	if !$RayCast2D.is_colliding() && is_on_floor():
 		flip()
 	
-	velocity.x = speed 
+
 	move_and_slide()
 
 func flip():
@@ -63,6 +63,7 @@ func _update_behaviour(new_state: State) -> void:
 			if target:
 				direction = target.global_position - global_position
 				velocity.x = direction.x # TODO works but moves too fast, so this isn't quite right
+				#du könntest extra eine variable für pursure speed machen
 		
 		State.ATTACK:
 			velocity.x = idle_speed

@@ -13,6 +13,7 @@ func _ready() -> void:
 func _on_timeline_ended():
 	if Dialogic.VAR.JimEnd:
 		show()
+	show()
 
 func _on_option_1_pressed() -> void:
 	option_one.emit()

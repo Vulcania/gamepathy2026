@@ -9,12 +9,23 @@ signal game_resumed
 @onready var currentblocklabel = $CollectedBuffs/HBoxContainer/BlockBuffData/CurrentBlockData
 @onready var currenttimerlabel = $CollectedBuffs/HBoxContainer/TimerBuffData/CurrentTimerData
 
+var speedbuffcount = 0
+var blockbuffcount = 3
+var timerbuffcount = 0
+
 func _ready() -> void:
 	#quit.visible = false
 	BuffSelectionOne.option_one.connect(_on_option_1)
 	BuffSelectionOne.option_two.connect(_on_option_2)
 	BuffSelectionOne.option_three.connect(_on_option_3)
+	BuffSelectionTwo.option_one.connect(_on_option_1)
+
 	hide()
+
+#func _process(float) -> void:
+#	currentspeedlabel.text = "+" and speedbuffcount and "%"
+#	currentblocklabel.text = "+" && blockbuffcount
+#	currenttimerlabel.text = "+" && timerbuffcount && "s"
 
 func _input(event):
 	if event.is_action_pressed("pausemenu"):
@@ -41,10 +52,10 @@ func _on_no_pressed() -> void:
 	quit.visible = false
 
 func _on_option_1():
-	currentspeedlabel.text += 5
+	speedbuffcount += 5
 
 func _on_option_2():
-	currentblocklabel.text += 1
+	blockbuffcount += 1
 
 func _on_option_3():
-	currenttimerlabel.text += 10
+	timerbuffcount += 10

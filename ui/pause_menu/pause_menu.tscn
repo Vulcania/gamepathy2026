@@ -122,7 +122,7 @@ horizontal_alignment = 1
 [node name="MusicHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=571521292]
 process_mode = 3
 layout_mode = 2
-value = 100.0
+value = 50.0
 
 [node name="sfx" type="Label" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=717492906]
 layout_mode = 2
@@ -134,7 +134,7 @@ horizontal_alignment = 1
 
 [node name="sfxHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=270981091]
 layout_mode = 2
-value = 100.0
+value = 50.0
 
 [node name="ClosePause" type="Button" parent="." unique_id=1412257940]
 layout_mode = 0
@@ -171,7 +171,7 @@ layout_mode = 0
 offset_left = 44.0
 offset_top = 32.0
 offset_right = 846.0
-offset_bottom = 338.0
+offset_bottom = 299.0
 theme_override_constants/separation = 13
 
 [node name="SpeedBuffData" type="ColorRect" parent="CollectedBuffs/HBoxContainer" unique_id=1289687594]
@@ -228,7 +228,7 @@ offset_bottom = 178.0
 theme_override_colors/font_color = Color(0.31764707, 0.22745098, 0.21176471, 1)
 theme_override_fonts/font = ExtResource("3_b4b0p")
 theme_override_font_sizes/font_size = 59
-text = "+0"
+text = "+3"
 horizontal_alignment = 1
 
 [node name="TimerBuffData" type="ColorRect" parent="CollectedBuffs/HBoxContainer" unique_id=335434545]
@@ -314,7 +314,7 @@ theme_override_font_sizes/font_size = 34
 text = "Do You Really Want To Quit?"
 horizontal_alignment = 1
 
-[node name="Text" type="Label" parent="DoYouWantToQuit/Panel" unique_id=1475107846]
+[node name="Your Progress" type="Label" parent="DoYouWantToQuit/Panel" unique_id=1475107846]
 layout_mode = 0
 offset_left = 244.0
 offset_top = 124.0
