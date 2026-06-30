@@ -291,7 +291,7 @@ disabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1484122301]
 position = Vector2(-138, 0)
-target_position = Vector2(0, 108)
+target_position = Vector2(0, 144)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1680425517]
 libraries/ = SubResource("AnimationLibrary_up443")
