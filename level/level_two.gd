@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 
 func enter_next_room():
-	pass
+	get_tree().change_scene_to_file("res://level/kitchen_two.tscn")
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

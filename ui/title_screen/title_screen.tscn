@@ -6,15 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bc4p53er7q3xa" path="res://ui/title_screen/title.png" id="3_ca08b"]
 [ext_resource type="Texture2D" uid="uid://dttfvhp7rhes6" path="res://ui/ui_assets/menu tile.png" id="5_2er51"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="6_2er51"]
+[ext_resource type="Texture2D" uid="uid://coiefrw5780b8" path="res://ui/ui_assets/pausenscreen.png" id="6_533ah"]
 [ext_resource type="Texture2D" uid="uid://bdx82784d5yid" path="res://ui/title_screen/credits/crow.png" id="6_c8lgs"]
 [ext_resource type="Texture2D" uid="uid://j8p31dcryge1" path="res://ui/title_screen/credits/image.png" id="7_533ah"]
 [ext_resource type="Texture2D" uid="uid://cwbt7itwp145y" path="res://ui/title_screen/credits/elli.png" id="8_qua4x"]
 [ext_resource type="Texture2D" uid="uid://belyptr0vk67i" path="res://ui/title_screen/credits/portrait_imke.png" id="9_hhwne"]
 [ext_resource type="Texture2D" uid="uid://bycqe7ixg0b8h" path="res://ui/title_screen/credits/portrait_anni.png" id="10_objlv"]
 [ext_resource type="Texture2D" uid="uid://dfwjc8om3vtbm" path="res://ui/title_screen/credits/Unbenanntes_Projekt-1.png" id="11_h0jpi"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_3agr5"]
-font_size = 72
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1djn3"]
 texture = ExtResource("5_2er51")
@@ -52,6 +50,17 @@ modulate_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
 texture = ExtResource("5_2er51")
 modulate_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kkgxs"]
+texture = ExtResource("5_2er51")
+texture_margin_top = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhokr"]
+texture = ExtResource("5_2er51")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mof7"]
+texture = ExtResource("5_2er51")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2er51"]
 texture = ExtResource("5_2er51")
 texture_margin_left = 20.0
@@ -79,20 +88,6 @@ script = ExtResource("1_g2mvh")
 z_index = -2
 position = Vector2(960, 540)
 texture = ExtResource("2_2er51")
-
-[node name="GameTitle" type="Label" parent="." unique_id=1736463983]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -229.5
-offset_top = 50.0
-offset_right = 229.5
-offset_bottom = 149.0
-grow_horizontal = 2
-text = "Excuse me, Sir Death"
-label_settings = SubResource("LabelSettings_3agr5")
 
 [node name="Menu" type="Control" parent="." unique_id=2059926244]
 anchors_preset = 0
@@ -157,42 +152,96 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_hhwne")
 theme_override_styles/hover = SubResource("StyleBoxTexture_objlv")
 text = "Quit"
 
-[node name="OptionsVBox" type="VBoxContainer" parent="." unique_id=1356479431]
-visible = false
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 90.0
-
-[node name="MusicSliderLabel" type="Label" parent="OptionsVBox" unique_id=1687499172]
-layout_mode = 2
-text = "Music"
-
-[node name="MusicSlider" type="HSlider" parent="OptionsVBox" unique_id=737446236]
-layout_mode = 2
-value = 50.0
-
-[node name="SfxSliderLabel" type="Label" parent="OptionsVBox" unique_id=1330748542]
-layout_mode = 2
-text = "Sfx"
-
-[node name="SfxSlider" type="HSlider" parent="OptionsVBox" unique_id=421204896]
-layout_mode = 2
-value = 50.0
-
-[node name="BackButton" type="Button" parent="OptionsVBox" unique_id=1529389511]
-layout_mode = 2
-text = "Back"
-
-[node name="Credits" type="Control" parent="." unique_id=625954100]
+[node name="Options" type="Control" parent="." unique_id=435805870]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=1586235410]
+[node name="ColorRect2" type="ColorRect" parent="Options" unique_id=1653914116]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.5294118)
+
+[node name="TextureRect" type="TextureRect" parent="Options" unique_id=567911539]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 1923.0
+offset_bottom = 1080.0
+texture = ExtResource("6_533ah")
+
+[node name="optionstitle" type="Label" parent="Options" unique_id=1736463983]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 525.0
+offset_top = 239.0
+offset_right = 1321.0
+offset_bottom = 338.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.72156864, 0.58431375, 0.56078434, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 96
+text = "Options"
+horizontal_alignment = 1
+
+[node name="OptionsVBox" type="VBoxContainer" parent="Options" unique_id=1356479431]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 364.0
+offset_right = 1234.0
+offset_bottom = 625.0
+theme_override_constants/separation = 26
+
+[node name="MusicSliderLabel" type="Label" parent="Options/OptionsVBox" unique_id=1687499172]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72096, 0.584691, 0.56027645, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 46
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="Options/OptionsVBox" unique_id=737446236]
+layout_mode = 2
+value = 50.0
+
+[node name="SfxSliderLabel" type="Label" parent="Options/OptionsVBox" unique_id=1330748542]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72096, 0.584691, 0.56027645, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 46
+text = "sfx"
+
+[node name="SfxSlider" type="HSlider" parent="Options/OptionsVBox" unique_id=421204896]
+layout_mode = 2
+value = 50.0
+
+[node name="BackButton" type="Button" parent="Options/OptionsVBox" unique_id=1529389511]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1764706, 0.16078432, 0.15686275, 1)
+theme_override_colors/font_pressed_color = Color(0.7137255, 0.5764706, 0.5529412, 1)
+theme_override_colors/font_hover_color = Color(0.72156864, 0.58431375, 0.56078434, 1)
+theme_override_fonts/font = ExtResource("2_72buf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_kkgxs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qhokr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8mof7")
+text = "Back"
+
+[node name="Credits" type="Control" parent="." unique_id=625954100]
+visible = false
+anchors_preset = 0
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=1586235410]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_left = -3.0
+offset_right = 1917.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.5294118)
 
@@ -335,7 +384,8 @@ theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
 theme_override_fonts/font = ExtResource("2_72buf")
 theme_override_font_sizes/font_size = 36
 text = "Art
-Sound"
+Sound
+Writing"
 horizontal_alignment = 1
 
 [node name="imke" type="VBoxContainer" parent="Credits/Portraits" unique_id=177388638]
@@ -428,7 +478,7 @@ bus = &"Music"
 [connection signal="pressed" from="Menu/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menu/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Menu/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="value_changed" from="OptionsVBox/MusicSlider" to="OptionsVBox" method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="OptionsVBox/SfxSlider" to="OptionsVBox" method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="OptionsVBox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Options/OptionsVBox/MusicSlider" to="Options/OptionsVBox" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Options/OptionsVBox/SfxSlider" to="Options/OptionsVBox" method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Options/OptionsVBox/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Credits/CreditsVBox/BackButton2" to="." method="_on_back_button_pressed"]
