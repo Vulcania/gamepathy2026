@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="9_tgev6"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="10_5q01i"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="12_luhl6"]
+[ext_resource type="PackedScene" uid="uid://chqwe0yjmhbef" path="res://ui/buffs/buff_selection_two.tscn" id="13_tgev6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3nfk"]
 radius = 245.0
@@ -128,6 +129,8 @@ limit_left = 0
 limit_top = 0
 limit_right = 3328
 limit_bottom = 1150
+
+[node name="BuffSelectionTwo" parent="Player" unique_id=323398453 instance=ExtResource("13_tgev6")]
 
 [node name="game musik" type="AudioStreamPlayer" parent="." unique_id=2048672444]
 process_mode = 3

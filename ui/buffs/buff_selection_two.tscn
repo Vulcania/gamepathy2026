@@ -57,7 +57,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 text = "\"I don’t have time for that. I’ve gotten called 
 up because of my stunning quota. 
 I bet I’ll get a promotion.\"
-(Speed +5%)"
+(Speed +10%)"
 
 [node name="Option2" type="Button" parent="HBoxContainer" unique_id=1115032660]
 layout_mode = 2
@@ -83,7 +83,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_lmly5")
-text = "\"did you also hear someone call for me?
+text = "\"Did you also hear someone call for me?
 Let me check on it!\"
 (Timer +10 Seconds)"
 

@@ -1,0 +1,4 @@
+join "jim dreaper" center
+"jim dreaper": It's probs the boss about to chew you out!
+[signal arg="option3_selected"]
+[signal arg="exited_dialog"]

@@ -56,7 +56,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
 text = "\"I can't come. I have an appointment 
 to get my wisdom teeth removed.\"
-(Speed +5%)"
+(Speed +10%)"
 
 [node name="Option2" type="Button" parent="HBoxContainer" unique_id=1115032660]
 layout_mode = 2

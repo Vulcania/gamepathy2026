@@ -1,28 +1,28 @@
 extends CanvasLayer
 
-signal option_one
-signal option_two
-signal option_three
-
-@onready var jim = preload("res://npc/JimDreaper/jimdreaper.tscn")
+#signal option_one
+#signal option_two
+#signal option_three
 
 func _ready() -> void:
 	hide()
-	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
-func _on_timeline_ended():
-	if Dialogic.VAR.JimEnd:
+func _on_dialogic_signal(argument: String):
+	if argument == "open_buffs2":
 		show()
-	show()
 
 func _on_option_1_pressed() -> void:
-	option_one.emit()
+#	option_one.emit()
+	Dialogic.start("res://dialog/timelines/Jim_Option1.dtl")
 	queue_free()
 
 func _on_option_2_pressed() -> void:
-	option_two.emit()
+	#option_two.emit()
+	Dialogic.start("res://dialog/timelines/Jim_Option2.dtl")
 	queue_free()
 
 func _on_option_3_pressed() -> void:
-	option_three.emit()
+	#option_three.emit()
+	Dialogic.start("res://dialog/timelines/Jim_Option3.dtl")
 	queue_free()

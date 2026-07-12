@@ -9,8 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://coiefrw5780b8" path="res://ui/ui_assets/pausenscreen.png" id="6_533ah"]
 [ext_resource type="Texture2D" uid="uid://bdx82784d5yid" path="res://ui/title_screen/credits/crow.png" id="6_c8lgs"]
 [ext_resource type="Texture2D" uid="uid://j8p31dcryge1" path="res://ui/title_screen/credits/image.png" id="7_533ah"]
+[ext_resource type="Texture2D" uid="uid://hr6rvbioiow6" path="res://ui/ui_assets/slider button.png" id="7_h0jpi"]
+[ext_resource type="StyleBox" uid="uid://5geqqm3l2qtc" path="res://resources/slider_style.tres" id="8_kkgxs"]
 [ext_resource type="Texture2D" uid="uid://cwbt7itwp145y" path="res://ui/title_screen/credits/elli.png" id="8_qua4x"]
 [ext_resource type="Texture2D" uid="uid://belyptr0vk67i" path="res://ui/title_screen/credits/portrait_imke.png" id="9_hhwne"]
+[ext_resource type="StyleBox" uid="uid://cpvil5s6rhnob" path="res://resources/slidergrabber_style.tres" id="9_qhokr"]
+[ext_resource type="StyleBox" uid="uid://cyluaagqu1afy" path="res://resources/slidergrabberhightlight_style.tres" id="10_8mof7"]
 [ext_resource type="Texture2D" uid="uid://bycqe7ixg0b8h" path="res://ui/title_screen/credits/portrait_anni.png" id="10_objlv"]
 [ext_resource type="Texture2D" uid="uid://dfwjc8om3vtbm" path="res://ui/title_screen/credits/Unbenanntes_Projekt-1.png" id="11_h0jpi"]
 
@@ -106,6 +110,7 @@ offset_left = 1321.0
 offset_top = 446.0
 offset_right = 1761.0
 offset_bottom = 577.0
+theme_override_colors/font_color = Color(0.93555653, 0.8137423, 0.7710418, 1)
 theme_override_fonts/font = ExtResource("2_72buf")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_1djn3")
@@ -119,6 +124,7 @@ offset_left = 1410.0
 offset_top = 594.0
 offset_right = 1853.0
 offset_bottom = 730.0
+theme_override_colors/font_color = Color(0.93555653, 0.8137423, 0.7710418, 1)
 theme_override_fonts/font = ExtResource("2_72buf")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_1djn3")
@@ -132,6 +138,7 @@ offset_left = 1257.0
 offset_top = 741.0
 offset_right = 1700.0
 offset_bottom = 879.0
+theme_override_colors/font_color = Color(0.93555653, 0.8137423, 0.7710418, 1)
 theme_override_fonts/font = ExtResource("2_72buf")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_1djn3")
@@ -145,6 +152,7 @@ offset_left = 1399.0
 offset_top = 891.0
 offset_right = 1842.0
 offset_bottom = 1030.0
+theme_override_colors/font_color = Color(0.93555653, 0.8137423, 0.7710418, 1)
 theme_override_fonts/font = ExtResource("2_72buf")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_1djn3")
@@ -191,10 +199,10 @@ horizontal_alignment = 1
 [node name="OptionsVBox" type="VBoxContainer" parent="Options" unique_id=1356479431]
 layout_mode = 0
 offset_left = 651.0
-offset_top = 364.0
+offset_top = 352.0
 offset_right = 1234.0
-offset_bottom = 625.0
-theme_override_constants/separation = 26
+offset_bottom = 734.0
+theme_override_constants/separation = 14
 
 [node name="MusicSliderLabel" type="Label" parent="Options/OptionsVBox" unique_id=1687499172]
 layout_mode = 2
@@ -205,6 +213,11 @@ text = "Music"
 
 [node name="MusicSlider" type="HSlider" parent="Options/OptionsVBox" unique_id=737446236]
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("7_h0jpi")
+theme_override_icons/grabber_highlight = ExtResource("7_h0jpi")
+theme_override_styles/slider = ExtResource("8_kkgxs")
+theme_override_styles/grabber_area = ExtResource("9_qhokr")
+theme_override_styles/grabber_area_highlight = ExtResource("10_8mof7")
 value = 50.0
 
 [node name="SfxSliderLabel" type="Label" parent="Options/OptionsVBox" unique_id=1330748542]
@@ -216,6 +229,11 @@ text = "sfx"
 
 [node name="SfxSlider" type="HSlider" parent="Options/OptionsVBox" unique_id=421204896]
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("7_h0jpi")
+theme_override_icons/grabber_highlight = ExtResource("7_h0jpi")
+theme_override_styles/slider = ExtResource("8_kkgxs")
+theme_override_styles/grabber_area = ExtResource("9_qhokr")
+theme_override_styles/grabber_area_highlight = ExtResource("10_8mof7")
 value = 50.0
 
 [node name="BackButton" type="Button" parent="Options/OptionsVBox" unique_id=1529389511]

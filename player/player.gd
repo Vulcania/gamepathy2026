@@ -220,6 +220,7 @@ func _on_dialogic_signal(argument: String):
 		is_interacting = true
 	if argument == "exited_dialog":
 		is_interacting = false
+		#how do i make him move again??
 	if argument == "option1_selected":
 		speed_buff_factor += 0.1
 	if argument == "option2_selected":

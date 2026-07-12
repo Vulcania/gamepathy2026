@@ -1,6 +1,4 @@
 [signal arg="entered_dialog"]
-join agatha center
-join Player center
 agatha: Grimmy! It's so good to see you finally decided to show up!
 - Good morning, Agatha! I overslept. But now I'm here...
 	agatha: I was wondering when you were going to clock in today. It's quite late already. But that's alright.
