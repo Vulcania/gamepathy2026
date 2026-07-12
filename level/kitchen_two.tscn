@@ -91,6 +91,7 @@ shape = SubResource("CapsuleShape2D_q6vxl")
 libraries/ = SubResource("AnimationLibrary_qj1uy")
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=791383808]
+process_mode = 3
 stream = ExtResource("11_2pfc2")
 autoplay = true
 bus = &"Music"

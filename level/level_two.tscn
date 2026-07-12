@@ -76,6 +76,7 @@ texture = ExtResource("2_ytbjg")
 shape = SubResource("CapsuleShape2D_f0gof")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door" unique_id=1041293049]
+process_mode = 3
 libraries/ = SubResource("AnimationLibrary_3n8xi")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("2_p6hxi")]

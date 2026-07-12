@@ -1,3 +1,4 @@
+[signal arg="entered_dialog"]
 join agatha center
 join Player center
 agatha: Grimmy! It's so good to see you finally decided to show up!
@@ -26,5 +27,5 @@ agatha: Grimmy! It's so good to see you finally decided to show up!
 agatha: As a newer worker, you should be able to make a good impression!
 agatha: You will be there, right?
 - I'd love to go, but....
-	set {OpeningAgathaEnd} = true
-	do Dialogic.end_timeline()
+	[signal arg="open_buff_selection_1"]
+[signal arg="exited_dialog"]

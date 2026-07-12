@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dlk8ewbf5q5hw" path="res://ui/ui_assets/sense einzeln.png" id="3_ihaig"]
 [ext_resource type="Texture2D" uid="uid://dhofruf3bpe1n" path="res://ui/ui_assets/close pause menu button.png" id="4_c3jo5"]
 [ext_resource type="Texture2D" uid="uid://6atvixy378x5" path="res://ui/ui_assets/close game.png" id="5_c3jo5"]
+[ext_resource type="Texture2D" uid="uid://hr6rvbioiow6" path="res://ui/ui_assets/slider button.png" id="5_f2x4c"]
+[ext_resource type="StyleBox" uid="uid://5geqqm3l2qtc" path="res://resources/slider_style.tres" id="6_j11rl"]
+[ext_resource type="StyleBox" uid="uid://cpvil5s6rhnob" path="res://resources/slidergrabber_style.tres" id="7_j11rl"]
+[ext_resource type="StyleBox" uid="uid://cyluaagqu1afy" path="res://resources/slidergrabberhightlight_style.tres" id="8_j11rl"]
 [ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="8_umsyg"]
 [ext_resource type="FontFile" uid="uid://bpn6t6wv6nq7y" path="res://ui/font/CreatoDisplay-Regular.otf" id="9_b05md"]
 [ext_resource type="Texture2D" uid="uid://dttfvhp7rhes6" path="res://ui/ui_assets/menu tile.png" id="10_f2x4c"]
@@ -73,7 +77,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mnjdh")
 
-[node name="ColorRect" type="TextureRect" parent="." unique_id=393419362]
+[node name="BlackBG" type="ColorRect" parent="." unique_id=831922076]
+modulate = Color(1, 1, 1, 0.7294118)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.6313726)
+
+[node name="PausePanel" type="TextureRect" parent="." unique_id=2055592942]
 layout_mode = 0
 offset_left = -301.0
 offset_top = -61.0
@@ -90,18 +101,18 @@ texture = ExtResource("3_ihaig")
 [node name="PanelSound" type="ColorRect" parent="." unique_id=1384176311]
 layout_mode = 0
 offset_left = 699.0
-offset_top = 633.0
+offset_top = 595.0
 offset_right = 1385.0
-offset_bottom = 854.0
+offset_bottom = 870.90356
 scale = Vector2(0.83, 0.83)
 color = Color(0.46666667, 0.3647059, 0.34901962, 1)
 
 [node name="SoundOptions" type="Control" parent="PanelSound" unique_id=1580034800]
 anchors_preset = 0
-offset_left = 72.0
-offset_top = 42.0
-offset_right = 173.0
-offset_bottom = 124.0
+offset_left = 72.28915
+offset_top = 19.277124
+offset_right = 173.28915
+offset_bottom = 101.27712
 scale = Vector2(1.46, 1.46)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelSound/SoundOptions" unique_id=1632070797]
@@ -122,6 +133,11 @@ horizontal_alignment = 1
 [node name="MusicHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=571521292]
 process_mode = 3
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("5_f2x4c")
+theme_override_icons/grabber_highlight = ExtResource("5_f2x4c")
+theme_override_styles/slider = ExtResource("6_j11rl")
+theme_override_styles/grabber_area = ExtResource("7_j11rl")
+theme_override_styles/grabber_area_highlight = ExtResource("8_j11rl")
 value = 50.0
 
 [node name="sfx" type="Label" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=717492906]
@@ -134,6 +150,11 @@ horizontal_alignment = 1
 
 [node name="sfxHSlider" type="HSlider" parent="PanelSound/SoundOptions/VBoxContainer" unique_id=270981091]
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("5_f2x4c")
+theme_override_icons/grabber_highlight = ExtResource("5_f2x4c")
+theme_override_styles/slider = ExtResource("6_j11rl")
+theme_override_styles/grabber_area = ExtResource("7_j11rl")
+theme_override_styles/grabber_area_highlight = ExtResource("8_j11rl")
 value = 50.0
 
 [node name="ClosePause" type="Button" parent="." unique_id=1412257940]
@@ -273,10 +294,10 @@ text = "Buffs"
 
 [node name="QuitRun" type="Button" parent="." unique_id=2017299980]
 layout_mode = 0
-offset_left = 934.0
-offset_top = 843.0
-offset_right = 1035.8387
-offset_bottom = 893.0
+offset_left = 938.0
+offset_top = 854.0
+offset_right = 1039.8387
+offset_bottom = 904.0
 theme_override_colors/font_color = Color(0.2045947, 0.124900185, 0.103204526, 1)
 theme_override_colors/font_pressed_color = Color(0.9536317, 0.832446, 0.7741755, 1)
 theme_override_colors/font_hover_color = Color(0.6114726, 0.41984028, 0.37133282, 1)

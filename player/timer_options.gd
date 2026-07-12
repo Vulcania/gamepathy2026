@@ -7,9 +7,10 @@ extends Control
 
 
 func _ready() -> void:
-	BuffSelectionOne.option_one.connect(_on_option_3)
+#	BuffSelectionOne.option_one.connect(_on_option_3)
 #	PauseMenu.game_paused.connect(timer_paused)
 #	PauseMenu.game_resumed.connect(timer_unpaused)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func time_left_until_late():
 	var time_left = thetimer.time_left
@@ -29,7 +30,13 @@ func _process(delta):
 #func timer_unpaused():
 #	thetimer.pause = false
 
-func _on_option_3():
-	thetimer.wait_time += 10
-	if not thetimer.is_stopped():
-		thetimer.time_left += 10
+func _on_dialogic_signal(argument: String):
+	if argument == "option3_selected":
+		thetimer.wait_time += 10
+#		if not thetimer.is_stopped():
+#			thetimer.time_left += 10
+
+#func _on_option_3():
+#	thetimer.wait_time += 10
+#	if not thetimer.is_stopped():
+#		thetimer.time_left += 10

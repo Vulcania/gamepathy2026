@@ -59,11 +59,9 @@ signal state_updated(state:State)
 
 func _ready() -> void:
 	hearts_container.set_max_hearts(max_health)
-	BuffSelectionOne.option_one.connect(_on_option_1)
-	BuffSelectionOne.option_one.connect(_on_option_2)
-
-func _on_ready():
-	hit = false
+#	BuffSelectionOne.option_one.connect(_on_option_1)
+#	BuffSelectionOne.option_one.connect(_on_option_2)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _physics_process(delta: float) -> void:
 	move_input = Input.get_axis("move_left", "move_right")
@@ -73,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	is_blocking = Input.is_action_pressed("block")
 	is_jumping = Input.is_action_pressed("jump")
 	is_attacking = Input.is_action_pressed("attack")
-	is_interacting = Input.is_action_pressed("interact")
+	#is_interacting = Input.is_action_pressed("interact")
 	
 	_update_state()
 	flip()
@@ -113,6 +111,8 @@ func _get_state() -> State:
 		if is_blocking:
 			return State.BLOCK
 		return State.JUMP if velocity.y < 0 else State.FALL
+	if is_interacting:
+		return State.INTERACTING
 	if is_jumping:
 		return State.JUMP
 	if is_blocking and is_running and move_input != 0.0 and not current_state == State.DASH and boost_cooldown_left <= 0.0:
@@ -136,8 +136,6 @@ func _get_state() -> State:
 		return State.WALK
 	if is_attacking:
 		return State.ATTACK
-	if is_interacting:
-		return State.INTERACTING
 	return State.IDLE
 
 func _update_animation()->void:
@@ -217,25 +215,21 @@ func _apply_movement(delta:float) -> void:
 func die():
 	animation.play("Dead")
 
-func talking():
-	is_interacting = true
-	can_move = false
-
-func finished_talking():
-	is_interacting = false
-	can_move = true
+func _on_dialogic_signal(argument: String):
+	if argument == "entered_dialog":
+		is_interacting = true
+	if argument == "exited_dialog":
+		is_interacting = false
+	if argument == "option1_selected":
+		speed_buff_factor += 0.1
+	if argument == "option2_selected":
+		max_block_count += 1
+		current_block_count += 1
+	if argument == "":
+		pass
 
 func return_to_foyer():
 	pass
-
-func open_pause():
-	if Input.is_action_pressed("pausemenu"):
-		$HUD/PauseMenu.visible = true
-		pause_menu_open = true
-		$HUD/TimerOptions/Timer.paused = true
-	if not $HUD/PauseMenu.visible:
-		pause_menu_open = false
-		$HUD/TimerOptions/Timer.paused = false
 
 func entered_safe_room():
 	in_safe_room = true
@@ -249,9 +243,9 @@ func start_timer_in_level_one():
 func _on_health_component_health_changed(new_health) -> void:
 	hearts_container.update_hearts(new_health)
 
-func _on_option_1():
+#func _on_option_1():
 	speed_buff_factor += 0.05
 
-func _on_option_2():
+#func _on_option_2():
 	max_block_count += 1
 	current_block_count += 1

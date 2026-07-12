@@ -72,6 +72,7 @@
 [ext_resource type="PackedScene" uid="uid://buvakl6wq0bod" path="res://ui/pause_menu/pause_menu.tscn" id="67_hggc2"]
 [ext_resource type="Script" uid="uid://ciot0edarbaup" path="res://player/timer_options.gd" id="69_7l6ig"]
 [ext_resource type="PackedScene" uid="uid://3mgwi13a1xe1" path="res://ui/hearts_container.tscn" id="70_j3r50"]
+[ext_resource type="LabelSettings" uid="uid://cpcxmlpc60y80" path="res://resources/timer_label_settings.tres" id="72_do7qw"]
 
 [sub_resource type="Animation" id="Animation_rnncm"]
 length = 1.6
@@ -468,14 +469,6 @@ script = ExtResource("67_b2j0d")
 [node name="PauseMenu" parent="HUD" unique_id=700370192 instance=ExtResource("67_hggc2")]
 visible = false
 
-[node name="OpenPause" type="Button" parent="HUD" unique_id=1501449008]
-offset_left = 1745.0
-offset_top = 952.0
-offset_right = 1875.0
-offset_bottom = 1042.0
-text = "press P
-for Pause"
-
 [node name="TimerOptions" type="Control" parent="HUD" unique_id=556560597]
 layout_mode = 3
 anchors_preset = 0
@@ -491,16 +484,21 @@ autostart = true
 
 [node name="TimeLeft" type="Label" parent="HUD/TimerOptions" unique_id=911187428]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 891.0
+offset_top = 13.0
+offset_right = 1033.0
+offset_bottom = 78.0
 text = "00:00"
+label_settings = ExtResource("72_do7qw")
 
 [node name="HeartsContainer" parent="HUD" unique_id=1877649860 instance=ExtResource("70_j3r50")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = 41.0
+offset_top = 28.0
+offset_right = 41.0
+offset_bottom = 28.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -519,6 +517,4 @@ bus = &"Effects"
 bus = &"Effects"
 
 [connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]
-[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_button_pressed"]
-[connection signal="pressed" from="HUD/OpenPause" to="HUD" method="_on_open_pause_pressed"]
 [connection signal="timeout" from="HUD/TimerOptions/Timer" to="HUD/TimerOptions" method="_on_timer_timeout"]

@@ -105,6 +105,7 @@ limit_right = 14200
 limit_bottom = 1150
 
 [node name="musik" type="AudioStreamPlayer" parent="." unique_id=1714583761]
+process_mode = 3
 stream = ExtResource("10_j8omg")
 autoplay = true
 bus = &"Music"

@@ -20,9 +20,9 @@ config/icon="res://icon.svg"
 Global="*uid://c3bu5o1pgdkfk"
 Options="*uid://c6hw1pwomiwrq"
 Dialogic="*uid://ds2q0uclmolvu"
-PauseMenu="*uid://dxhtb0cebwdri"
 BuffSelectionOne="*uid://cmyu6pp3fa0tq"
 BuffSelectionTwo="*uid://dd4axoax3k8fx"
+PauseMenu="*uid://buvakl6wq0bod"
 
 [dialogic]
 

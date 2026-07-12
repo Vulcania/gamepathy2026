@@ -302,7 +302,7 @@ shape = SubResource("CapsuleShape2D_vxcw3")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(395, 697)
+position = Vector2(3212, -1232)
 collision_layer = 1
 collision_mask = 1
 
@@ -325,6 +325,7 @@ position = Vector2(-51, 461.5)
 shape = SubResource("RectangleShape2D_vxcw3")
 
 [node name="musik" type="AudioStreamPlayer" parent="." unique_id=1545390943]
+process_mode = 3
 stream = ExtResource("7_jnkt6")
 autoplay = true
 bus = &"Music"

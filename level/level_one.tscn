@@ -81,6 +81,7 @@ shape = SubResource("CapsuleShape2D_k4voq")
 libraries/ = SubResource("AnimationLibrary_vj0se")
 
 [node name="sehr gute game musik" type="AudioStreamPlayer" parent="." unique_id=290455109]
+process_mode = 3
 stream = ExtResource("9_84ti7")
 autoplay = true
 bus = &"Music"

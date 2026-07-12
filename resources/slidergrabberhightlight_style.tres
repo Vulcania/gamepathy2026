@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://cyluaagqu1afy"]
+
+[ext_resource type="Texture2D" uid="uid://bh0i55copcfuu" path="res://ui/ui_assets/slider.png" id="1_we53t"]
+
+[resource]
+texture = ExtResource("1_we53t")
+expand_margin_top = 11.0
+expand_margin_bottom = 11.0
+modulate_color = Color(0.9151653, 0.8171741, 0.813759, 1)
