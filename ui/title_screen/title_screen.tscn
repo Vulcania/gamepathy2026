@@ -487,7 +487,7 @@ theme_override_font_sizes/font_size = 36
 text = "Programming"
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=411395990]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=734439363]
 stream = ExtResource("6_2er51")
 autoplay = true
 bus = &"Music"
@@ -496,7 +496,7 @@ bus = &"Music"
 [connection signal="pressed" from="Menu/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menu/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Menu/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="value_changed" from="Options/OptionsVBox/MusicSlider" to="Options/OptionsVBox" method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="Options/OptionsVBox/SfxSlider" to="Options/OptionsVBox" method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Options/OptionsVBox/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Options/OptionsVBox/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="Options/OptionsVBox/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Credits/CreditsVBox/BackButton2" to="." method="_on_back_button_pressed"]

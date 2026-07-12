@@ -19,6 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://djseq43ja7gho" path="res://ui/buffs/buff_selection.tscn" id="11_6je0e"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="11_ba8y2"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="13_q4jiv"]
+[ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="20_v7w16"]
+[ext_resource type="Script" uid="uid://dpn2jtif5ykds" path="res://level/onboarding.gd" id="20_ykcbn"]
+[ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="21_ykcbn"]
+[ext_resource type="Texture2D" uid="uid://h415y5w8xomf" path="res://ui/ui_assets/tooltip.png" id="23_i52af"]
+[ext_resource type="FontFile" uid="uid://bpn6t6wv6nq7y" path="res://ui/font/CreatoDisplay-Regular.otf" id="26_exeja"]
+[ext_resource type="LabelSettings" uid="uid://7sbid5o03kgw" path="res://resources/tutorial_label_settings.tres" id="26_i52af"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnkt6"]
 texture = ExtResource("3_l3wt5")
@@ -180,7 +186,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxcw3"]
-radius = 247.0
+radius = 181.0
 height = 734.0
 
 [sub_resource type="Animation" id="Animation_fdjj2"]
@@ -230,6 +236,38 @@ gradient = SubResource("Gradient_6je0e")
 fill = 1
 fill_from = Vector2(0.517094, 0.50427353)
 fill_to = Vector2(0.8247863, 0.16666667)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykcbn"]
+texture = ExtResource("23_i52af")
+expand_margin_left = 40.0
+expand_margin_top = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sbh46"]
+texture = ExtResource("23_i52af")
+expand_margin_left = 40.0
+expand_margin_top = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8hdo"]
+texture = ExtResource("23_i52af")
+expand_margin_left = 40.0
+expand_margin_top = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 14.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_v47dh"]
+font = ExtResource("26_exeja")
+font_size = 15
+font_color = Color(0.92156863, 0.7882353, 0.75686276, 0.6392157)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sbh46"]
+radius = 72.11102
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v47dh"]
+size = Vector2(162, 107)
 
 [node name="SafeRoomOne" type="Node2D" unique_id=829498224]
 script = ExtResource("1_bd1u2")
@@ -301,7 +339,7 @@ texture = ExtResource("5_vxcw3")
 [node name="DoorArea" type="Area2D" parent="Door" unique_id=875189229]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DoorArea" unique_id=1475270101]
-position = Vector2(9, -4)
+position = Vector2(-31, -4)
 shape = SubResource("CapsuleShape2D_vxcw3")
 
 [node name="pressE" type="Label" parent="Door" unique_id=912552184]
@@ -314,7 +352,7 @@ label_settings = ExtResource("13_q4jiv")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(339, 743)
+position = Vector2(320, 835)
 collision_layer = 1
 collision_mask = 1
 
@@ -371,5 +409,158 @@ position = Vector2(2933, 748)
 z_index = 1
 position = Vector2(3700, 504)
 
+[node name="Onboarding" type="Node" parent="." unique_id=182219842]
+process_mode = 3
+script = ExtResource("20_ykcbn")
+
+[node name="TutorialTexts" type="CanvasLayer" parent="Onboarding" unique_id=1638230778]
+
+[node name="Tutorialbox" type="Sprite2D" parent="Onboarding/TutorialTexts" unique_id=1761661186]
+position = Vector2(904, 519)
+scale = Vector2(1.4606744, 1.4606742)
+texture = ExtResource("20_v7w16")
+
+[node name="GotIt" type="Button" parent="Onboarding/TutorialTexts/Tutorialbox" unique_id=1636039928]
+offset_left = -15.061549
+offset_top = 95.84616
+offset_right = 42.93845
+offset_bottom = 126.84615
+theme_override_colors/font_color = Color(0.92044884, 0.7885213, 0.75536156, 1)
+theme_override_colors/font_pressed_color = Color(0.26666668, 0.20784314, 0.19215687, 1)
+theme_override_colors/font_hover_color = Color(0.88235295, 0.69411767, 0.64705884, 1)
+theme_override_fonts/font = ExtResource("21_ykcbn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_ykcbn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sbh46")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p8hdo")
+text = "Got it!"
+
+[node name="tomove" type="Label" parent="Onboarding/TutorialTexts" unique_id=990345742]
+visible = false
+offset_left = 621.0
+offset_top = 402.0
+offset_right = 1241.0
+offset_bottom = 687.0
+text = "Look who decided to come to work today! Hopefully 
+you didn't forget how to do your tasks. 
+Let me give you some reminders:
+
+Use WASD or the arrow key to move.
+You can also jump with SPACE.
+Use RMB to dash.
+"
+label_settings = ExtResource("26_i52af")
+horizontal_alignment = 1
+
+[node name="toattackandblock" type="Label" parent="Onboarding/TutorialTexts" unique_id=399469890]
+visible = false
+offset_left = 572.0
+offset_top = 405.0
+offset_right = 1290.0
+offset_bottom = 435.0
+text = "Due to the apocalypse, several monsters have swarmed the office.
+But that is no problem for us, right?
+
+Simply attack them by holding the LMB.
+You can block any incoming attacks by pressing ALT but be aware
+that your blocking energy is limited. Don't forget to get a cup of
+coffee in the breakroom!"
+label_settings = ExtResource("26_i52af")
+horizontal_alignment = 1
+
+[node name="tointeract" type="Label" parent="Onboarding/TutorialTexts" unique_id=1394097014]
+visible = false
+offset_left = 622.0
+offset_top = 488.0
+offset_right = 1218.0
+offset_bottom = 551.0
+text = "Oh, look! There's one of your nice coworkers! 
+Let's go say hi by pressing E when we're close enough!"
+label_settings = ExtResource("26_i52af")
+horizontal_alignment = 1
+
+[node name="topause" type="Label" parent="Onboarding/TutorialTexts" unique_id=1848867557]
+visible = false
+offset_left = 629.0
+offset_top = 440.0
+offset_right = 1222.0
+offset_bottom = 602.0
+text = "Now that you've excused yourself from a dire situation,
+you can feel the reliev power you up!
+
+Let's check it out in the pause menu!
+Simply press P or ESC to do so!"
+label_settings = ExtResource("26_i52af")
+horizontal_alignment = 1
+
+[node name="timerinnextlevel" type="Label" parent="Onboarding/TutorialTexts" unique_id=1295824293]
+visible = false
+offset_left = 554.0
+offset_top = 411.0
+offset_right = 1311.0
+offset_bottom = 589.0
+text = "We're almost at the door now! From now on, we should start hurrying! 
+How do they say? \"the early bird catches the worm and 
+you're wearing a bird mask!
+A timer will run when you enter the next room. Make sure not to
+waste too much time or the boss will be mad."
+label_settings = ExtResource("26_i52af")
+horizontal_alignment = 1
+
+[node name="timerinnextlevel2" type="Label" parent="Onboarding/TutorialTexts/timerinnextlevel" unique_id=1567692877]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 181.0
+offset_right = 724.0
+offset_bottom = 224.0
+text = "The timer is paused within kitchens as we have made them into little pocket dimensions 
+so our employees don't waste valuable company time <3"
+label_settings = SubResource("LabelSettings_v47dh")
+horizontal_alignment = 1
+
+[node name="Areas" type="Node2D" parent="Onboarding" unique_id=1945138151]
+
+[node name="OBtomove" type="Area2D" parent="Onboarding/Areas" unique_id=1071627096]
+position = Vector2(763, 748)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Onboarding/Areas/OBtomove" unique_id=1224595426]
+position = Vector2(-420, -4)
+shape = SubResource("CircleShape2D_sbh46")
+
+[node name="OBtoattackandblock" type="Area2D" parent="Onboarding/Areas" unique_id=811234543]
+position = Vector2(1792, 684)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Onboarding/Areas/OBtoattackandblock" unique_id=1860531230]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_sbh46")
+
+[node name="OBtointeract" type="Area2D" parent="Onboarding/Areas" unique_id=951431059]
+position = Vector2(4836, -789)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Onboarding/Areas/OBtointeract" unique_id=2099567619]
+position = Vector2(139, 201.5)
+shape = SubResource("RectangleShape2D_v47dh")
+
+[node name="Obtopause" type="Area2D" parent="Onboarding/Areas" unique_id=1042433318]
+position = Vector2(3185, -1274)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Onboarding/Areas/Obtopause" unique_id=17151326]
+position = Vector2(3, 205)
+shape = SubResource("CircleShape2D_sbh46")
+
+[node name="OBtimerinnextlevel" type="Area2D" parent="Onboarding/Areas" unique_id=1492330166]
+position = Vector2(2719, -1256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Onboarding/Areas/OBtimerinnextlevel" unique_id=2113867909]
+position = Vector2(-28, 8)
+shape = SubResource("CircleShape2D_sbh46")
+
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
 [connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]
+[connection signal="pressed" from="Onboarding/TutorialTexts/Tutorialbox/GotIt" to="Onboarding" method="_on_got_it_pressed"]
+[connection signal="area_entered" from="Onboarding/Areas/OBtomove" to="Onboarding" method="_on_o_btomove_area_entered"]
+[connection signal="area_exited" from="Onboarding/Areas/OBtomove" to="Onboarding" method="_on_o_btomove_area_exited"]
+[connection signal="area_entered" from="Onboarding/Areas/OBtoattackandblock" to="Onboarding" method="_on_o_btoattackandblock_area_entered"]
+[connection signal="area_entered" from="Onboarding/Areas/OBtointeract" to="Onboarding" method="_on_o_btointeract_area_entered"]
+[connection signal="area_entered" from="Onboarding/Areas/Obtopause" to="Onboarding" method="_on_obtopause_area_entered"]
+[connection signal="area_entered" from="Onboarding/Areas/OBtimerinnextlevel" to="Onboarding" method="_on_o_btimerinnextlevel_area_entered"]

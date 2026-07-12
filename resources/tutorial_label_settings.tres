@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://7sbid5o03kgw"]
+
+[ext_resource type="FontFile" uid="uid://bpn6t6wv6nq7y" path="res://ui/font/CreatoDisplay-Regular.otf" id="1_nsb00"]
+
+[resource]
+font = ExtResource("1_nsb00")
+font_size = 25
+font_color = Color(0.93555653, 0.8137423, 0.7710418, 1)
