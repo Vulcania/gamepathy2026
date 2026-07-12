@@ -26,4 +26,3 @@ agatha: As a newer worker, you should be able to make a good impression!
 agatha: You will be there, right?
 - I'd love to go, but....
 	[signal arg="open_buff_selection_1"]
-[signal arg="exited_dialog"]

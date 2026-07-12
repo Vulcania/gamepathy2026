@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://culce1lh482eo" path="res://npc/AgathaToad/agatha.gd" id="1_210dv"]
 [ext_resource type="Texture2D" uid="uid://57nuu55loahy" path="res://npc/AgathaToad/frame_01.png" id="1_iv2xl"]
 [ext_resource type="Texture2D" uid="uid://cgmamaxtjdfwo" path="res://npc/AgathaToad/frame_02.png" id="2_210dv"]
+[ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="4_l15y2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iv2xl"]
-radius = 399.05515
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l15y2"]
+radius = 240.0
+height = 690.0
 
 [sub_resource type="Animation" id="Animation_pfbew"]
 resource_name = "agatha_idle"
@@ -40,7 +42,7 @@ visibility_layer = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=790354303]
 light_mask = 3
 visibility_layer = 3
-shape = SubResource("CircleShape2D_iv2xl")
+shape = SubResource("CapsuleShape2D_l15y2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1133501965]
 libraries/ = SubResource("AnimationLibrary_ow6p5")
@@ -53,6 +55,7 @@ offset_top = -152.0
 offset_right = 62.0
 offset_bottom = -129.0
 text = "press E to interact"
+label_settings = ExtResource("4_l15y2")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

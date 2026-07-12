@@ -2,14 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dpgr5m7y01lkl" path="res://npc/JimDreaper/jimdreaper.gd" id="1_worfg"]
 [ext_resource type="Texture2D" uid="uid://bc5c7pv7wndwi" path="res://npc/JimDreaper/frame_03.png" id="1_y6dky"]
+[ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="2_nibwc"]
 [ext_resource type="Texture2D" uid="uid://di310h508e4y0" path="res://npc/JimDreaper/frame_04.png" id="2_worfg"]
 [ext_resource type="Texture2D" uid="uid://ducoyl3krl5nx" path="res://npc/JimDreaper/frame_05.png" id="3_nibwc"]
 [ext_resource type="Texture2D" uid="uid://by2xw0frkiwro" path="res://npc/JimDreaper/frame_06.png" id="4_up0bj"]
 [ext_resource type="Texture2D" uid="uid://dpdbin5cdghi3" path="res://npc/JimDreaper/frame_07.png" id="5_vjfiv"]
 [ext_resource type="Texture2D" uid="uid://da0ac5iawyktc" path="res://npc/JimDreaper/frame_08.png" id="6_ssy11"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_worfg"]
-radius = 228.1403
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nibwc"]
+radius = 167.0
+height = 492.0
 
 [sub_resource type="Animation" id="Animation_lgwdp"]
 resource_name = "jim_idle"
@@ -39,7 +41,7 @@ script = ExtResource("1_worfg")
 [node name="Area2D" type="Area2D" parent="." unique_id=841821658]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1171577396]
-shape = SubResource("CircleShape2D_worfg")
+shape = SubResource("CapsuleShape2D_nibwc")
 
 [node name="pressE" type="Label" parent="." unique_id=756940419]
 z_index = 3
@@ -48,6 +50,7 @@ offset_top = -132.0
 offset_right = 73.0
 offset_bottom = -109.0
 text = "press E to interact"
+label_settings = ExtResource("2_nibwc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=512288185]
 libraries/ = SubResource("AnimationLibrary_ls6ks")

@@ -121,6 +121,10 @@ shape = SubResource("CapsuleShape2D_a3nfk")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door" unique_id=1099255737]
 libraries/ = SubResource("AnimationLibrary_c67a7")
 
+[node name="pressE" type="Label" parent="Door" unique_id=50681314]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("5_4av7d")]
 position = Vector2(358, 689)
 
