@@ -4,7 +4,7 @@
 
 [resource]
 font = ExtResource("1_ktksc")
-font_size = 21
+font_size = 25
 font_color = Color(0.93555653, 0.8137423, 0.7710418, 1)
 outline_size = 2
 outline_color = Color(0.36818454, 0.18582922, 0.0618729, 1)

@@ -42,7 +42,8 @@ directories/dtl_directory={
 "Jim_Option1": "res://dialog/timelines/Jim_Option1.dtl",
 "Jim_Option2": "res://dialog/timelines/Jim_Option2.dtl",
 "Jim_Option3": "res://dialog/timelines/Jim_Option3.dtl",
-"Opening Agatha": "res://dialog/timelines/Opening Agatha.dtl"
+"Opening Agatha": "res://dialog/timelines/Opening Agatha.dtl",
+"enter_kitchen2": "res://dialog/timelines/enter_kitchen2.dtl"
 }
 layout/style_directory={}
 variables={

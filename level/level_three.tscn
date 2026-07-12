@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://8fsnnxewsflr" path="res://level/base_tile_set.tres" id="1_do2xk"]
 [ext_resource type="Script" uid="uid://vcig4yjbvaok" path="res://level/level_three.gd" id="1_x7wke"]
+[ext_resource type="PackedScene" uid="uid://bf52cbt7d6yt8" path="res://level/background.tscn" id="2_2ibb3"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="2_8wfkq"]
 [ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="3_j8omg"]
 [ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="4_ba0s7"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="6_2ibb3"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="7_4s1t8"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="8_odo28"]
+[ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="9_rdl48"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="10_j8omg"]
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="11_ba0s7"]
 
@@ -70,6 +72,8 @@ _data = {
 [node name="LevelThree" type="Node2D" unique_id=2113791590]
 script = ExtResource("1_x7wke")
 
+[node name="Background" parent="." unique_id=792204034 instance=ExtResource("2_2ibb3")]
+
 [node name="TileMap" type="TileMap" parent="." unique_id=2104477129]
 tile_set = ExtResource("1_do2xk")
 format = 2
@@ -94,6 +98,14 @@ shape = SubResource("CapsuleShape2D_do2xk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door" unique_id=1476419747]
 libraries/ = SubResource("AnimationLibrary_2bqh7")
+
+[node name="pressE" type="Label" parent="Door" unique_id=1194129970]
+offset_left = -33.0
+offset_top = -233.0
+offset_right = 26.0
+offset_bottom = -210.0
+text = "press E"
+label_settings = ExtResource("9_rdl48")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("2_8wfkq")]
 position = Vector2(446, 708)
@@ -125,3 +137,4 @@ position = Vector2(10349, -1896)
 position = Vector2(11912, 546)
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]

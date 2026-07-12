@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://dipjd56lggga3" path="res://level/level_one.gd" id="1_6k22j"]
 [ext_resource type="TileSet" uid="uid://8fsnnxewsflr" path="res://level/base_tile_set.tres" id="1_k4voq"]
 [ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="2_ah3ca"]
+[ext_resource type="PackedScene" uid="uid://bf52cbt7d6yt8" path="res://level/background.tscn" id="2_vj0se"]
 [ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="3_bxc86"]
 [ext_resource type="Texture2D" uid="uid://dyj4wscmmr02l" path="res://items/door/door02.png" id="4_6k22j"]
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="5_84ti7"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="6_ekjd4"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="7_7a6hf"]
+[ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="9_35rcf"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="9_84ti7"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="10_ekjd4"]
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="11_7a6hf"]
@@ -54,6 +56,8 @@ _data = {
 [node name="LevelOne" type="Node2D" unique_id=129307988]
 script = ExtResource("1_6k22j")
 
+[node name="Background" parent="." unique_id=792204034 instance=ExtResource("2_vj0se")]
+
 [node name="TileMap" type="TileMap" parent="." unique_id=699910190]
 tile_set = ExtResource("1_k4voq")
 rendering_quadrant_size = 128
@@ -79,6 +83,14 @@ shape = SubResource("CapsuleShape2D_k4voq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door" unique_id=1446577454]
 libraries/ = SubResource("AnimationLibrary_vj0se")
+
+[node name="pressE" type="Label" parent="Door" unique_id=1636332717]
+offset_left = -29.0
+offset_top = -237.0
+offset_right = 30.0
+offset_bottom = -214.0
+text = "press E"
+label_settings = ExtResource("9_35rcf")
 
 [node name="sehr gute game musik" type="AudioStreamPlayer" parent="." unique_id=290455109]
 process_mode = 3
@@ -110,3 +122,4 @@ position = Vector2(2453, 1369)
 position = Vector2(6040, 920)
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]

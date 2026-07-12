@@ -7,7 +7,6 @@ func _ready() -> void:
 
 func _input(event):
 	if is_in_area:
-		$Door/pressE.show()
 		if event.is_action_pressed("interact"):
 			$Door/AnimationPlayer.play("door_opened")
 
