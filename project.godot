@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Neues Spiel"
+config/name="Excuse Me, Sir Death"
 run/main_scene="uid://px7xfu6q40ti"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
