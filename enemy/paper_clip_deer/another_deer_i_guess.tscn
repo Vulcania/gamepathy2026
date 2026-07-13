@@ -180,7 +180,7 @@ height = 214.0
 script = ExtResource("1_ltqy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=9655633]
-texture = ExtResource("13_kq82d")
+texture = ExtResource("2_gih7w")
 
 [node name="Polygon2D" type="CollisionPolygon2D" parent="." unique_id=1065690913]
 polygon = PackedVector2Array(-6, -41, -19, -23, -2, -6, 2, 53, -4, 94, 147, 87, 149, 40, 128, 11, 122, -27, 47, -21, 21, -34)
@@ -219,9 +219,11 @@ collision_mask = 4
 [node name="RayCastPlayer" type="RayCast2D" parent="." unique_id=1859247547]
 target_position = Vector2(-214, -1)
 collision_mask = 2
+collide_with_areas = true
 
 [node name="RayCastPlayerBehind" type="RayCast2D" parent="." unique_id=1522749125]
 target_position = Vector2(401, 0)
 collision_mask = 2
+collide_with_areas = true
 
 [connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]

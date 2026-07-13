@@ -5,7 +5,27 @@ var is_in_door_area = false
 func ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	$Door/pressE.hide()
-	TimerOptions.timer_paused()
+
+func rounds():
+	if Global.round_one:
+		$Enemies/RoundOne.show()
+		$Enemies/RoundTwo.hide()
+		$Enemies/RoundThree.hide()
+		TimerOptions.timer_paused()
+		
+	if Global.round_two:
+		$Enemies/RoundOne.hide()
+		$Enemies/RoundTwo.show()
+		$Enemies/RoundThree.hide()
+		$Onboarding.queue_free()
+		TimerOptions.timer_unpaused()
+		
+	if Global.round_three:
+		$Enemies/RoundOne.hide()
+		$Enemies/RoundTwo.hide()
+		$Enemies/RoundThree.show()
+		$Onboarding.queue_free()
+		TimerOptions.timer_unpaused()
 
 func _input(event):
 	if event.is_action_pressed("interact"):

@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://c1igjfwmbciot"]
+
+[ext_resource type="Script" uid="uid://bjyo3ue2445eg" path="res://ui/buffs/buff_selection_boss.gd" id="1_uc6tl"]
+[ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="2_kjfon"]
+[ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="3_77rxs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h17sf"]
+texture = ExtResource("3_77rxs")
+texture_margin_left = 100.0
+texture_margin_top = 50.0
+texture_margin_right = 100.0
+texture_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybwrj"]
+texture = ExtResource("3_77rxs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twcsm"]
+texture = ExtResource("3_77rxs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lmly5"]
+texture = ExtResource("3_77rxs")
+texture_margin_left = 100.0
+texture_margin_top = 70.0
+texture_margin_right = 100.0
+texture_margin_bottom = 70.0
+modulate_color = Color(0.4871179, 0.6643872, 0.74482286, 1)
+
+[node name="BuffSelectionBoss" type="CanvasLayer" unique_id=323398453]
+script = ExtResource("1_uc6tl")
+
+[node name="Excuse Me" type="Label" parent="." unique_id=1305717303]
+offset_left = 544.0
+offset_top = 85.0
+offset_right = 1396.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0.88235295, 0.69411767, 0.64705884, 1)
+theme_override_fonts/font = ExtResource("2_kjfon")
+theme_override_font_sizes/font_size = 125
+text = "\"Excuse me, but...\""
+
+[node name="Round1" type="VBoxContainer" parent="." unique_id=1251234039]
+offset_left = 488.0
+offset_top = 244.0
+offset_right = 1430.0
+offset_bottom = 1075.0
+theme_override_constants/separation = -12
+
+[node name="Option1" type="Button" parent="Round1" unique_id=1900892457]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+text = "\"I think Jim Dreaper would be more suited for this.\"
+(Speed +10%)"
+
+[node name="Option2" type="Button" parent="Round1" unique_id=1845188903]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+text = "\"I am too busy doing the bare
+minimum to get by, Sir\"
+(Block +1)"
+
+[node name="Option3" type="Button" parent="Round1" unique_id=1126068348]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lmly5")
+text = "\"But I'm already working 24/7...\" 
+(Timer +10 Seconds)"
+
+[node name="Round2" type="VBoxContainer" parent="." unique_id=2071695082]
+visible = false
+offset_left = 488.0
+offset_top = 244.0
+offset_right = 1425.0
+offset_bottom = 1075.0
+theme_override_constants/separation = -12
+
+[node name="Option1" type="Button" parent="Round2" unique_id=402928383]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+text = "\"I do not taste good enough for the
+monster that lives in a shelf, Sir.\"
+(Speed +10%)"
+
+[node name="Option2" type="Button" parent="Round2" unique_id=1115032660]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+text = "\"I think Agatha is way more suited
+for sorting files and being food.\"
+(Block +1)"
+
+[node name="Option3" type="Button" parent="Round2" unique_id=795218139]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9592003, 0.81277174, 0.7457628, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9098039, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.8764468, 0.56798095, 0.42109627, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h17sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybwrj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twcsm")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lmly5")
+text = "\"I don't know what a promotion
+is, Sir. Can you explain it to me?\" 
+(Timer +10 Seconds)"
+
+[connection signal="pressed" from="Round1/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Round1/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="Round1/Option3" to="." method="_on_option_3_pressed"]
+[connection signal="pressed" from="Round2/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Round2/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="Round2/Option3" to="." method="_on_option_3_pressed"]

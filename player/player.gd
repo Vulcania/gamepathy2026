@@ -27,11 +27,13 @@ var can_move = true
 #block
 @export var max_block_count = 3
 @export var current_block_count = 3
+var blocks_list : Array[TextureRect]
 
 # names
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
 @onready var hearts_container = $HUD/HeartsContainer
+@onready var block_container = $HUD/BlocksContainer
 
 # input actions
 var move_input: float = 0.0
@@ -62,6 +64,10 @@ func _ready() -> void:
 #	BuffSelectionOne.option_one.connect(_on_option_1)
 #	BuffSelectionOne.option_one.connect(_on_option_2)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	
+	var blocks_parent = $HUD/BlocksContainer
+	for child in blocks_parent.get_children():
+		blocks_list.append(child)
 
 func _physics_process(delta: float) -> void:
 	move_input = Input.get_axis("move_left", "move_right")
@@ -211,6 +217,15 @@ func _apply_movement(delta:float) -> void:
 			var yeet_direction = Vector2(move_input, -abs(move_input)) * slide_speed_factor
 			print('YEET: %s' % yeet_direction)
 			collider.apply_central_impulse(yeet_direction)
+
+func update_blocks_display():
+	for i in range(blocks_list.size()):
+		blocks_list[i].visible = i < max_block_count
+
+func refill_blocks():
+	if Global.coffee_break:
+		current_block_count = max_block_count
+		print("the blocks are refilled in player")
 
 func die():
 	animation.play("Dead")

@@ -1,0 +1,5 @@
+"Sir Death": You have returned...
+"Sir Death": AND WITH AN BELOW-AVERAGE QUOTA AT THAT! ARE YOU PROUD TO SHOW ME SOMETHING LIKE THIS?!
+"Sir Death": GET OUT AND TRY AGAIN, YOU WORM!
+[signal arg="kicked_out"]
+[signal arg="end_round_two"]

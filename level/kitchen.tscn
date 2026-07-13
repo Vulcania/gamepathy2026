@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="8_27wkt"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="9_tgev6"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="10_5q01i"]
-[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="12_luhl6"]
 [ext_resource type="PackedScene" uid="uid://chqwe0yjmhbef" path="res://ui/buffs/buff_selection_two.tscn" id="13_tgev6"]
+[ext_resource type="AudioStream" uid="uid://chtnk530b2lt0" path="res://sounds/music/kitchen_music.wav" id="14_tgev6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3nfk"]
 radius = 245.0
@@ -138,7 +138,7 @@ limit_bottom = 1150
 
 [node name="game musik" type="AudioStreamPlayer" parent="." unique_id=2048672444]
 process_mode = 3
-stream = ExtResource("12_luhl6")
+stream = ExtResource("14_tgev6")
 autoplay = true
 bus = &"Music"
 

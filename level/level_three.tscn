@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="7_4s1t8"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="8_odo28"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="9_rdl48"]
-[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="10_j8omg"]
+[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="10_j8omg"]
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="11_ba0s7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_do2xk"]

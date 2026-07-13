@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="8_umsyg"]
 [ext_resource type="FontFile" uid="uid://bpn6t6wv6nq7y" path="res://ui/font/CreatoDisplay-Regular.otf" id="9_b05md"]
 [ext_resource type="Texture2D" uid="uid://dttfvhp7rhes6" path="res://ui/ui_assets/menu tile.png" id="10_f2x4c"]
+[ext_resource type="AudioStream" uid="uid://dk3owdo4u462f" path="res://sounds/sfx/button_pressed.wav" id="14_pu65w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uraes"]
 texture = ExtResource("4_c3jo5")
@@ -370,6 +371,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_wdlyj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tfo3w")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8cp71")
 text = "No, I want to stay"
+
+[node name="ButtonPressSound" type="AudioStreamPlayer2D" parent="." unique_id=1164916163]
+stream = ExtResource("14_pu65w")
+bus = &"Effects"
 
 [connection signal="value_changed" from="PanelSound/SoundOptions/VBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
 [connection signal="value_changed" from="PanelSound/SoundOptions/VBoxContainer/sfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]

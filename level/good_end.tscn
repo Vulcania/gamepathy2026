@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c4nvbqpqlmeds"]
+
+[ext_resource type="Script" uid="uid://dvokoadmwgytf" path="res://level/good_end.gd" id="1_pfgjh"]
+
+[node name="GoodEnd" type="Node2D" unique_id=1650353504]
+script = ExtResource("1_pfgjh")
+
+[node name="ReturnToMenu" type="Button" parent="." unique_id=1742107797]
+offset_left = 707.0
+offset_top = 877.0
+offset_right = 1159.0
+offset_bottom = 963.0
+theme_override_font_sizes/font_size = 57
+text = "Return To Menu"
+
+[node name="Label" type="Label" parent="." unique_id=302738596]
+offset_left = 629.0
+offset_top = 370.0
+offset_right = 1259.0
+offset_bottom = 580.0
+theme_override_font_sizes/font_size = 130
+text = "Good job!"
+
+[connection signal="pressed" from="ReturnToMenu" to="." method="_on_return_to_menu_pressed"]

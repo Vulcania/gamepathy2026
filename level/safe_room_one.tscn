@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c7dj1tpwvei3x" path="res://items/monitor/item_monitor-01.png" id="6_ba8y2"]
 [ext_resource type="Texture2D" uid="uid://4ey8h3qo47gy" path="res://items/monitor/item_monitor-02.png" id="7_6je0e"]
 [ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="7_eefxu"]
-[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="7_jnkt6"]
+[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="7_jnkt6"]
 [ext_resource type="Texture2D" uid="uid://dyj4wscmmr02l" path="res://items/door/door02.png" id="8_xegi8"]
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="9_dsajg"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="10_gor4a"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://h415y5w8xomf" path="res://ui/ui_assets/tooltip.png" id="23_i52af"]
 [ext_resource type="FontFile" uid="uid://bpn6t6wv6nq7y" path="res://ui/font/CreatoDisplay-Regular.otf" id="26_exeja"]
 [ext_resource type="LabelSettings" uid="uid://7sbid5o03kgw" path="res://resources/tutorial_label_settings.tres" id="26_i52af"]
+[ext_resource type="AudioStream" uid="uid://dk3owdo4u462f" path="res://sounds/sfx/button_pressed.wav" id="27_v47dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnkt6"]
 texture = ExtResource("3_l3wt5")
@@ -324,14 +325,14 @@ rotation = -1.5707964
 scale = Vector2(0.41040462, 0.8333333)
 texture = ExtResource("5_gor4a")
 
-[node name="CoffeeMaker" parent="Agatha" unique_id=1907298632 instance=ExtResource("6_6je0e")]
-position = Vector2(191, -9)
-
 [node name="monitor" type="AnimatedSprite2D" parent="Agatha" unique_id=1436178165]
 position = Vector2(-88, -7)
 sprite_frames = SubResource("SpriteFrames_m7wlf")
 autoplay = "default"
 frame_progress = 0.3454733
+
+[node name="CoffeeMaker" parent="." unique_id=1907298632 instance=ExtResource("6_6je0e")]
+position = Vector2(4356, -1091)
 
 [node name="Door" type="Sprite2D" parent="." unique_id=467976559]
 position = Vector2(2426, -1386)
@@ -353,7 +354,7 @@ label_settings = ExtResource("13_q4jiv")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(320, 835)
+position = Vector2(2285, 293)
 collision_layer = 1
 collision_mask = 1
 
@@ -402,13 +403,19 @@ texture = SubResource("GradientTexture2D_m7wlf")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=286173373]
 
-[node name="PaperClipDeer" parent="Enemies" unique_id=1517736822 instance=ExtResource("4_ccrhc")]
+[node name="RoundOne" type="Node2D" parent="Enemies" unique_id=1538980593]
+
+[node name="PaperClipDeer" parent="Enemies/RoundOne" unique_id=1517736822 instance=ExtResource("4_ccrhc")]
 z_index = 1
 position = Vector2(2933, 748)
 
-[node name="PaperClipDeer2" parent="Enemies" unique_id=823125165 instance=ExtResource("4_ccrhc")]
+[node name="PaperClipDeer2" parent="Enemies/RoundOne" unique_id=823125165 instance=ExtResource("4_ccrhc")]
 z_index = 1
-position = Vector2(3700, 504)
+position = Vector2(4380, 748)
+
+[node name="RoundTwo" type="Node2D" parent="Enemies" unique_id=1992174846]
+
+[node name="RoundThree" type="Node2D" parent="Enemies" unique_id=1785268295]
 
 [node name="Onboarding" type="Node" parent="." unique_id=182219842]
 process_mode = 3
@@ -555,6 +562,10 @@ position = Vector2(2719, -1256)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Onboarding/Areas/OBtimerinnextlevel" unique_id=2113867909]
 position = Vector2(-28, 8)
 shape = SubResource("CircleShape2D_sbh46")
+
+[node name="ButtonPressSound" type="AudioStreamPlayer2D" parent="Onboarding" unique_id=1467375440]
+stream = ExtResource("27_v47dh")
+bus = &"Effects"
 
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
 [connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]

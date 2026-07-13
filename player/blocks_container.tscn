@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cmifa1p6oqh71"]
+
+[ext_resource type="Script" uid="uid://dvwj6heajfhmi" path="res://player/blocks_container.gd" id="1_105rq"]
+
+[node name="BlocksContainer" type="HBoxContainer" unique_id=263776662]
+offset_left = 33.0
+offset_top = 29.0
+offset_right = 119.0
+offset_bottom = 98.0
+script = ExtResource("1_105rq")

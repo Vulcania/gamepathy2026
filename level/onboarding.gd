@@ -9,8 +9,6 @@ func _ready() -> void:
 	$TutorialTexts/topause.hide()
 	$TutorialTexts/timerinnextlevel.hide()
 
-
-
 func _on_o_btomove_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		$TutorialTexts/Tutorialbox.show()
@@ -43,6 +41,7 @@ func _on_o_btimerinnextlevel_area_entered(area: Area2D) -> void:
 
 
 func _on_got_it_pressed() -> void:
+	$ButtonPressSound.play()
 	get_tree().paused = false
 	$TutorialTexts/Tutorialbox.hide()
 	$TutorialTexts/tomove.hide()

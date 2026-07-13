@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 100.0
 @export var current_speed = 0.0
 
-var idle_speed = 0
+var idle_speed = 2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var facing_right = false
@@ -70,7 +70,6 @@ func _update_behaviour(new_state: State) -> void:
 		
 		State.DYING:
 			velocity.x = idle_speed
-			# Timer to let animation play
 			state_changed.emit(State.DEAD)
 	
 func _update_animation(new_state: State):
@@ -93,9 +92,6 @@ func _update_animation(new_state: State):
 		State.DYING:
 			speed = 0
 			animation.play("Dead")
-			# TODO timer
-			# queue_free()
-			# das queue_free und der timer( also die zeit wegzugehen, wenn animation zuende ist) sind im AnimationPlayer
 
 func take_damage(damage_amount):
 	state_changed.emit(State.HIT)

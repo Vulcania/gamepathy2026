@@ -10,6 +10,8 @@ var facing_right = false
 
 var dead = false
 
+var player : Player
+
 var max_health = 2
 var health 
 var hit = false 
@@ -18,6 +20,7 @@ var can_attack = true
 @onready var detect_edge = $RayCastEdges
 @onready var detect_wall = $RayCastWalls
 @onready var detect_player = $RayCastPlayer
+@onready var detect_player_behind = $RayCastPlayerBehind
 @onready var animation = $AnimationPlayer
 
 func _ready():
@@ -33,8 +36,10 @@ func _physics_process(delta):
 	if detect_wall.is_colliding():
 		flip()
 	
-	if detect_player.get_collider().name == "Player":
+	if detect_player.get_collider() is Player:
 		attack()
+	if detect_player_behind.get_collider() is Player:
+		flip()
 	
 	velocity.x = speed 
 	move_and_slide()
@@ -50,7 +55,7 @@ func flip():
 		speed = abs(speed) * -1
 
 func attack():
-	animation.play()
+	animation.play("Attack")
 
 func _on_attack_area_area_entered(area):
 	if area.get_parent() is Player && !dead && can_attack:

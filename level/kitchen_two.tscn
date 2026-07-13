@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="7_1io5q"]
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="8_omw66"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="9_4i32y"]
-[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="11_2pfc2"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="11_omw66"]
 [ext_resource type="TileSet" uid="uid://bvwbx8wttd2r1" path="res://level/kitchen_minus_x.tres" id="12_1io5q"]
+[ext_resource type="AudioStream" uid="uid://chtnk530b2lt0" path="res://sounds/music/kitchen_music.wav" id="12_omw66"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6vxl"]
 radius = 216.0
@@ -117,7 +117,7 @@ label_settings = ExtResource("11_omw66")
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=791383808]
 process_mode = 3
-stream = ExtResource("11_2pfc2")
+stream = ExtResource("12_omw66")
 autoplay = true
 bus = &"Music"
 

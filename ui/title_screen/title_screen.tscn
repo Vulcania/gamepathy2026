@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="2_72buf"]
 [ext_resource type="Texture2D" uid="uid://bc4p53er7q3xa" path="res://ui/title_screen/title.png" id="3_ca08b"]
 [ext_resource type="Texture2D" uid="uid://dttfvhp7rhes6" path="res://ui/ui_assets/menu tile.png" id="5_2er51"]
-[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://ui/mittelguter game song.mp3" id="6_2er51"]
+[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="6_2er51"]
 [ext_resource type="Texture2D" uid="uid://coiefrw5780b8" path="res://ui/ui_assets/pausenscreen.png" id="6_533ah"]
 [ext_resource type="Texture2D" uid="uid://bdx82784d5yid" path="res://ui/title_screen/credits/crow.png" id="6_c8lgs"]
 [ext_resource type="Texture2D" uid="uid://j8p31dcryge1" path="res://ui/title_screen/credits/image.png" id="7_533ah"]
@@ -17,6 +17,7 @@
 [ext_resource type="StyleBox" uid="uid://cyluaagqu1afy" path="res://resources/slidergrabberhightlight_style.tres" id="10_8mof7"]
 [ext_resource type="Texture2D" uid="uid://bycqe7ixg0b8h" path="res://ui/title_screen/credits/portrait_anni.png" id="10_objlv"]
 [ext_resource type="Texture2D" uid="uid://dfwjc8om3vtbm" path="res://ui/title_screen/credits/Unbenanntes_Projekt-1.png" id="11_h0jpi"]
+[ext_resource type="AudioStream" uid="uid://dk3owdo4u462f" path="res://sounds/sfx/button_pressed.wav" id="18_kkgxs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1djn3"]
 texture = ExtResource("5_2er51")
@@ -491,6 +492,11 @@ horizontal_alignment = 1
 stream = ExtResource("6_2er51")
 autoplay = true
 bus = &"Music"
+
+[node name="ButtonPressSound" type="AudioStreamPlayer2D" parent="." unique_id=230107447]
+process_mode = 3
+stream = ExtResource("18_kkgxs")
+bus = &"Effects"
 
 [connection signal="pressed" from="Menu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu/OptionsButton" to="." method="_on_options_button_pressed"]

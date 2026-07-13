@@ -1,0 +1,19 @@
+Player: Um, excuse me....
+"Sir Death": You're finally here, Grimmy.
+"Sir Death": I called you here to talk about your soul quota.
+"Sir Death": What do you think?
+"Sir Death": Were you any good?
+- Uh.... yes?
+	"Sir Death": "Yes", you say?
+- I don't know....
+	"Sir Death": You don't know, huh?
+	"Sir Death": You seem scared, Grimmy.
+	You don't have to be.
+- ....
+	"Sir Death": No answer?
+	"Sir Death": It's not polite not to answer your bosses questions, Grimmy.
+	"Sir Death": There is no reason to be scared.
+"Sir Death": Well, you're right. You did suprisingly well.
+"Sir Death": You should work more hours so we can squeeze more numbers out of your tiny vessel.
+[signal arg="first_boss_buffs"]
+[signal arg="open_boss_buffs"]

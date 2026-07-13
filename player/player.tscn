@@ -71,6 +71,7 @@
 [ext_resource type="Script" uid="uid://bgyk0ydx1rk7p" path="res://scripts/attack_box.gd" id="67_do7qw"]
 [ext_resource type="PackedScene" uid="uid://buvakl6wq0bod" path="res://ui/pause_menu/pause_menu.tscn" id="67_hggc2"]
 [ext_resource type="PackedScene" uid="uid://3mgwi13a1xe1" path="res://ui/hearts_container.tscn" id="70_j3r50"]
+[ext_resource type="PackedScene" uid="uid://cmifa1p6oqh71" path="res://player/blocks_container.tscn" id="72_do7qw"]
 
 [sub_resource type="Animation" id="Animation_rnncm"]
 length = 1.6
@@ -407,7 +408,7 @@ radius = 90.0
 height = 290.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8pxes"]
-radius = 205.00244
+radius = 94.641426
 
 [node name="Player" type="CharacterBody2D" unique_id=1980571954]
 collision_layer = 2
@@ -477,6 +478,8 @@ offset_right = 41.0
 offset_bottom = 28.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="BlocksContainer" parent="HUD" unique_id=263776662 instance=ExtResource("72_do7qw")]
 
 [node name="Sounds" type="Node" parent="." unique_id=1379984318]
 

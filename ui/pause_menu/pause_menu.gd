@@ -22,6 +22,8 @@ func _ready() -> void:
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("pausemenu"):
+		$ButtonPressSound.play()
+		
 		if get_tree().paused:
 			hide()
 			get_tree().paused = false
@@ -36,16 +38,20 @@ func _on_sfx_h_slider_value_changed(value: float) -> void:
 	Options.change_sfx_volume(value)
 
 func _on_close_pause_pressed() -> void:
+	$ButtonPressSound.play()
 	hide()
 	get_tree().paused = false
 
 func _on_quit_run_pressed() -> void:
+	$ButtonPressSound.play()
 	quit.visible = true
 
 func _on_yes_pressed() -> void:
+	$ButtonPressSound.play()
 	get_tree().change_scene_to_file("res://ui/title_screen/title_screen.tscn")
 
 func _on_no_pressed() -> void:
+	$ButtonPressSound.play()
 	quit.visible = false
 
 
