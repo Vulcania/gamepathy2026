@@ -5,6 +5,7 @@ var is_in_door_area = false
 func ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	$Door/pressE.hide()
+	TimerOptions.timer_paused()
 
 func _input(event):
 	if event.is_action_pressed("interact"):

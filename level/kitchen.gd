@@ -4,6 +4,7 @@ var is_in_area = false
 
 func _ready() -> void:
 	$Door/pressE.hide()
+	TimerOptions.timer_paused()
 
 func _input(event):
 	if is_in_area:

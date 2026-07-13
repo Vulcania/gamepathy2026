@@ -1,10 +1,7 @@
-extends Control
-
+extends CanvasLayer
 
 @onready var timelabel = $TimeLeft
 @onready var thetimer = $Timer
-#@onready var pausemenu = preload("res://ui/pause_menu/pause_menu.gd")
-
 
 func _ready() -> void:
 #	BuffSelectionOne.option_one.connect(_on_option_3)
@@ -24,11 +21,11 @@ func _on_timer_timeout() -> void:
 func _process(delta):
 	timelabel.text = "%02d:%02d" % time_left_until_late()
 
-#func timer_paused():
-#	thetimer.pause = true
+func timer_paused():
+	thetimer.paused = true
 
-#func timer_unpaused():
-#	thetimer.pause = false
+func timer_unpaused():
+	thetimer.paused = false
 
 func _on_dialogic_signal(argument: String):
 	if argument == "option3_selected":

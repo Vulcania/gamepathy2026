@@ -5,6 +5,7 @@ var is_in_area = false
 func _ready() -> void:
 	Dialogic.start("res://dialog/timelines/enter_kitchen2.dtl")
 	$Door/pressE.hide()
+	TimerOptions.timer_paused()
 
 func _input(event):
 	if event.is_action_pressed("interact"):

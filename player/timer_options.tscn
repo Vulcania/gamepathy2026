@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b64goye1ug3tj"]
+
+[ext_resource type="Script" uid="uid://ciot0edarbaup" path="res://player/timer_options.gd" id="1_ey4lb"]
+[ext_resource type="LabelSettings" uid="uid://cpcxmlpc60y80" path="res://resources/timer_label_settings.tres" id="2_j66qo"]
+
+[node name="TimerOptions" type="CanvasLayer" unique_id=798620838]
+script = ExtResource("1_ey4lb")
+
+[node name="Timer" type="Timer" parent="." unique_id=264054541]
+process_mode = 1
+wait_time = 300.0
+one_shot = true
+autostart = true
+
+[node name="TimeLeft" type="Label" parent="." unique_id=1825578362]
+offset_left = 891.0
+offset_top = 13.0
+offset_right = 1033.0
+offset_bottom = 78.0
+text = "00:00"
+label_settings = ExtResource("2_j66qo")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -220,7 +220,6 @@ func _on_dialogic_signal(argument: String):
 		is_interacting = true
 	if argument == "exited_dialog":
 		is_interacting = false
-		#how do i make him move again??
 	if argument == "option1_selected":
 		speed_buff_factor += 0.1
 	if argument == "option2_selected":
@@ -232,9 +231,9 @@ func _on_dialogic_signal(argument: String):
 func return_to_foyer():
 	pass
 
-func entered_safe_room():
-	in_safe_room = true
-	$HUD/TimerOptions/Timer.paused = true
+#func entered_safe_room():
+#	in_safe_room = true
+#	$HUD/TimerOptions/Timer.paused = true
 
 func start_timer_in_level_one():
 	if not in_safe_room:
