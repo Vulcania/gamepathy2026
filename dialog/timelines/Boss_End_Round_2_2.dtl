@@ -5,4 +5,5 @@
 "Sir Death": Oh well. Doesn't matter.
 "Sir Death": Go back to work, Grimmy.
 [signal arg="end_round_two"]
+[signal arg="option2_selected"]
 [signal arg="kicked_out2"]

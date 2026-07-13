@@ -1,4 +1,5 @@
 "Sir Death": What a coincidence! So am I.
 "Sir Death": Now go and keep doing what you do. Bring me more good numbers.
 [signal arg="end_round_one"]
+[signal arg="option2_selected"]
 [signal arg="kicked_out"]

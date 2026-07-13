@@ -2,4 +2,5 @@
 "Sir Death": Don't be silly. Just create a time pocket like the one in the kitchen.
 "Sir Death": Now go back to work.
 [signal arg="end_round_one"]
+[signal arg="option3_selected"]
 [signal arg="kicked_out"]

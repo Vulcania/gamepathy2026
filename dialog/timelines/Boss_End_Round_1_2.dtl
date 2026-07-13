@@ -3,4 +3,5 @@
 "Sir Death": Time is money and although time doesn't exist in this office, you shouldn't waste it.
 "Sir Death": Now back to work.
 [signal arg="end_round_two"]
+[signal arg="option1_selected"]
 [signal arg="kicked_out2"]

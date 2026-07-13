@@ -354,7 +354,7 @@ label_settings = ExtResource("13_q4jiv")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(2285, 293)
+position = Vector2(351, 789)
 collision_layer = 1
 collision_mask = 1
 

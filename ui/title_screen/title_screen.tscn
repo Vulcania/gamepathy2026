@@ -348,7 +348,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
 theme_override_fonts/font = ExtResource("2_72buf")
 theme_override_font_sizes/font_size = 36
-text = "Programming"
+text = "Programming
+Writing"
 horizontal_alignment = 1
 
 [node name="kimi" type="VBoxContainer" parent="Credits/Portraits" unique_id=37047531]

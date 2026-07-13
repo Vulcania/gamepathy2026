@@ -40,6 +40,13 @@ func timer_paused():
 func timer_unpaused():
 	thetimer.paused = false
 
+func timer_deactivated():
+	thetimer.paused = true
+	hide()
+
+func timer_activated():
+	show()
+
 func _on_dialogic_signal(argument: String):
 	if argument == "option3_selected":
 		thetimer.wait_time += 10

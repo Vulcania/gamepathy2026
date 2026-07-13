@@ -7,6 +7,7 @@ extends Control
 @onready var sfx_slider: HSlider = $Options/OptionsVBox/SfxSlider
 
 func _ready() -> void:
+	TimerOptions.timer_deactivated()
 	menu_vbox.visible = true
 	options_vbox.visible = false
 	credits_vbox.visible = false

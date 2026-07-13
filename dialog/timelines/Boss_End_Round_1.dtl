@@ -2,4 +2,5 @@
 "Sir Death": And don't be ungrateful for the work we do.
 "Sir Death": Now stop wasting valuable company time and return to work!
 [signal arg="end_round_one"]
+[signal arg="option1_selected"]
 [signal arg="kicked_out"]

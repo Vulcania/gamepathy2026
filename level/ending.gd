@@ -42,3 +42,6 @@ func _on_dialogic_signal(argument: String):
 		if argument == "bad_ending":
 			get_tree().change_scene_to_file("res://ui/title_screen/title_screen.tscn")
 		Global.restart_game()
+
+func new_round():
+	get_tree().change_scene_to_file("res://level/safe_room_one.tscn")
