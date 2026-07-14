@@ -262,7 +262,7 @@ layout_mode = 0
 offset_left = -3.0
 offset_right = 1917.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.5294118)
+color = Color(0, 0, 0, 0.68235296)
 
 [node name="CreditsVBox" type="VBoxContainer" parent="Credits" unique_id=1127990577]
 layout_mode = 1
@@ -271,13 +271,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 782.0
-offset_top = 791.0
-offset_right = 1151.0
-offset_bottom = 1004.0
+offset_left = 774.0
+offset_top = 746.0
+offset_right = 1159.0
+offset_bottom = 1064.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 33
+theme_override_constants/separation = 17
 
 [node name="ThxForPlayingLabel" type="Label" parent="Credits/CreditsVBox" unique_id=99909993]
 layout_mode = 2
@@ -292,7 +292,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
 theme_override_fonts/font = ExtResource("2_72buf")
 theme_override_font_sizes/font_size = 24
-text = "Special Thanks to
+text = "Special Thanks to:
 - GamePathy
 - Gamescom
 - Marion & Benni"
@@ -321,15 +321,17 @@ text = "Back"
 
 [node name="Portraits" type="Control" parent="Credits" unique_id=477496049]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 2.0
+offset_top = -27.0
+offset_right = 42.0
+offset_bottom = 13.0
 
 [node name="crow" type="VBoxContainer" parent="Credits/Portraits" unique_id=1982377975]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 379.0
-offset_right = 276.0
-offset_bottom = 816.0
+offset_left = 344.0
+offset_top = 112.0
+offset_right = 574.0
+offset_bottom = 590.0
 
 [node name="picture" type="TextureRect" parent="Credits/Portraits/crow" unique_id=1513477366]
 layout_mode = 2
@@ -354,9 +356,9 @@ horizontal_alignment = 1
 
 [node name="kimi" type="VBoxContainer" parent="Credits/Portraits" unique_id=37047531]
 layout_mode = 0
-offset_left = 337.0
+offset_left = 976.0
 offset_top = 114.0
-offset_right = 567.0
+offset_right = 1206.0
 offset_bottom = 551.0
 
 [node name="picture" type="TextureRect" parent="Credits/Portraits/kimi" unique_id=2100309072]
@@ -381,10 +383,10 @@ horizontal_alignment = 1
 
 [node name="elli" type="VBoxContainer" parent="Credits/Portraits" unique_id=1506923996]
 layout_mode = 0
-offset_left = 976.0
-offset_top = 117.0
-offset_right = 1206.0
-offset_bottom = 595.0
+offset_left = 52.0
+offset_top = 306.0
+offset_right = 282.0
+offset_bottom = 825.0
 
 [node name="picture" type="TextureRect" parent="Credits/Portraits/elli" unique_id=1958504789]
 layout_mode = 2
@@ -410,10 +412,10 @@ horizontal_alignment = 1
 
 [node name="imke" type="VBoxContainer" parent="Credits/Portraits" unique_id=177388638]
 layout_mode = 0
-offset_left = 659.0
-offset_top = 307.0
-offset_right = 889.0
-offset_bottom = 744.0
+offset_left = 1598.0
+offset_top = 122.0
+offset_right = 1828.0
+offset_bottom = 559.0
 
 [node name="picture" type="TextureRect" parent="Credits/Portraits/imke" unique_id=1267542939]
 layout_mode = 2
@@ -437,10 +439,10 @@ horizontal_alignment = 1
 
 [node name="änni" type="VBoxContainer" parent="Credits/Portraits" unique_id=1259212357]
 layout_mode = 0
-offset_left = 1272.0
-offset_top = 351.0
-offset_right = 1535.0
-offset_bottom = 815.0
+offset_left = 637.0
+offset_top = 289.0
+offset_right = 900.0
+offset_bottom = 753.0
 
 [node name="picture" type="TextureRect" parent="Credits/Portraits/änni" unique_id=674025253]
 layout_mode = 2
@@ -464,10 +466,10 @@ horizontal_alignment = 1
 
 [node name="niki" type="VBoxContainer" parent="Credits/Portraits" unique_id=299855353]
 layout_mode = 0
-offset_left = 1592.0
-offset_top = 140.0
-offset_right = 1822.0
-offset_bottom = 577.0
+offset_left = 1296.0
+offset_top = 315.0
+offset_right = 1526.0
+offset_bottom = 752.0
 
 [node name="picture" type="TextureRect" parent="Credits/Portraits/niki" unique_id=1968729185]
 layout_mode = 2
