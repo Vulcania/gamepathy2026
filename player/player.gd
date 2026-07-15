@@ -12,8 +12,8 @@ var can_move = true
 @export var base_speed: float = 300.0
 @export var run_speed_factor: float = 1.67
 @export var speed_buff_factor: float = 1
-@export var jump_height = -750
-@export var gravity = 1100
+@export var jump_height = -1150
+@export var gravity = 1300
 @export var acceleration: float = 20.0
 @export var friction: float = 50.0
 

@@ -100,6 +100,7 @@ bus = &"Music"
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("10_ekjd4")]
 position = Vector2(895, 734)
+jump_height = -1150
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1996065375]
 limit_left = 0

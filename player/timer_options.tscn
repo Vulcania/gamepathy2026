@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ciot0edarbaup" path="res://player/timer_options.gd" id="1_ey4lb"]
 [ext_resource type="LabelSettings" uid="uid://cpcxmlpc60y80" path="res://resources/timer_label_settings.tres" id="2_j66qo"]
+[ext_resource type="Texture2D" uid="uid://hr6rvbioiow6" path="res://ui/ui_assets/slider button.png" id="3_j66qo"]
 
 [node name="TimerOptions" type="CanvasLayer" unique_id=798620838]
 script = ExtResource("1_ey4lb")
@@ -19,5 +20,9 @@ offset_right = 1033.0
 offset_bottom = 78.0
 text = "00:00"
 label_settings = ExtResource("2_j66qo")
+
+[node name="SliderButton" type="Sprite2D" parent="." unique_id=1946332433]
+position = Vector2(866, 46)
+texture = ExtResource("3_j66qo")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
