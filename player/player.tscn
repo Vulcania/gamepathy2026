@@ -127,6 +127,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("18_or4qq"), ExtResource("19_hggc2"), ExtResource("20_b2j0d")]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"blocking"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_lufic"]
 length = 0.5

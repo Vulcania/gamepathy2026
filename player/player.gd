@@ -28,6 +28,7 @@ var can_move = true
 @export var max_block_count = 3
 @export var current_block_count = 3
 var blocks_list : Array[TextureRect]
+var coffee_refilling = false
 
 # names
 @onready var animation = $AnimationPlayer
@@ -60,10 +61,11 @@ var hit = false
 signal state_updated(state:State)
 
 func _ready() -> void:
-	hearts_container.set_max_hearts(max_health)
+#	hearts_container.set_max_hearts(max_health)
 #	BuffSelectionOne.option_one.connect(_on_option_1)
 #	BuffSelectionOne.option_one.connect(_on_option_2)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	CoffeeMaker.refill_coffee.connect(refill_blocks)
 	
 	var blocks_parent = $HUD/BlocksContainer
 	for child in blocks_parent.get_children():
@@ -222,6 +224,11 @@ func update_blocks_display():
 	for i in range(blocks_list.size()):
 		blocks_list[i].visible = i < max_block_count
 
+func blocking():
+	if is_blocking:
+		current_block_count -= 1
+	print(current_block_count)
+
 func refill_blocks():
 	if Global.coffee_break:
 		current_block_count = max_block_count
@@ -245,10 +252,6 @@ func _on_dialogic_signal(argument: String):
 
 func return_to_foyer():
 	pass
-
-#func entered_safe_room():
-#	in_safe_room = true
-#	$HUD/TimerOptions/Timer.paused = true
 
 func start_timer_in_level_one():
 	if not in_safe_room:
