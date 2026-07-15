@@ -117,7 +117,8 @@ func _get_state() -> State:
 		return State.DASH
 	if not is_on_floor():
 		if is_blocking:
-			return State.BLOCK
+			if current_block_count > 0:
+				return State.BLOCK
 		return State.JUMP if velocity.y < 0 else State.FALL
 	if is_interacting:
 		return State.INTERACTING
@@ -230,7 +231,7 @@ func blocking():
 	print(current_block_count)
 
 func refill_blocks():
-	if Global.coffee_break:
+	if Global.coffee_break and CoffeeMaker.player_drank_coffee:
 		current_block_count = max_block_count
 		print("the blocks are refilled in player")
 
