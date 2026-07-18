@@ -22,11 +22,11 @@ func restart_game():
 
 func blocks_refilled():
 	coffee_break = true
-#	coffee_break = !coffee_break
+	coffee_break = !coffee_break
 	print("coffee_break")
 
 func enemy_counter_lvl_one():
-	max_enemies_in_lvl = 5
+	max_enemies_in_lvl = 2
 	defeated_enemies = 0
 
 func enemy_counter_lvl_two():

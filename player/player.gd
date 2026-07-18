@@ -12,8 +12,8 @@ var can_move = true
 @export var base_speed: float = 300.0
 @export var run_speed_factor: float = 1.67
 @export var speed_buff_factor: float = 1
-@export var jump_height = -1150
-@export var gravity = 1300
+@export var jump_height = -1350
+@export var gravity = 1200
 @export var acceleration: float = 20.0
 @export var friction: float = 50.0
 
@@ -231,8 +231,12 @@ func blocking():
 	print(current_block_count)
 
 func refill_blocks():
-	if Global.coffee_break and CoffeeMaker.player_drank_coffee:
+	if Global.coffee_break:
 		current_block_count = max_block_count
+		print("the blocks are refilled in player globally")
+	if CoffeeMaker.player_drank_coffee:
+		current_block_count = max_block_count
+		print(current_block_count)
 		print("the blocks are refilled in player")
 
 func die():

@@ -45,6 +45,7 @@ func timer_deactivated():
 	hide()
 
 func timer_activated():
+	thetimer.paused = true
 	show()
 
 func _on_dialogic_signal(argument: String):

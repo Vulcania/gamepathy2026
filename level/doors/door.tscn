@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bs6f66jl0mw14"]
+
+[ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="1_dyuhe"]
+[ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="2_28lkr"]
+[ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="3_f7mjs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxcw3"]
+radius = 181.0
+height = 734.0
+
+[node name="Door" type="Sprite2D" unique_id=1499227984]
+texture = ExtResource("1_dyuhe")
+
+[node name="DoorArea" type="Area2D" parent="." unique_id=1455456263]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea" unique_id=1991772940]
+position = Vector2(-31, -4)
+shape = SubResource("CapsuleShape2D_vxcw3")
+
+[node name="pressE" type="Label" parent="." unique_id=1290611621]
+offset_left = -31.0
+offset_top = -236.0
+offset_right = 38.0
+offset_bottom = -210.0
+text = "press E"
+label_settings = ExtResource("2_28lkr")
+
+[node name="WaypointMarkerEnemy" parent="." unique_id=1906790374 instance=ExtResource("3_f7mjs")]
+on_screen_offset = Vector2(0.5, -300)

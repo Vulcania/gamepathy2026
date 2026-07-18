@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://dka83fciwkmb2" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_06.png" id="18_628q8"]
 [ext_resource type="Texture2D" uid="uid://b4qjdnndfdup5" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_07.png" id="19_djpun"]
 [ext_resource type="Texture2D" uid="uid://5vt7w23s1p3u" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_08.png" id="20_mhei1"]
+[ext_resource type="PackedScene" uid="uid://bbnby8wg0loc3" path="res://ui/enemy marker.tscn" id="41_y40wq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apqnp"]
 size = Vector2(146, 121)
@@ -278,6 +279,9 @@ autoplay = &"Walk"
 position = Vector2(2, -128)
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=171518536]
+
+[node name="WaypointMarkerEnemy" parent="." unique_id=1906790374 instance=ExtResource("41_y40wq")]
+on_screen_offset = Vector2(50, -150)
 
 [connection signal="state_changed" from="." to="." method="_on_state_changed"]
 [connection signal="body_entered" from="DetectEnvironment" to="." method="_on_detect_environment_body_entered"]

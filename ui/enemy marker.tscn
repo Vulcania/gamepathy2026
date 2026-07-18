@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bbnby8wg0loc3"]
+
+[ext_resource type="Texture2D" uid="uid://co73aqouxl7mw" path="res://ui/ui_assets/waypointmarker_enemy.png" id="1_dtt7p"]
+[ext_resource type="Script" uid="uid://dghjy6k6v2b36" path="res://ui/waypointmarker.gd" id="2_5ta1j"]
+
+[node name="WaypointMarkerEnemy" type="Sprite2D" unique_id=1906790374]
+z_index = 2000
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_dtt7p")
+script = ExtResource("2_5ta1j")

@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="10_gor4a"]
 [ext_resource type="PackedScene" uid="uid://djseq43ja7gho" path="res://ui/buffs/buff_selection.tscn" id="11_6je0e"]
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="11_ba8y2"]
+[ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="11_v47dh"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="13_q4jiv"]
 [ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="20_v7w16"]
 [ext_resource type="Script" uid="uid://dpn2jtif5ykds" path="res://level/onboarding.gd" id="20_ykcbn"]
@@ -334,23 +335,26 @@ frame_progress = 0.3454733
 [node name="CoffeeMaker" parent="." unique_id=1907298632 instance=ExtResource("6_6je0e")]
 position = Vector2(4356, -1091)
 
-[node name="Door" type="Sprite2D" parent="." unique_id=467976559]
+[node name="Door" type="Sprite2D" parent="." unique_id=1499227984]
 position = Vector2(2426, -1386)
 texture = ExtResource("5_vxcw3")
 
-[node name="DoorArea" type="Area2D" parent="Door" unique_id=875189229]
+[node name="DoorArea" type="Area2D" parent="Door" unique_id=1455456263]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DoorArea" unique_id=1475270101]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DoorArea" unique_id=1991772940]
 position = Vector2(-31, -4)
 shape = SubResource("CapsuleShape2D_vxcw3")
 
-[node name="pressE" type="Label" parent="Door" unique_id=912552184]
+[node name="pressE" type="Label" parent="Door" unique_id=1290611621]
 offset_left = -31.0
 offset_top = -236.0
-offset_right = 28.0
-offset_bottom = -213.0
+offset_right = 38.0
+offset_bottom = -210.0
 text = "press E"
 label_settings = ExtResource("13_q4jiv")
+
+[node name="WaypointMarkerEnemy" parent="Door" unique_id=1906790374 instance=ExtResource("11_v47dh")]
+on_screen_offset = Vector2(0.5, -300)
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
@@ -567,8 +571,6 @@ shape = SubResource("CircleShape2D_sbh46")
 stream = ExtResource("27_v47dh")
 bus = &"Effects"
 
-[connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
-[connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]
 [connection signal="pressed" from="Onboarding/TutorialTexts/Tutorialbox/GotIt" to="Onboarding" method="_on_got_it_pressed"]
 [connection signal="area_entered" from="Onboarding/Areas/OBtomove" to="Onboarding" method="_on_o_btomove_area_entered"]
 [connection signal="area_exited" from="Onboarding/Areas/OBtomove" to="Onboarding" method="_on_o_btomove_area_exited"]
