@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://dda1fdf4h4ysw"]
+
+[ext_resource type="PackedScene" uid="uid://i20tsh23l1oh" path="res://enemy/base_enemy.tscn" id="1_anrut"]
+[ext_resource type="Texture2D" uid="uid://cw7t0fnw7uw2q" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_01.png" id="2_vfgpr"]
+[ext_resource type="Texture2D" uid="uid://dlye8k46d65p2" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_02.png" id="3_nh8nj"]
+[ext_resource type="Texture2D" uid="uid://cuxh68ul1jipd" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_03.png" id="4_6pj6x"]
+[ext_resource type="Texture2D" uid="uid://dehe2tx2ieenp" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_04.png" id="5_rbgdp"]
+[ext_resource type="Texture2D" uid="uid://ckvlr4xuvbean" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_05.png" id="6_bvsb5"]
+[ext_resource type="Texture2D" uid="uid://c2a2115j5ss3m" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_06.png" id="7_ki6ai"]
+[ext_resource type="Texture2D" uid="uid://cvwes63vl75t2" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_07.png" id="8_va8bo"]
+[ext_resource type="Texture2D" uid="uid://b0ulivpxn1xff" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_08.png" id="9_v41sa"]
+[ext_resource type="Texture2D" uid="uid://cnjxjk1u3e5k1" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_09.png" id="10_euou2"]
+[ext_resource type="Texture2D" uid="uid://c7yjhrpb4ixo8" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/attack/frame_10.png" id="11_2ucdw"]
+[ext_resource type="Texture2D" uid="uid://ceg61yfabgfse" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_01.png" id="12_ie17o"]
+[ext_resource type="Texture2D" uid="uid://c6o2ragq3ycc2" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_02.png" id="13_8my2n"]
+[ext_resource type="Texture2D" uid="uid://b7smfyoeae7hm" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_03.png" id="14_0s68k"]
+[ext_resource type="Texture2D" uid="uid://bjisnb0smxhwd" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_04.png" id="15_trtxw"]
+[ext_resource type="Texture2D" uid="uid://b416blr8syblq" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_05.png" id="16_pk17u"]
+[ext_resource type="Texture2D" uid="uid://dka83fciwkmb2" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_06.png" id="17_k5eft"]
+[ext_resource type="Texture2D" uid="uid://b4qjdnndfdup5" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_07.png" id="18_uymua"]
+[ext_resource type="Texture2D" uid="uid://5vt7w23s1p3u" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/death/frame_08.png" id="19_3mj56"]
+[ext_resource type="Texture2D" uid="uid://hs3xr53r3sha" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/hit/frame_01.png" id="20_lrltr"]
+[ext_resource type="Texture2D" uid="uid://cvobeo316ijh5" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/hit/frame_02.png" id="21_x2y1d"]
+[ext_resource type="Texture2D" uid="uid://cwr7827p4snpi" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/hit/frame_03.png" id="22_jvvri"]
+[ext_resource type="Texture2D" uid="uid://dxpte0378rtx7" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/hit/frame_04.png" id="23_ncubk"]
+[ext_resource type="Texture2D" uid="uid://c28tojbbjc6l1" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/hit/frame_05.png" id="24_v1uh7"]
+[ext_resource type="Texture2D" uid="uid://uchg8la348qp" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_01.png" id="25_ppetk"]
+[ext_resource type="Texture2D" uid="uid://c8nw1gjje2lv3" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_02.png" id="26_88uxo"]
+[ext_resource type="Texture2D" uid="uid://dwde64xw08a0j" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_03.png" id="27_13j2f"]
+[ext_resource type="Texture2D" uid="uid://bcbrbmpau6j8a" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_04.png" id="28_f5vhe"]
+[ext_resource type="Texture2D" uid="uid://dq3n7trpghitd" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_05.png" id="29_qyxym"]
+[ext_resource type="Texture2D" uid="uid://dhe5sb0u5lgoq" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/idle/frame_06.png" id="30_7d3u2"]
+[ext_resource type="Texture2D" uid="uid://c0kca8q6u1vhv" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_01.png" id="31_lnce5"]
+[ext_resource type="Texture2D" uid="uid://dkcrhs1f415ai" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_02.png" id="32_n4wua"]
+[ext_resource type="Texture2D" uid="uid://w8cm08ksyqtk" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_03.png" id="33_0w1rc"]
+[ext_resource type="Texture2D" uid="uid://bjatkrd8uhnl0" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_04.png" id="34_juwiq"]
+[ext_resource type="Texture2D" uid="uid://evpbn0f82kps" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_05.png" id="35_kgr0o"]
+[ext_resource type="Texture2D" uid="uid://c02qdkmplkism" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_06.png" id="36_v0k8c"]
+[ext_resource type="Texture2D" uid="uid://cy1y0gl1h2qht" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_07.png" id="37_nsjsc"]
+[ext_resource type="Texture2D" uid="uid://2d2agsfpfqve" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_08.png" id="38_6jxyl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pgol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vfgpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nh8nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6pj6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rbgdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bvsb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ki6ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_va8bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_v41sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_euou2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2ucdw")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ie17o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8my2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0s68k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_trtxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pk17u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k5eft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_uymua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3mj56")
+}],
+"loop": true,
+"name": &"dying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_lrltr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_x2y1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jvvri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ncubk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_v1uh7")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ppetk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_88uxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_13j2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_f5vhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qyxym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7d3u2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_lnce5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_n4wua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0w1rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_juwiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_kgr0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_v0k8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_nsjsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_6jxyl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anrut"]
+size = Vector2(171, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfgpr"]
+size = Vector2(133, 127)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nh8nj"]
+radius = 22.46077
+height = 60.03134
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anrut"]
+radius = 85.0
+height = 226.0
+
+[node name="YetAnotherPaperClipDeer" unique_id=1112242495 instance=ExtResource("1_anrut")]
+
+[node name="EnemyAIHandler" parent="." index="0" unique_id=1351028729 node_paths=PackedStringArray("body", "sprite")]
+body = NodePath("..")
+sprite = NodePath("../AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=196603920]
+sprite_frames = SubResource("SpriteFrames_0pgol")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionBody" parent="." index="2" unique_id=753404391]
+position = Vector2(61.5, 36)
+shape = SubResource("RectangleShape2D_anrut")
+debug_color = Color(1.1072266, 1.1072266, 1.1176962, 0.27450982)
+
+[node name="HitBox" parent="." index="3" unique_id=849468902]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=133508168]
+position = Vector2(65.5, 31.5)
+shape = SubResource("RectangleShape2D_vfgpr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" index="1" unique_id=988453784]
+position = Vector2(5, -44)
+rotation = 1.0393859
+shape = SubResource("CapsuleShape2D_nh8nj")
+
+[node name="AttackBox" parent="." index="4" unique_id=1208718593]
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" index="0" unique_id=1522116914]
+position = Vector2(-19, -14)
+shape = SubResource("CapsuleShape2D_anrut")
+debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
+
+[node name="RayCastFloorLeft" parent="." index="5" unique_id=1520115567]
+position = Vector2(-154, -24)
+target_position = Vector2(-2, 141)
+
+[node name="RayCastFloorRight" parent="." index="6" unique_id=1480427850]
+visible = false
+position = Vector2(112, -24)
+target_position = Vector2(0, 142)
+
+[node name="RayCastWallLeft" parent="." index="7" unique_id=617552342]
+position = Vector2(-154, -24)
+rotation = -4.712639
+
+[node name="RayCastWallRight" parent="." index="8" unique_id=2126165915]
+visible = false
+position = Vector2(112.000015, -24)
+rotation = -1.5714905
+
+[node name="MovementHandler" parent="." index="10" unique_id=1555339876]
+move_speed = 3000
+
+[node name="HealthComponent" parent="." index="11" unique_id=2114641219]
+max_health = 3
+
+[node name="Healthbar" parent="." index="13" unique_id=112998173]
+position = Vector2(0, -138)
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
+[connection signal="body_exited" from="AttackBox" to="." method="_on_attack_box_body_exited"]
+[connection signal="depleted_health" from="HealthComponent" to="." method="_on_health_component_depleted_health"]
+[connection signal="depleted_health" from="HealthComponent" to="EnemyAIHandler" method="_on_health_component_depleted_health"]
+[connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]

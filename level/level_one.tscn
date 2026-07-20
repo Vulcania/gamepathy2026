@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="9_84ti7"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="10_ekjd4"]
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="11_7a6hf"]
+[ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="14_6jd0m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4voq"]
 radius = 318.0
@@ -121,6 +122,9 @@ position = Vector2(2453, 1369)
 
 [node name="PaperClipDeer4" parent="Enemies" unique_id=1429468052 instance=ExtResource("11_7a6hf")]
 position = Vector2(6040, 920)
+
+[node name="YetAnotherPaperClipDeer" parent="." unique_id=1112242495 instance=ExtResource("14_6jd0m")]
+position = Vector2(1418, 918)
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]

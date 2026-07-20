@@ -1,7 +1,7 @@
 class_name Healthbar
 extends Node2D
 
-@onready var max_bar_fill = $ColorRect.size.x
+@onready var max_bar_fill = 120.0
 var bar_fill_amount : float
 
 func update_healthbar(current_health : int, max_health : int):

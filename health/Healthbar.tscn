@@ -8,4 +8,6 @@ script = ExtResource("1_dn7v2")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=895126413]
 offset_right = 120.0
 offset_bottom = 7.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 color = Color(0.60686415, 0.19815129, 0.09666056, 1)

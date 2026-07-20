@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://76ay80ih27k7"]
 
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="1_dsqel"]
-[ext_resource type="PackedScene" uid="uid://i3akofxem4v" path="res://enemy/yeetee_enemy.tscn" id="1_s65ib"]
-[ext_resource type="PackedScene" uid="uid://cx7pkpfryvs2h" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/buggy_paper_clip_deer.tscn" id="3_w72v2"]
+[ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="2_s65ib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s65ib"]
-size = Vector2(145, 18)
+size = Vector2(168.9, 51)
 
 [node name="TestLevel" type="Node2D" unique_id=929540585]
 
@@ -191,12 +190,13 @@ position = Vector2(951, 1037)
 scale = Vector2(10, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform18" unique_id=1038031347]
+position = Vector2(4.150017, 16.5)
 shape = SubResource("RectangleShape2D_s65ib")
 
 [node name="Polygon2D" type="Polygon2D" parent="Platform18" unique_id=167454613]
 position = Vector2(-173, -62)
 color = Color(0.32156864, 0.56078434, 0.38431373, 1)
-polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 101, 71)
+polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 173.7, 71, 101, 71)
 
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=369817433]
 position = Vector2(496, 311)
@@ -209,13 +209,8 @@ position = Vector2(-173, -62)
 color = Color(0.32156864, 0.56078434, 0.38431373, 1)
 polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 101, 71)
 
-[node name="YeeteeEnemy" parent="." unique_id=764007780 instance=ExtResource("1_s65ib")]
-position = Vector2(733, 990)
-mass = 0.005
-
 [node name="Player" parent="." unique_id=166332311 instance=ExtResource("1_dsqel")]
 position = Vector2(387, 908)
-scale = Vector2(2, 2)
 
-[node name="PaperClipDeerAlt" parent="." unique_id=23731481 instance=ExtResource("3_w72v2")]
-position = Vector2(1139, 925)
+[node name="YetAnotherPaperClipDeer" parent="." unique_id=1112242495 instance=ExtResource("2_s65ib")]
+position = Vector2(1039, 928)

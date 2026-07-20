@@ -414,8 +414,8 @@ _data = {
 size = Vector2(53, 104)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmu53"]
-radius = 19.0
-height = 112.0
+radius = 130.0
+height = 260.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8pxes"]
 radius = 90.0
@@ -425,6 +425,7 @@ height = 290.0
 radius = 94.641426
 
 [node name="Player" type="CharacterBody2D" unique_id=1980571954]
+texture_filter = 1
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_oul6g")
@@ -454,6 +455,7 @@ position = Vector2(-14, 23)
 shape = SubResource("CapsuleShape2D_fmu53")
 
 [node name="AttackBox" type="Area2D" parent="." unique_id=1145952830]
+visible = false
 light_mask = 4
 visibility_layer = 4
 collision_layer = 4
@@ -475,6 +477,8 @@ visibility_layer = 3
 shape = SubResource("CircleShape2D_8pxes")
 
 [node name="HealthComponent" parent="." unique_id=1032837444 instance=ExtResource("66_or4qq")]
+offset_left = -1.0
+offset_right = -1.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=749907556]
 script = ExtResource("67_b2j0d")

@@ -61,7 +61,7 @@ var hit = false
 signal state_updated(state:State)
 
 func _ready() -> void:
-#	hearts_container.set_max_hearts(max_health)
+	hearts_container.set_max_hearts(max_health)
 #	BuffSelectionOne.option_one.connect(_on_option_1)
 #	BuffSelectionOne.option_one.connect(_on_option_2)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -180,6 +180,7 @@ func _update_animation()->void:
 
 func take_damage(damage) -> void:
 	$HealthComponent.decrease_health(damage)
+	animation.play("Hit")
 
 func _apply_movement(delta:float) -> void:
 	var target_speed : float = 0.0

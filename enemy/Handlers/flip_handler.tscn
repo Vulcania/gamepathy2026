@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://liposhj56ryc"]
+
+[ext_resource type="Script" uid="uid://cw7ryewcmoul3" path="res://enemy/Handlers/flip_handler.gd" id="1_dkb60"]
+
+[node name="FlipHandler" type="Node2D" unique_id=209031885]
+script = ExtResource("1_dkb60")
