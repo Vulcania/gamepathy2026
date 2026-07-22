@@ -72,6 +72,8 @@
 [ext_resource type="PackedScene" uid="uid://buvakl6wq0bod" path="res://ui/pause_menu/pause_menu.tscn" id="67_hggc2"]
 [ext_resource type="PackedScene" uid="uid://3mgwi13a1xe1" path="res://ui/hearts_container.tscn" id="70_j3r50"]
 [ext_resource type="PackedScene" uid="uid://cmifa1p6oqh71" path="res://player/blocks_container.tscn" id="72_do7qw"]
+[ext_resource type="Script" uid="uid://cw7ryewcmoul3" path="res://enemy/Handlers/flip_handler.gd" id="73_2h6tc"]
+[ext_resource type="Script" uid="uid://g3ca5an7h1wt" path="res://input_handler.gd" id="73_do7qw"]
 
 [sub_resource type="Animation" id="Animation_rnncm"]
 length = 1.6
@@ -91,23 +93,23 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AttackBox:monitorable")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.28044727, 1.1252947),
+"times": PackedFloat32Array(0, 0.5, 1.15),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false, true]
+"values": [false, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AttackBox:monitorable")
+tracks/2/path = NodePath("AttackBox:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.29, 1.13),
+"times": PackedFloat32Array(0, 0.5, 1.15),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -285,7 +287,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.16666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-2, 31), Vector2(-2, 31)]
+"values": [Vector2(0, 31), Vector2(0, 31)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -302,26 +304,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("AttackBox:monitorable")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AttackBox:monitorable")
+tracks/4/path = NodePath("AttackBox:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.23333333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, true]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_wsa1w"]
@@ -414,11 +416,11 @@ _data = {
 size = Vector2(53, 104)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmu53"]
-radius = 130.0
-height = 260.0
+radius = 20.0
+height = 114.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8pxes"]
-radius = 90.0
+radius = 42.0
 height = 290.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8pxes"]
@@ -439,10 +441,11 @@ libraries/ = SubResource("AnimationLibrary_ig2t1")
 autoplay = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1725338669]
-position = Vector2(-2, 31)
+position = Vector2(0, 31)
 shape = SubResource("RectangleShape2D_8pxes")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1811097177]
+editor_description = "The Hitbox is the area afflicted with a hit. "
 light_mask = 2
 visibility_layer = 2
 collision_layer = 2
@@ -451,20 +454,22 @@ script = ExtResource("66_kewli")
 metadata/_custom_type_script = "uid://d2qvfaqjiwl62"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2060181973]
-position = Vector2(-14, 23)
+position = Vector2(0, 22)
 shape = SubResource("CapsuleShape2D_fmu53")
 
 [node name="AttackBox" type="Area2D" parent="." unique_id=1145952830]
-visible = false
+editor_description = "The Attackbox is the area dealing a hit."
 light_mask = 4
 visibility_layer = 4
 collision_layer = 4
 collision_mask = 0
+monitoring = false
+monitorable = false
 script = ExtResource("67_do7qw")
 metadata/_custom_type_script = "uid://bgyk0ydx1rk7p"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=1701210703]
-position = Vector2(6, -16)
+position = Vector2(0, 39)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_8pxes")
 disabled = true
@@ -498,6 +503,10 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="BlocksContainer" parent="HUD" unique_id=263776662 instance=ExtResource("72_do7qw")]
+offset_left = 34.0
+offset_top = 24.0
+offset_right = 120.0
+offset_bottom = 93.0
 
 [node name="Sounds" type="Node" parent="." unique_id=1379984318]
 
@@ -513,4 +522,17 @@ bus = &"Effects"
 [node name="Talk" type="AudioStreamPlayer2D" parent="Sounds" unique_id=397134613]
 bus = &"Effects"
 
+[node name="Handlers" type="Node2D" parent="." unique_id=921333397]
+
+[node name="FlipHandler" type="Node2D" parent="Handlers" unique_id=455388712]
+script = ExtResource("73_2h6tc")
+player_hitbox_left = 34.0
+player_hitbox_right = -34.0
+metadata/_custom_type_script = "uid://cw7ryewcmoul3"
+
+[node name="InputHandler" type="Node2D" parent="Handlers" unique_id=1376263356]
+script = ExtResource("73_do7qw")
+metadata/_custom_type_script = "uid://g3ca5an7h1wt"
+
+[connection signal="area_entered" from="HitBox" to="HitBox" method="_on_area_entered"]
 [connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b05524en1gu7x" path="res://enemy/Handlers/gravity_handler.tscn" id="4_phv04"]
 [ext_resource type="PackedScene" uid="uid://ckngah0w44vci" path="res://enemy/Handlers/movement_handler.tscn" id="6_btpf0"]
 [ext_resource type="Script" uid="uid://42tcyoxr3bs" path="res://scripts/health_component.gd" id="7_phv04"]
+[ext_resource type="Script" uid="uid://cw7ryewcmoul3" path="res://enemy/Handlers/flip_handler.gd" id="8_btpf0"]
 [ext_resource type="Script" uid="uid://dghjy6k6v2b36" path="res://ui/waypointmarker.gd" id="8_ul1qf"]
 [ext_resource type="PackedScene" uid="uid://b8pbr6khyr1xh" path="res://health/Healthbar.tscn" id="9_ul1qf"]
 
@@ -14,47 +15,38 @@
 texture_filter = 1
 script = ExtResource("1_rgntv")
 
-[node name="EnemyAIHandler" type="Node2D" parent="." unique_id=1351028729 node_paths=PackedStringArray("floor_check_left", "floor_check_right", "wall_check_left", "wall_check_right", "movement_handler")]
+[node name="EnemyAIHandler" type="Node2D" parent="." unique_id=1351028729 node_paths=PackedStringArray("floor_check_left", "wall_check_left", "movement_handler", "flip_handler")]
 script = ExtResource("4_btpf0")
 floor_check_left = NodePath("../RayCastFloorLeft")
-floor_check_right = NodePath("../RayCastFloorRight")
 wall_check_left = NodePath("../RayCastWallLeft")
-wall_check_right = NodePath("../RayCastWallRight")
-movement_handler = NodePath("../MovementHandler")
+movement_handler = NodePath("../Handlers/MovementHandler")
+flip_handler = NodePath("../Handlers/FlipHandler")
 metadata/_custom_type_script = "uid://vt276yyr73ni"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=196603920]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=493143461]
+
 [node name="CollisionBody" type="CollisionShape2D" parent="." unique_id=753404391]
 
 [node name="HitBox" type="Area2D" parent="." unique_id=849468902]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
+monitorable = false
 script = ExtResource("2_818q2")
 metadata/_custom_type_script = "uid://d2qvfaqjiwl62"
 
 [node name="AttackBox" type="Area2D" parent="." unique_id=1208718593]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_un648")
 metadata/_custom_type_script = "uid://bgyk0ydx1rk7p"
 
 [node name="RayCastFloorLeft" type="RayCast2D" parent="." unique_id=1520115567]
-position = Vector2(-56, -24)
-
-[node name="RayCastFloorRight" type="RayCast2D" parent="." unique_id=1480427850]
-position = Vector2(52, -24)
+target_position = Vector2(0, 150)
 
 [node name="RayCastWallLeft" type="RayCast2D" parent="." unique_id=617552342]
-position = Vector2(52, -24)
-
-[node name="RayCastWallRight" type="RayCast2D" parent="." unique_id=2126165915]
-position = Vector2(52, -24)
-
-[node name="GravityHandler" parent="." unique_id=1233328583 instance=ExtResource("4_phv04")]
-
-[node name="MovementHandler" parent="." unique_id=1555339876 instance=ExtResource("6_btpf0")]
-move_speed = 100
+target_position = Vector2(0, 150)
 
 [node name="HealthComponent" type="Control" parent="." unique_id=2114641219]
 layout_mode = 3
@@ -69,3 +61,16 @@ script = ExtResource("8_ul1qf")
 metadata/_custom_type_script = "uid://dghjy6k6v2b36"
 
 [node name="Healthbar" parent="." unique_id=112998173 instance=ExtResource("9_ul1qf")]
+
+[node name="Handlers" type="Node2D" parent="." unique_id=1692696989]
+
+[node name="FlipHandler" type="Node2D" parent="Handlers" unique_id=1220700486]
+script = ExtResource("8_btpf0")
+metadata/_custom_type_script = "uid://cw7ryewcmoul3"
+
+[node name="MovementHandler" parent="Handlers" unique_id=1555339876 instance=ExtResource("6_btpf0")]
+move_speed = 100
+
+[node name="GravityHandler" parent="Handlers" unique_id=1233328583 instance=ExtResource("4_phv04")]
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1239927453]

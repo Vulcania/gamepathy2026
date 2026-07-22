@@ -1,55 +1,51 @@
 class_name EnemyAIHandler
 extends Node2D
 
-@export var body : CharacterBody2D = null
 @export var sprite : AnimatedSprite2D = null
-#@export var healthbar : Healthbar = null
+@export var animation : AnimationPlayer = null
+@export var base_shape : CollisionShape2D = null
+@export var hitbox : HitBox = null
+@export var attack_box : AttackBox = null
 @export var floor_check_left : RayCast2D = null
-@export var floor_check_right : RayCast2D = null
 @export var wall_check_left : RayCast2D = null
-@export var wall_check_right : RayCast2D = null
 @export var movement_handler : MovementHandler = null
+@export var flip_handler : FlipHandler = null
 
-var is_idle : bool = false
 var is_attacking : bool = false
 var is_targeted : bool = false
 var is_dying : bool = false
 
 signal is_dead
 
-enum State { IDLE, PURSUING, WALK, ATTACK, HIT, DYING, DEAD }
+enum State { IDLE, WALK, ATTACK, HIT, DYING, DEAD }
 
+var new_state : State
 var current_state = State.WALK
-var direction = Vector2(-1.0, 0.0)
+var direction = Vector2(1.0, 0.0)
 
 func handle_state(entity : CharacterBody2D, delta : float) -> void:
-	current_state = check_state()
-	match current_state:
-		State.IDLE:
-			movement_handler.movement(entity, Vector2.ZERO, delta)
-			is_idle = true
-			await get_tree().create_timer(2.0).timeout
-		
-		State.WALK:
-			is_idle = false
-			movement_handler.movement(entity, direction, delta)
-		
-		State.HIT:
-			is_idle = false
-			movement_handler.movement(entity, Vector2.ZERO, delta)
-		
-		State.ATTACK:
-			is_idle = false
-			movement_handler.movement(entity, Vector2.ZERO, delta)
-		
-		State.DYING:
-			movement_handler.movement(entity, Vector2.ZERO, delta)
-	_update_animation()
+	new_state = check_state()
+	if new_state != current_state:
+		current_state = new_state
+		match current_state:
+			State.DYING:
+				movement_handler.movement(entity, Vector2.ZERO, delta)
+			
+			State.IDLE:
+				movement_handler.movement(entity, Vector2.ZERO, delta)
+			
+			State.WALK:
+				movement_handler.movement(entity, direction, delta)
+			
+			State.HIT:
+				movement_handler.movement(entity, Vector2.ZERO, delta)
+			
+			State.ATTACK:
+				movement_handler.movement(entity, Vector2.ZERO, delta)
+		_update_animation()
+		await animation.animation_finished
 
 func check_state():
-	if is_idle:
-		return State.WALK
-	
 	if is_attacking:
 		return State.ATTACK
 	
@@ -63,32 +59,30 @@ func check_state():
 		flip()
 		return State.IDLE
 	
-	#if floor_check_right.is_colliding() == false or wall_check_right.is_colliding():
-		#flip()
-		#return State.IDLE
 	return State.WALK
 
 func flip():
-	body.scale.x *= -1
-	#healthbar.scale.x *= -1
+	flip_handler.flip_entity(sprite, direction)
+	flip_handler.flip_raycast(floor_check_left, wall_check_left)
+	flip_handler.apply_collision_shapes_offset(base_shape, hitbox, attack_box)
 	direction.x *= -1
 
 func _update_animation():
 	match current_state:
 		State.IDLE:
-			sprite.animation = "idle"
+			animation.play("idle")
 			return
 		State.WALK:
-			sprite.animation = "walk"
+			animation.play("walk")
 			return
 		State.HIT:
-			sprite.animation = "hit"
+			animation.play("hit")
 			return
 		State.ATTACK:
-			sprite.animation = "attack"
+			animation.play("attack")
 			return
 		State.DYING:
-			sprite.animation = "dying"
+			animation.play("dying")
 			return
 
 func _on_health_component_depleted_health() -> void:

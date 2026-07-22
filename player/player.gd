@@ -35,14 +35,20 @@ var coffee_refilling = false
 @onready var sprite = $Sprite2D
 @onready var hearts_container = $HUD/HeartsContainer
 @onready var block_container = $HUD/BlocksContainer
+@onready var player_hitbox: HitBox = $HitBox
+
+# handlers
+@onready var input_handler: InputHandler = $Handlers/InputHandler
+@onready var flip_handler: FlipHandler = $Handlers/FlipHandler
 
 # input actions
-var move_input: float = 0.0
+var move_input: Vector2 = Vector2.ZERO
 var is_running: bool = false
 var is_ducking: bool = false
-var is_ducking_just_pressed:bool = false
+var is_ducking_just_pressed: bool = false
 var is_blocking: bool = false
 var is_jumping: bool = false
+var is_jump_released : bool = false
 var is_attacking: bool = false
 var is_interacting: bool = false
 var gravity_vector: Vector2 = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
@@ -72,38 +78,27 @@ func _ready() -> void:
 		blocks_list.append(child)
 
 func _physics_process(delta: float) -> void:
-	move_input = Input.get_axis("move_left", "move_right")
+	move_input = input_handler.movement_input()
 	is_running = Input.is_action_pressed("run")
 	is_ducking = Input.is_action_pressed("duck")
 	is_ducking_just_pressed = Input.is_action_just_pressed("duck")
 	is_blocking = Input.is_action_pressed("block")
-	is_jumping = Input.is_action_pressed("jump")
+	is_jumping = input_handler.jump_input()
+	is_jump_released = input_handler.jump_released()
 	is_attacking = Input.is_action_pressed("attack")
 	#is_interacting = Input.is_action_pressed("interact")
 	
 	_update_state()
-	flip()
+	
+	flip_handler.flip_entity(sprite, move_input)
+	player_hitbox.position.x = 0
+	if move_input.x != 0.0:
+		flip_handler.player_flip_hitbox_correction(player_hitbox)
 		
 	if current_state != State.DASH and boost_cooldown_left > 0:
 		boost_cooldown_left = boost_cooldown_left - delta
 	
 	_apply_movement(delta)
-
-func flip():
-	if Input.is_action_pressed("move_left"):
-		if !hit && !is_interacting:
-			sprite.scale.x = abs(sprite.scale.x) * -1
-			$AttackBox.scale.x = abs($AttackBox.scale.x) * -1
-			$HitBox.scale.x = abs($HitBox.scale.x) * -1
-			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * -1
-			$CollisionShape2D.scale.x = abs($CollisionShape2D.scale.x) * -1
-	if Input.is_action_pressed("move_right"):
-		if !hit && !is_interacting:
-			sprite.scale.x = abs(sprite.scale.x) * 1
-			$AttackBox.scale.x = abs($AttackBox.scale.x) * 1
-			$HitBox.scale.x = abs($HitBox.scale.x) * 1
-			$MonitorArea.scale.x = abs($MonitorArea.scale.x) * 1
-			$CollisionShape2D.scale.x = abs($CollisionShape2D.scale.x) * 1
 
 func _update_state()->void:
 	var previous_state = current_state
@@ -124,11 +119,11 @@ func _get_state() -> State:
 		return State.INTERACTING
 	if is_jumping:
 		return State.JUMP
-	if is_blocking and is_running and move_input != 0.0 and not current_state == State.DASH and boost_cooldown_left <= 0.0:
+	if is_blocking and is_running and move_input.x != 0.0 and not current_state == State.DASH and boost_cooldown_left <= 0.0:
 		boost_time_left = boost_duration
-		dash_direction = sign(move_input) if move_input != 0.0 else 1.0
+		dash_direction = sign(move_input) if move_input.x != 0.0 else 1.0
 		return State.DASH
-	if is_ducking and is_running and move_input != 0.0:
+	if is_ducking and is_running and move_input.x != 0.0:
 		if is_ducking_just_pressed:
 			boost_time_left = boost_duration
 		return State.SLIDE
@@ -137,18 +132,18 @@ func _get_state() -> State:
 			return State.BLOCK
 	if is_ducking:
 		return State.DUCK
-	if sign(move_input) != sign(velocity.x):
+	if sign(move_input.x) != sign(velocity.x):
 		return State.BRAKING
-	if is_running and move_input != 0.0:
+	if is_running and move_input.x != 0.0:
 		return State.RUN
-	if move_input != 0.0:
+	if move_input.x != 0.0:
 		return State.WALK
 	if is_attacking:
 		return State.ATTACK
 	return State.IDLE
 
 func _update_animation()->void:
-	rotation = 0
+	#rotation = 0
 	match current_state:
 		State.IDLE:
 			animation.play("Idle")
@@ -186,25 +181,25 @@ func _apply_movement(delta:float) -> void:
 	var target_speed : float = 0.0
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		var direction = Input.get_axis("move_left","move_right")
-		velocity.x = 300 * direction
+		#var direction = move_input
+		velocity.x = 300 * move_input.x #direction
 	match current_state:
 		State.IDLE, State.BLOCK, State.DUCK, State.INTERACTING:
 			target_speed = 0.0
 			velocity.x = move_toward(velocity.x, target_speed, friction)
 		State.BRAKING:
-			target_speed = move_input * base_speed * speed_buff_factor
+			target_speed = move_input.x * base_speed * speed_buff_factor
 			velocity.x = move_toward(velocity.x, target_speed, friction)
 		State.WALK:
-			target_speed = move_input * base_speed * speed_buff_factor
+			target_speed = move_input.x * base_speed * speed_buff_factor
 			velocity.x = move_toward(velocity.x, target_speed, acceleration)
 		State.RUN:
-			target_speed = move_input * base_speed * run_speed_factor * speed_buff_factor
+			target_speed = move_input.x * base_speed * run_speed_factor * speed_buff_factor
 			velocity.x = move_toward(velocity.x, target_speed, acceleration)
 		State.JUMP:
 			if is_on_floor():
 				velocity.y = jump_height
-			target_speed = move_input * base_speed * speed_buff_factor
+			target_speed = move_input.x * base_speed * speed_buff_factor
 			#velocity.x = move_toward(velocity.x, target_speed, acceleration)
 			#velocity.x is the jump problems origin but i don't know how to fix it
 		State.DASH:
@@ -215,12 +210,12 @@ func _apply_movement(delta:float) -> void:
 		
 	move_and_slide()
 	
-	for collision_index in range(get_slide_collision_count()):
-		var collider = get_slide_collision(collision_index).get_collider()
-		if collider is RigidBody2D:
-			var yeet_direction = Vector2(move_input, -abs(move_input)) * slide_speed_factor
-			print('YEET: %s' % yeet_direction)
-			collider.apply_central_impulse(yeet_direction)
+	#for collision_index in range(get_slide_collision_count()):
+		#var collider = get_slide_collision(collision_index).get_collider()
+		#if collider is RigidBody2D:
+			#var yeet_direction = Vector2(move_input, -abs(move_input)) * slide_speed_factor
+			#print('YEET: %s' % yeet_direction)
+			#collider.apply_central_impulse(yeet_direction)
 
 func update_blocks_display():
 	for i in range(blocks_list.size()):

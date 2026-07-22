@@ -178,15 +178,229 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_anrut"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackBox:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackBox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ki6ai"]
+resource_name = "attack"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackBox:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackBox:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_va8bo"]
+resource_name = "dying"
+length = 1.1333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"dying"]
+}
+
+[sub_resource type="Animation" id="Animation_v41sa"]
+resource_name = "hit"
+length = 0.8333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hit"]
+}
+
+[sub_resource type="Animation" id="Animation_euou2"]
+resource_name = "idle"
+length = 1.8333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_2ucdw"]
+resource_name = "walk"
+length = 1.1333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ie17o"]
+_data = {
+&"RESET": SubResource("Animation_anrut"),
+&"attack": SubResource("Animation_ki6ai"),
+&"dying": SubResource("Animation_va8bo"),
+&"hit": SubResource("Animation_v41sa"),
+&"idle": SubResource("Animation_euou2"),
+&"walk": SubResource("Animation_2ucdw")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anrut"]
 size = Vector2(171, 124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfgpr"]
-size = Vector2(133, 127)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nh8nj"]
-radius = 22.46077
-height = 60.03134
+size = Vector2(149, 151)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anrut"]
 radius = 85.0
@@ -194,67 +408,62 @@ height = 226.0
 
 [node name="YetAnotherPaperClipDeer" unique_id=1112242495 instance=ExtResource("1_anrut")]
 
-[node name="EnemyAIHandler" parent="." index="0" unique_id=1351028729 node_paths=PackedStringArray("body", "sprite")]
-body = NodePath("..")
+[node name="EnemyAIHandler" parent="." index="0" unique_id=1351028729 node_paths=PackedStringArray("sprite", "animation", "base_shape", "hitbox", "attack_box")]
 sprite = NodePath("../AnimatedSprite2D")
+animation = NodePath("../AnimationPlayer")
+base_shape = NodePath("../CollisionBody")
+hitbox = NodePath("../HitBox")
+attack_box = NodePath("../AttackBox")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=196603920]
 sprite_frames = SubResource("SpriteFrames_0pgol")
-animation = &"walk"
+animation = &"attack"
 autoplay = "walk"
 
-[node name="CollisionBody" parent="." index="2" unique_id=753404391]
-position = Vector2(61.5, 36)
+[node name="AnimationPlayer" parent="." index="2" unique_id=493143461]
+libraries/ = SubResource("AnimationLibrary_ie17o")
+autoplay = &"idle"
+
+[node name="CollisionBody" parent="." index="3" unique_id=753404391]
+position = Vector2(0, 35)
 shape = SubResource("RectangleShape2D_anrut")
 debug_color = Color(1.1072266, 1.1072266, 1.1176962, 0.27450982)
 
-[node name="HitBox" parent="." index="3" unique_id=849468902]
-collision_layer = 0
+[node name="HitBox" parent="." index="4" unique_id=849468902]
+position = Vector2(0, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=133508168]
-position = Vector2(65.5, 31.5)
 shape = SubResource("RectangleShape2D_vfgpr")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" index="1" unique_id=988453784]
-position = Vector2(5, -44)
-rotation = 1.0393859
-shape = SubResource("CapsuleShape2D_nh8nj")
-
-[node name="AttackBox" parent="." index="4" unique_id=1208718593]
+[node name="AttackBox" parent="." index="5" unique_id=1208718593]
 visible = false
-collision_layer = 2
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" index="0" unique_id=1522116914]
-position = Vector2(-19, -14)
+position = Vector2(0, -31)
 shape = SubResource("CapsuleShape2D_anrut")
 debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
 
-[node name="RayCastFloorLeft" parent="." index="5" unique_id=1520115567]
-position = Vector2(-154, -24)
-target_position = Vector2(-2, 141)
-
-[node name="RayCastFloorRight" parent="." index="6" unique_id=1480427850]
-visible = false
-position = Vector2(112, -24)
-target_position = Vector2(0, 142)
-
-[node name="RayCastWallLeft" parent="." index="7" unique_id=617552342]
-position = Vector2(-154, -24)
-rotation = -4.712639
-
-[node name="RayCastWallRight" parent="." index="8" unique_id=2126165915]
-visible = false
-position = Vector2(112.000015, -24)
-rotation = -1.5714905
-
-[node name="MovementHandler" parent="." index="10" unique_id=1555339876]
-move_speed = 3000
-
-[node name="HealthComponent" parent="." index="11" unique_id=2114641219]
+[node name="HealthComponent" parent="." index="8" unique_id=2114641219]
 max_health = 3
 
-[node name="Healthbar" parent="." index="13" unique_id=112998173]
-position = Vector2(0, -138)
+[node name="Healthbar" parent="." index="10" unique_id=112998173]
+position = Vector2(0, -123)
+
+[node name="FlipHandler" parent="Handlers" parent_id_path=PackedInt32Array(1692696989) index="0" unique_id=1220700486]
+floor_collosion_position_left = -100.0
+floor_collosion_position_right = 100.0
+base_shape_offset_left = 60.0
+base_shape_offset_right = -60.0
+hitbox_shape_offset_left = 63.0
+hitbox_shape_offset_right = -63.0
+
+[node name="MovementHandler" parent="Handlers" parent_id_path=PackedInt32Array(1692696989) index="1" unique_id=1555339876]
+move_speed = 3000
+
+[node name="VisibleOnScreenEnabler2D" parent="." index="12" unique_id=1239927453]
+rect = Rect2(-86, -101, 172, 202)
+show_rect = false
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
