@@ -431,6 +431,7 @@ debug_color = Color(1.1072266, 1.1072266, 1.1176962, 0.27450982)
 
 [node name="HitBox" parent="." index="4" unique_id=849468902]
 position = Vector2(0, 14)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=133508168]
 shape = SubResource("RectangleShape2D_vfgpr")

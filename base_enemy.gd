@@ -23,9 +23,11 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(damage_amount):
 	health_component.decrease_health(damage_amount)
+	print("Taking damage")
 
 func _on_health_component_health_changed(current_health: int) -> void:
 	healthbar.update_healthbar(current_health, max_health)
+	print("Health is Updated")
 
 func _on_health_component_depleted_health() -> void:
 	await get_tree().create_timer(1.0).timeout
@@ -34,10 +36,13 @@ func _on_health_component_depleted_health() -> void:
 func _on_attack_box_body_entered(body: Node2D) -> void:
 	if body is Player:
 		enemy_ai_handler.is_attacking = true
+		print("Is attacking")
 
 func _on_hit_box_body_entered(body : AttackBox) -> void:
 	if body.parent is Player:
 		enemy_ai_handler.is_targeted = true
+		print("Is getting hit")
 
 func _on_attack_box_body_exited(_body : Player) -> void:
 	enemy_ai_handler.is_attacking = false
+	print("Player left me")

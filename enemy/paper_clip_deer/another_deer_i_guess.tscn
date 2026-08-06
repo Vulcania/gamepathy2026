@@ -177,10 +177,11 @@ radius = 107.0
 height = 214.0
 
 [node name="AnotherDeerIGuess" type="CharacterBody2D" unique_id=2053150465]
+collision_layer = 4
 script = ExtResource("1_ltqy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=9655633]
-texture = ExtResource("2_gih7w")
+texture = ExtResource("3_1gyau")
 
 [node name="Polygon2D" type="CollisionPolygon2D" parent="." unique_id=1065690913]
 polygon = PackedVector2Array(-6, -41, -19, -23, -2, -6, 2, 53, -4, 94, 147, 87, 149, 40, 128, 11, 122, -27, 47, -21, 21, -34)
