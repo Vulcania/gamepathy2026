@@ -90,8 +90,10 @@ func _physics_process(delta: float) -> void:
 	
 	_update_state()
 	
-	flip_handler.flip_entity(sprite, move_input)
-	player_hitbox.position.x = 0
+	if move_input:
+		flip_handler.flip_entity(sprite, move_input)
+	else:
+		player_hitbox.position.x = 0
 	if move_input.x != 0.0:
 		flip_handler.player_flip_hitbox_correction(player_hitbox)
 		
@@ -175,6 +177,7 @@ func _update_animation()->void:
 
 func take_damage(damage) -> void:
 	$HealthComponent.decrease_health(damage)
+	print("take damage")
 	animation.play("Hit")
 
 func _apply_movement(delta:float) -> void:
@@ -263,8 +266,8 @@ func _on_health_component_health_changed(new_health) -> void:
 	hearts_container.update_hearts(new_health)
 
 #func _on_option_1():
-	speed_buff_factor += 0.05
+	#speed_buff_factor += 0.05
 
 #func _on_option_2():
-	max_block_count += 1
-	current_block_count += 1
+	#max_block_count += 1
+	#current_block_count += 1

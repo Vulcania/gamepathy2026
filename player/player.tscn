@@ -429,7 +429,7 @@ radius = 94.641426
 [node name="Player" type="CharacterBody2D" unique_id=1980571954]
 texture_filter = 1
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_oul6g")
 base_speed = 350.0
 jump_height = -950
