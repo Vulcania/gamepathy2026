@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://c02qdkmplkism" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_06.png" id="36_v0k8c"]
 [ext_resource type="Texture2D" uid="uid://cy1y0gl1h2qht" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_07.png" id="37_nsjsc"]
 [ext_resource type="Texture2D" uid="uid://2d2agsfpfqve" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_08.png" id="38_6jxyl"]
+[ext_resource type="Texture2D" uid="uid://co73aqouxl7mw" path="res://ui/ui_assets/waypointmarker_enemy.png" id="39_vfgpr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0pgol"]
 animations = [{
@@ -447,6 +448,11 @@ debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
 
 [node name="HealthComponent" parent="." index="8" unique_id=2114641219]
 max_health = 3
+
+[node name="WaypointMarker" parent="." index="9" unique_id=984549330]
+position = Vector2(12, -154)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("39_vfgpr")
 
 [node name="Healthbar" parent="." index="10" unique_id=112998173]
 position = Vector2(0, -123)
