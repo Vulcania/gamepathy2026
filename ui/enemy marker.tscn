@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dghjy6k6v2b36" path="res://ui/waypointmarker.gd" id="2_5ta1j"]
 
 [node name="WaypointMarkerEnemy" type="Sprite2D" unique_id=1906790374]
+process_mode = 3
 z_index = 2000
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_dtt7p")

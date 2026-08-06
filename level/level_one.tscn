@@ -110,6 +110,7 @@ limit_right = 7600
 limit_bottom = 1650
 
 [node name="Enemies" type="Node2D" parent="." unique_id=115406205]
+visible = false
 
 [node name="PaperClipDeer" parent="Enemies" unique_id=1517736822 instance=ExtResource("11_7a6hf")]
 position = Vector2(2044, -990)
@@ -120,11 +121,11 @@ position = Vector2(2451, 539)
 [node name="PaperClipDeer3" parent="Enemies" unique_id=549405261 instance=ExtResource("11_7a6hf")]
 position = Vector2(2453, 1369)
 
-[node name="PaperClipDeer4" parent="Enemies" unique_id=1429468052 instance=ExtResource("11_7a6hf")]
-position = Vector2(6040, 920)
-
 [node name="YetAnotherPaperClipDeer" parent="." unique_id=1112242495 instance=ExtResource("14_6jd0m")]
 position = Vector2(1418, 918)
+
+[node name="YetAnotherPaperClipDeer2" parent="." unique_id=1284693010 instance=ExtResource("14_6jd0m")]
+position = Vector2(2968, 532)
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]
