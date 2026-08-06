@@ -1,6 +1,8 @@
 extends Node
 class_name States
 
+#für boss battle
+
 signal switch_state(state: States)
 
 func enter_state() -> void:
