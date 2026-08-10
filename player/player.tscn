@@ -535,4 +535,5 @@ script = ExtResource("73_do7qw")
 metadata/_custom_type_script = "uid://g3ca5an7h1wt"
 
 [connection signal="area_entered" from="HitBox" to="HitBox" method="_on_area_entered"]
+[connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
 [connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]

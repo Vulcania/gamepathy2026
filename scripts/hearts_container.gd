@@ -7,11 +7,15 @@ func set_max_hearts(max_hearts: int):
 		var heart = heart_gui_class.instantiate()
 		add_child(heart)
 
-func update_hearts(current_health : int):
+func update_hearts(current_health : HealthComponent):
+	print("hearts container updated")
+	print("healths container", current_health)
 	var hearts = get_children()
 	
 	for i in range(current_health):
 		hearts[i].update(true)
+		print("hearts container updated true")
 	
 	for i in range(current_health, hearts.size()):
 		hearts[i].update(false)
+		print("hearts container updated false")

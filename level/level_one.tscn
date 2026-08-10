@@ -13,7 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="9_84ti7"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="10_ekjd4"]
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="11_7a6hf"]
+[ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="11_weswd"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="14_6jd0m"]
+[ext_resource type="PackedScene" uid="uid://buheikhdmn30b" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/im_sorry_its_another_deer.tscn" id="15_1owxw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4voq"]
 radius = 318.0
@@ -93,6 +95,9 @@ offset_bottom = -214.0
 text = "press E"
 label_settings = ExtResource("9_35rcf")
 
+[node name="WaypointMarkerEnemy" parent="Door" unique_id=1906790374 instance=ExtResource("11_weswd")]
+position = Vector2(0, -278)
+
 [node name="sehr gute game musik" type="AudioStreamPlayer" parent="." unique_id=290455109]
 process_mode = 3
 stream = ExtResource("9_84ti7")
@@ -112,6 +117,10 @@ limit_bottom = 1650
 [node name="Enemies" type="Node2D" parent="." unique_id=115406205]
 visible = false
 
+[node name="Sorry" parent="Enemies" unique_id=203460800 instance=ExtResource("15_1owxw")]
+visible = false
+position = Vector2(1278.6165, 928.16296)
+
 [node name="PaperClipDeer" parent="Enemies" unique_id=1517736822 instance=ExtResource("11_7a6hf")]
 position = Vector2(2044, -990)
 
@@ -122,10 +131,19 @@ position = Vector2(2451, 539)
 position = Vector2(2453, 1369)
 
 [node name="YetAnotherPaperClipDeer" parent="." unique_id=1112242495 instance=ExtResource("14_6jd0m")]
-position = Vector2(1418, 918)
+position = Vector2(2286, 1322)
 
 [node name="YetAnotherPaperClipDeer2" parent="." unique_id=1284693010 instance=ExtResource("14_6jd0m")]
 position = Vector2(2968, 532)
+
+[node name="YetAnotherPaperClipDeer3" parent="." unique_id=1962498490 instance=ExtResource("14_6jd0m")]
+position = Vector2(2201, -1022)
+
+[node name="YetAnotherPaperClipDeer4" parent="." unique_id=1609823788 instance=ExtResource("14_6jd0m")]
+position = Vector2(4993, -760)
+
+[node name="YetAnotherPaperClipDeer5" parent="." unique_id=1758064986 instance=ExtResource("14_6jd0m")]
+position = Vector2(6143, 908)
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]

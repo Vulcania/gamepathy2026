@@ -60,6 +60,7 @@ func check_state():
 		return State.IDLE
 	
 	return State.WALK
+	print(State)
 
 func flip():
 	flip_handler.flip_entity(sprite, direction)

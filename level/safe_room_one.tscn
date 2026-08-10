@@ -411,18 +411,22 @@ texture = SubResource("GradientTexture2D_m7wlf")
 
 [node name="PaperClipDeer" parent="Enemies/RoundOne" unique_id=1517736822 instance=ExtResource("4_ccrhc")]
 z_index = 1
-position = Vector2(2933, 748)
+position = Vector2(2933, 880)
 
 [node name="PaperClipDeer2" parent="Enemies/RoundOne" unique_id=823125165 instance=ExtResource("4_ccrhc")]
 z_index = 1
 position = Vector2(4380, 748)
+
+[node name="PaperClipDeer3" parent="Enemies/RoundOne" unique_id=1181900283 instance=ExtResource("4_ccrhc")]
+z_index = 1
+position = Vector2(5087, -19)
 
 [node name="RoundTwo" type="Node2D" parent="Enemies" unique_id=1992174846]
 
 [node name="RoundThree" type="Node2D" parent="Enemies" unique_id=1785268295]
 
 [node name="Onboarding" type="Node" parent="." unique_id=182219842]
-process_mode = 3
+process_mode = 4
 script = ExtResource("20_ykcbn")
 
 [node name="TutorialTexts" type="CanvasLayer" parent="Onboarding" unique_id=1638230778]

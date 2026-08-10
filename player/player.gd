@@ -5,8 +5,6 @@ var in_safe_room = true
 var pause_menu_open = false
 var can_move = true
 
-#health and attack
-@export var max_health = 5
 
 # movement
 @export var base_speed: float = 300.0
@@ -67,7 +65,7 @@ var hit = false
 signal state_updated(state:State)
 
 func _ready() -> void:
-	hearts_container.set_max_hearts(max_health)
+	hearts_container.set_max_hearts(5)
 #	BuffSelectionOne.option_one.connect(_on_option_1)
 #	BuffSelectionOne.option_one.connect(_on_option_2)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -177,7 +175,7 @@ func _update_animation()->void:
 
 func take_damage(damage) -> void:
 	$HealthComponent.decrease_health(damage)
-	print("take damage")
+	print("player takes damage ", damage)
 	animation.play("Hit")
 
 func _apply_movement(delta:float) -> void:
@@ -212,17 +210,11 @@ func _apply_movement(delta:float) -> void:
 				boost_cooldown_left = boost_cooldown
 		
 	move_and_slide()
-	
-	#for collision_index in range(get_slide_collision_count()):
-		#var collider = get_slide_collision(collision_index).get_collider()
-		#if collider is RigidBody2D:
-			#var yeet_direction = Vector2(move_input, -abs(move_input)) * slide_speed_factor
-			#print('YEET: %s' % yeet_direction)
-			#collider.apply_central_impulse(yeet_direction)
 
 func update_blocks_display():
 	for i in range(blocks_list.size()):
 		blocks_list[i].visible = i < max_block_count
+		print("update blocks display")
 
 func blocking():
 	if is_blocking:
@@ -262,8 +254,8 @@ func start_timer_in_level_one():
 		$HUD/TimerOptions/Timer.start()
 		$HUD/TimerOptions/Timer.paused = false
 
-func _on_health_component_health_changed(new_health) -> void:
-	hearts_container.update_hearts(new_health)
+#func _on_health_component_health_changed(current_health) -> void:
+#	hearts_container.update_hearts(current_health)
 
 #func _on_option_1():
 	#speed_buff_factor += 0.05
@@ -271,3 +263,17 @@ func _on_health_component_health_changed(new_health) -> void:
 #func _on_option_2():
 	#max_block_count += 1
 	#current_block_count += 1
+
+
+func attack():
+	if is_attacking:
+		var overlapping_objects = $AttackBox.get_overlapping_areas()
+			
+		for area in overlapping_objects:
+			var parent = area.get_parent()
+			print(parent.name)
+			
+		for area in overlapping_objects:
+			if area.get_parent().is_in_group("Enemies"):
+				print("attacks enemy area")
+				area.get_parent().take_damage(2)

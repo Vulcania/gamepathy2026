@@ -127,11 +127,20 @@ bus = &"Music"
 [node name="PaperClipDeer" parent="Enemies" unique_id=1517736822 instance=ExtResource("11_ba0s7")]
 position = Vector2(4490, 147)
 
+[node name="PaperClipDeer5" parent="Enemies" unique_id=1717583726 instance=ExtResource("11_ba0s7")]
+position = Vector2(2292, -745)
+
 [node name="PaperClipDeer2" parent="Enemies" unique_id=787293028 instance=ExtResource("11_ba0s7")]
 position = Vector2(8471, -2275)
 
 [node name="PaperClipDeer3" parent="Enemies" unique_id=1191620894 instance=ExtResource("11_ba0s7")]
 position = Vector2(10349, -1896)
+
+[node name="PaperClipDeer6" parent="Enemies" unique_id=833344360 instance=ExtResource("11_ba0s7")]
+position = Vector2(9922, -1256)
+
+[node name="PaperClipDeer7" parent="Enemies" unique_id=854997980 instance=ExtResource("11_ba0s7")]
+position = Vector2(7669, -1777)
 
 [node name="PaperClipDeer4" parent="Enemies" unique_id=7955458 instance=ExtResource("11_ba0s7")]
 position = Vector2(11912, 546)

@@ -5,6 +5,7 @@ extends Node2D
 var bar_fill_amount : float
 
 func update_healthbar(current_health : int, max_health : int):
+	print("enemy healthbar script update healthbar")
 	bar_fill_amount = (float(current_health) / max_health) * max_bar_fill
 	if bar_fill_amount > max_bar_fill:
 		bar_fill_amount = max_bar_fill
