@@ -5,6 +5,7 @@ var in_safe_room = true
 var pause_menu_open = false
 var can_move = true
 
+@onready var camera: Camera2D = get_tree().get_first_node_in_group("Camera")
 
 # movement
 @export var base_speed: float = 300.0
@@ -174,6 +175,7 @@ func _update_animation()->void:
 			return
 
 func take_damage(damage) -> void:
+	camera.trigger_shake()
 	$HealthComponent.decrease_health(damage)
 	print("player takes damage ", damage)
 	animation.play("Hit")

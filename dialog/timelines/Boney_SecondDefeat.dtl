@@ -1,0 +1,2 @@
+[signal arg="entered_dialog"]
+[signal arg="exited_dialog"]

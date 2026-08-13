@@ -13,6 +13,7 @@
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="9_rdl48"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="10_j8omg"]
 [ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="11_ba0s7"]
+[ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="12_4s1t8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_do2xk"]
 radius = 193.0
@@ -110,11 +111,12 @@ label_settings = ExtResource("9_rdl48")
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("2_8wfkq")]
 position = Vector2(446, 708)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1327581296]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1327581296 groups=["Camera"]]
 limit_left = -256
 limit_top = -3300
 limit_right = 14200
 limit_bottom = 1150
+script = ExtResource("12_4s1t8")
 
 [node name="musik" type="AudioStreamPlayer" parent="." unique_id=1714583761]
 process_mode = 3

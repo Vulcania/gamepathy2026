@@ -10,6 +10,7 @@ var restart = false
 var round_one = true
 var round_two = false
 var round_three = false
+var boss_deafeated = false
 
 func _ready():
 	if Dialogic.current_timeline != null:
@@ -19,6 +20,7 @@ func restart_game():
 	TimerOptions.restart_game()
 	round_one = true
 	restart = true
+	boss_deafeated = false
 
 func blocks_refilled():
 	coffee_break = true
