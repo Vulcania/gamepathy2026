@@ -2,7 +2,7 @@ class_name WaypointMarker
 extends Sprite2D
 
 @export var on_screen_offset: Vector2 = Vector2(0.5, -0.5)
-@export var screen_margin: float = 4.0
+@export var screen_margin: float = 20.0
 @export var smoothing_speed: float = 8.0
 
 var camera_node: Camera2D
@@ -36,5 +36,5 @@ func _process(delta: float) -> void:
 		var vector_to_target: Vector2 = target_global_position - target_display_position
 		target_display_rotation = vector_to_target.angle() - PI * 0.5
 	
-	global_position = lerp(global_position, target_display_position, delta*smoothing_speed)
-	rotation = lerp(rotation, target_display_rotation, delta*smoothing_speed)
+	global_position = lerp(global_position, target_display_position, delta * smoothing_speed)
+	rotation = lerp(rotation, target_display_rotation, delta * smoothing_speed)

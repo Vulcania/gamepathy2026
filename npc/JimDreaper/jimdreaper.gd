@@ -10,6 +10,8 @@ var is_in_area = false
 
 func _ready():
 	$pressE.hide()
+	var layout = Dialogic.start("jim dreaper")
+	layout.register_character(load("res://dialog/characters/jim dreaper.dch"), $Marker2D)
 #	BuffSelectionTwo.option_one.connect(_on_option_1)
 #	BuffSelectionTwo.option_two.connect(_on_option_2)
 #	BuffSelectionTwo.option_three.connect(_on_option_3)

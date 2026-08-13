@@ -177,7 +177,7 @@ func _update_animation()->void:
 func take_damage(damage) -> void:
 	camera.trigger_shake()
 	$HealthComponent.decrease_health(damage)
-	print("player takes damage ", damage)
+	print("player takes damage, ", damage)
 	animation.play("Hit")
 
 func _apply_movement(delta:float) -> void:
@@ -221,7 +221,7 @@ func update_blocks_display():
 func blocking():
 	if is_blocking:
 		current_block_count -= 1
-	print(current_block_count)
+	print(current_block_count, "blocks left")
 
 func refill_blocks():
 	if Global.coffee_break:
@@ -229,7 +229,7 @@ func refill_blocks():
 		print("the blocks are refilled in player globally")
 	if CoffeeMaker.player_drank_coffee:
 		current_block_count = max_block_count
-		print(current_block_count)
+		print(current_block_count, "blocks left after refill")
 		print("the blocks are refilled in player")
 
 func die():
@@ -268,14 +268,20 @@ func start_timer_in_level_one():
 
 
 func attack():
-	if is_attacking:
+	#if is_attacking:
 		var overlapping_objects = $AttackBox.get_overlapping_areas()
 			
 		for area in overlapping_objects:
 			var parent = area.get_parent()
-			print(parent.name)
+			print("print parent name in player script", parent.name)
 			
 		for area in overlapping_objects:
 			if area.get_parent().is_in_group("Enemies"):
 				print("attacks enemy area")
 				area.get_parent().take_damage(2)
+
+
+func _on_attack_box_body_entered(body: Node2D) -> void:
+	if body.get_parent() is Enemy:
+		print("player: enemy attack box body entered")
+		body.take_damage(1)

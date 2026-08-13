@@ -432,8 +432,11 @@ shape = SubResource("RectangleShape2D_anrut")
 debug_color = Color(1.1072266, 1.1072266, 1.1176962, 0.27450982)
 
 [node name="HitBox" parent="." index="4" unique_id=849468902]
+light_mask = 4
+visibility_layer = 4
 position = Vector2(0, 14)
 collision_layer = 4
+monitorable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=133508168]
 shape = SubResource("RectangleShape2D_vfgpr")
@@ -477,6 +480,7 @@ move_speed = 3000
 rect = Rect2(-86, -101, 172, 202)
 show_rect = false
 
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
 [connection signal="body_exited" from="AttackBox" to="." method="_on_attack_box_body_exited"]

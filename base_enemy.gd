@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var flip_handler: FlipHandler = $Handlers/FlipHandler
 @onready var movement_handler: MovementHandler = $Handlers/MovementHandler
 @onready var gravity_handler: GravityHandler = $Handlers/GravityHandler
-@onready var health_component: HealthComponent = $HealthComponent
+@onready var health_component = $HealthComponent
 @onready var healthbar: Healthbar = $Healthbar
 @onready var attack_box: AttackBox = $AttackBox
 
@@ -39,6 +39,7 @@ func _on_attack_box_body_entered(body: Node2D) -> void:
 		print("attackbox body Deer Is attacking")
 
 func _on_hit_box_body_entered(body : AttackBox) -> void:
+	print("base enemy: on hit box entered", body)
 	if body.get_parent() is Player:
 		enemy_ai_handler.is_targeted = true
 		print("hitbox body Deer Is getting hit")
@@ -47,8 +48,9 @@ func _on_attack_box_body_exited(_body : Player) -> void:
 	enemy_ai_handler.is_attacking = false
 	print("Player left me")
 
-
-func _on_attack_box_area_entered(area: Area2D) -> void:
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	print("base enemy: on hit box area entered", area)
 	if area.get_parent() is Player:
-		area.get_parent().take_damage(1)
-		print("attackbox area entered player take damage")
+		enemy_ai_handler.is_targeted = true
+		print("hitbox area Deer Is getting hit")
+		take_damage(1)

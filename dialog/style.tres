@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://bi6g6ga3ypthu"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_6jxrv"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_tq638"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_adevd"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_xd5x3"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_hkmte"]
+
+[sub_resource type="Resource" id="Resource_wh1to"]
+script = ExtResource("2_tq638")
+scene = ExtResource("1_6jxrv")
+
+[sub_resource type="Resource" id="Resource_gh5ut"]
+script = ExtResource("2_tq638")
+scene = ExtResource("3_adevd")
+
+[sub_resource type="Resource" id="Resource_04qt0"]
+script = ExtResource("2_tq638")
+scene = ExtResource("4_xd5x3")
+overrides = {
+"box_modulate": "Color(0.84705883, 0.76862746, 0.7607843, 1)",
+"choices_text_color": "Color(0.10546875, 0.07188535, 0.04737854, 1)",
+"choices_text_color_disabled": "Color(0.12109375, 0.06495929, 0.04777527, 1)",
+"choices_text_color_focus": "Color(0.08203125, 0.04736924, 0.030441284, 1)",
+"choices_text_color_hover": "Color(0.07421875, 0.04525423, 0.033920288, 1)",
+"name_label_box_modulate": "Color(0.8984375, 0.6110077, 0.57907104, 1)",
+"name_label_color": "Color(0.56640625, 0.3412819, 0.17700195, 1)",
+"text_max_width": "500.0"
+}
+
+[resource]
+script = ExtResource("5_hkmte")
+name = "style"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_wh1to"),
+"10": SubResource("Resource_gh5ut"),
+"11": SubResource("Resource_04qt0")
+}
+metadata/_latest_layer = "10"

@@ -66,11 +66,16 @@ directories/dtl_directory={
 "Opening Agatha": "res://dialog/timelines/Opening Agatha.dtl",
 "enter_kitchen2": "res://dialog/timelines/enter_kitchen2.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://dialog/style.tres",
+"style": "res://dialog/style.tres"
+}
 variables={
 "JimEnd": true,
 "OpeningAgathaEnd": true
 }
+layout/style_list=["res://dialog/style.tres"]
+layout/default_style="res://dialog/style.tres"
 
 [display]
 

@@ -1,4 +1,5 @@
 [signal arg="entered_dialog"]
+"boney toney": First Test
 [signal arg="exited_dialog"]
 [signal arg="start_boss_battle"]
 [signal arg="boss_battle_1"]

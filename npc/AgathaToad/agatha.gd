@@ -8,12 +8,13 @@ var option_three = false
 
 var is_in_area = false
 
-
 func _ready():
 	$pressE.hide()
 	BuffSelectionOne.option_one.connect(_on_option_1)
 	BuffSelectionOne.option_two.connect(_on_option_2)
 	BuffSelectionOne.option_three.connect(_on_option_3)
+	var layout = Dialogic.start("agatha")
+	layout.register_character(load("res://dialog/characters/agatha.dch"), $Marker2D)
 
 func _input(event):
 	if event.is_action_pressed("interact"):

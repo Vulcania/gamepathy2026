@@ -58,15 +58,16 @@ func check_state():
 	if floor_check_left.is_colliding() == false or wall_check_left.is_colliding():
 		flip()
 		return State.IDLE
-	
+	#print("enemy ai handler:", current_state)
 	return State.WALK
-	print(State)
+
 
 func flip():
 	flip_handler.flip_entity(sprite, direction)
 	flip_handler.flip_raycast(floor_check_left, wall_check_left)
 	flip_handler.apply_collision_shapes_offset(base_shape, hitbox, attack_box)
 	direction.x *= -1
+	print("enemy ai handler flipped")
 
 func _update_animation():
 	match current_state:

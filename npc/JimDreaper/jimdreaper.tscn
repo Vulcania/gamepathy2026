@@ -59,5 +59,8 @@ autoplay = &"jim_idle"
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=95187513]
 texture = ExtResource("1_y6dky")
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1789448440]
+position = Vector2(44, -76)
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

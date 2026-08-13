@@ -11,7 +11,7 @@ signal full_health_restored
 # Take Damage
 func decrease_health(amount : int):
 	current_health -= amount
-	print("healthcomp decrease health ", current_health)
+	print("healthcomp decrease health ", current_health, owner)
 	if current_health < 0:
 		current_health = 0
 		depleted_health.emit()

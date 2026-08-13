@@ -57,5 +57,8 @@ offset_bottom = -129.0
 text = "press E to interact"
 label_settings = ExtResource("4_l15y2")
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=652143614]
+position = Vector2(64, -64)
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
