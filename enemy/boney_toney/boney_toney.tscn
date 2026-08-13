@@ -198,6 +198,42 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Attack1:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Attack2:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Dying:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_50u07"]
 resource_name = "attack_1"
@@ -225,6 +261,18 @@ tracks/1/keys = {
 "update": 1,
 "values": []
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Attack1:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_svqh0"]
 resource_name = "attack_2"
@@ -251,6 +299,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(),
 "update": 1,
 "values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Attack2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_tu7fq"]
@@ -304,6 +364,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Dying:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_pq3vj"]
@@ -443,6 +515,14 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=408631061]
 shape = SubResource("CircleShape2D_xwnnu")
 
+[node name="HitBox" type="Area2D" parent="." unique_id=1285560821]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=385876530]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1876295152]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=55257301]
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=1767920810]
 
 [node name="ProgressBar" type="ProgressBar" parent="UI" unique_id=1445691898]
@@ -506,7 +586,25 @@ script = ExtResource("32_2rgc6")
 
 [node name="SFX" type="Node2D" parent="." unique_id=1460880203]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFX" unique_id=1246945057]
+[node name="Idle" type="AudioStreamPlayer2D" parent="SFX" unique_id=1246945057]
+bus = &"Effects"
+
+[node name="Skill" type="AudioStreamPlayer2D" parent="SFX" unique_id=1433544411]
+bus = &"Effects"
+
+[node name="Summon" type="AudioStreamPlayer2D" parent="SFX" unique_id=750162132]
+bus = &"Effects"
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="SFX" unique_id=1557316000]
+bus = &"Effects"
+
+[node name="Attack1" type="AudioStreamPlayer2D" parent="SFX" unique_id=737001307]
+bus = &"Effects"
+
+[node name="Attack2" type="AudioStreamPlayer2D" parent="SFX" unique_id=242981481]
+bus = &"Effects"
+
+[node name="Dying" type="AudioStreamPlayer2D" parent="SFX" unique_id=2061500417]
 bus = &"Effects"
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=97403195]
@@ -514,3 +612,4 @@ visible = false
 rect = Rect2(-295, -302, 579, 609)
 
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]
+[connection signal="area_entered" from="AttackArea" to="FiniteStateMachine/Attack" method="_on_attack_area_area_entered"]

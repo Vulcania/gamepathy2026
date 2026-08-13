@@ -28,7 +28,12 @@
 [ext_resource type="Texture2D" uid="uid://wtlcm22ty7bw" path="res://enemy/ring-binder/hit/frame_10.png" id="18_kb3br"]
 [ext_resource type="Texture2D" uid="uid://djtpijuojf0m4" path="res://enemy/ring-binder/hit/frame_11.png" id="19_n7i7i"]
 [ext_resource type="Texture2D" uid="uid://bbry6i8moidwc" path="res://enemy/ring-binder/hit/frame_12.png" id="20_r7iey"]
-[ext_resource type="Script" uid="uid://bie4wu05xnn2b" path="res://scripts/healthbar.gd" id="29_ifvnn"]
+[ext_resource type="Script" uid="uid://dfifemk4cqv2h" path="res://enemy/ring-binder/ring_binder_states.gd" id="30_4oa4u"]
+[ext_resource type="Script" uid="uid://doutctndguvf" path="res://enemy/ring-binder/idle.gd" id="31_fht7q"]
+[ext_resource type="Script" uid="uid://c8sgwu2b8g6ep" path="res://enemy/ring-binder/attack.gd" id="32_qvsbj"]
+[ext_resource type="Script" uid="uid://cpwd8r605qkgi" path="res://enemy/ring-binder/hurt.gd" id="33_qvsbj"]
+[ext_resource type="Script" uid="uid://dy46xer2u2750" path="res://enemy/ring-binder/healthbar.gd" id="34_56oou"]
+[ext_resource type="Script" uid="uid://cesxa22lb57ch" path="res://enemy/ring-binder/dead.gd" id="34_qvsbj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cssm5"]
 radius = 60.551632
@@ -248,6 +253,9 @@ radius = 113.004425
 radius = 88.005684
 
 [node name="RingBinder" type="CharacterBody2D" unique_id=606483896]
+scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_lihf5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1841305218]
@@ -263,21 +271,21 @@ autoplay = &"Idle"
 
 [node name="HitArea" type="Area2D" parent="." unique_id=1952087068]
 visible = false
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=709368692]
 position = Vector2(-22, 8)
 shape = SubResource("CircleShape2D_lihf5")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1092380745]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1689796689]
 position = Vector2(-25, -2)
 shape = SubResource("CircleShape2D_ifvnn")
-
-[node name="Healthbar" type="Node2D" parent="." unique_id=897526776]
-visible = false
-script = ExtResource("29_ifvnn")
-metadata/_custom_type_script = "uid://bie4wu05xnn2b"
 
 [node name="SFX" type="Node2D" parent="." unique_id=1657816712]
 
@@ -294,10 +302,35 @@ bus = &"Effects"
 [node name="Dying" type="AudioStreamPlayer2D" parent="SFX" unique_id=840965638]
 bus = &"Effects"
 
-[node name="Healthbar2" type="Control" parent="." unique_id=77074979]
+[node name="RingBinderStates" type="Node2D" parent="." unique_id=1228838638]
+visible = false
+script = ExtResource("30_4oa4u")
+
+[node name="Idle" type="Node2D" parent="RingBinderStates" unique_id=1997690806]
+script = ExtResource("31_fht7q")
+
+[node name="Attack" type="Node2D" parent="RingBinderStates" unique_id=1113569604]
+script = ExtResource("32_qvsbj")
+
+[node name="Hurt" type="Node2D" parent="RingBinderStates" unique_id=300617813]
+script = ExtResource("33_qvsbj")
+
+[node name="Dead" type="Node2D" parent="RingBinderStates" unique_id=1131210509]
+script = ExtResource("34_qvsbj")
+
+[node name="Healthbar" type="Control" parent="." unique_id=973988457]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("34_56oou")
 
-[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
+[node name="ColorRect" type="ColorRect" parent="Healthbar" unique_id=935422043]
+layout_mode = 0
+offset_left = -111.0
+offset_top = -89.0
+offset_right = 85.0
+offset_bottom = -71.0
+color = Color(0.92941177, 0, 0.1764706, 1)
+
+[connection signal="area_entered" from="AttackArea" to="RingBinderStates/Attack" method="_on_attack_area_area_entered"]

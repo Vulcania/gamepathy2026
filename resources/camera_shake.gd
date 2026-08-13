@@ -1,9 +1,8 @@
-extends Node
+extends Camera2D
 class_name Camera
 
 @export var max_shake: float = 10.0
 @export var shake_fade: float = 10.0
-var offset : Vector2
 
 var _shake_strength: float = 0.0
 

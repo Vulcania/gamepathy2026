@@ -12,47 +12,44 @@ var facing_right = false
 
 var max_health = 3
 var health: int
-#var current_state: States
+var hit = false
+var can_attack = true 
 
-#var direction : Vector2
-var acceleration: Vector2 = Vector2.ZERO 
+var direction : Vector2
 
 func _ready():
-	$SFX/Idle.play()
 	health = max_health
 	set_physics_process(false)
 	await animation.animation_finished
 	set_physics_process(true)
 	animation.play("idle")
+	$SFX/Idle.play()
 
 func _process(_delta: float) -> void:
-#	if direction.x < 0:
-#		sprite.flip_h = true
-#	else:
-#		sprite.flip_h = false
-	acceleration = (player.position - position).normalized() * 700
+	direction = player.global_position - position
+	
+	if direction.x < 0:
+		sprite.flip_h = false
+	else:
+		sprite.flip_h = true
+
+	if direction.x and direction.y <= 60:
+		animation.play("Attack")
+	else:
+		animation.play("Idle")
 
 func _physics_process(_delta):
-	var direction = player.position - position
-	
 	velocity = direction.normalized() * 60
 	move_and_slide()
 
-func _on_attack_area_area_entered(area):
-	if area.get_parent() is Player:
-		area.get_parent().take_damage(1)
-		$SFX/Attack.play()
-		camera.trigger_shake()
-		print("melee attacking player")
-
 func take_damage():
 	health -= 1
-	print("ring binder takes damage", health)
-	camera.trigger_shake()
+	print("ring binder takes damage ", health)
+#	camera.trigger_shake()
 	if health > 0:
 		$SFX/Hurt.play()
 		animation.play("Hit")
-	if health < 1: 
-		$SFX/Dying.play()
-		animation.play("Death")
+#	if health <= 0: 
+#		$SFX/Dying.play()
+#		animation.play("Death")
 #queue free in Death Animation
