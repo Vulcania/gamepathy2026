@@ -281,13 +281,18 @@ func attack():
 				area.get_parent().take_damage(2)
 
 
-func _on_attack_box_body_entered(body: Node2D) -> void:
-	if body.get_parent() is Enemy:
-		print("player: enemy attack box body entered")
-		body.take_damage(1)
-
-
 func _on_attack_box_area_entered(area: Area2D) -> void:
 	if area.get_parent() is RingBinder:
 		area.get_parent().take_damage()
-		print("player:attackarea entered")
+		print("player:attack area ringbinder entered")
+	#if area.get_parent() is Enemy:
+	#	print("player: enemy attack box body entered")
+	#	area.get_parent().take_damage()
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	print("player: on hit box area entered", area.name)
+	if area.get_parent() is Enemy:
+		print("hitbox area player Is getting hit by enemy")
+		take_damage(1)
+		$AnimationPlayer.play("Hit")

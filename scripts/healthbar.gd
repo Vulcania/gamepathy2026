@@ -10,3 +10,5 @@ func update_healthbar(current_health : int, max_health : int):
 	if bar_fill_amount > max_bar_fill:
 		bar_fill_amount = max_bar_fill
 	$ColorRect.size.x = bar_fill_amount
+	if current_health <= 0:
+		bar_fill_amount = 0

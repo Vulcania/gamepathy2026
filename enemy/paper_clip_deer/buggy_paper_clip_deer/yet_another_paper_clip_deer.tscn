@@ -74,7 +74,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_2ucdw")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -103,7 +103,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_3mj56")
 }],
-"loop": true,
+"loop": false,
 "name": &"dying",
 "speed": 5.0
 }, {
@@ -123,7 +123,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("24_v1uh7")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -222,7 +222,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_ki6ai"]
 resource_name = "attack"
 length = 2.0
-loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -275,7 +274,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_va8bo"]
 resource_name = "dying"
-length = 1.1333333
+length = 2.4333334
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -283,10 +282,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.26666668, 0.5, 0.76666665, 1, 1.2333333, 1.5, 1.7333333, 2.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 7]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -300,11 +299,24 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"dying"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.0666666),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_v41sa"]
 resource_name = "hit"
 length = 0.8333333
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -410,12 +422,13 @@ height = 226.0
 
 [node name="YetAnotherPaperClipDeer" unique_id=1112242495 instance=ExtResource("1_anrut")]
 
-[node name="EnemyAIHandler" parent="." index="0" unique_id=1351028729 node_paths=PackedStringArray("sprite", "animation", "base_shape", "hitbox", "attack_box")]
+[node name="EnemyAIHandler" parent="." index="0" unique_id=1351028729 node_paths=PackedStringArray("sprite", "animation", "base_shape", "hitbox", "attack_box", "health_component")]
 sprite = NodePath("../AnimatedSprite2D")
 animation = NodePath("../AnimationPlayer")
 base_shape = NodePath("../CollisionBody")
 hitbox = NodePath("../HitBox")
 attack_box = NodePath("../AttackBox")
+health_component = NodePath("../HealthComponent")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=196603920]
 sprite_frames = SubResource("SpriteFrames_0pgol")
@@ -443,15 +456,13 @@ shape = SubResource("RectangleShape2D_vfgpr")
 
 [node name="AttackBox" parent="." index="5" unique_id=1208718593]
 visible = false
+visibility_layer = 3
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" index="0" unique_id=1522116914]
 position = Vector2(0, -31)
 shape = SubResource("CapsuleShape2D_anrut")
 debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
-
-[node name="HealthComponent" parent="." index="8" unique_id=2114641219]
-max_health = 3
 
 [node name="WaypointMarker" parent="." index="9" unique_id=984549330]
 visible = false
@@ -482,6 +493,7 @@ show_rect = false
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
 [connection signal="body_exited" from="AttackBox" to="." method="_on_attack_box_body_exited"]
 [connection signal="depleted_health" from="HealthComponent" to="." method="_on_health_component_depleted_health"]

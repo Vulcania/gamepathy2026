@@ -11,6 +11,8 @@ extends Node2D
 @export var movement_handler : MovementHandler = null
 @export var flip_handler : FlipHandler = null
 
+@export var health_component: HealthComponent = null
+
 var is_attacking : bool = false
 var is_targeted : bool = false
 var is_dying : bool = false
@@ -22,6 +24,9 @@ enum State { IDLE, WALK, ATTACK, HIT, DYING, DEAD }
 var new_state : State
 var current_state = State.WALK
 var direction = Vector2(1.0, 0.0)
+
+func _ready() -> void:
+	health_component.depleted_health.connect(_on_health_component_depleted_health)
 
 func handle_state(entity : CharacterBody2D, delta : float) -> void:
 	new_state = check_state()
@@ -43,14 +48,14 @@ func handle_state(entity : CharacterBody2D, delta : float) -> void:
 			State.ATTACK:
 				movement_handler.movement(entity, Vector2.ZERO, delta)
 		_update_animation()
-		await animation.animation_finished
+		#await animation.animation_finished
 
 func check_state():
-	if is_attacking:
-		return State.ATTACK
-	
-	if is_targeted:
+	if is_targeted and !is_dying:
 		return State.HIT
+	
+	if is_attacking and !is_targeted and !is_dying:
+		return State.ATTACK
 	
 	if is_dying:
 		return State.DYING
@@ -58,7 +63,9 @@ func check_state():
 	if floor_check_left.is_colliding() == false or wall_check_left.is_colliding():
 		flip()
 		return State.IDLE
-	#print("enemy ai handler:", current_state)
+	
+	if !is_attacking and !is_targeted and !is_dying:
+		return State.WALK
 	return State.WALK
 
 
@@ -67,25 +74,29 @@ func flip():
 	flip_handler.flip_raycast(floor_check_left, wall_check_left)
 	flip_handler.apply_collision_shapes_offset(base_shape, hitbox, attack_box)
 	direction.x *= -1
-	print("enemy ai handler flipped")
 
 func _update_animation():
 	match current_state:
 		State.IDLE:
-			animation.play("idle")
-			return
+			if !is_dying:
+				animation.play("idle")
+				return
 		State.WALK:
-			animation.play("walk")
-			return
+			if !is_dying:
+				animation.play("walk")
+				return
 		State.HIT:
-			animation.play("hit")
-			return
+			if !is_dying:
+				animation.play("hit")
+				await animation.animation_finished
+				return
 		State.ATTACK:
 			animation.play("attack")
 			return
 		State.DYING:
 			animation.play("dying")
+			await animation.animation_finished
 			return
 
-func _on_health_component_depleted_health() -> void:
+func _on_health_component_depleted_health():
 	is_dying = true

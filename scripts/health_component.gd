@@ -1,8 +1,8 @@
 class_name HealthComponent
 extends Control
 
-@export var max_health : int = 5
-@export var current_health : int = 5
+@export var max_health : int = 3
+@export var current_health : int = 3
 
 signal depleted_health
 signal health_changed(current_health)
@@ -12,7 +12,7 @@ signal full_health_restored
 func decrease_health(amount : int):
 	current_health -= amount
 	print("healthcomp decrease health ", current_health, owner)
-	if current_health < 0:
+	if current_health <= 0:
 		current_health = 0
 		depleted_health.emit()
 	else:
