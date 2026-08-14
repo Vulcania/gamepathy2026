@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name RingBinder
 
 #@export var speed = 120.0
 #@export var current_speed = 0.0
@@ -11,7 +12,7 @@ extends CharacterBody2D
 var facing_right = false
 
 var max_health = 3
-var health: int
+var health: int = 3
 var hit = false
 var can_attack = true 
 
@@ -19,11 +20,12 @@ var direction : Vector2
 
 func _ready():
 	health = max_health
+	print("ringbinder health:", health)
 	set_physics_process(false)
 	await animation.animation_finished
 	set_physics_process(true)
-	animation.play("idle")
-	$SFX/Idle.play()
+	animation.play("Idle")
+	#$SFX/Idle.play()
 
 func _process(_delta: float) -> void:
 	direction = player.global_position - position
@@ -44,12 +46,22 @@ func _physics_process(_delta):
 
 func take_damage():
 	health -= 1
-	print("ring binder takes damage ", health)
-#	camera.trigger_shake()
+	print("ring binder takes damage, health: ", health)
+	camera.trigger_shake()
 	if health > 0:
-		$SFX/Hurt.play()
+		#$SFX/Hurt.play()
 		animation.play("Hit")
 #	if health <= 0: 
 #		$SFX/Dying.play()
 #		animation.play("Death")
 #queue free in Death Animation
+
+func _on_hit_area_area_entered(area: Area2D) -> void:
+	if area.get_parent() is AttackBox:
+		#hit = true
+		print("ringbinder: attackbox entered")
+		take_damage()
+	if area.get_parent() is Player:
+		#hit = true
+		print("ringbinder: attackbox entered")
+		take_damage()

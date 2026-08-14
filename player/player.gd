@@ -285,3 +285,9 @@ func _on_attack_box_body_entered(body: Node2D) -> void:
 	if body.get_parent() is Enemy:
 		print("player: enemy attack box body entered")
 		body.take_damage(1)
+
+
+func _on_attack_box_area_entered(area: Area2D) -> void:
+	if area.get_parent() is RingBinder:
+		area.get_parent().take_damage()
+		print("player:attackarea entered")

@@ -4,7 +4,7 @@ var is_in_area = false
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	var layout = Dialogic.start("Boney Toney")
+	var layout = Dialogic.start("boney toney")
 	layout.register_character(load("res://dialog/characters/boney toney.dch"), $Marker2D)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

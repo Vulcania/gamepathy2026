@@ -30,6 +30,7 @@ texture = SubResource("PlaceholderTexture2D_3yi2a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CompanyBossDoor/BossDoorEnter" unique_id=1008406914]
 
 [node name="NPCBoney" parent="." unique_id=1981898663 instance=ExtResource("3_bnxeg")]
+visible = false
 position = Vector2(1397, 884)
 
 [node name="BoneyToney" parent="." unique_id=1276564800 instance=ExtResource("2_tu2fl")]

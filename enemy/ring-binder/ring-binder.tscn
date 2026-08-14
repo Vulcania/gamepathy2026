@@ -250,9 +250,10 @@ _data = {
 radius = 113.004425
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ifvnn"]
-radius = 145.4957
+radius = 154.05194
 
 [node name="RingBinder" type="CharacterBody2D" unique_id=606483896]
+visibility_layer = 7
 scale = Vector2(0.5, 0.5)
 collision_layer = 4
 collision_mask = 4
@@ -262,6 +263,7 @@ script = ExtResource("1_lihf5")
 texture = ExtResource("1_gqtpm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=42931433]
+visibility_layer = 8
 position = Vector2(-20.5, 7.5)
 shape = SubResource("CircleShape2D_cssm5")
 
@@ -271,20 +273,25 @@ autoplay = &"Idle"
 
 [node name="HitArea" type="Area2D" parent="." unique_id=1952087068]
 visible = false
-collision_layer = 0
+visibility_layer = 4
+collision_layer = 4
 collision_mask = 4
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=709368692]
+visibility_layer = 4
 position = Vector2(-22, 8)
 shape = SubResource("CircleShape2D_lihf5")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1092380745]
+visibility_layer = 2
 collision_layer = 0
 collision_mask = 2
-monitorable = false
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1689796689]
-position = Vector2(-18, -4)
+visibility_layer = 2
+position = Vector2(-20, 8)
 shape = SubResource("CircleShape2D_ifvnn")
 
 [node name="SFX" type="Node2D" parent="." unique_id=1657816712]
@@ -333,4 +340,6 @@ offset_right = 85.0
 offset_bottom = -71.0
 color = Color(0.92941177, 0, 0.1764706, 1)
 
+[connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
+[connection signal="area_entered" from="HitArea" to="RingBinderStates/Hurt" method="_on_hit_area_area_entered"]
 [connection signal="area_entered" from="AttackArea" to="RingBinderStates/Attack" method="_on_attack_area_area_entered"]
