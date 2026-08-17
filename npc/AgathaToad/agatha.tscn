@@ -32,6 +32,8 @@ _data = {
 }
 
 [node name="Agatha" type="Sprite2D" unique_id=840079881]
+light_mask = 3
+visibility_layer = 7
 texture = ExtResource("1_iv2xl")
 script = ExtResource("1_210dv")
 

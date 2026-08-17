@@ -9,7 +9,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		player_drank_coffee = true
 		print(player_drank_coffee)
 		coffee_signal()
-#		Global.blocks_refilled()
+		Global.blocks_refilled()
 #		$Area2D.hide()
 
 func coffee_signal():

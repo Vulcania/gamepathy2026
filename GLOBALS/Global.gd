@@ -12,6 +12,8 @@ var round_two = false
 var round_three = false
 var boss_deafeated = false
 
+signal global_refill_coffee
+
 func _ready():
 	if Dialogic.current_timeline != null:
 		return
@@ -24,8 +26,9 @@ func restart_game():
 
 func blocks_refilled():
 	coffee_break = true
-	coffee_break = !coffee_break
+	#coffee_break = !coffee_break
 	print("coffee_break")
+	emit_signal("global_refill_coffee")
 
 func enemy_counter_lvl_one():
 	max_enemies_in_lvl = 2

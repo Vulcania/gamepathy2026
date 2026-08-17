@@ -70,7 +70,7 @@ func _ready() -> void:
 #	BuffSelectionOne.option_one.connect(_on_option_1)
 #	BuffSelectionOne.option_one.connect(_on_option_2)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	CoffeeMaker.refill_coffee.connect(refill_blocks)
+	Global.global_refill_coffee.connect(_refill_blocks)
 	
 	var blocks_parent = $HUD/BlocksContainer
 	for child in blocks_parent.get_children():
@@ -223,14 +223,14 @@ func blocking():
 		current_block_count -= 1
 	print(current_block_count, "blocks left")
 
-func refill_blocks():
-	if Global.coffee_break:
-		current_block_count = max_block_count
-		print("the blocks are refilled in player globally")
-	if CoffeeMaker.player_drank_coffee:
-		current_block_count = max_block_count
-		print(current_block_count, "blocks left after refill")
-		print("the blocks are refilled in player")
+func _refill_blocks():
+	current_block_count = max_block_count
+	print("coffee refilled, blockcount:", current_block_count)
+	Global.coffee_break = false
+	#if CoffeeMaker.player_drank_coffee:
+		#current_block_count = max_block_count
+		#print(current_block_count, "blocks left after refill")
+		#print("the blocks are refilled in player")
 
 func die():
 	animation.play("Dead")
@@ -280,7 +280,6 @@ func attack():
 				print("attacks enemy area")
 				area.get_parent().take_damage(2)
 
-
 func _on_attack_box_area_entered(area: Area2D) -> void:
 	if area.get_parent() is RingBinder:
 		area.get_parent().take_damage()
@@ -288,7 +287,6 @@ func _on_attack_box_area_entered(area: Area2D) -> void:
 	#if area.get_parent() is Enemy:
 	#	print("player: enemy attack box body entered")
 	#	area.get_parent().take_damage()
-
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	print("player: on hit box area entered", area.name)

@@ -34,16 +34,18 @@ func _input(event):
 	if event.is_action_pressed("interact"):
 		if is_in_door_area:
 			$AnimationPlayer.play("EnterLevelOne")
+			#level change in animation player
 
-func _on_door_area_area_entered(area: Area2D) -> void:
+func _on_door_area_area_entered(area):
 	if area.get_parent() is Player:
-		is_in_door_area = true
 		$Door/pressE.show()
+		is_in_door_area = true
 
-func _on_door_area_area_exited(area: Area2D) -> void:
+func _on_door_area_area_exited(area):
 	if area.get_parent() is Player:
-		is_in_door_area = false
 		$Door/pressE.hide()
+		is_in_door_area = false
+
 
 func _on_dialogic_signal(argument: String):
 	if argument == "":

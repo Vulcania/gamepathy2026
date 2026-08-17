@@ -525,7 +525,7 @@ radius = 94.641426
 [node name="Player" type="CharacterBody2D" unique_id=1980571954]
 visibility_layer = 3
 texture_filter = 1
-collision_layer = 2
+collision_layer = 3
 collision_mask = 7
 script = ExtResource("1_oul6g")
 base_speed = 350.0
@@ -574,7 +574,6 @@ visibility_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MonitorArea" unique_id=50398872]
 shape = SubResource("CircleShape2D_8pxes")
-disabled = true
 
 [node name="HealthComponent" parent="." unique_id=1032837444 instance=ExtResource("66_or4qq")]
 offset_left = -1.0

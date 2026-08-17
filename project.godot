@@ -25,7 +25,7 @@ BuffSelectionTwo="*uid://dd4axoax3k8fx"
 PauseMenu="*uid://buvakl6wq0bod"
 TimerOptions="*uid://b64goye1ug3tj"
 BlocksContainer="*uid://cmifa1p6oqh71"
-CoffeeMaker="*uid://smxepc6nvhmu"
+CoffeeMaker="uid://bfqhlqksjd4mu"
 
 [dialogic]
 
