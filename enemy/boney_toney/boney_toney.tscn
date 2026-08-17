@@ -2,29 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dqrflkr7hssvw" path="res://enemy/boney_toney/boney_toney.gd" id="1_4v46i"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="1_50u07"]
-[ext_resource type="Texture2D" uid="uid://dfd1pmf06npkd" path="res://enemy/toad_enemy/attack/frame_06.png" id="1_g6u8s"]
-[ext_resource type="Texture2D" uid="uid://bj2fkq7k4vif6" path="res://enemy/toad_enemy/attack/frame_07.png" id="2_6oovl"]
-[ext_resource type="Texture2D" uid="uid://dgb0wo24tn4hd" path="res://enemy/toad_enemy/attack/frame_08.png" id="3_w4pii"]
-[ext_resource type="Texture2D" uid="uid://doj0n0rr0wewb" path="res://enemy/toad_enemy/attack/frame_09.png" id="4_uf3ox"]
-[ext_resource type="Texture2D" uid="uid://bkp4nf4uaqbfc" path="res://enemy/toad_enemy/attack/frame_10.png" id="5_pfi6b"]
-[ext_resource type="Texture2D" uid="uid://bj605up53t20r" path="res://enemy/toad_enemy/attack/frame_11.png" id="6_4ras7"]
-[ext_resource type="Texture2D" uid="uid://bmeaawhguqxlt" path="res://enemy/toad_enemy/attack/frame_12.png" id="7_o7b0u"]
 [ext_resource type="Texture2D" uid="uid://bvewbss6sqeyb" path="res://enemy/toad_enemy/attack/frame_13.png" id="8_2rgc6"]
-[ext_resource type="Texture2D" uid="uid://bwkrmaat16r15" path="res://enemy/toad_enemy/death/frame_24.png" id="9_4v46i"]
-[ext_resource type="Texture2D" uid="uid://badhmnuwcj2v3" path="res://enemy/toad_enemy/death/frame_25.png" id="10_iw7wr"]
-[ext_resource type="Texture2D" uid="uid://bnh2ipichw1wq" path="res://enemy/toad_enemy/death/frame_26.png" id="11_f8e23"]
-[ext_resource type="Texture2D" uid="uid://4r7b3mwbkqtq" path="res://enemy/toad_enemy/death/frame_27.png" id="12_dhspa"]
-[ext_resource type="Texture2D" uid="uid://s15q1cq76kef" path="res://enemy/toad_enemy/death/frame_28.png" id="13_1j6fj"]
-[ext_resource type="Texture2D" uid="uid://qtbswb10xj24" path="res://enemy/toad_enemy/death/frame_29.png" id="14_3ap36"]
-[ext_resource type="Texture2D" uid="uid://bv1f3adsnxm81" path="res://enemy/toad_enemy/death/frame_30.png" id="15_ql6h4"]
 [ext_resource type="Texture2D" uid="uid://gs13viiceyeb" path="res://enemy/toad_enemy/death/frame_31.png" id="16_nqpj0"]
-[ext_resource type="Texture2D" uid="uid://dowoydagou4g6" path="res://enemy/toad_enemy/idle/frame_01.png" id="17_r6flh"]
-[ext_resource type="Texture2D" uid="uid://mh5g6c7tcou3" path="res://enemy/toad_enemy/idle/frame_02.png" id="18_j5rku"]
-[ext_resource type="Texture2D" uid="uid://dso5srsyh8d6l" path="res://enemy/toad_enemy/idle/frame_03.png" id="19_hil80"]
-[ext_resource type="Texture2D" uid="uid://dw5usms4x4nqq" path="res://enemy/toad_enemy/idle/frame_04.png" id="20_wsx6x"]
 [ext_resource type="Texture2D" uid="uid://kygdk0c2b4c2" path="res://enemy/toad_enemy/idle/frame_05.png" id="21_vnw5w"]
-[ext_resource type="Texture2D" uid="uid://cpjsow4l53vhg" path="res://enemy/toad_enemy/hit/frame_17.png" id="22_thipg"]
-[ext_resource type="Texture2D" uid="uid://ca8fbqlfrexo1" path="res://enemy/toad_enemy/hit/frame_18.png" id="23_3b8f4"]
 [ext_resource type="Texture2D" uid="uid://ce286k7g2ktj4" path="res://enemy/toad_enemy/hit/frame_19.png" id="24_kva6e"]
 [ext_resource type="Script" uid="uid://dc0uhdylfngqk" path="res://enemy/boney_toney/finite_state_machine.gd" id="26_w4pii"]
 [ext_resource type="Script" uid="uid://ccj68o4bx73nc" path="res://enemy/boney_toney/idle.gd" id="27_pfi6b"]
@@ -38,27 +18,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_g6u8s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_6oovl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_w4pii")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_uf3ox")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_pfi6b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_4ras7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_o7b0u")
-}, {
-"duration": 1.0,
 "texture": ExtResource("8_2rgc6")
 }],
 "loop": false,
@@ -66,27 +25,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_g6u8s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_6oovl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_w4pii")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_uf3ox")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_pfi6b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_4ras7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_o7b0u")
-}, {
 "duration": 1.0,
 "texture": ExtResource("8_2rgc6")
 }],
@@ -96,27 +34,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_4v46i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_iw7wr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_f8e23")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_dhspa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_1j6fj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_3ap36")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_ql6h4")
-}, {
-"duration": 1.0,
 "texture": ExtResource("16_nqpj0")
 }],
 "loop": false,
@@ -124,18 +41,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("17_r6flh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_j5rku")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_hil80")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_wsx6x")
-}, {
 "duration": 1.0,
 "texture": ExtResource("21_vnw5w")
 }],
@@ -145,12 +50,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_thipg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_3b8f4")
-}, {
-"duration": 1.0,
 "texture": ExtResource("24_kva6e")
 }],
 "loop": false,
@@ -158,12 +57,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_thipg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_3b8f4")
-}, {
 "duration": 1.0,
 "texture": ExtResource("24_kva6e")
 }],
