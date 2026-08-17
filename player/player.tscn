@@ -74,6 +74,7 @@
 [ext_resource type="PackedScene" uid="uid://cmifa1p6oqh71" path="res://player/blocks_container.tscn" id="72_do7qw"]
 [ext_resource type="Script" uid="uid://cw7ryewcmoul3" path="res://enemy/Handlers/flip_handler.gd" id="73_2h6tc"]
 [ext_resource type="Script" uid="uid://g3ca5an7h1wt" path="res://input_handler.gd" id="73_do7qw"]
+[ext_resource type="Script" uid="uid://c1ygv6kpfpk33" path="res://player/jump_handler.gd" id="75_8rogd"]
 
 [sub_resource type="Animation" id="Animation_rnncm"]
 length = 1.6
@@ -627,6 +628,10 @@ metadata/_custom_type_script = "uid://cw7ryewcmoul3"
 [node name="InputHandler" type="Node2D" parent="Handlers" unique_id=1376263356]
 script = ExtResource("73_do7qw")
 metadata/_custom_type_script = "uid://g3ca5an7h1wt"
+
+[node name="JumpHandler" type="Node2D" parent="Handlers" unique_id=1545143895]
+script = ExtResource("75_8rogd")
+metadata/_custom_type_script = "uid://c1ygv6kpfpk33"
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="HitBox" to="HitBox" method="_on_area_entered"]

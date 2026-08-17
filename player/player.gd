@@ -39,6 +39,9 @@ var coffee_refilling = false
 # handlers
 @onready var input_handler: InputHandler = $Handlers/InputHandler
 @onready var flip_handler: FlipHandler = $Handlers/FlipHandler
+@onready var jump_handler: JumpHandler = $Handlers/JumpHandler
+
+@export var decelerate_on_jump_release : float = 0.0
 
 # input actions
 var move_input: Vector2 = Vector2.ZERO
@@ -99,6 +102,7 @@ func _physics_process(delta: float) -> void:
 	if current_state != State.DASH and boost_cooldown_left > 0:
 		boost_cooldown_left = boost_cooldown_left - delta
 	
+	jump_handler.handle_jump(self, is_jumping, is_jump_released)
 	_apply_movement(delta)
 
 func _update_state()->void:
