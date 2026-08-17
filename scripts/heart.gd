@@ -3,5 +3,7 @@ extends Panel
 @onready var sprite = $Sprite2D
 
 func update(whole : bool):
-	pass
-	
+	if whole:
+		sprite.frame = 0
+	else:
+		sprite.frame = 1

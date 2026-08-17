@@ -7,7 +7,7 @@ func set_max_hearts(max_hearts: int):
 		var heart = heart_gui_class.instantiate()
 		add_child(heart)
 
-func update_hearts(current_health : HealthComponent):
+func update_hearts(current_health):
 	print("hearts container updated")
 	print("healths container", current_health)
 	var hearts = get_children()

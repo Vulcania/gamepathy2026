@@ -35,6 +35,8 @@ var coffee_refilling = false
 @onready var hearts_container = $HUD/HeartsContainer
 @onready var block_container = $HUD/BlocksContainer
 @onready var player_hitbox: HitBox = $HitBox
+@onready var health_component: HealthComponent = $HealthComponent
+
 
 # handlers
 @onready var input_handler: InputHandler = $Handlers/InputHandler
@@ -69,7 +71,7 @@ var hit = false
 signal state_updated(state:State)
 
 func _ready() -> void:
-	hearts_container.set_max_hearts(5)
+	hearts_container.set_max_hearts(health_component.max_health)
 #	BuffSelectionOne.option_one.connect(_on_option_1)
 #	BuffSelectionOne.option_one.connect(_on_option_2)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -260,8 +262,8 @@ func start_timer_in_level_one():
 		$HUD/TimerOptions/Timer.start()
 		$HUD/TimerOptions/Timer.paused = false
 
-#func _on_health_component_health_changed(current_health) -> void:
-#	hearts_container.update_hearts(current_health)
+func _on_health_component_health_changed(current_health) -> void:
+	hearts_container.update_hearts(current_health)
 
 #func _on_option_1():
 	#speed_buff_factor += 0.05
