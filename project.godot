@@ -58,6 +58,7 @@ directories/dtl_directory={
 "Boss_End_Round_2_2": "res://dialog/timelines/Boss_End_Round_2_2.dtl",
 "Boss_End_Round_3": "res://dialog/timelines/Boss_End_Round_3.dtl",
 "Boss_End_Round_3_2": "res://dialog/timelines/Boss_End_Round_3_2.dtl",
+"Boss_Gamescom_Ending": "res://dialog/timelines/Boss_Gamescom_Ending.dtl",
 "Ending Temp": "res://dialog/timelines/Ending Temp.dtl",
 "Jim Main": "res://dialog/timelines/Jim Main.dtl",
 "Jim_Option1": "res://dialog/timelines/Jim_Option1.dtl",
