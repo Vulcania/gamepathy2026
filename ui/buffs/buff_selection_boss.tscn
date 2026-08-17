@@ -131,6 +131,9 @@ text = "\"I don't know what a promotion
 is, Sir. Can you explain it to me?\" 
 (Timer +10 Seconds)"
 
+[node name="BuffObtainedSound" type="AudioStreamPlayer" parent="." unique_id=760046410]
+bus = &"Effects"
+
 [connection signal="pressed" from="Round1/Option1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Round1/Option2" to="." method="_on_option_2_pressed"]
 [connection signal="pressed" from="Round1/Option3" to="." method="_on_option_3_pressed"]

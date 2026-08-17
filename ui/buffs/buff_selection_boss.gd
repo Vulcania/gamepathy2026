@@ -17,20 +17,32 @@ func _on_dialogic_signal(argument: String):
 func _on_option_1_pressed() -> void:
 	if Global.round_one:
 		Dialogic.start("res://dialog/timelines/Boss_End_Round_1.dtl")
+		$BuffObtainedSound.play()
+		await $BuffObtainedSound.finished
 	if Global.round_two:
 		Dialogic.start("res://dialog/timelines/Boss_End_Round_1_2.dtl")
+		$BuffObtainedSound.play()
+		await $BuffObtainedSound.finished
 	hide()
 
 func _on_option_2_pressed() -> void:
 	if Global.round_one:
 		Dialogic.start("res://dialog/timelines/Boss_End_Round_2.dtl")
+		$BuffObtainedSound.play()
+		await $BuffObtainedSound.finished
 	if Global.round_two:
 		Dialogic.start("res://dialog/timelines/Boss_End_Round_2_2.dtl")
+		$BuffObtainedSound.play()
+		await $BuffObtainedSound.finished
 	hide()
 
 func _on_option_3_pressed() -> void:
 	if Global.round_one:
 		Dialogic.start("res://dialog/timelines/Boss_End_Round_3.dtl")
+		$BuffObtainedSound.play()
+		await $BuffObtainedSound.finished
 	if Global.round_two:
 		Dialogic.start("res://dialog/timelines/Boss_End_Round_3_2.dtl")
+		$BuffObtainedSound.play()
+		await $BuffObtainedSound.finished
 	hide()

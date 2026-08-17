@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dd4axoax3k8fx" path="res://ui/buffs/buff_selection_two.gd" id="1_e0ave"]
 [ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="2_aqn1d"]
 [ext_resource type="Texture2D" uid="uid://bi01tmdkojtnk" path="res://ui/ui_assets/buff box.png" id="3_pdt6l"]
+[ext_resource type="AudioStream" uid="uid://ykkxomvuftt2" path="res://sounds/sfx/buff_obtained.wav" id="4_aqn1d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h17sf"]
 texture = ExtResource("3_pdt6l")
@@ -86,6 +87,10 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_lmly5")
 text = "\"Did you also hear someone call for me?
 Let me check on it!\"
 (Timer +10 Seconds)"
+
+[node name="BuffObtainedSound" type="AudioStreamPlayer" parent="." unique_id=546311744]
+stream = ExtResource("4_aqn1d")
+bus = &"Effects"
 
 [connection signal="pressed" from="HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
