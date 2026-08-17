@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="11_weswd"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="14_6jd0m"]
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="14_weswd"]
+[ext_resource type="PackedScene" uid="uid://cb75wlk3vw31d" path="res://enemy/toad_enemy/AngryToad.tscn" id="16_weswd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4voq"]
 radius = 318.0
@@ -103,7 +104,7 @@ stream = ExtResource("9_84ti7")
 bus = &"Music"
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("10_ekjd4")]
-position = Vector2(895, 734)
+position = Vector2(1367, -1114)
 jump_height = -1150
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1996065375 groups=["Camera"]]
@@ -115,6 +116,9 @@ script = ExtResource("14_weswd")
 
 [node name="YetAnotherPaperClipDeer" parent="." unique_id=1112242495 instance=ExtResource("14_6jd0m")]
 position = Vector2(2296, 1302)
+
+[node name="AngryToad" parent="." unique_id=690832968 instance=ExtResource("16_weswd")]
+position = Vector2(2848, -1013)
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]

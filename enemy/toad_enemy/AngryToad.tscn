@@ -29,7 +29,8 @@
 
 [sub_resource type="Animation" id="Animation_vo5ka"]
 resource_name = "Attack"
-length = 0.8666667
+length = 1.4333333
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -37,10 +38,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.70000005, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 1.0333333, 1.1333333, 1.2333333, 1.4333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("1_6ov3y"), ExtResource("2_iau0b"), ExtResource("3_1sx5g"), ExtResource("4_rohq6"), ExtResource("5_2s37a"), ExtResource("6_8wfx3"), ExtResource("7_owxc5"), ExtResource("8_bwvlg")]
+"values": [ExtResource("1_6ov3y"), ExtResource("2_iau0b"), ExtResource("3_1sx5g"), ExtResource("4_rohq6"), ExtResource("5_2s37a"), ExtResource("6_8wfx3"), ExtResource("7_owxc5"), ExtResource("8_bwvlg"), ExtResource("1_6ov3y")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -49,7 +50,7 @@ tracks/1/path = NodePath("AttackBox/CollisionShape2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.73333335),
+"times": PackedFloat32Array(0, 0.9, 1.1666666),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -227,6 +228,7 @@ polygon = PackedVector2Array(0, 12, -8, 29, -32, 75, -32, 98, 141, 98, 152, 44, 
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1302543764]
 libraries/ = SubResource("AnimationLibrary_pbst5")
+autoplay = &"Idle"
 
 [node name="DetectPlayer" type="Area2D" parent="." unique_id=1501656087]
 
@@ -235,11 +237,15 @@ position = Vector2(-210.5, 1)
 shape = SubResource("RectangleShape2D_6ov3y")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1325138587]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=88029056]
 polygon = PackedVector2Array(-16, 14, -20, 34, -38, 73, -40, 100, -26, 113, 143, 106, 153, 63, 160, 43, 159, 16, 139, -18, 106, -48, 79, -70, 59, -85, 36, -92, 13, -88, -8, -60, -9, -42, -24, -14, -27, 1)
 
 [node name="AttackBox" type="Area2D" parent="." unique_id=1408604181]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=866949570]
 position = Vector2(-91, 27)
@@ -247,6 +253,9 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_6ov3y")
 
 [node name="Healthbar" parent="." unique_id=112998173 instance=ExtResource("26_1sx5g")]
+position = Vector2(45, -126)
 
 [connection signal="area_entered" from="DetectPlayer" to="." method="_on_detect_player_area_entered"]
 [connection signal="area_exited" from="DetectPlayer" to="." method="_on_detect_player_area_exited"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
