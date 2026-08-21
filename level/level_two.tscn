@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="7_3a3bi"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="9_adiw7"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="10_6qftm"]
-[ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="11_v51nt"]
 [ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="11_x2d0d"]
+[ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="14_x2d0d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0gof"]
 radius = 231.0
@@ -110,24 +110,10 @@ autoplay = true
 bus = &"Music"
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1412030509]
+visible = false
 
-[node name="PaperClipDeer" parent="Enemies" unique_id=1517736822 instance=ExtResource("11_v51nt")]
-position = Vector2(3614, 671)
-
-[node name="PaperClipDeer5" parent="Enemies" unique_id=31432804 instance=ExtResource("11_v51nt")]
-position = Vector2(2711, -2023)
-
-[node name="PaperClipDeer6" parent="Enemies" unique_id=116192300 instance=ExtResource("11_v51nt")]
-position = Vector2(987, -880)
-
-[node name="PaperClipDeer2" parent="Enemies" unique_id=1978160423 instance=ExtResource("11_v51nt")]
-position = Vector2(3592, -868)
-
-[node name="PaperClipDeer3" parent="Enemies" unique_id=377090502 instance=ExtResource("11_v51nt")]
-position = Vector2(4850, -2273)
-
-[node name="PaperClipDeer4" parent="Enemies" unique_id=91291157 instance=ExtResource("11_v51nt")]
-position = Vector2(2264, -3943)
+[node name="YetAnotherPaperClipDeer" parent="Enemies" unique_id=1112242495 instance=ExtResource("14_x2d0d")]
+position = Vector2(3493.7905, 593.4951)
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]
