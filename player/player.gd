@@ -26,7 +26,7 @@ var can_move = true
 #block
 @export var max_block_count = 3
 @export var current_block_count = 3
-var blocks_list : Array[TextureRect]
+# var blocks_list : Array[TextureRect]
 var coffee_refilling = false
 
 # names
@@ -72,16 +72,18 @@ signal state_updated(state:State)
 
 func _ready() -> void:
 	hearts_container.set_max_hearts(health_component.max_health)
+	block_container.set_max_blocks(max_block_count)
 #	BuffSelectionOne.option_one.connect(_on_option_1)
 #	BuffSelectionOne.option_one.connect(_on_option_2)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Global.global_refill_coffee.connect(_refill_blocks)
 	
-	var blocks_parent = $HUD/BlocksContainer
-	for child in blocks_parent.get_children():
-		blocks_list.append(child)
+	#var blocks_parent = $HUD/BlocksContainer
+	#for child in blocks_parent.get_children():
+		#blocks_list.append(child)
 
 func _physics_process(delta: float) -> void:
+	block_container.update_blocks(current_block_count)
 	move_input = input_handler.movement_input()
 	is_running = Input.is_action_pressed("run")
 	is_ducking = Input.is_action_pressed("duck")
@@ -219,18 +221,20 @@ func _apply_movement(delta:float) -> void:
 		
 	move_and_slide()
 
-func update_blocks_display():
-	for i in range(blocks_list.size()):
-		blocks_list[i].visible = i < max_block_count
-		print("update blocks display")
+#func update_blocks_display():
+	#for i in range(blocks_list.size()):
+		#blocks_list[i].visible = i < max_block_count
+		#print("update blocks display")
 
 func blocking():
 	if is_blocking:
 		current_block_count -= 1
+		# block_container.update_blocks(current_block_count)
 	print(current_block_count, "blocks left")
 
 func _refill_blocks():
 	current_block_count = max_block_count
+	block_container.update_blocks(current_block_count)
 	print("coffee refilled, blockcount:", current_block_count)
 	Global.coffee_break = false
 	#if CoffeeMaker.player_drank_coffee:
