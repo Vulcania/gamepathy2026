@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://76ay80ih27k7"]
 
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="1_dsqel"]
+[ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="2_owtjd"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="2_s65ib"]
+[ext_resource type="PackedScene" uid="uid://cb75wlk3vw31d" path="res://enemy/toad_enemy/AngryToad.tscn" id="3_w72v2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s65ib"]
-size = Vector2(168.9, 51)
+size = Vector2(361.8, 51)
 
 [node name="TestLevel" type="Node2D" unique_id=929540585]
 
@@ -13,7 +15,7 @@ position = Vector2(951, 1037)
 scale = Vector2(10, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform18" unique_id=1038031347]
-position = Vector2(4.150017, 16.5)
+position = Vector2(100.6, 16.5)
 shape = SubResource("RectangleShape2D_s65ib")
 
 [node name="Polygon2D" type="Polygon2D" parent="Platform18" unique_id=167454613]
@@ -24,7 +26,14 @@ polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 173.7, 71, 101, 71)
 [node name="Player" parent="." unique_id=166332311 instance=ExtResource("1_dsqel")]
 position = Vector2(387, 908)
 
+[node name="Camera" type="Camera2D" parent="Player" unique_id=1821580959 groups=["Camera"]]
+script = ExtResource("2_owtjd")
+metadata/_custom_type_script = "uid://drj54yp0jw613"
+
 [node name="YetAnotherPaperClipDeer" parent="." unique_id=1112242495 instance=ExtResource("2_s65ib")]
 position = Vector2(1039, 928)
 collision_layer = 1
 collision_mask = 1
+
+[node name="AngryToad" parent="." unique_id=690832968 instance=ExtResource("3_w72v2")]
+position = Vector2(1617, 907)

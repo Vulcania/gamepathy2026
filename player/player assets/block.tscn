@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://bal0xydoj4rpc"]
 
+[ext_resource type="Script" uid="uid://tpsi1jk8t7jk" path="res://player/player assets/block.gd" id="1_fg8fy"]
 [ext_resource type="Texture2D" uid="uid://c10yv5yqtab0n" path="res://ui/ui_assets/block.png" id="1_xbvqw"]
 
-[node name="Block" type="TextureRect" unique_id=1207696061]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Block" type="Panel" unique_id=1528623791]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 86.0
+offset_bottom = 69.0
+script = ExtResource("1_fg8fy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=637231915]
+self_modulate = Color(1, 1, 1, 0.9882353)
+texture_filter = 1
+position = Vector2(43, 34)
 texture = ExtResource("1_xbvqw")

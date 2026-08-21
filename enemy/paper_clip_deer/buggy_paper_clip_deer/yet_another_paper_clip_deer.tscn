@@ -464,6 +464,10 @@ position = Vector2(0, -31)
 shape = SubResource("CapsuleShape2D_anrut")
 debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
 
+[node name="RayCastWallLeft" parent="." index="7" unique_id=617552342]
+collide_with_areas = true
+collide_with_bodies = false
+
 [node name="WaypointMarker" parent="." index="9" unique_id=984549330]
 visible = false
 position = Vector2(12, -154)

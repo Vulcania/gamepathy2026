@@ -2,11 +2,14 @@ class_name HealthComponent
 extends Control
 
 @export var max_health : int = 3
-@export var current_health : int = 3
+var current_health
 
 signal depleted_health
 signal health_changed(current_health)
 signal full_health_restored
+
+func _ready() -> void:
+	current_health = max_health
 
 # Take Damage
 func decrease_health(amount : int):

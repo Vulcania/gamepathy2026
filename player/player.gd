@@ -191,7 +191,7 @@ func _apply_movement(delta:float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		#var direction = move_input
-		velocity.x = 300 * move_input.x #direction
+		velocity.x = base_speed * move_input.x #direction
 	match current_state:
 		State.IDLE, State.BLOCK, State.DUCK, State.INTERACTING:
 			target_speed = 0.0

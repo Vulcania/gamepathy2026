@@ -169,9 +169,10 @@ dialogic_default_action={
 [layer_names]
 
 2d_render/layer_1="Environment"
-2d_physics/layer_1="Environment"
+2d_physics/layer_1="Interactions"
 2d_physics/layer_2="Player HitBox"
 2d_physics/layer_3="Enemy HitBox"
+2d_physics/layer_4="Environment"
 
 [physics]
 
