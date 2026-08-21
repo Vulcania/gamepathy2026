@@ -103,12 +103,11 @@ stream = ExtResource("9_84ti7")
 bus = &"Music"
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("10_ekjd4")]
-visible = false
-position = Vector2(1367, -1114)
+position = Vector2(926, 718)
+collision_mask = 7
 jump_height = -1150
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1996065375 groups=["Camera"]]
-visible = false
 limit_left = 0
 limit_top = -2600
 limit_right = 7600
@@ -119,6 +118,7 @@ script = ExtResource("14_weswd")
 
 [node name="AngryToad" parent="Enemies" unique_id=690832968 instance=ExtResource("16_weswd")]
 position = Vector2(2848, -1013)
+collision_layer = 1
 
 [node name="YetAnotherPaperClipDeer" parent="Enemies" unique_id=1112242495 instance=ExtResource("14_6jd0m")]
 position = Vector2(2367, 1045)

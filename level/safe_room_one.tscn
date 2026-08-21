@@ -189,9 +189,6 @@ _data = {
 &"RESET": SubResource("Animation_sbh46")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxcw3"]
-size = Vector2(344, 1341)
-
 [node name="SafeRoomOne" type="Node2D" unique_id=829498224]
 script = ExtResource("1_bd1u2")
 
@@ -312,12 +309,6 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=397617716]
 libraries/ = SubResource("AnimationLibrary_ccrhc")
-
-[node name="Trapping the Player" type="StaticBody2D" parent="." unique_id=282739034]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trapping the Player" unique_id=943433742]
-position = Vector2(-51, 461.5)
-shape = SubResource("RectangleShape2D_vxcw3")
 
 [node name="musik" type="AudioStreamPlayer" parent="." unique_id=1545390943]
 process_mode = 3
