@@ -48,9 +48,6 @@ polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dat80"]
 polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r2ome"]
-polygon = PackedVector2Array(-3.5971756, -1.2590103, 12.590111, -1.4388695, 21.04347, 1.7985878, 11, 47, -2, 49, -14.388699, 4.4964685, -11.690818, 0.8992939)
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4h5ds"]
 polygon = PackedVector2Array(-54, -64, 64, -64, 64, 64, -2, 33, -53, -13)
 
@@ -227,8 +224,10 @@ texture_region_size = Vector2i(128, 128)
 7:6/0 = 0
 8:6/0 = 0
 9:6/0 = 0
+0:7/animation_columns = 2
+0:7/animation_frame_0/duration = 1.0
+0:7/animation_frame_1/duration = 1.0
 0:7/0 = 0
-1:7/0 = 0
 2:7/0 = 0
 3:7/0 = 0
 4:7/0 = 0
@@ -237,10 +236,11 @@ texture_region_size = Vector2i(128, 128)
 7:7/0 = 0
 8:7/0 = 0
 9:7/0 = 0
+0:8/animation_columns = 2
+0:8/animation_frame_0/duration = 1.0
+0:8/animation_frame_1/duration = 1.0
 0:8/0 = 0
 0:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xainf")
-1:8/0 = 0
-1:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_r2ome")
 2:8/0 = 0
 3:8/0 = 0
 4:8/0 = 0
@@ -249,8 +249,10 @@ texture_region_size = Vector2i(128, 128)
 7:8/0 = 0
 8:8/0 = 0
 9:8/0 = 0
+0:9/animation_columns = 2
+0:9/animation_frame_0/duration = 1.0
+0:9/animation_frame_1/duration = 1.0
 0:9/0 = 0
-1:9/0 = 0
 2:9/0 = 0
 3:9/0 = 0
 4:9/0 = 0

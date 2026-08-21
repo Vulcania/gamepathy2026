@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b7bf03hbgbmga"]
+
+[sub_resource type="Gradient" id="Gradient_6je0e"]
+offsets = PackedFloat32Array(0, 0.104477614, 0.23880596, 0.5273632, 0.7761194, 0.8905473, 0.9502488, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.7647668, 0.7647668, 0.7647668, 1, 0.5967431, 0.5967431, 0.5967431, 1, 0.33210582, 0.33210582, 0.33210582, 1, 0.11702126, 0.11702126, 0.11702126, 1, 0.026747726, 0.026747726, 0.026747726, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m7wlf"]
+gradient = SubResource("Gradient_6je0e")
+fill = 1
+fill_from = Vector2(0.517094, 0.50427353)
+fill_to = Vector2(0.8247863, 0.16666667)
+
+[sub_resource type="Animation" id="Animation_qk2vo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_bbo1p"]
+resource_name = "new_animation"
+length = 1.9666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.8, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dgfk"]
+_data = {
+&"RESET": SubResource("Animation_qk2vo"),
+&"new_animation": SubResource("Animation_bbo1p")
+}
+
+[node name="CandleLight" type="PointLight2D" unique_id=1017493835]
+scale = Vector2(2.8671885, 2.8671885)
+color = Color(0.99999994, 0.79015803, 0.39617246, 1)
+texture = SubResource("GradientTexture2D_m7wlf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=933084676]
+libraries/ = SubResource("AnimationLibrary_5dgfk")
+autoplay = &"new_animation"

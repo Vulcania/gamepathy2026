@@ -35,7 +35,7 @@ visible = false
 position = Vector2(1397, 884)
 
 [node name="BoneyToney" parent="." unique_id=1276564800 instance=ExtResource("2_tu2fl")]
-position = Vector2(1529, 694)
+position = Vector2(1484, 881)
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_tu2fl")]
 position = Vector2(234, 906)

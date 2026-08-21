@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byf1d3u72rc4j"]
 
+[ext_resource type="Script" uid="uid://dqrflkr7hssvw" path="res://enemy/boney_toney/boney_toney.gd" id="1_4v46i"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="1_50u07"]
-[ext_resource type="Script" uid="uid://c41vdww0jpsu8" path="res://enemy/boney_toney/boney_toney_bossfight.gd" id="1_mwff5"]
 [ext_resource type="Texture2D" uid="uid://oy6xobrvldvo" path="res://enemy/boney_toney/assets/boney-tony-spritesheet.png" id="2_mwff5"]
 [ext_resource type="Script" uid="uid://dc0uhdylfngqk" path="res://enemy/boney_toney/finite_state_machine.gd" id="26_w4pii"]
 [ext_resource type="Script" uid="uid://ccj68o4bx73nc" path="res://enemy/boney_toney/idle.gd" id="27_pfi6b"]
@@ -795,12 +795,12 @@ tracks/1/keys = {
 }
 tracks/2/type = "method"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("FiniteStateMachine/Death")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.25),
+"times": PackedFloat32Array(3),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -830,6 +830,20 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"boss_slained"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_pq3vj"]
@@ -892,12 +906,26 @@ tracks/1/keys = {
 }
 tracks/2/type = "method"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("FiniteStateMachine/Teleport")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.46666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"teleport"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -935,12 +963,26 @@ tracks/1/keys = {
 }
 tracks/2/type = "method"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("FiniteStateMachine/SpawnMinion")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.375),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -967,9 +1009,9 @@ height = 180.32
 radius = 338.07248
 
 [node name="BoneyToney" type="CharacterBody2D" unique_id=1276564800]
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("1_mwff5")
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_4v46i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1513826201]
 position = Vector2(0, 15.75)
@@ -986,19 +1028,20 @@ position = Vector2(-56, 39)
 shape = SubResource("CapsuleShape2D_xwnnu")
 
 [node name="PlayerDetection" type="Area2D" parent="." unique_id=1257424169]
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=408631061]
 shape = SubResource("CircleShape2D_xwnnu")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1285560821]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=385876530]
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1876295152]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=55257301]
 
@@ -1090,5 +1133,6 @@ bus = &"Effects"
 visible = false
 rect = Rect2(-295, -302, 579, 609)
 
-[connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]
-[connection signal="area_entered" from="AttackArea" to="FiniteStateMachine/Attack" method="_on_attack_area_area_entered"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]

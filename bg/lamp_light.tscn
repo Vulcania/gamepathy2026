@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://yxj5fm114kig"]
+
+[sub_resource type="Gradient" id="Gradient_1figm"]
+offsets = PackedFloat32Array(0, 0.10169491, 0.1779661, 0.23305085, 0.37288135, 0.44067797, 0.5762712, 0.6737288, 0.7711864, 0.84322035, 0.87711865, 0.9533898, 1)
+colors = PackedColorArray(0.8920188, 0.8920188, 0.8920188, 1, 0.8920188, 0.8920188, 0.8920188, 1, 0.8541276, 0.8541276, 0.8541276, 1, 0.819394, 0.819394, 0.819394, 1, 0.6015196, 0.6015196, 0.6015196, 1, 0.50166047, 0.50166047, 0.50166047, 1, 0.36921751, 0.36921751, 0.36921751, 1, 0.28208393, 0.28208393, 0.28208393, 1, 0.1881861, 0.1881861, 0.1881861, 1, 0.1376257, 0.1376257, 0.1376257, 1, 0.08755401, 0.08755401, 0.08755401, 1, 0.044635378, 0.044635378, 0.044635378, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yy0ae"]
+gradient = SubResource("Gradient_1figm")
+fill = 1
+fill_from = Vector2(0.491453, 0.50427353)
+fill_to = Vector2(0.82905984, 0.18376069)
+
+[sub_resource type="Animation" id="Animation_1figm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7]
+}
+
+[sub_resource type="Animation" id="Animation_yy0ae"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.7, 0.5, 0.7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5evqp"]
+_data = {
+&"RESET": SubResource("Animation_1figm"),
+&"new_animation": SubResource("Animation_yy0ae")
+}
+
+[node name="LampLight" type="PointLight2D" unique_id=1161307948]
+energy = 0.7
+texture = SubResource("GradientTexture2D_yy0ae")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2061582499]
+libraries/ = SubResource("AnimationLibrary_5evqp")
+autoplay = &"new_animation"
