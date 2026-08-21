@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://hxqg8upxw5os" path="res://Tilesets/tileset_aug.png" id="1_k764t"]
 [ext_resource type="Texture2D" uid="uid://d0hc7fsl8m7l2" path="res://Tilesets/tileset_level.png" id="2_0naqh"]
+[ext_resource type="Texture2D" uid="uid://17sl6uvqnmbp" path="res://items/door/Elevator/chain-link.png" id="3_0naqh"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sbh46"]
 polygon = PackedVector2Array(-54, -64, 64, -64, 64, 64, -2, 33, -53, -13)
@@ -400,6 +401,10 @@ texture_region_size = Vector2i(128, 128)
 6:7/0 = 0
 8:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xd6c0"]
+texture = ExtResource("3_0naqh")
+texture_region_size = Vector2i(128, 128)
+
 [resource]
 tile_size = Vector2i(128, 128)
 occlusion_layer_0/light_mask = 1
@@ -407,3 +412,4 @@ physics_layer_0/collision_layer = 5
 physics_layer_0/collision_mask = 5
 sources/1 = SubResource("TileSetAtlasSource_jnkt6")
 sources/0 = SubResource("TileSetAtlasSource_ew3rf")
+sources/2 = SubResource("TileSetAtlasSource_xd6c0")
