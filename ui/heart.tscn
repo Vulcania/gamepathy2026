@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjlcqod1h87h3"]
 
 [ext_resource type="Script" uid="uid://bg6yl3s2l3myx" path="res://scripts/heart.gd" id="1_e44o4"]
-[ext_resource type="Texture2D" uid="uid://b83v7gfca0d2i" path="res://ui/ui_assets/active life.png" id="2_e44o4"]
+[ext_resource type="Texture2D" uid="uid://duwwyqhq47rnv" path="res://ui/ui_assets/life spritesheet.png" id="2_e44o4"]
 
 [node name="Heart" type="Panel" unique_id=850795517]
 self_modulate = Color(1, 1, 1, 0)
@@ -16,6 +16,8 @@ grow_vertical = 2
 script = ExtResource("1_e44o4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=872843603]
+texture_filter = 1
 scale = Vector2(0.44000003, 0.5)
 texture = ExtResource("2_e44o4")
 centered = false
+hframes = 2
