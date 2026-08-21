@@ -25,19 +25,6 @@ polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 173.7, 71, 101, 71)
 
 [node name="Player" parent="." unique_id=166332311 instance=ExtResource("1_dsqel")]
 position = Vector2(387, 908)
-run_speed_factor = 1.67
-speed_buff_factor = 1.0
-gravity = 1200
-acceleration = 20.0
-friction = 50.0
-dash_speed_factor = 4.0
-boost_duration = 0.2
-boost_cooldown = 1.0
-slide_speed_factor = 2.5
-slide_friction_factor = 0.25
-max_block_count = 3
-current_block_count = 3
-decelerate_on_jump_release = 0.0
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=1821580959 groups=["Camera"]]
 script = ExtResource("2_owtjd")

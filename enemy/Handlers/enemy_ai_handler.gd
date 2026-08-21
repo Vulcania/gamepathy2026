@@ -66,8 +66,7 @@ func check_state():
 	
 	if !is_attacking and !is_targeted and !is_dying:
 		return State.WALK
-	return State.WALK
-
+	return State.IDLE
 
 func flip():
 	flip_handler.flip_entity(sprite, direction)
@@ -77,6 +76,10 @@ func flip():
 
 func _update_animation():
 	match current_state:
+		State.DYING:
+			animation.play("dying")
+			await animation.animation_finished
+			return
 		State.IDLE:
 			if !is_dying:
 				animation.play("idle")
@@ -92,10 +95,6 @@ func _update_animation():
 				return
 		State.ATTACK:
 			animation.play("attack")
-			return
-		State.DYING:
-			animation.play("dying")
-			await animation.animation_finished
 			return
 
 func _on_health_component_depleted_health():
