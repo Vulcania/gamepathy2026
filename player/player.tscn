@@ -587,11 +587,24 @@ radius = 94.641426
 light_mask = 0
 visibility_layer = 3
 texture_filter = 1
-collision_layer = 3
+collision_layer = 11
 collision_mask = 15
 script = ExtResource("1_oul6g")
 base_speed = 350.0
+run_speed_factor = null
+speed_buff_factor = null
 jump_height = -950
+gravity = null
+acceleration = null
+friction = null
+dash_speed_factor = null
+boost_duration = null
+boost_cooldown = null
+slide_speed_factor = null
+slide_friction_factor = null
+max_block_count = null
+current_block_count = null
+decelerate_on_jump_release = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=94848369]
 

@@ -3,7 +3,7 @@ class_name Block_Manager
 
 @onready var blocks_gui_class = preload("res://player/player assets/block.tscn")
 
-func set_max_blocks(max_blocks = get_parent().max_block_count):
+func set_max_blocks(max_blocks : int):
 	for i in range(max_blocks):
 		var block = blocks_gui_class.instantiate()
 		add_child(block)
