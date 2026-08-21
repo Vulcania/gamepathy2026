@@ -1,4 +1,4 @@
-extends States
+extends BossState
 
 @onready var collision = $"../../PlayerDetection/CollisionShape2D"
 @onready var progress_bar = owner.find_child("ProgressBar")
@@ -18,4 +18,4 @@ func _on_player_detection_body_entered(body):
  
 func transition():
 	if player_entered:
-		get_parent().change_state("Follow")
+		get_parent().change_states("Follow")

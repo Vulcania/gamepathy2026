@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byf1d3u72rc4j"]
 
-[ext_resource type="Script" uid="uid://dqrflkr7hssvw" path="res://enemy/boney_toney/boney_toney.gd" id="1_4v46i"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="1_50u07"]
+[ext_resource type="Script" uid="uid://c41vdww0jpsu8" path="res://enemy/boney_toney/boney_toney_bossfight.gd" id="1_mwff5"]
 [ext_resource type="Texture2D" uid="uid://oy6xobrvldvo" path="res://enemy/boney_toney/assets/boney-tony-spritesheet.png" id="2_mwff5"]
 [ext_resource type="Script" uid="uid://dc0uhdylfngqk" path="res://enemy/boney_toney/finite_state_machine.gd" id="26_w4pii"]
 [ext_resource type="Script" uid="uid://ccj68o4bx73nc" path="res://enemy/boney_toney/idle.gd" id="27_pfi6b"]
@@ -800,7 +800,7 @@ tracks/2/path = NodePath("FiniteStateMachine/Death")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.8666667),
+"times": PackedFloat32Array(3.25),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -809,12 +809,12 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath(".:process_mode")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.96666664),
+"times": PackedFloat32Array(3.25),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
@@ -960,7 +960,7 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xwnnu"]
-radius = 65.0
+radius = 40.0
 height = 180.32
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xwnnu"]
@@ -969,31 +969,36 @@ radius = 338.07248
 [node name="BoneyToney" type="CharacterBody2D" unique_id=1276564800]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_4v46i")
+script = ExtResource("1_mwff5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1513826201]
 position = Vector2(0, 15.75)
 sprite_frames = SubResource("SpriteFrames_xwnnu")
 animation = &"death"
+autoplay = "idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824145941]
 libraries/ = SubResource("AnimationLibrary_8fgux")
 autoplay = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=779086245]
+position = Vector2(-56, 39)
 shape = SubResource("CapsuleShape2D_xwnnu")
 
 [node name="PlayerDetection" type="Area2D" parent="." unique_id=1257424169]
-collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=408631061]
 shape = SubResource("CircleShape2D_xwnnu")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1285560821]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=385876530]
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1876295152]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=55257301]
 

@@ -1,4 +1,4 @@
-extends States
+extends BossState
 
 @export var minion_node : PackedScene = preload("res://enemy/ring-binder/ring-binder.tscn")
 var can_transition: bool = false
@@ -17,5 +17,5 @@ func spawn():
  
 func transition():
 	if can_transition:
-		get_parent().change_state("Follow")
+		get_parent().change_states("Follow")
 		can_transition = false

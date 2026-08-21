@@ -1,4 +1,4 @@
-extends States
+extends BossState
 
 var hit = false
 
@@ -8,7 +8,7 @@ func _enter_tree():
 func enter():
 	super.enter()
 	owner.set_physics_process(true)
-	animation_player.play("Idle")
+	#animation_player.play("Idle")
  
 func exit():
 	super.exit()

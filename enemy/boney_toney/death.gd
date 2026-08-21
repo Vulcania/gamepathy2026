@@ -1,4 +1,4 @@
-extends States
+extends BossState
 
 func enter():
 	super.enter()

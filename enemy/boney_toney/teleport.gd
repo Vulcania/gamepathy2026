@@ -1,4 +1,4 @@
-extends States
+extends BossState
 
 var can_transition: bool = false
  
@@ -13,5 +13,5 @@ func teleport():
 
 func transition():
 	if can_transition:
-		get_parent().change_state("Attack")
+		get_parent().change_states("Attack")
 		can_transition = false

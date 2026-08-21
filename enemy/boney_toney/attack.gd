@@ -1,4 +1,4 @@
-extends States
+extends BossState
 
 @onready var camera: Camera2D = get_tree().get_first_node_in_group("Camera")
 
@@ -20,7 +20,7 @@ func combo():
  
 func transition():
 	if owner.direction.length() > 260:
-		get_parent().change_state("Follow")
+		get_parent().change_states("Follow")
 
 func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:

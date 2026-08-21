@@ -1,5 +1,5 @@
 extends Node2D
-class_name States
+class_name BossState
 
 #boney toney state script
 
@@ -21,3 +21,4 @@ func transition():
  
 func _physics_process(_delta):
 	transition()
+	debug.text = name
