@@ -1,7 +1,7 @@
 extends Area2D
 
 func _ready() -> void:
-	var layout = Dialogic.start("res://dialog/characters/skull.dch")
+	var layout = Dialogic.start("res://dialog/timelines/SkullNote_DontDie.dtl")
 	layout.register_character(load("res://dialog/characters/skull.dch"), $Marker2D)
 
 
