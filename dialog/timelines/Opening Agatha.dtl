@@ -1,28 +1,45 @@
 [signal arg="entered_dialog"]
+audio "res://sounds/sfx/agatha_sfx/agatha3_r2aNyhVX.wav"
 agatha: Grimmy! It's so good to see you finally decided to show up!
 - Good morning, Agatha! I overslept. But now I'm here...
+	audio "res://sounds/sfx/agatha_sfx/agatha1_bwwanfjd.wav"
 	agatha: I was wondering when you were going to clock in today. It's quite late already. But that's alright.
 	- I know, I'm sorry....
+		audio "res://sounds/sfx/agatha_sfx/agatha1_dGcQm7R7.wav"
 		agatha: That's alright.
 		- No worries!
+			audio "res://sounds/sfx/agatha_sfx/agatha3_r2aNyhVX.wav"
 			agatha: And before you go\: Don't forget about the company's party tonight!
 			- The party?
+				audio "res://sounds/sfx/agatha_sfx/agatha2_9HqNmyKh.wav"
 				agatha: My, my. So you did forget.
+				audio "res://sounds/sfx/agatha_sfx/agatha1_bwwanfjd.wav"
 				agatha: No worries, I can remind you.
 				- No need! I remember!
+					audio "res://sounds/sfx/agatha_sfx/agatha1_dGcQm7R7.wav"
 					agatha: That's good!
 				- Sure, go ahead!
+					audio "res://sounds/sfx/agatha_sfx/agatha3_r2aNyhVX.wav"
 					agatha: How could you forget! Usually only beings my age should start to have memory problems!
+					audio "res://sounds/sfx/agatha_sfx/agatha3_r2aNyhVX.wav"
 					agatha: It's our yearly party to celebrate the passing of souls!
+					audio "res://sounds/sfx/agatha_sfx/agatha1_bwwanfjd.wav"
 					agatha: And to meet our shareholders. So make sure, you dress nicely and behave yourself in front of them.
+					audio "res://sounds/sfx/agatha_sfx/agatha1_dGcQm7R7.wav"
 					agatha: We're going to that one restaurant where Jimmy had an allergic reaction to the shrimps. I'm sure he'll be more careful this time.
+					audio "res://sounds/sfx/agatha_sfx/agatha2_9HqNmyKh.wav"
 					agatha: Make sure not to put anything suspicious in your mouth.
 		- Sorry, I have to go! I have a meeting!
+			audio "res://sounds/sfx/agatha_sfx/agatha3_r2aNyhVX.wav"
 			agatha: I see. But before you go, I've been meaning to ask you something important...
+			audio "res://sounds/sfx/agatha_sfx/agatha1_dGcQm7R7.wav"
 			agatha: What are you going to wear to the company's party?
+			audio "res://sounds/sfx/agatha_sfx/agatha3_r2aNyhVX.wav"
 			agatha: If you haven't decided on anything we could go shopping together!
 			- Oh, the company's party....
+audio "res://sounds/sfx/agatha_sfx/agatha1_Bb0c2X3p.wav"
 agatha: As a newer worker, you should be able to make a good impression!
+audio "res://sounds/sfx/agatha_sfx/agatha1_dGcQm7R7.wav"
 agatha: You will be there, right?
 - I'd love to go, but....
 	[signal arg="open_buff_selection_1"]
