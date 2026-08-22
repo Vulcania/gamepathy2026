@@ -6,5 +6,6 @@ func _on_area_entered(body : AttackBox) -> void:
 		return
 	print("hitbox script body entered, ", owner)
 	if owner.has_method("take_damage"):
-		owner.take_damage(body.damage)
-		print("hitbox script take damage, ", owner)
+		if not Global.player_blocking:
+			owner.take_damage(body.damage)
+			print("hitbox script take damage, ", owner)

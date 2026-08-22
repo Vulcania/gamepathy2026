@@ -122,6 +122,7 @@ func _get_state() -> State:
 		return State.DASH
 	if not is_on_floor():
 		if is_blocking:
+			Global.player_blocking = true
 			if current_block_count > 0:
 				return State.BLOCK
 		return State.JUMP if velocity.y < 0 else State.FALL
@@ -130,6 +131,7 @@ func _get_state() -> State:
 	if is_jumping:
 		return State.JUMP
 	if is_blocking and is_running and move_input.x != 0.0 and not current_state == State.DASH and boost_cooldown_left <= 0.0:
+		Global.player_blocking = true
 		boost_time_left = boost_duration
 		dash_direction = sign(move_input) if move_input.x != 0.0 else 1.0
 		return State.DASH
@@ -138,6 +140,7 @@ func _get_state() -> State:
 			boost_time_left = boost_duration
 		return State.SLIDE
 	if is_blocking:
+		Global.player_blocking = true
 		if current_block_count > 0:
 			return State.BLOCK
 	if is_ducking:
@@ -172,6 +175,10 @@ func _update_animation()->void:
 			return
 		State.BLOCK:
 			animation.play("Block")
+			await get_tree().create_timer(2).timeout
+			is_blocking = false
+			Global.player_blocking = false
+			print("player: is_blocking:", is_blocking)
 			return
 		State.DASH:
 			animation.play("Dash")
@@ -185,9 +192,12 @@ func _update_animation()->void:
 
 func take_damage(damage) -> void:
 	camera.trigger_shake()
-	$HealthComponent.decrease_health(damage)
-	print("player takes damage, ", damage)
-	animation.play("Hit")
+	if !is_blocking:
+		$HealthComponent.decrease_health(damage)
+		print("player takes damage, ", damage)
+		animation.play("Hit")
+	else:
+		print("player blocked it")
 
 func _apply_movement(delta:float) -> void:
 	var target_speed : float = 0.0
@@ -229,19 +239,17 @@ func _apply_movement(delta:float) -> void:
 
 func blocking():
 	if is_blocking:
+		Global.player_blocking = true
 		current_block_count -= 1
 		# block_container.update_blocks(current_block_count)
 	print(current_block_count, "blocks left")
+	print("player: is_blocking value:", is_blocking)
 
 func _refill_blocks():
 	current_block_count = max_block_count
 	block_container.update_blocks(current_block_count)
 	print("coffee refilled, blockcount:", current_block_count)
 	Global.coffee_break = false
-	#if CoffeeMaker.player_drank_coffee:
-		#current_block_count = max_block_count
-		#print(current_block_count, "blocks left after refill")
-		#print("the blocks are refilled in player")
 
 func die():
 	animation.play("Dead")
@@ -299,9 +307,9 @@ func _on_attack_box_area_entered(area: Area2D) -> void:
 	#	print("player: enemy attack box body entered")
 	#	area.get_parent().take_damage()
 
-func _on_hit_box_area_entered(area: Area2D) -> void:
-	print("player: on hit box area entered", area.name)
-	if area.get_parent() is Enemy:
-		print("hitbox area player Is getting hit by enemy")
-		take_damage(1)
-		$AnimationPlayer.play("Hit")
+#func _on_hit_box_area_entered(area: Area2D) -> void:
+#	print("player: on hit box area entered", area.name)
+#	if area.get_parent() is Enemy:
+#		print("hitbox area player Is getting hit by enemy")
+#		take_damage(1)
+#		$AnimationPlayer.play("Hit")

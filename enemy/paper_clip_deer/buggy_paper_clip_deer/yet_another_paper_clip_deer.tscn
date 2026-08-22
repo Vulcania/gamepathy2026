@@ -46,6 +46,10 @@
 [ext_resource type="AudioStream" uid="uid://dnvnh0a6oikch" path="res://sounds/sfx/enemy_sfx/deer_attackanticipation.wav" id="43_va8bo"]
 [ext_resource type="AudioStream" uid="uid://bgxkipjlv23pe" path="res://sounds/sfx/enemy_sfx/deer_death.wav" id="44_v41sa"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_va8bo"]
+radius = 63.0
+height = 154.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0pgol"]
 animations = [{
 "frames": [{
@@ -698,10 +702,11 @@ size = Vector2(171, 124)
 size = Vector2(149, 151)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anrut"]
-radius = 62.0
-height = 156.0
+radius = 111.0
+height = 222.0
 
 [node name="YetAnotherPaperClipDeer" unique_id=1112242495 instance=ExtResource("1_anrut")]
+collision_layer = 5
 
 [node name="EnemyAIHandler" parent="." index="0" unique_id=1351028729 node_paths=PackedStringArray("sprite", "animation", "base_shape", "hitbox", "attack_box", "health_component")]
 sprite = NodePath("../AnimatedSprite2D")
@@ -711,22 +716,28 @@ hitbox = NodePath("../HitBox")
 attack_box = NodePath("../AttackBox")
 health_component = NodePath("../HealthComponent")
 
-[node name="AnimatedSprite2D" parent="." index="1" unique_id=196603920]
+[node name="MontorCollision" type="CollisionShape2D" parent="MonitorArea" parent_id_path=PackedInt32Array(302155852) index="0" unique_id=1896794720]
+z_index = 2
+position = Vector2(0, -31)
+shape = SubResource("CapsuleShape2D_va8bo")
+debug_color = Color(0.7844535, 0.4283154, 0.19541326, 0.41960785)
+
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=196603920]
 sprite_frames = SubResource("SpriteFrames_0pgol")
 animation = &"attack"
 autoplay = "walk"
 frame = 5
 
-[node name="AnimationPlayer" parent="." index="2" unique_id=493143461]
+[node name="AnimationPlayer" parent="." index="3" unique_id=493143461]
 libraries/ = SubResource("AnimationLibrary_ie17o")
 autoplay = &"idle"
 
-[node name="CollisionBody" parent="." index="3" unique_id=753404391]
+[node name="CollisionBody" parent="." index="4" unique_id=753404391]
 position = Vector2(0, 35)
 shape = SubResource("RectangleShape2D_anrut")
-debug_color = Color(1.1072266, 1.1072266, 1.1176962, 0.27450982)
+debug_color = Color(0.623023, 0.54467416, 1.118, 0.275)
 
-[node name="HitBox" parent="." index="4" unique_id=849468902]
+[node name="HitBox" parent="." index="5" unique_id=849468902]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(0, 14)
@@ -735,25 +746,19 @@ monitorable = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=133508168]
 shape = SubResource("RectangleShape2D_vfgpr")
 
-[node name="AttackBox" parent="." index="5" unique_id=1208718593]
+[node name="AttackBox" parent="." index="6" unique_id=1208718593]
 visible = false
 visibility_layer = 3
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" index="0" unique_id=1522116914]
-position = Vector2(0, -31)
+position = Vector2(10, -31)
 shape = SubResource("CapsuleShape2D_anrut")
 disabled = true
 debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="MonitorArea" parent_id_path=PackedInt32Array(1479376439) index="0" unique_id=1608739575]
-position = Vector2(0, -31)
-shape = SubResource("CapsuleShape2D_anrut")
-debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
-
 [node name="RayCastWallLeft" parent="." index="8" unique_id=617552342]
 collide_with_areas = true
-collide_with_bodies = false
 
 [node name="WaypointMarkerEnemy" parent="." index="10" unique_id=1906790374 instance=ExtResource("40_nh8nj")]
 on_screen_offset = Vector2(50, -150)
@@ -817,12 +822,12 @@ bus = &"Effects"
 rect = Rect2(-86, -101, 172, 202)
 show_rect = false
 
+[connection signal="body_entered" from="MonitorArea" to="." method="_on_monitor_area_body_entered"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
 [connection signal="body_exited" from="AttackBox" to="." method="_on_attack_box_body_exited"]
-[connection signal="body_entered" from="MonitorArea" to="." method="_on_monitor_area_body_entered"]
 [connection signal="depleted_health" from="HealthComponent" to="." method="_on_health_component_depleted_health"]
 [connection signal="depleted_health" from="HealthComponent" to="EnemyAIHandler" method="_on_health_component_depleted_health"]
 [connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]

@@ -24,9 +24,12 @@ func flip_entity(sprite, direction : Vector2) -> void:
 	direction.x = direction.x * -1
 	facing_right = direction.x > 0.0
 	sprite.flip_h = facing_right
-	
+	#print("flip handler: flip entity")
+
+
 func player_flip_hitbox_correction(hitbox : HitBox):
 	hitbox.position.x = player_hitbox_right if facing_right else player_hitbox_left
+	#print("player flipping")
 
 
 # for enemies
@@ -35,6 +38,9 @@ func flip_raycast(collision_floor : RayCast2D, collision_wall : RayCast2D) -> vo
 	var current_rotation : float = WALL_COLLISION_ROTATION_TO_RIGHT if facing_right else WALL_COLLISION_ROTATION_TO_LEFT
 	collision_wall.set_rotation_degrees(current_rotation)
 	print("flip handler: flip raycast")
+	if collision_wall.get_collider() is TileMap:
+		pass
+
 
 func apply_collision_shapes_offset(base_shape : CollisionShape2D, hitbox : HitBox, attack_box : AttackBox) -> void:
 	base_shape.position.x = base_shape_offset_right if facing_right else base_shape_offset_left

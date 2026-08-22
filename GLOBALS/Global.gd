@@ -13,6 +13,7 @@ var round_three = false
 var boss_deafeated = false
 
 var player_position
+var player_blocking = false
 
 signal global_refill_coffee
 
@@ -41,3 +42,6 @@ func enemy_counter_lvl_two():
 
 func enemy_counter_lvl_three():
 	max_enemies_in_lvl += 5
+
+func player_is_blocking():
+	player_blocking = true

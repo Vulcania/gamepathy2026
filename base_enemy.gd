@@ -52,12 +52,12 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		await get_tree().create_timer(1.0).timeout
 		enemy_ai_handler.is_targeted = false
 
-func _on_attack_box_area_entered(area: Area2D) -> void:
-		if area.get_parent() is Player:
-			print("deear area attacking player")
-			area.get_parent().take_damage(1)
+#func _on_attack_box_area_entered(area: Area2D) -> void:
+#		if area.get_parent() is Player and not Global.player_blocking:
+#			print("deer area attacking player")
+#			area.get_parent().take_damage(1)
 
 func _on_monitor_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		enemy_ai_handler.is_attacking = true
-		print("attackbox body: Deer Is attacking")
+		print("monitorarea body: Deer Is monitoring player")

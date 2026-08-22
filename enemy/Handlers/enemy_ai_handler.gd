@@ -104,6 +104,8 @@ func _update_animation():
 				return
 		State.ATTACK:
 			animation.play("attack")
+			await animation.animation_finished
+			is_attacking = false
 			return
 
 func _on_health_component_depleted_health():

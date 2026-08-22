@@ -291,7 +291,7 @@ on_screen_offset = Vector2(0.5, -300)
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(3623, -1164)
+position = Vector2(8076, -2212)
 collision_layer = 1
 collision_mask = 1
 gravity = 1100
