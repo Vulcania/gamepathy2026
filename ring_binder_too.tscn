@@ -315,6 +315,7 @@ attack_box = NodePath("../AttackBox")
 health_component = NodePath("../HealthComponent")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=196603920]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8vg56")
 animation = &"idle"
 
@@ -330,6 +331,13 @@ shape = SubResource("CircleShape2D_iqtb0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" parent_id_path=PackedInt32Array(1208718593) index="0" unique_id=1861059047]
 shape = SubResource("CircleShape2D_0ld2h")
+
+[node name="Healthbar" parent="." index="10" unique_id=112998173]
+position = Vector2(0, -51)
+
+[node name="VisibleOnScreenEnabler2D" parent="." index="12" unique_id=1239927453]
+scale = Vector2(10.960002, 10.960002)
+show_rect = false
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]

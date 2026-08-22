@@ -44,6 +44,8 @@ collision_mask = 2
 script = ExtResource("3_un648")
 metadata/_custom_type_script = "uid://bgyk0ydx1rk7p"
 
+[node name="MonitorArea" type="Area2D" parent="." unique_id=1479376439]
+
 [node name="RayCastFloorLeft" type="RayCast2D" parent="." unique_id=1520115567]
 target_position = Vector2(0, 150)
 

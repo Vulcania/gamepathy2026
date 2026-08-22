@@ -307,6 +307,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ki6ai"]
 resource_name = "attack"
@@ -384,6 +396,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_va8bo"]
 resource_name = "dying"
@@ -450,6 +474,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_v41sa"]
 resource_name = "hit"
@@ -502,6 +538,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_euou2"]
 resource_name = "idle"
@@ -542,6 +590,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_2ucdw"]
@@ -608,6 +668,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, true, true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ie17o"]
 _data = {
@@ -626,8 +698,8 @@ size = Vector2(171, 124)
 size = Vector2(149, 151)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anrut"]
-radius = 85.0
-height = 226.0
+radius = 62.0
+height = 156.0
 
 [node name="YetAnotherPaperClipDeer" unique_id=1112242495 instance=ExtResource("1_anrut")]
 
@@ -658,7 +730,6 @@ debug_color = Color(1.1072266, 1.1072266, 1.1176962, 0.27450982)
 light_mask = 4
 visibility_layer = 4
 position = Vector2(0, 14)
-collision_layer = 4
 monitorable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=133508168]
@@ -672,22 +743,28 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" index="0" unique_id=1522116914]
 position = Vector2(0, -31)
 shape = SubResource("CapsuleShape2D_anrut")
+disabled = true
 debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
 
-[node name="RayCastWallLeft" parent="." index="7" unique_id=617552342]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MonitorArea" parent_id_path=PackedInt32Array(1479376439) index="0" unique_id=1608739575]
+position = Vector2(0, -31)
+shape = SubResource("CapsuleShape2D_anrut")
+debug_color = Color(0.92966354, 0.25669444, 0.18194059, 0.41960785)
+
+[node name="RayCastWallLeft" parent="." index="8" unique_id=617552342]
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="WaypointMarker" parent="." index="9" unique_id=984549330]
+[node name="WaypointMarkerEnemy" parent="." index="10" unique_id=1906790374 instance=ExtResource("40_nh8nj")]
+on_screen_offset = Vector2(50, -150)
+
+[node name="WaypointMarker" parent="." index="11" unique_id=984549330]
 visible = false
 position = Vector2(12, -154)
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("39_vfgpr")
 
-[node name="WaypointMarkerEnemy" parent="." index="10" unique_id=1906790374 instance=ExtResource("40_nh8nj")]
-on_screen_offset = Vector2(50, -150)
-
-[node name="Healthbar" parent="." index="11" unique_id=112998173]
+[node name="Healthbar" parent="." index="12" unique_id=112998173]
 position = Vector2(0, -123)
 
 [node name="FlipHandler" parent="Handlers" parent_id_path=PackedInt32Array(1692696989) index="0" unique_id=1220700486]
@@ -700,10 +777,6 @@ hitbox_shape_offset_right = -63.0
 
 [node name="MovementHandler" parent="Handlers" parent_id_path=PackedInt32Array(1692696989) index="1" unique_id=1555339876]
 move_speed = 3000
-
-[node name="VisibleOnScreenEnabler2D" parent="." index="13" unique_id=1239927453]
-rect = Rect2(-86, -101, 172, 202)
-show_rect = false
 
 [node name="SFX" type="Node2D" parent="." index="14" unique_id=59007413]
 
@@ -740,11 +813,16 @@ bus = &"Effects"
 stream = ExtResource("44_v41sa")
 bus = &"Effects"
 
+[node name="VisibleOnScreenEnabler2D" parent="." index="15" unique_id=1239927453]
+rect = Rect2(-86, -101, 172, 202)
+show_rect = false
+
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_body_entered"]
 [connection signal="body_exited" from="AttackBox" to="." method="_on_attack_box_body_exited"]
+[connection signal="body_entered" from="MonitorArea" to="." method="_on_monitor_area_body_entered"]
 [connection signal="depleted_health" from="HealthComponent" to="." method="_on_health_component_depleted_health"]
 [connection signal="depleted_health" from="HealthComponent" to="EnemyAIHandler" method="_on_health_component_depleted_health"]
 [connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]

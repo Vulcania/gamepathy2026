@@ -26,7 +26,7 @@ enum State { IDLE, WALK, ATTACK, HIT, DYING, DEAD }
 
 var new_state : State
 var current_state = State.WALK
-var direction : Vector2
+var direction : Vector2 = Vector2(1.0, 0.0)
 
 func _ready() -> void:
 	health_component.depleted_health.connect(_on_health_component_depleted_health)
@@ -34,8 +34,6 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if is_flying:
 		direction = Global.player_position - position
-	else:
-		direction = Vector2(1.0, 0.0)
 
 func handle_state(entity : CharacterBody2D, delta : float) -> void:
 	new_state = check_state()

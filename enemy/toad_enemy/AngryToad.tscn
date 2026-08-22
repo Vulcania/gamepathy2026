@@ -492,6 +492,9 @@ bus = &"Effects"
 stream = ExtResource("31_bwvlg")
 bus = &"Effects"
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=811968844]
+scale = Vector2(16.32, 16.32)
+
 [connection signal="area_entered" from="DetectPlayer" to="." method="_on_detect_player_area_entered"]
 [connection signal="area_exited" from="DetectPlayer" to="." method="_on_detect_player_area_exited"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

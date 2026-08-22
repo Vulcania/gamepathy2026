@@ -11,7 +11,7 @@ func take_damage():
 	print("ringbinder hurt: take damage")
 	print(owner.health, "ringbinder health")
 	camera.trigger_shake()
-	owner.take_damage()
+	owner.take_damage(1)
 	can_transition = true
 
 func _on_hit_area_area_entered(area: Area2D) -> void:

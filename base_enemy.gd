@@ -39,11 +39,6 @@ func _on_health_component_depleted_health() -> void:
 		await $AnimationPlayer.animation_finished
 		self.queue_free()
 
-func _on_attack_box_body_entered(body: Node2D) -> void:
-	if body is Player:
-		enemy_ai_handler.is_attacking = true
-		print("attackbox body: Deer Is attacking")
-
 func _on_attack_box_body_exited(_body : Player) -> void:
 	enemy_ai_handler.is_attacking = false
 	print("Player left me")
@@ -61,3 +56,8 @@ func _on_attack_box_area_entered(area: Area2D) -> void:
 		if area.get_parent() is Player:
 			print("deear area attacking player")
 			area.get_parent().take_damage(1)
+
+func _on_monitor_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		enemy_ai_handler.is_attacking = true
+		print("attackbox body: Deer Is attacking")
