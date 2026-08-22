@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b7bf03hbgbmga" path="res://bg/candle_light.tscn" id="21_p8hdo"]
 [ext_resource type="PackedScene" uid="uid://yxj5fm114kig" path="res://bg/lamp_light.tscn" id="21_sbh46"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="21_ykcbn"]
+[ext_resource type="AudioStream" uid="uid://di73g02ojbj3a" path="res://sounds/sfx/level_sfx/tiny_typing.wav" id="22_q4jiv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m7wlf"]
 animations = [{
@@ -400,7 +401,21 @@ position = Vector2(8907, -1808)
 
 [node name="SFX" type="Node2D" parent="." unique_id=1428970542]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFX" unique_id=402680736]
+[node name="TinyTyping" type="AudioStreamPlayer2D" parent="SFX" unique_id=402680736]
+position = Vector2(5419, 1085)
+stream = ExtResource("22_q4jiv")
+volume_db = 4.728
+autoplay = true
+max_distance = 500.0
+bus = &"Effects"
+
+[node name="TinyTyping2" type="AudioStreamPlayer2D" parent="SFX" unique_id=1360675595]
+position = Vector2(12848, -963)
+stream = ExtResource("22_q4jiv")
+volume_db = 4.728
+autoplay = true
+max_distance = 500.0
+bus = &"Effects"
 
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
 [connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]
