@@ -48,10 +48,9 @@ _data = {
 }
 
 [node name="CandleLight" type="PointLight2D" unique_id=1017493835]
-scale = Vector2(2.8671885, 2.8671885)
+scale = Vector2(3.0625002, 3.0625)
 color = Color(0.99999994, 0.79015803, 0.39617246, 1)
 shadow_enabled = true
-shadow_color = Color(0.25882354, 0, 0, 0)
 shadow_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_m7wlf")
 

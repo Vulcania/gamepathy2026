@@ -67,26 +67,19 @@ texture = ExtResource("10_f2x4c")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8cp71"]
 texture = ExtResource("10_f2x4c")
 
-[node name="PauseMenu" type="Control" unique_id=700370192]
+[node name="PauseMenu" type="CanvasLayer" unique_id=2045351744]
 process_mode = 3
-z_index = 20
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layer = 4
+visible = false
 script = ExtResource("1_mnjdh")
 
 [node name="BlackBG" type="ColorRect" parent="." unique_id=831922076]
 modulate = Color(1, 1, 1, 0.7294118)
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.6313726)
 
 [node name="PausePanel" type="TextureRect" parent="." unique_id=2055592942]
-layout_mode = 0
 offset_left = -301.0
 offset_top = -61.0
 offset_right = 2309.0
@@ -100,7 +93,6 @@ scale = Vector2(1.4028571, 1.2972878)
 texture = ExtResource("3_ihaig")
 
 [node name="PanelSound" type="ColorRect" parent="." unique_id=1384176311]
-layout_mode = 0
 offset_left = 699.0
 offset_top = 595.0
 offset_right = 1385.0
@@ -159,7 +151,6 @@ theme_override_styles/grabber_area_highlight = ExtResource("8_j11rl")
 value = 50.0
 
 [node name="ClosePause" type="Button" parent="." unique_id=1412257940]
-layout_mode = 0
 offset_left = 1457.0
 offset_top = 184.0
 offset_right = 1491.0
@@ -170,7 +161,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_umsyg")
 theme_override_styles/focus = SubResource("StyleBoxTexture_3qrb2")
 
 [node name="Pause" type="Label" parent="." unique_id=993706785]
-layout_mode = 0
 offset_left = 810.0
 offset_top = 183.0
 offset_right = 1147.0
@@ -182,6 +172,7 @@ text = "PAUSE"
 horizontal_alignment = 1
 
 [node name="CollectedBuffs" type="Control" parent="." unique_id=1787114514]
+layout_mode = 3
 anchors_preset = 0
 offset_left = 530.0
 offset_top = 265.0
@@ -294,7 +285,6 @@ theme_override_font_sizes/font_size = 35
 text = "Buffs"
 
 [node name="QuitRun" type="Button" parent="." unique_id=2017299980]
-layout_mode = 0
 offset_left = 938.0
 offset_top = 854.0
 offset_right = 1039.8387
@@ -313,6 +303,7 @@ Quit Run"
 [node name="DoYouWantToQuit" type="Control" parent="." unique_id=1862183043]
 visible = false
 z_index = 5
+layout_mode = 3
 anchors_preset = 0
 
 [node name="Panel" type="TextureRect" parent="DoYouWantToQuit" unique_id=159205207]

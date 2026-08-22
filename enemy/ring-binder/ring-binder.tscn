@@ -31,10 +31,14 @@
 [ext_resource type="Script" uid="uid://d2qvfaqjiwl62" path="res://scripts/hit_box.gd" id="29_22hjt"]
 [ext_resource type="Script" uid="uid://dfifemk4cqv2h" path="res://enemy/ring-binder/ring_binder_states.gd" id="30_4oa4u"]
 [ext_resource type="Script" uid="uid://bgyk0ydx1rk7p" path="res://scripts/attack_box.gd" id="30_hkgvm"]
+[ext_resource type="AudioStream" uid="uid://b5mpm1en80wtr" path="res://sounds/sfx/enemy_sfx/ringbinder_idle.wav" id="31_06l5c"]
 [ext_resource type="Script" uid="uid://doutctndguvf" path="res://enemy/ring-binder/idle.gd" id="31_fht7q"]
 [ext_resource type="Script" uid="uid://c8sgwu2b8g6ep" path="res://enemy/ring-binder/attack.gd" id="32_qvsbj"]
+[ext_resource type="AudioStream" uid="uid://b3q2uota35hi2" path="res://sounds/sfx/enemy_sfx/ringbinder_attack.wav" id="32_uojgp"]
+[ext_resource type="AudioStream" uid="uid://dlmf228oj2nxn" path="res://sounds/sfx/enemy_sfx/ringbinder_hit.wav" id="33_cx64e"]
 [ext_resource type="Script" uid="uid://cpwd8r605qkgi" path="res://enemy/ring-binder/hurt.gd" id="33_qvsbj"]
 [ext_resource type="Script" uid="uid://cesxa22lb57ch" path="res://enemy/ring-binder/dead.gd" id="34_qvsbj"]
+[ext_resource type="AudioStream" uid="uid://cj4ejdqwk3m7q" path="res://sounds/sfx/enemy_sfx/ringbinder_death.wav" id="34_x4a01"]
 [ext_resource type="Script" uid="uid://42tcyoxr3bs" path="res://scripts/health_component.gd" id="37_06l5c"]
 [ext_resource type="PackedScene" uid="uid://b8pbr6khyr1xh" path="res://health/Healthbar.tscn" id="37_hkgvm"]
 
@@ -66,6 +70,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Attack:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.46666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_8cxo2"]
@@ -120,6 +136,18 @@ tracks/3/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Dying:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.43333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_e5gjq"]
 length = 0.6333333
@@ -158,6 +186,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, false, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Hurt:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_6dl7e"]
@@ -200,6 +240,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Idle:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
 
 [sub_resource type="Animation" id="Animation_dg8y0"]
 length = 0.001
@@ -234,6 +286,54 @@ tracks/2/path = NodePath("HitArea:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Attack:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Dying:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/Hurt:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SFX/Idle:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -302,16 +402,19 @@ shape = SubResource("CircleShape2D_ifvnn")
 [node name="SFX" type="Node2D" parent="." unique_id=1657816712]
 
 [node name="Idle" type="AudioStreamPlayer2D" parent="SFX" unique_id=1806950947]
-autoplay = true
+stream = ExtResource("31_06l5c")
 bus = &"Effects"
 
 [node name="Attack" type="AudioStreamPlayer2D" parent="SFX" unique_id=574082809]
+stream = ExtResource("32_uojgp")
 bus = &"Effects"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="SFX" unique_id=181108870]
+stream = ExtResource("33_cx64e")
 bus = &"Effects"
 
 [node name="Dying" type="AudioStreamPlayer2D" parent="SFX" unique_id=840965638]
+stream = ExtResource("34_x4a01")
 bus = &"Effects"
 
 [node name="RingBinderStates" type="Node2D" parent="." unique_id=1228838638]

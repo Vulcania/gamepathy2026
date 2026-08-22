@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 #class_name PauseMenu 
 
 @onready var quit = $DoYouWantToQuit
@@ -39,8 +39,9 @@ func _on_sfx_h_slider_value_changed(value: float) -> void:
 
 func _on_close_pause_pressed() -> void:
 	$ButtonPressSound.play()
-	hide()
+	
 	get_tree().paused = false
+	hide()
 
 func _on_quit_run_pressed() -> void:
 	$ButtonPressSound.play()

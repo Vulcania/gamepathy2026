@@ -69,7 +69,6 @@
 [ext_resource type="PackedScene" uid="uid://dc5k83g31j3su" path="res://health/HealthComponent.tscn" id="66_or4qq"]
 [ext_resource type="Script" uid="uid://e74kf2cearsk" path="res://player/hud.gd" id="67_b2j0d"]
 [ext_resource type="Script" uid="uid://bgyk0ydx1rk7p" path="res://scripts/attack_box.gd" id="67_do7qw"]
-[ext_resource type="PackedScene" uid="uid://buvakl6wq0bod" path="res://ui/pause_menu/pause_menu.tscn" id="67_hggc2"]
 [ext_resource type="PackedScene" uid="uid://3mgwi13a1xe1" path="res://ui/hearts_container.tscn" id="70_j3r50"]
 [ext_resource type="PackedScene" uid="uid://cmifa1p6oqh71" path="res://player/blocks_container.tscn" id="72_do7qw"]
 [ext_resource type="Script" uid="uid://cw7ryewcmoul3" path="res://enemy/Handlers/flip_handler.gd" id="73_2h6tc"]
@@ -643,9 +642,6 @@ max_health = 5
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=749907556]
 script = ExtResource("67_b2j0d")
-
-[node name="PauseMenu" parent="HUD" unique_id=700370192 instance=ExtResource("67_hggc2")]
-visible = false
 
 [node name="HeartsContainer" parent="HUD" unique_id=1877649860 instance=ExtResource("70_j3r50")]
 anchors_preset = 0
