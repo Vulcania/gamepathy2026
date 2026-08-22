@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="8_odo28"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="9_rdl48"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="10_j8omg"]
-[ext_resource type="PackedScene" uid="uid://csu5w0vfgfkjt" path="res://enemy/paper_clip_deer/paper_clip_deer.tscn" id="11_ba0s7"]
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="12_4s1t8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_do2xk"]
@@ -125,27 +124,6 @@ autoplay = true
 bus = &"Music"
 
 [node name="Enemies" type="Node2D" parent="." unique_id=108758984]
-
-[node name="PaperClipDeer" parent="Enemies" unique_id=1517736822 instance=ExtResource("11_ba0s7")]
-position = Vector2(4490, 147)
-
-[node name="PaperClipDeer5" parent="Enemies" unique_id=1717583726 instance=ExtResource("11_ba0s7")]
-position = Vector2(2292, -745)
-
-[node name="PaperClipDeer2" parent="Enemies" unique_id=787293028 instance=ExtResource("11_ba0s7")]
-position = Vector2(8471, -2275)
-
-[node name="PaperClipDeer3" parent="Enemies" unique_id=1191620894 instance=ExtResource("11_ba0s7")]
-position = Vector2(10349, -1896)
-
-[node name="PaperClipDeer6" parent="Enemies" unique_id=833344360 instance=ExtResource("11_ba0s7")]
-position = Vector2(9922, -1256)
-
-[node name="PaperClipDeer7" parent="Enemies" unique_id=854997980 instance=ExtResource("11_ba0s7")]
-position = Vector2(7669, -1777)
-
-[node name="PaperClipDeer4" parent="Enemies" unique_id=7955458 instance=ExtResource("11_ba0s7")]
-position = Vector2(11912, 546)
 
 [connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]

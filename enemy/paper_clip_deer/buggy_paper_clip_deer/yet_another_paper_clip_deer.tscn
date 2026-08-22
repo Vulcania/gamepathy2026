@@ -40,6 +40,11 @@
 [ext_resource type="Texture2D" uid="uid://2d2agsfpfqve" path="res://enemy/paper_clip_deer/paper_clip_deer_assets/walking/frame_08.png" id="38_6jxyl"]
 [ext_resource type="Texture2D" uid="uid://co73aqouxl7mw" path="res://ui/ui_assets/waypointmarker_enemy.png" id="39_vfgpr"]
 [ext_resource type="PackedScene" uid="uid://bbnby8wg0loc3" path="res://ui/enemy marker.tscn" id="40_nh8nj"]
+[ext_resource type="AudioStream" uid="uid://cx2t7a1m2jga8" path="res://sounds/sfx/enemy_sfx/deer_hit.wav" id="41_6pj6x"]
+[ext_resource type="AudioStream" uid="uid://b4w0n4leu273h" path="res://sounds/sfx/enemy_sfx/deer_walk.wav" id="41_ki6ai"]
+[ext_resource type="AudioStream" uid="uid://ddj2cl6yo0d84" path="res://sounds/sfx/enemy_sfx/deer_attack.wav" id="42_va8bo"]
+[ext_resource type="AudioStream" uid="uid://dnvnh0a6oikch" path="res://sounds/sfx/enemy_sfx/deer_attackanticipation.wav" id="43_va8bo"]
+[ext_resource type="AudioStream" uid="uid://bgxkipjlv23pe" path="res://sounds/sfx/enemy_sfx/deer_death.wav" id="44_v41sa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0pgol"]
 animations = [{
@@ -218,6 +223,90 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/DeathSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/HitSFX:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/WalkSFX:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SFX/WalkSFX2:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatedSprite2D:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SFX/AttackSFX:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SFX/AttackAnticipationSFX:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ki6ai"]
 resource_name = "attack"
@@ -270,6 +359,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/AttackSFX:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/AttackAnticipationSFX:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_va8bo"]
@@ -325,6 +438,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/DeathSFX:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.56666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_v41sa"]
 resource_name = "hit"
@@ -364,6 +489,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/HitSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_euou2"]
@@ -409,7 +546,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_2ucdw"]
 resource_name = "walk"
-length = 1.1333333
+length = 1.7333333
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -418,10 +555,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.02, 1.23, 1.4333333, 1.6666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 7]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -446,6 +583,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/WalkSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 1.1333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/WalkSFX2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.13333334, 0.6333333, 1.5666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ie17o"]
@@ -482,6 +643,7 @@ health_component = NodePath("../HealthComponent")
 sprite_frames = SubResource("SpriteFrames_0pgol")
 animation = &"attack"
 autoplay = "walk"
+frame = 5
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=493143461]
 libraries/ = SubResource("AnimationLibrary_ie17o")
@@ -542,6 +704,41 @@ move_speed = 3000
 [node name="VisibleOnScreenEnabler2D" parent="." index="13" unique_id=1239927453]
 rect = Rect2(-86, -101, 172, 202)
 show_rect = false
+
+[node name="SFX" type="Node2D" parent="." index="14" unique_id=59007413]
+
+[node name="WalkSFX" type="AudioStreamPlayer2D" parent="SFX" index="0" unique_id=1494231796]
+stream = ExtResource("41_ki6ai")
+volume_db = 4.262
+pitch_scale = 1.39
+max_distance = 1000.0
+bus = &"Effects"
+
+[node name="WalkSFX2" type="AudioStreamPlayer2D" parent="SFX" index="1" unique_id=1534155871]
+stream = ExtResource("41_ki6ai")
+volume_db = 4.262
+pitch_scale = 1.39
+max_distance = 1000.0
+bus = &"Effects"
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="SFX" index="2" unique_id=1688840323]
+stream = ExtResource("42_va8bo")
+max_distance = 500.0
+bus = &"Effects"
+
+[node name="AttackAnticipationSFX" type="AudioStreamPlayer2D" parent="SFX" index="3" unique_id=743728011]
+stream = ExtResource("43_va8bo")
+max_distance = 500.0
+bus = &"Effects"
+
+[node name="HitSFX" type="AudioStreamPlayer2D" parent="SFX" index="4" unique_id=1743028013]
+stream = ExtResource("41_6pj6x")
+max_distance = 1000.0
+bus = &"Effects"
+
+[node name="DeathSFX" type="AudioStreamPlayer2D" parent="SFX" index="5" unique_id=1290177508]
+stream = ExtResource("44_v41sa")
+bus = &"Effects"
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

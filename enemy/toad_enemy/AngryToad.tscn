@@ -26,6 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://dso5srsyh8d6l" path="res://enemy/toad_enemy/idle/frame_03.png" id="23_8f6nq"]
 [ext_resource type="Texture2D" uid="uid://dw5usms4x4nqq" path="res://enemy/toad_enemy/idle/frame_04.png" id="24_qnk1i"]
 [ext_resource type="PackedScene" uid="uid://b8pbr6khyr1xh" path="res://health/Healthbar.tscn" id="26_1sx5g"]
+[ext_resource type="AudioStream" uid="uid://df5evxrsm3byh" path="res://sounds/sfx/enemy_sfx/angrytoad_idle.wav" id="27_rohq6"]
+[ext_resource type="AudioStream" uid="uid://cd7w6xi61hjux" path="res://sounds/sfx/enemy_sfx/angrytoad_anticipation.mp3" id="28_8wfx3"]
+[ext_resource type="AudioStream" uid="uid://chfhlakbvmp6a" path="res://sounds/sfx/enemy_sfx/angrytoad_attack.wav" id="29_owxc5"]
+[ext_resource type="AudioStream" uid="uid://0x64fyp3xqm2" path="res://sounds/sfx/enemy_sfx/angrytoad_hit.wav" id="30_owxc5"]
+[ext_resource type="AudioStream" uid="uid://cbslmvy4olihh" path="res://sounds/sfx/enemy_sfx/angrytoad_death.wav" id="31_bwvlg"]
 
 [sub_resource type="Animation" id="Animation_vo5ka"]
 resource_name = "Attack"
@@ -91,6 +96,30 @@ tracks/4/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/AttackAnti:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SFX/Attack:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_iug6n"]
 tracks/0/type = "value"
@@ -143,6 +172,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Death:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_bdyw3"]
 length = 0.4
@@ -169,6 +210,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Hit:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_tbx5k"]
@@ -209,6 +262,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Idle:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_w8lhm"]
@@ -285,6 +350,66 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SFX/Idle:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SFX/AttackAnti:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SFX/Attack:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SFX/Hit:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SFX/Death:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbst5"]
 _data = {
@@ -341,6 +466,31 @@ shape = SubResource("CapsuleShape2D_6ov3y")
 
 [node name="Healthbar" parent="." unique_id=112998173 instance=ExtResource("26_1sx5g")]
 position = Vector2(45, -126)
+
+[node name="SFX" type="Node2D" parent="." unique_id=870880519]
+
+[node name="Idle" type="AudioStreamPlayer2D" parent="SFX" unique_id=1195660364]
+stream = ExtResource("27_rohq6")
+volume_db = -3.41
+pitch_scale = 0.77
+max_distance = 1500.0
+bus = &"Effects"
+
+[node name="AttackAnti" type="AudioStreamPlayer2D" parent="SFX" unique_id=1883794350]
+stream = ExtResource("28_8wfx3")
+bus = &"Effects"
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="SFX" unique_id=100669081]
+stream = ExtResource("29_owxc5")
+bus = &"Effects"
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="SFX" unique_id=822671346]
+stream = ExtResource("30_owxc5")
+bus = &"Effects"
+
+[node name="Death" type="AudioStreamPlayer2D" parent="SFX" unique_id=1946491371]
+stream = ExtResource("31_bwvlg")
+bus = &"Effects"
 
 [connection signal="area_entered" from="DetectPlayer" to="." method="_on_detect_player_area_entered"]
 [connection signal="area_exited" from="DetectPlayer" to="." method="_on_detect_player_area_exited"]

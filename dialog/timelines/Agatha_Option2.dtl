@@ -1,3 +1,4 @@
+audio sfx "res://sounds/sfx/agatha_sfx/agatha3_r2aNyhVX.wav"
 agatha: Wish your rat a happy birthday from me!
 [signal arg="option2_selected"]
 [signal arg="exited_dialog"]

@@ -18,11 +18,10 @@
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="13_q4jiv"]
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="14_sbh46"]
 [ext_resource type="Texture2D" uid="uid://b1evak51qupla" path="res://items/door/Elevator/elevator-opened-frame.png" id="17_ykcbn"]
-[ext_resource type="Script" uid="uid://dpn2jtif5ykds" path="res://level/onboarding.gd" id="20_ykcbn"]
 [ext_resource type="PackedScene" uid="uid://b7bf03hbgbmga" path="res://bg/candle_light.tscn" id="21_p8hdo"]
 [ext_resource type="PackedScene" uid="uid://yxj5fm114kig" path="res://bg/lamp_light.tscn" id="21_sbh46"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="21_ykcbn"]
-[ext_resource type="LabelSettings" uid="uid://7sbid5o03kgw" path="res://resources/tutorial_label_settings.tres" id="26_i52af"]
+[ext_resource type="AudioStream" uid="uid://di73g02ojbj3a" path="res://sounds/sfx/level_sfx/tiny_typing.wav" id="22_q4jiv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m7wlf"]
 animations = [{
@@ -189,9 +188,6 @@ _data = {
 &"RESET": SubResource("Animation_sbh46")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxcw3"]
-size = Vector2(344, 1341)
-
 [node name="SafeRoomOne" type="Node2D" unique_id=829498224]
 script = ExtResource("1_bd1u2")
 
@@ -313,12 +309,6 @@ visible = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=397617716]
 libraries/ = SubResource("AnimationLibrary_ccrhc")
 
-[node name="Trapping the Player" type="StaticBody2D" parent="." unique_id=282739034]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trapping the Player" unique_id=943433742]
-position = Vector2(-51, 461.5)
-shape = SubResource("RectangleShape2D_vxcw3")
-
 [node name="musik" type="AudioStreamPlayer" parent="." unique_id=1545390943]
 process_mode = 3
 stream = ExtResource("7_jnkt6")
@@ -409,35 +399,23 @@ position = Vector2(8907, -1808)
 
 [node name="RoundThree" type="Node2D" parent="Enemies" unique_id=1785268295]
 
-[node name="Onboarding" type="Node" parent="." unique_id=182219842]
-script = ExtResource("20_ykcbn")
+[node name="SFX" type="Node2D" parent="." unique_id=1428970542]
 
-[node name="TutorialTexts" type="CanvasLayer" parent="Onboarding" unique_id=1638230778]
+[node name="TinyTyping" type="AudioStreamPlayer2D" parent="SFX" unique_id=402680736]
+position = Vector2(5419, 1085)
+stream = ExtResource("22_q4jiv")
+volume_db = 4.728
+autoplay = true
+max_distance = 500.0
+bus = &"Effects"
 
-[node name="tomove" type="Label" parent="Onboarding/TutorialTexts" unique_id=990345742]
-visible = false
-offset_left = 621.0
-offset_top = 402.0
-offset_right = 1241.0
-offset_bottom = 687.0
-text = "To Move:
-WASD
-Jump with SPACE.
-Dash with RMB
-"
-label_settings = ExtResource("26_i52af")
-horizontal_alignment = 1
-
-[node name="toattackandblock" type="Label" parent="Onboarding/TutorialTexts" unique_id=399469890]
-visible = false
-offset_left = 572.0
-offset_top = 405.0
-offset_right = 1290.0
-offset_bottom = 435.0
-text = "attack with LMB.
-block with ALT"
-label_settings = ExtResource("26_i52af")
-horizontal_alignment = 1
+[node name="TinyTyping2" type="AudioStreamPlayer2D" parent="SFX" unique_id=1360675595]
+position = Vector2(12848, -963)
+stream = ExtResource("22_q4jiv")
+volume_db = 4.728
+autoplay = true
+max_distance = 500.0
+bus = &"Effects"
 
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
 [connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]

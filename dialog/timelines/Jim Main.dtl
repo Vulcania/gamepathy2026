@@ -1,7 +1,12 @@
 [signal arg="entered_dialog"]
+audio sfx "res://sounds/sfx/jim_sfx/jim-dreaper_wha.wav"
 "jim dreaper": Grimmy! Just the little guy I’ve been waiting on.
+audio sfx "res://sounds/sfx/jim_sfx/jim-dreaper_sfx.wav"
 "jim dreaper": Guess what?
+audio sfx "res://sounds/sfx/jim_sfx/jim-dreaper_surprised.wav"
 "jim dreaper": Yours truly has a stunning soul quota.
+audio sfx "res://sounds/sfx/jim_sfx/jim-dreaper_sfx.wav"
 "jim dreaper": I bet you can’t keep up eh? How is your quota looking? You should show me!
+audio sfx "res://sounds/sfx/jim_sfx/jim-dreaper_sfx.wav"
 "jim dreaper": As two good pals would, right?
 [signal arg="open_buffs2"]

@@ -1,3 +1,4 @@
+audio sfx "res://sounds/sfx/agatha_sfx/agatha2_9HqNmyKh.wav"
 agatha: Damn those allergies!
 [signal arg="option3_selected"]
 [signal arg="exited_dialog"]
