@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://yxj5fm114kig" path="res://bg/lamp_light.tscn" id="21_sbh46"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="21_ykcbn"]
 [ext_resource type="AudioStream" uid="uid://di73g02ojbj3a" path="res://sounds/sfx/level_sfx/tiny_typing.wav" id="22_q4jiv"]
+[ext_resource type="PackedScene" uid="uid://b4orio7wnqpoq" path="res://npc/skull_note.tscn" id="23_ykcbn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m7wlf"]
 animations = [{
@@ -293,7 +294,7 @@ on_screen_offset = Vector2(0.5, -300)
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(3198, -1237)
+position = Vector2(11457, -2206)
 collision_layer = 1
 collision_mask = 1
 gravity = 1100
@@ -419,5 +420,9 @@ autoplay = true
 max_distance = 500.0
 bus = &"Effects"
 
+[node name="SkullNote" parent="." unique_id=1878760672 instance=ExtResource("23_ykcbn")]
+position = Vector2(10162, -1744)
+
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
 [connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]
+[connection signal="area_entered" from="SkullNote" to="." method="_on_skull_note_area_entered"]

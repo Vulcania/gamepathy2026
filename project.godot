@@ -34,7 +34,8 @@ directories/dch_directory={
 "Sir Death": "res://dialog/characters/Sir Death.dch",
 "agatha": "res://dialog/characters/agatha.dch",
 "boney toney": "res://dialog/characters/boney toney.dch",
-"jim dreaper": "res://dialog/characters/jim dreaper.dch"
+"jim dreaper": "res://dialog/characters/jim dreaper.dch",
+"skull": "res://dialog/characters/skull.dch"
 }
 directories/dtl_directory={
 "Agatha_Option1": "res://dialog/timelines/Agatha_Option1.dtl",
@@ -65,6 +66,7 @@ directories/dtl_directory={
 "Jim_Option2": "res://dialog/timelines/Jim_Option2.dtl",
 "Jim_Option3": "res://dialog/timelines/Jim_Option3.dtl",
 "Opening Agatha": "res://dialog/timelines/Opening Agatha.dtl",
+"SkullNote_DontDie": "res://dialog/timelines/SkullNote_DontDie.dtl",
 "enter_kitchen2": "res://dialog/timelines/enter_kitchen2.dtl"
 }
 layout/style_directory={

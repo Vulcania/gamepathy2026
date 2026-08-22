@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b4orio7wnqpoq"]
+
+[ext_resource type="Script" uid="uid://coa7pqm4hlgi8" path="res://npc/skull_note.gd" id="1_6gqmn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q4jiv"]
+radius = 683.0359
+
+[node name="SkullNote" type="Area2D" unique_id=1878760672]
+script = ExtResource("1_6gqmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586445410]
+shape = SubResource("CircleShape2D_q4jiv")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1117652800]
+position = Vector2(35, -47)

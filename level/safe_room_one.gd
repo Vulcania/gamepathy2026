@@ -6,6 +6,9 @@ func ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	$Door/pressE.hide()
 	TimerOptions.timer_deactivated()
+	
+	
+
 
 func rounds():
 	if Global.round_one:
