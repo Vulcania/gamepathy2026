@@ -584,7 +584,6 @@ height = 290.0
 radius = 94.641426
 
 [node name="Player" type="CharacterBody2D" unique_id=1980571954]
-light_mask = 0
 visibility_layer = 3
 texture_filter = 1
 collision_layer = 3
