@@ -52,11 +52,8 @@ func take_damage(damage):
 	print("ring binder takes damage, health: ", health)
 	camera.trigger_shake()
 	if health > 0:
-		#$SFX/Hurt.play()
+		$SFX/Hurt.play()
 		animation.play("Hit")
-#	if health <= 0: 
-#		$SFX/Dying.play()
-#		animation.play("Death")
 #queue free in Death Animation
 
 #func _on_hit_area_area_entered(area: Area2D) -> void:
@@ -69,6 +66,11 @@ func take_damage(damage):
 		#print("ringbinder: attackbox entered")
 		#take_damage()
 
-
 func _on_health_component_health_changed(current_health: Variant) -> void:
 	healthbar.update_healthbar(current_health, max_health)
+
+func _on_health_component_depleted_health() -> void:
+	$SFX/Dying.play()
+	animation.play("Death")
+	await animation.animation_finished
+	queue_free()
