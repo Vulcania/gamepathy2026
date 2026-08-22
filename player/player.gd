@@ -83,6 +83,7 @@ func _ready() -> void:
 		#blocks_list.append(child)
 
 func _physics_process(delta: float) -> void:
+	Global.player_position = global_position
 	block_container.update_blocks(current_block_count)
 	move_input = input_handler.movement_input()
 	is_running = Input.is_action_pressed("run")

@@ -12,6 +12,8 @@ var round_two = false
 var round_three = false
 var boss_deafeated = false
 
+var player_position
+
 signal global_refill_coffee
 
 func _ready():

@@ -1,6 +1,10 @@
 class_name EnemyAIHandler
 extends Node2D
 
+@onready var player = get_node("root/Main/test_level/Player")
+
+@export var is_flying : bool = false
+
 @export var sprite : AnimatedSprite2D = null
 @export var animation : AnimationPlayer = null
 @export var base_shape : CollisionShape2D = null
@@ -10,7 +14,6 @@ extends Node2D
 @export var wall_check_left : RayCast2D = null
 @export var movement_handler : MovementHandler = null
 @export var flip_handler : FlipHandler = null
-
 @export var health_component: HealthComponent = null
 
 var is_attacking : bool = false
@@ -23,10 +26,16 @@ enum State { IDLE, WALK, ATTACK, HIT, DYING, DEAD }
 
 var new_state : State
 var current_state = State.WALK
-var direction = Vector2(1.0, 0.0)
+var direction : Vector2
 
 func _ready() -> void:
 	health_component.depleted_health.connect(_on_health_component_depleted_health)
+
+func _process(_delta) -> void:
+	if is_flying:
+		direction = Global.player_position - position
+	else:
+		direction = Vector2(1.0, 0.0)
 
 func handle_state(entity : CharacterBody2D, delta : float) -> void:
 	new_state = check_state()
@@ -72,7 +81,9 @@ func flip():
 	flip_handler.flip_entity(sprite, direction)
 	flip_handler.flip_raycast(floor_check_left, wall_check_left)
 	flip_handler.apply_collision_shapes_offset(base_shape, hitbox, attack_box)
-	direction.x *= -1
+	
+	if is_flying == false:
+		direction.x *= -1
 
 func _update_animation():
 	match current_state:

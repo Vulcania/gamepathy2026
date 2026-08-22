@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="2_owtjd"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="2_s65ib"]
 [ext_resource type="PackedScene" uid="uid://cb75wlk3vw31d" path="res://enemy/toad_enemy/AngryToad.tscn" id="3_w72v2"]
+[ext_resource type="PackedScene" uid="uid://bwswyvroaqyxb" path="res://ring_binder_too.tscn" id="5_22gpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s65ib"]
 size = Vector2(361.8, 51)
@@ -37,3 +38,6 @@ collision_mask = 1
 
 [node name="AngryToad" parent="." unique_id=690832968 instance=ExtResource("3_w72v2")]
 position = Vector2(1617, 907)
+
+[node name="RingBinder" parent="." unique_id=298444336 instance=ExtResource("5_22gpc")]
+position = Vector2(772, 703)

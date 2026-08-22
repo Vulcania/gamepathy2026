@@ -28,12 +28,15 @@
 [ext_resource type="Texture2D" uid="uid://wtlcm22ty7bw" path="res://enemy/ring-binder/hit/frame_10.png" id="18_kb3br"]
 [ext_resource type="Texture2D" uid="uid://djtpijuojf0m4" path="res://enemy/ring-binder/hit/frame_11.png" id="19_n7i7i"]
 [ext_resource type="Texture2D" uid="uid://bbry6i8moidwc" path="res://enemy/ring-binder/hit/frame_12.png" id="20_r7iey"]
+[ext_resource type="Script" uid="uid://d2qvfaqjiwl62" path="res://scripts/hit_box.gd" id="29_22hjt"]
 [ext_resource type="Script" uid="uid://dfifemk4cqv2h" path="res://enemy/ring-binder/ring_binder_states.gd" id="30_4oa4u"]
+[ext_resource type="Script" uid="uid://bgyk0ydx1rk7p" path="res://scripts/attack_box.gd" id="30_hkgvm"]
 [ext_resource type="Script" uid="uid://doutctndguvf" path="res://enemy/ring-binder/idle.gd" id="31_fht7q"]
 [ext_resource type="Script" uid="uid://c8sgwu2b8g6ep" path="res://enemy/ring-binder/attack.gd" id="32_qvsbj"]
 [ext_resource type="Script" uid="uid://cpwd8r605qkgi" path="res://enemy/ring-binder/hurt.gd" id="33_qvsbj"]
-[ext_resource type="Script" uid="uid://dy46xer2u2750" path="res://enemy/ring-binder/healthbar.gd" id="34_56oou"]
 [ext_resource type="Script" uid="uid://cesxa22lb57ch" path="res://enemy/ring-binder/dead.gd" id="34_qvsbj"]
+[ext_resource type="Script" uid="uid://42tcyoxr3bs" path="res://scripts/health_component.gd" id="37_06l5c"]
+[ext_resource type="PackedScene" uid="uid://b8pbr6khyr1xh" path="res://health/Healthbar.tscn" id="37_hkgvm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cssm5"]
 radius = 60.551632
@@ -277,6 +280,7 @@ visibility_layer = 4
 collision_layer = 4
 collision_mask = 4
 monitorable = false
+script = ExtResource("29_22hjt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=709368692]
 visibility_layer = 4
@@ -285,9 +289,10 @@ shape = SubResource("CircleShape2D_lihf5")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1092380745]
 visibility_layer = 2
-collision_layer = 0
+collision_layer = 2
 collision_mask = 2
 monitoring = false
+script = ExtResource("30_hkgvm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1689796689]
 visibility_layer = 2
@@ -325,21 +330,18 @@ script = ExtResource("33_qvsbj")
 [node name="Dead" type="Node2D" parent="RingBinderStates" unique_id=1131210509]
 script = ExtResource("34_qvsbj")
 
-[node name="Healthbar" type="Control" parent="." unique_id=973988457]
+[node name="HealthComponent" type="Control" parent="." unique_id=2233378]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("34_56oou")
+script = ExtResource("37_06l5c")
+metadata/_custom_type_script = "uid://42tcyoxr3bs"
 
-[node name="ColorRect" type="ColorRect" parent="Healthbar" unique_id=935422043]
-layout_mode = 0
-offset_left = -111.0
-offset_top = -89.0
-offset_right = 85.0
-offset_bottom = -71.0
-color = Color(0.92941177, 0, 0.1764706, 1)
+[node name="Healthbar" parent="." unique_id=112998173 instance=ExtResource("37_hkgvm")]
+position = Vector2(0, -62)
 
 [connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
 [connection signal="area_entered" from="HitArea" to="RingBinderStates/Hurt" method="_on_hit_area_area_entered"]
 [connection signal="area_entered" from="AttackArea" to="RingBinderStates/Attack" method="_on_attack_area_area_entered"]
+[connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]

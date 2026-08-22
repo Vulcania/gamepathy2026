@@ -2,22 +2,27 @@ class_name Enemy
 extends CharacterBody2D
 
 @onready var enemy_ai_handler: EnemyAIHandler = $EnemyAIHandler
-@onready var flip_handler: FlipHandler = $Handlers/FlipHandler
-@onready var movement_handler: MovementHandler = $Handlers/MovementHandler
 @onready var gravity_handler: GravityHandler = $Handlers/GravityHandler
 @onready var health_component = $HealthComponent
 @onready var healthbar: Healthbar = $Healthbar
 @onready var attack_box: AttackBox = $AttackBox
 
 var max_health = 1
+var direction : Vector2
+var is_flying : bool
 
 func _ready() -> void:
 	max_health = health_component.max_health
 	attack_box.hide()
+	is_flying = enemy_ai_handler.is_flying
 
 func _physics_process(delta: float) -> void:
-	gravity_handler.apply_gravity(self, delta)
 	enemy_ai_handler.handle_state(self, delta)
+	
+	if is_flying:
+		velocity = direction.normalized() * 60
+	else:
+		gravity_handler.apply_gravity(self, delta)
 	
 	move_and_slide()
 
@@ -30,7 +35,6 @@ func _on_health_component_health_changed(current_health: int) -> void:
 	print("Deer Health is Updated")
 
 func _on_health_component_depleted_health() -> void:
-	
 	if $AnimationPlayer.current_animation == "dying":
 		await $AnimationPlayer.animation_finished
 		self.queue_free()
