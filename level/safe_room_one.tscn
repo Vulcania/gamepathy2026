@@ -398,5 +398,9 @@ position = Vector2(8907, -1808)
 
 [node name="RoundThree" type="Node2D" parent="Enemies" unique_id=1785268295]
 
+[node name="SFX" type="Node2D" parent="." unique_id=1428970542]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFX" unique_id=402680736]
+
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
 [connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]
