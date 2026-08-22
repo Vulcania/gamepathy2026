@@ -1,11 +1,11 @@
 class_name StateMachine
 extends Node
 
-@export var initial_state : States
-var active_state: States
+@export var initial_state : BossState
+var active_state: BossState
 
 func _ready() -> void:
-	for child_state: States in get_children():
+	for child_state: BossState in get_children():
 		child_state.switch_state.connect(change_state)
 	
 	if initial_state:
@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if active_state:
 		active_state.physics_update(delta)
 
-func change_state(new_state: States) -> void:
+func change_state(new_state: BossState) -> void:
 	if new_state == active_state:
 		return
 	

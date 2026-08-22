@@ -44,7 +44,6 @@ func _on_attack_box_body_entered(body: Node2D) -> void:
 		enemy_ai_handler.is_attacking = true
 		print("attackbox body: Deer Is attacking")
 
-
 func _on_attack_box_body_exited(_body : Player) -> void:
 	enemy_ai_handler.is_attacking = false
 	print("Player left me")

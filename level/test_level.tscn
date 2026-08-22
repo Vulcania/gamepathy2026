@@ -25,6 +25,7 @@ color = Color(0.32156864, 0.56078434, 0.38431373, 1)
 polygon = PackedVector2Array(101, 53, 246, 53, 246, 71, 173.7, 71, 101, 71)
 
 [node name="Player" parent="." unique_id=166332311 instance=ExtResource("1_dsqel")]
+light_mask = 0
 position = Vector2(387, 908)
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=1821580959 groups=["Camera"]]
