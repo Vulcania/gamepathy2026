@@ -13,10 +13,11 @@ class_name RingBinder
 
 var facing_right = false
 
-var max_health = 3
-var health: int = 3
+var max_health = 2
+var health: int = 2
 var hit = false
 var can_attack = true 
+var dead = false
 
 var direction : Vector2
 
@@ -30,21 +31,23 @@ func _ready():
 	#$SFX/Idle.play()
 
 func _process(_delta: float) -> void:
-	direction = Global.player_position - position
-	
-	if direction.x < 0:
-		sprite.flip_h = false
-	else:
-		sprite.flip_h = true
+	if !dead:
+		direction = Global.player_position - position
+		
+		if direction.x < 0:
+			sprite.flip_h = false
+		else:
+			sprite.flip_h = true
 
-	if direction.x and direction.y <= 60:
-		animation.play("Attack")
-	else:
-		animation.play("Idle")
+		if direction.x and direction.y <= 60:
+			animation.play("Attack")
+		else:
+			animation.play("Idle")
 
 func _physics_process(_delta):
-	velocity = direction.normalized() * 60
-	move_and_slide()
+	if !dead:
+		velocity = direction.normalized() * 60
+		move_and_slide()
 
 func take_damage(damage):
 	#health -= 1
@@ -54,23 +57,18 @@ func take_damage(damage):
 	if health > 0:
 		$SFX/Hurt.play()
 		animation.play("Hit")
+	if health <=0:
+		_on_health_component_depleted_health()
 #queue free in Death Animation
-
-#func _on_hit_area_area_entered(area: Area2D) -> void:
-	#if area.get_parent() is AttackBox:
-		##hit = true
-		#print("ringbinder: attackbox entered")
-		#take_damage()
-	#if area.get_parent() is Player:
-		##hit = true
-		#print("ringbinder: attackbox entered")
-		#take_damage()
 
 func _on_health_component_health_changed(current_health: Variant) -> void:
 	healthbar.update_healthbar(current_health, max_health)
+	#animation.play("Hit")
+	#$SFX/Hurt.play()
 
 func _on_health_component_depleted_health() -> void:
-	$SFX/Dying.play()
+	#$SFX/Dying.play()
+	dead = true
 	animation.play("Death")
 	await animation.animation_finished
 	queue_free()

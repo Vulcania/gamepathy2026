@@ -6,14 +6,13 @@ var can_transition: bool = false
 func enter():
 	super.enter()
 	animation_player.play("summon")
-	await animation_player.animation_finished
+	await get_tree().create_timer(2).timeout
 	can_transition = true
  
 func spawn():
 	var minion = minion_node.instantiate()
 	minion.position = owner.position + Vector2(40,-40)
 	get_tree().current_scene.add_child(minion)
- 
  
 func transition():
 	if can_transition:

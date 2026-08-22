@@ -17,7 +17,7 @@ func take_damage():
 func _on_hit_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		hit = true
-		print("ringbinder hurt: hit area entered")
+		print("ringbinder hurt: hit area entered", area)
 		take_damage()
 		if hit:
 			hit = !hit

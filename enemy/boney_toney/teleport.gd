@@ -9,9 +9,10 @@ func enter():
 	can_transition = true
  
 func teleport():
-	owner.position = player.position + Vector2.RIGHT * 40
+	owner.position = player.position + Vector2.RIGHT * 200 + Vector2.UP * 50
 
 func transition():
 	if can_transition:
+		#await get_tree().create_timer(1).timeout
 		get_parent().change_states("Attack")
 		can_transition = false

@@ -568,7 +568,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pxes"]
-size = Vector2(53, 104)
+size = Vector2(53, 95)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmu53"]
 radius = 22.0

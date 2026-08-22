@@ -1,21 +1,17 @@
 extends Node2D
 
-enum State {Idle, Follow, Attack, Teleport, SpawnMinion, Death}
-var Idle = get_child(0)
-var Follow = get_child(1)
-
-var current_state: State
-var previous_state: State
+var current_state: BossState
+var previous_state: BossState
  
 func _ready():
-	current_state = State.Idle
+	current_state = get_child(0) as BossState
 	previous_state = current_state
-	#current_state.enter()
+	current_state.enter()
  
-func change_state(state):
-	#current_state = find_child(state)
-	#current_state.enter()
-	print("fsm change state")
+func change_states(state):
+	current_state = find_child(state)
+	current_state.enter()
+	#print("fsm: change state")
  
-	#previous_state.exit()
+	previous_state.exit()
 	previous_state = current_state

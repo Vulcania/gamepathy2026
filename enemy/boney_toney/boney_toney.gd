@@ -12,7 +12,7 @@ var health: = 100:
 		progress_bar.value = value
 		if value <= 0:
 			progress_bar.visible = false
-			find_child("FiniteStateMachine").change_state("Death")
+			find_child("FiniteStateMachine").change_states("Death")
  
 func _ready():
 	set_physics_process(false)
@@ -31,9 +31,10 @@ func _physics_process(delta):
  
 func take_damage():
 	health -= 5
-	$SFX/Hurt.play()
-
+	print("boney_toney, take damage. Health:", health)
+	#$SFX/Hurt.play()
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
+		print("boney_toney: hitbox area entered")
 		take_damage()

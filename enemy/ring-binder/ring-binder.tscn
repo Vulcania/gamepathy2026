@@ -358,8 +358,8 @@ radius = 154.05194
 [node name="RingBinder" type="CharacterBody2D" unique_id=606483896]
 visibility_layer = 7
 scale = Vector2(0.5, 0.5)
-collision_layer = 4
-collision_mask = 4
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_lihf5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1841305218]
@@ -407,6 +407,7 @@ bus = &"Effects"
 
 [node name="Attack" type="AudioStreamPlayer2D" parent="SFX" unique_id=574082809]
 stream = ExtResource("32_uojgp")
+volume_db = -8.895
 bus = &"Effects"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="SFX" unique_id=181108870]
@@ -439,6 +440,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("37_06l5c")
+max_health = 2
 metadata/_custom_type_script = "uid://42tcyoxr3bs"
 
 [node name="Healthbar" parent="." unique_id=112998173 instance=ExtResource("37_hkgvm")]
