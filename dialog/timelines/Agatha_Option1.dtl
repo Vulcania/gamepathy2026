@@ -1,4 +1,4 @@
-audio "res://sounds/sfx/agatha_sfx/agatha2_9HqNmyKh.wav"
+audio sfx "res://sounds/sfx/agatha_sfx/agatha2_9HqNmyKh.wav"
 agatha: Make sure the dentist doesn't steal more teeth that they should!
 [signal arg="option1_selected"]
 [signal arg="exited_dialog"]
