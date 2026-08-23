@@ -446,6 +446,9 @@ metadata/_custom_type_script = "uid://42tcyoxr3bs"
 [node name="Healthbar" parent="." unique_id=112998173 instance=ExtResource("37_hkgvm")]
 position = Vector2(0, -62)
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1041728978]
+rect = Rect2(-158, -112, 286, 264)
+
 [connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
 [connection signal="area_entered" from="HitArea" to="RingBinderStates/Hurt" method="_on_hit_area_area_entered"]
 [connection signal="area_entered" from="AttackArea" to="RingBinderStates/Attack" method="_on_attack_area_area_entered"]

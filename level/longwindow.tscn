@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://codxv0jvi5il0"]
+
+[ext_resource type="Texture2D" uid="uid://dbwe8nhy00c3q" path="res://bg/window_lights2.png" id="1_bo4wi"]
+
+[node name="longwindow" type="PointLight2D" unique_id=1442944808]
+light_mask = 3
+visibility_layer = 3
+scale = Vector2(1, 1.0138888)
+energy = 0.4
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("1_bo4wi")
+offset = Vector2(0, 250)

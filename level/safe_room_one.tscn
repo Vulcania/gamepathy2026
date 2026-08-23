@@ -21,13 +21,12 @@
 [ext_resource type="PackedScene" uid="uid://cyefwpdlsxmdt" path="res://level/bigwindow.tscn" id="21_exeja"]
 [ext_resource type="PackedScene" uid="uid://b7bf03hbgbmga" path="res://bg/candle_light.tscn" id="21_p8hdo"]
 [ext_resource type="PackedScene" uid="uid://yxj5fm114kig" path="res://bg/lamp_light.tscn" id="21_sbh46"]
-[ext_resource type="Texture2D" uid="uid://dtqws3xlfh60" path="res://bg/window_lights.png" id="21_v47dh"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="21_ykcbn"]
+[ext_resource type="PackedScene" uid="uid://codxv0jvi5il0" path="res://level/longwindow.tscn" id="22_07oo5"]
 [ext_resource type="AudioStream" uid="uid://di73g02ojbj3a" path="res://sounds/sfx/level_sfx/tiny_typing.wav" id="22_q4jiv"]
-[ext_resource type="Texture2D" uid="uid://dbwe8nhy00c3q" path="res://bg/window_lights2.png" id="23_07oo5"]
+[ext_resource type="PackedScene" uid="uid://df1ocijhmy1yo" path="res://level/smallemptywindow.tscn" id="23_07oo5"]
 [ext_resource type="AudioStream" uid="uid://oepcegf5gaao" path="res://sounds/sfx/level_sfx/elevatoropen.wav" id="23_i52af"]
 [ext_resource type="PackedScene" uid="uid://b4orio7wnqpoq" path="res://npc/skull_note.tscn" id="23_ykcbn"]
-[ext_resource type="Texture2D" uid="uid://cg7senn6jnph2" path="res://bg/window_lights3.png" id="24_qc5qy"]
 [ext_resource type="PackedScene" uid="uid://dcticxd865koq" path="res://level/fade_out.tscn" id="24_sbh46"]
 [ext_resource type="AudioStream" uid="uid://cg8vyhec31uaq" path="res://sounds/sfx/level_sfx/elevatorclose.wav" id="24_v47dh"]
 
@@ -529,257 +528,59 @@ range_layer_max = 10
 [node name="bigwindow" parent="Lights/WindowLight" unique_id=897559571 instance=ExtResource("21_exeja")]
 position = Vector2(2732, 353)
 
-[node name="bigwindow2" type="PointLight2D" parent="Lights/WindowLight" unique_id=726494435]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(7851, 227)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("21_v47dh")
-offset = Vector2(0, 250)
+[node name="bigwindow2" parent="Lights/WindowLight" unique_id=593960377 instance=ExtResource("21_exeja")]
+position = Vector2(7852, 225)
 
-[node name="bigwindow3" type="PointLight2D" parent="Lights/WindowLight" unique_id=2131818842]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(8619, 226)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("21_v47dh")
-offset = Vector2(0, 250)
+[node name="bigwindow3" parent="Lights/WindowLight" unique_id=864143379 instance=ExtResource("21_exeja")]
+position = Vector2(8619, 225)
 
-[node name="bigwindow4" type="PointLight2D" parent="Lights/WindowLight" unique_id=924230112]
-light_mask = 3
-visibility_layer = 3
+[node name="bigwindow4" parent="Lights/WindowLight" unique_id=949407337 instance=ExtResource("21_exeja")]
+position = Vector2(9388, 226)
+
+[node name="bigwindow5" parent="Lights/WindowLight" unique_id=1900480807 instance=ExtResource("21_exeja")]
 position = Vector2(10155, 226)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("21_v47dh")
-offset = Vector2(0, 250)
 
-[node name="bigwindow5" type="PointLight2D" parent="Lights/WindowLight" unique_id=1875855458]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(9387, 225.00002)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("21_v47dh")
-offset = Vector2(0, 250)
+[node name="bigwindow6" parent="Lights/WindowLight" unique_id=1366946160 instance=ExtResource("21_exeja")]
+position = Vector2(10924, 225)
 
-[node name="bigwindow6" type="PointLight2D" parent="Lights/WindowLight" unique_id=1466118081]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(10923, 226)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("21_v47dh")
-offset = Vector2(0, 250)
+[node name="bigwindow7" parent="Lights/WindowLight" unique_id=1072251718 instance=ExtResource("21_exeja")]
+position = Vector2(11692, 226)
 
-[node name="bigwindow7" type="PointLight2D" parent="Lights/WindowLight" unique_id=92597772]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(11692, 225)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("21_v47dh")
-offset = Vector2(0, 250)
-
-[node name="bigwindow8" type="PointLight2D" parent="Lights/WindowLight" unique_id=1974137586]
-light_mask = 3
-visibility_layer = 3
+[node name="longwindow" parent="Lights/WindowLight" unique_id=1442944808 instance=ExtResource("22_07oo5")]
 position = Vector2(10057, -1850)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("23_07oo5")
-offset = Vector2(0, 250)
 
-[node name="bigwindow9" type="PointLight2D" parent="Lights/WindowLight" unique_id=2090890972]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(9673, -1850)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("23_07oo5")
-offset = Vector2(0, 250)
+[node name="longwindow2" parent="Lights/WindowLight" unique_id=310324115 instance=ExtResource("22_07oo5")]
+position = Vector2(9675, -1850)
 
-[node name="bigwindow10" type="PointLight2D" parent="Lights/WindowLight" unique_id=712039240]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(9289, -1850)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("23_07oo5")
-offset = Vector2(0, 250)
+[node name="longwindow3" parent="Lights/WindowLight" unique_id=750849167 instance=ExtResource("22_07oo5")]
+position = Vector2(9290, -1850)
 
-[node name="bigwindow11" type="PointLight2D" parent="Lights/WindowLight" unique_id=488541149]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(8906, -1850)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("23_07oo5")
-offset = Vector2(0, 250)
+[node name="longwindow4" parent="Lights/WindowLight" unique_id=1782288824 instance=ExtResource("22_07oo5")]
+position = Vector2(8905, -1850)
 
-[node name="bigwindow12" type="PointLight2D" parent="Lights/WindowLight" unique_id=1488290049]
-light_mask = 3
-visibility_layer = 3
+[node name="longwindow5" parent="Lights/WindowLight" unique_id=817669273 instance=ExtResource("22_07oo5")]
 position = Vector2(3273, -1466)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("23_07oo5")
-offset = Vector2(0, 250)
 
-[node name="bigwindow13" type="PointLight2D" parent="Lights/WindowLight" unique_id=908325735]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(1481, -1466)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("23_07oo5")
-offset = Vector2(0, 250)
+[node name="longwindow6" parent="Lights/WindowLight" unique_id=1251481025 instance=ExtResource("22_07oo5")]
+position = Vector2(1482, -1466)
 
-[node name="bigwindow14" type="PointLight2D" parent="Lights/WindowLight" unique_id=301102946]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(2377, 581)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("23_07oo5")
-offset = Vector2(0, 250)
+[node name="longwindow7" parent="Lights/WindowLight" unique_id=2016090616 instance=ExtResource("22_07oo5")]
+position = Vector2(2377, 579)
 
-[node name="bigwindow15" type="PointLight2D" parent="Lights/WindowLight" unique_id=1900436988]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(3145, 582)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("23_07oo5")
-offset = Vector2(0, 250)
+[node name="longwindow8" parent="Lights/WindowLight" unique_id=1129166085 instance=ExtResource("22_07oo5")]
+position = Vector2(3147, 579)
 
-[node name="bigwindow16" type="PointLight2D" parent="Lights/WindowLight" unique_id=1283437685]
-light_mask = 3
-visibility_layer = 3
+[node name="smallemptywindow" parent="Lights/WindowLight" unique_id=600220153 instance=ExtResource("23_07oo5")]
 position = Vector2(8007, -2293)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("24_qc5qy")
-offset = Vector2(0, 250)
 
-[node name="bigwindow17" type="PointLight2D" parent="Lights/WindowLight" unique_id=945831425]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(8391, -2293)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("24_qc5qy")
-offset = Vector2(0, 250)
+[node name="smallemptywindow2" parent="Lights/WindowLight" unique_id=769379100 instance=ExtResource("23_07oo5")]
+position = Vector2(8392, -2293)
 
-[node name="bigwindow18" type="PointLight2D" parent="Lights/WindowLight" unique_id=270170867]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(10951, -2293)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("24_qc5qy")
-offset = Vector2(0, 250)
+[node name="smallemptywindow3" parent="Lights/WindowLight" unique_id=988118091 instance=ExtResource("23_07oo5")]
+position = Vector2(10952, -2290)
 
-[node name="bigwindow19" type="PointLight2D" parent="Lights/WindowLight" unique_id=1020007313]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(11336, -2293)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("24_qc5qy")
-offset = Vector2(0, 250)
+[node name="smallemptywindow4" parent="Lights/WindowLight" unique_id=1818125838 instance=ExtResource("23_07oo5")]
+position = Vector2(11337, -2290)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=286173373]
 
