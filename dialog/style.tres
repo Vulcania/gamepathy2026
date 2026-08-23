@@ -19,7 +19,7 @@ script = ExtResource("2_tq638")
 scene = ExtResource("4_xd5x3")
 overrides = {
 "box_modulate": "Color(0.84705883, 0.76862746, 0.7607843, 1)",
-"choices_text_color": "Color(0.10546875, 0.07188535, 0.04737854, 1)",
+"choices_text_color": "Color(0.17578125, 0.114395134, 0.07347107, 1)",
 "choices_text_color_disabled": "Color(0.12109375, 0.06495929, 0.04777527, 1)",
 "choices_text_color_focus": "Color(0.08203125, 0.04736924, 0.030441284, 1)",
 "choices_text_color_hover": "Color(0.07421875, 0.04525423, 0.033920288, 1)",
@@ -37,4 +37,4 @@ layer_info = {
 "10": SubResource("Resource_gh5ut"),
 "11": SubResource("Resource_04qt0")
 }
-metadata/_latest_layer = "10"
+metadata/_latest_layer = "11"

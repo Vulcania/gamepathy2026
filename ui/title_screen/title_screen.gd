@@ -8,6 +8,9 @@ extends Control
 
 func _ready() -> void:
 	TimerOptions.timer_deactivated()
+	Global.in_game = false
+	BlocksContainer.hide()
+	
 	menu_vbox.visible = true
 	options_vbox.visible = false
 	credits_vbox.visible = false
@@ -17,8 +20,6 @@ func _ready() -> void:
 func _on_start_button_pressed() -> void:
 	$ButtonPressSound.play()
 	get_tree().change_scene_to_file("res://level/opening_animatic.tscn")
-	#get_tree().change_scene_to_file("res://level/test_level.tscn")
-
 
 func _on_options_button_pressed() -> void:
 	$ButtonPressSound.play()
@@ -26,25 +27,21 @@ func _on_options_button_pressed() -> void:
 	options_vbox.visible = true
 	credits_vbox.visible = false
 
-
 func _on_credits_button_pressed() -> void:
 	$ButtonPressSound.play()
 	menu_vbox.visible = false
 	options_vbox.visible = false
 	credits_vbox.visible = true
 
-
 func _on_quit_button_pressed() -> void:
 	$ButtonPressSound.play()
 	get_tree().quit()
-
 
 func _on_back_button_pressed() -> void:
 	$ButtonPressSound.play()
 	menu_vbox.visible = true
 	options_vbox.visible = false
 	credits_vbox.visible = false
-
 
 func _on_music_slider_value_changed(value: float) -> void:
 	Options.change_music_volume(value)

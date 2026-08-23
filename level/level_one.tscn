@@ -1,14 +1,8 @@
 [gd_scene format=3 uid="uid://kvywnegikmys"]
 
 [ext_resource type="Script" uid="uid://dipjd56lggga3" path="res://level/level_one.gd" id="1_6k22j"]
-[ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="2_ah3ca"]
 [ext_resource type="PackedScene" uid="uid://bf52cbt7d6yt8" path="res://level/background.tscn" id="2_vj0se"]
-[ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="3_bxc86"]
 [ext_resource type="TileSet" uid="uid://ibpa23efrbig" path="res://resources/tile_set.tres" id="3_weswd"]
-[ext_resource type="Texture2D" uid="uid://dyj4wscmmr02l" path="res://items/door/door02.png" id="4_6k22j"]
-[ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="5_84ti7"]
-[ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="6_ekjd4"]
-[ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="7_7a6hf"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="9_35rcf"]
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="9_84ti7"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="10_ekjd4"]
@@ -16,45 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="14_6jd0m"]
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="14_weswd"]
 [ext_resource type="PackedScene" uid="uid://cb75wlk3vw31d" path="res://enemy/toad_enemy/AngryToad.tscn" id="16_weswd"]
+[ext_resource type="Texture2D" uid="uid://b1evak51qupla" path="res://items/door/Elevator/elevator-opened-frame.png" id="17_vjef4"]
+[ext_resource type="Texture2D" uid="uid://dbgh5iy8m4pxf" path="res://items/door/Elevator/elevator-door-left.png" id="18_h3vvp"]
+[ext_resource type="Texture2D" uid="uid://dlq2ghiy34k6o" path="res://items/door/Elevator/elevator-door-right.png" id="19_vpyml"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4voq"]
-radius = 318.0
-height = 732.0
-
-[sub_resource type="Animation" id="Animation_35rcf"]
-resource_name = "door_opened"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.33333334, 0.46666667, 0.6666667, 0.8666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_ah3ca"), ExtResource("3_bxc86"), ExtResource("4_6k22j"), ExtResource("5_84ti7"), ExtResource("6_ekjd4"), ExtResource("7_7a6hf")]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.9666667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"enter_next_room"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vj0se"]
-_data = {
-&"door_opened": SubResource("Animation_35rcf")
-}
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5p04"]
+radius = 181.0
+height = 734.0
 
 [node name="LevelOne" type="Node2D" unique_id=129307988]
 script = ExtResource("1_6k22j")
@@ -73,29 +35,6 @@ layer_2/name = "bg2"
 layer_2/z_index = -2
 layer_3/name = "walls"
 layer_3/z_index = -3
-
-[node name="Door" type="Sprite2D" parent="." unique_id=438350031]
-position = Vector2(6911, -1857)
-texture = ExtResource("2_ah3ca")
-
-[node name="Area2D" type="Area2D" parent="Door" unique_id=330645268]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D" unique_id=293772327]
-shape = SubResource("CapsuleShape2D_k4voq")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Door" unique_id=1446577454]
-libraries/ = SubResource("AnimationLibrary_vj0se")
-
-[node name="pressE" type="Label" parent="Door" unique_id=1636332717]
-offset_left = -29.0
-offset_top = -237.0
-offset_right = 30.0
-offset_bottom = -214.0
-text = "press E"
-label_settings = ExtResource("9_35rcf")
-
-[node name="WaypointMarkerEnemy" parent="Door" unique_id=1906790374 instance=ExtResource("11_weswd")]
-position = Vector2(0, -278)
 
 [node name="sehr gute game musik" type="AudioStreamPlayer" parent="." unique_id=290455109]
 process_mode = 3
@@ -123,5 +62,34 @@ collision_layer = 1
 [node name="YetAnotherPaperClipDeer" parent="Enemies" unique_id=1112242495 instance=ExtResource("14_6jd0m")]
 position = Vector2(2367, 1045)
 
-[connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="Door" type="Sprite2D" parent="." unique_id=818843295]
+position = Vector2(5566, 346)
+texture = ExtResource("17_vjef4")
+
+[node name="Left" type="Sprite2D" parent="Door" unique_id=76684211]
+position = Vector2(-76, 121)
+texture = ExtResource("18_h3vvp")
+
+[node name="Right" type="Sprite2D" parent="Door" unique_id=2023245528]
+position = Vector2(75, 120)
+texture = ExtResource("19_vpyml")
+
+[node name="DoorArea" type="Area2D" parent="Door" unique_id=1323221329]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DoorArea" unique_id=1631186400]
+position = Vector2(1, -2)
+shape = SubResource("CapsuleShape2D_a5p04")
+
+[node name="pressE" type="Label" parent="Door" unique_id=873918142]
+offset_left = 147.0
+offset_top = -231.0
+offset_right = 216.0
+offset_bottom = -205.0
+text = "press E"
+label_settings = ExtResource("9_35rcf")
+
+[node name="WaypointMarkerEnemy" parent="Door" unique_id=1176689927 instance=ExtResource("11_weswd")]
+on_screen_offset = Vector2(0.5, -300)
+
+[connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
+[connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]

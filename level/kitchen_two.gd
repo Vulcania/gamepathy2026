@@ -3,9 +3,12 @@ extends Node2D
 var is_in_area = false
 
 func _ready() -> void:
+	var layout = Dialogic.start("res://dialog/timelines/enter_kitchen2.dtl")
+	layout.register_character(load("res://dialog/characters/Player.dch"), $Player/Marker2D)
 	Dialogic.start("res://dialog/timelines/enter_kitchen2.dtl")
 	$Door/pressE.hide()
 	TimerOptions.timer_paused()
+	BlocksContainer.hide()
 
 func _input(event):
 	if event.is_action_pressed("interact"):

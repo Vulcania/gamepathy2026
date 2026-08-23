@@ -5,6 +5,7 @@ var defeated_enemies: int = 0
 var coffee_break = false
 
 var restart = false
+var in_game = false
 
 #rounds
 var round_one = true
@@ -20,12 +21,15 @@ signal global_refill_coffee
 func _ready():
 	if Dialogic.current_timeline != null:
 		return
+	
+	in_game = false
 
 func restart_game():
 	TimerOptions.restart_game()
 	round_one = true
 	restart = true
 	boss_deafeated = false
+	in_game = false
 
 func blocks_refilled():
 	coffee_break = true

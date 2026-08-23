@@ -16,3 +16,9 @@ func update_blocks(current_block_count = get_parent().current_block_count):
 	
 	for i in range(current_block_count, blocks.size()):
 		blocks[i].update(false)
+
+#func hide_outside_levels():
+#	if Global.in_game:
+#		$".".visible = true
+#	if not Global.in_game:
+#		$".".visible = false

@@ -96,6 +96,9 @@ tile_set = ExtResource("12_1io5q")
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("1_e8s4c")]
 position = Vector2(255, 771)
 
+[node name="Marker2D" type="Marker2D" parent="Player" unique_id=980775197]
+position = Vector2(30, -25)
+
 [node name="CoffeeMaker" parent="." unique_id=1907298632 instance=ExtResource("2_s473l")]
 position = Vector2(1094, 616)
 

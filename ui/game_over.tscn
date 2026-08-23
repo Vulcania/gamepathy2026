@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://xigyqyxgu6dn"]
+
+[ext_resource type="Script" uid="uid://dnqju0st3l15t" path="res://ui/game_over.gd" id="1_exxln"]
+[ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="1_v1fhu"]
+[ext_resource type="StyleBox" uid="uid://ckc21i4hd4iny" path="res://resources/button_box_texture.tres" id="2_exxln"]
+[ext_resource type="Texture2D" uid="uid://b0yvp2buv3dyi" path="res://player/player assets/idle/frame_01.png" id="2_xtpiw"]
+[ext_resource type="Texture2D" uid="uid://jg6qd31pqql3" path="res://player/player assets/dead/frame_01.png" id="3_exxln"]
+[ext_resource type="Texture2D" uid="uid://bihffm0jbsa6u" path="res://player/player assets/dead/frame_02.png" id="4_ksit6"]
+[ext_resource type="Texture2D" uid="uid://rv2fqwuh8g2n" path="res://player/player assets/dead/frame_03.png" id="5_h5kff"]
+[ext_resource type="Texture2D" uid="uid://ctmd7kktey4h" path="res://player/player assets/dead/frame_04.png" id="6_mmccg"]
+[ext_resource type="Texture2D" uid="uid://tqet6wqa00fn" path="res://player/player assets/dead/frame_05.png" id="7_6a5lu"]
+[ext_resource type="Texture2D" uid="uid://dle5c4q1x8xqg" path="res://player/player assets/dead/frame_06.png" id="8_xi1dr"]
+[ext_resource type="Texture2D" uid="uid://dfiv804x03fw6" path="res://player/player assets/dead/frame_07.png" id="9_rkco3"]
+[ext_resource type="Texture2D" uid="uid://dx3f2dhjiiv1m" path="res://player/player assets/dead/frame_08.png" id="10_ev5vh"]
+[ext_resource type="Texture2D" uid="uid://bdlhewje6jhyn" path="res://player/player assets/dead/frame_09.png" id="11_mdph8"]
+[ext_resource type="Texture2D" uid="uid://de38p3kh8ul4g" path="res://player/player assets/dead/frame_10.png" id="12_4ya5j"]
+[ext_resource type="Texture2D" uid="uid://d0b78glftueie" path="res://player/player assets/dead/frame_11.png" id="13_v7lsb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lrtri"]
+font = ExtResource("1_v1fhu")
+font_size = 190
+font_color = Color(0.84705883, 0.76862746, 0.7607843, 1)
+
+[sub_resource type="Animation" id="Animation_khqhf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_xtpiw")]
+}
+
+[sub_resource type="Animation" id="Animation_3jbkt"]
+resource_name = "player_dead"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.56666666, 0.8666667, 1.1333333, 1.4, 1.7666667, 2.0333333, 2.4, 2.7666667, 3.0333333, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_xtpiw"), ExtResource("3_exxln"), ExtResource("4_ksit6"), ExtResource("5_h5kff"), ExtResource("6_mmccg"), ExtResource("7_6a5lu"), ExtResource("8_xi1dr"), ExtResource("9_rkco3"), ExtResource("10_ev5vh"), ExtResource("11_mdph8"), ExtResource("12_4ya5j"), ExtResource("13_v7lsb")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yre7o"]
+_data = {
+&"RESET": SubResource("Animation_khqhf"),
+&"player_dead": SubResource("Animation_3jbkt")
+}
+
+[node name="GameOver" type="Control" unique_id=984247932]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_exxln")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1370908669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameOverText" type="Label" parent="." unique_id=117514756]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -410.0
+offset_top = 219.0
+offset_right = 417.0
+offset_bottom = 413.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_lrtri")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1410763531]
+position = Vector2(955, 674)
+scale = Vector2(2.1699347, 2.1699345)
+texture = ExtResource("2_xtpiw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=544453946]
+libraries/ = SubResource("AnimationLibrary_yre7o")
+autoplay = &"player_dead"
+
+[node name="Button" type="Button" parent="." unique_id=701901029]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -189.4737
+offset_top = -159.0
+offset_right = 184.9209
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.84705883, 0.76862746, 0.7607843, 1)
+theme_override_colors/font_focus_color = Color(0.6431373, 0.5019608, 0.48235294, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.039215688, 0.003921569, 1)
+theme_override_colors/font_hover_color = Color(0.6392157, 0.5019608, 0.48235294, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.76862746, 0.7607843, 1)
+theme_override_colors/font_disabled_color = Color(0.6431373, 0.5019608, 0.48235294, 1)
+theme_override_fonts/font = ExtResource("1_v1fhu")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = ExtResource("2_exxln")
+theme_override_styles/pressed = ExtResource("2_exxln")
+theme_override_styles/hover = ExtResource("2_exxln")
+text = "Back To Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

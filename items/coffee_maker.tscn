@@ -23,6 +23,7 @@ animations = [{
 radius = 206.00243
 
 [node name="CoffeeMaker" type="AnimatedSprite2D" unique_id=1907298632]
+position = Vector2(-93, -87)
 sprite_frames = SubResource("SpriteFrames_ta2iw")
 autoplay = "default"
 frame_progress = 0.48758936
@@ -35,6 +36,7 @@ shape = SubResource("CircleShape2D_a3nfk")
 
 [node name="RefillSFX" type="AudioStreamPlayer2D" parent="." unique_id=903581312]
 stream = ExtResource("4_a41xw")
+volume_db = 12.316
 bus = &"Effects"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,4 +1,2 @@
-[signal arg="entered_dialog"]
 Player: Huh, nobody's here.
 Player: Nice!
-[signal arg="exited_dialog"]

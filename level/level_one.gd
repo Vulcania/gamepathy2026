@@ -20,12 +20,13 @@ func _input(event):
 func enter_next_room():
 	get_tree().change_scene_to_file("res://level/kitchen.tscn")
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_door_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		is_in_door_area = true
 		$Door/pressE.show()
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+
+func _on_door_area_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		is_in_door_area = false
 		$Door/pressE.hide()

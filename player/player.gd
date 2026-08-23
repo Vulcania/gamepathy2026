@@ -26,7 +26,6 @@ var can_move = true
 #block
 @export var max_block_count = 3
 @export var current_block_count = 3
-# var blocks_list : Array[TextureRect]
 var coffee_refilling = false
 
 # names
@@ -77,10 +76,7 @@ func _ready() -> void:
 #	BuffSelectionOne.option_one.connect(_on_option_2)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Global.global_refill_coffee.connect(_refill_blocks)
-	
-	#var blocks_parent = $HUD/BlocksContainer
-	#for child in blocks_parent.get_children():
-		#blocks_list.append(child)
+	health_component.depleted_health.connect(die)
 
 func _physics_process(delta: float) -> void:
 	Global.player_position = global_position
@@ -232,11 +228,6 @@ func _apply_movement(delta:float) -> void:
 		
 	move_and_slide()
 
-#func update_blocks_display():
-	#for i in range(blocks_list.size()):
-		#blocks_list[i].visible = i < max_block_count
-		#print("update blocks display")
-
 func blocking():
 	if is_blocking:
 		Global.player_blocking = true
@@ -252,7 +243,7 @@ func _refill_blocks():
 	Global.coffee_break = false
 
 func die():
-	animation.play("Dead")
+	get_tree().change_scene_to_file("res://ui/game_over.tscn")
 
 func _on_dialogic_signal(argument: String):
 	if argument == "entered_dialog":
@@ -278,13 +269,6 @@ func start_timer_in_level_one():
 func _on_health_component_health_changed(current_health) -> void:
 	hearts_container.update_hearts(current_health)
 
-#func _on_option_1():
-	#speed_buff_factor += 0.05
-
-#func _on_option_2():
-	#max_block_count += 1
-	#current_block_count += 1
-
 
 func attack():
 	#if is_attacking:
@@ -303,13 +287,10 @@ func _on_attack_box_area_entered(area: Area2D) -> void:
 	if area.get_parent() is RingBinder:
 		area.get_parent().take_damage()
 		print("player:attack area ringbinder entered")
-	#if area.get_parent() is Enemy:
-	#	print("player: enemy attack box body entered")
-	#	area.get_parent().take_damage()
 
-#func _on_hit_box_area_entered(area: Area2D) -> void:
-#	print("player: on hit box area entered", area.name)
-#	if area.get_parent() is Enemy:
-#		print("hitbox area player Is getting hit by enemy")
-#		take_damage(1)
-#		$AnimationPlayer.play("Hit")
+
+func in_elevator():
+	is_interacting = true
+	
+func left_elevator():
+	is_interacting = false
