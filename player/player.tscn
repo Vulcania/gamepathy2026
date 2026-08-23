@@ -236,7 +236,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("AttackBox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -568,7 +568,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pxes"]
-size = Vector2(53, 95)
+size = Vector2(53, 89.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmu53"]
 radius = 22.0
