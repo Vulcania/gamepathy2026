@@ -297,6 +297,9 @@ func _on_attack_box_area_entered(area: Area2D) -> void:
 
 func in_elevator():
 	is_interacting = true
-	
+
+func elevatorhide():
+	$Sprite2D.visible = false
+
 func left_elevator():
 	is_interacting = false
