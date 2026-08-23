@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b3nuu7dvnlhj2"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_exeja"]
+polygon = PackedVector2Array(-0.88500977, -30.933594, -5.3566284, -28.708042, -8.524033, -26.482494, -12.250381, -23.082348, -14.951981, -19.558561, -46.90541, 39.913063, -61.06552, 31.752716, -54.637573, -33.15914, -38.893753, -42.2468, 44.296936, -39.95943, 56.966522, -35.44651, 59.10916, 39.7276, 53.240173, 54.997345, 13.927216, -19.620382, 12.157196, -21.784111, 10.6666565, -23.453274, 8.710327, -25.122437, 6.008728, -27.224342, 2.841339, -28.955326)
+
+[sub_resource type="Gradient" id="Gradient_i52af"]
+offsets = PackedFloat32Array(0, 0.69140625, 0.7890625, 0.91796875, 1)
+colors = PackedColorArray(0.8784314, 1, 1, 1, 0.1526112, 0.17373139, 0.17373139, 1, 0.09856075, 0.1122008, 0.1122008, 1, 0.03774512, 0.04296875, 0.04296875, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v47dh"]
+gradient = SubResource("Gradient_i52af")
+fill = 1
+fill_from = Vector2(0.48290598, 0.0982906)
+fill_to = Vector2(0.50427353, 1)
+
+[node name="WindowLight" type="Node2D" unique_id=1631988509]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=100327594]
+position = Vector2(2759.5, 222.37502)
+scale = Vector2(10.734373, 16.175781)
+occluder = SubResource("OccluderPolygon2D_exeja")
+
+[node name="bigwindow" type="PointLight2D" parent="." unique_id=1491484119]
+position = Vector2(2768.5, 571.875)
+scale = Vector2(15.640627, 27.097654)
+energy = 0.68
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_v47dh")
