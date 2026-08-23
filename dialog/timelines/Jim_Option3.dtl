@@ -1,5 +1,5 @@
 join "jim dreaper" center
-audio sfx -
+audio sfx "res://sounds/sfx/jimdreaper_sfx/jim_pouty.wav"
 "jim dreaper": It's probs the boss about to chew you out!
 [signal arg="option3_selected"]
 [signal arg="exited_dialog"]

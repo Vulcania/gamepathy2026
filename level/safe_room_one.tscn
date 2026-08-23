@@ -22,8 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://yxj5fm114kig" path="res://bg/lamp_light.tscn" id="21_sbh46"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="21_ykcbn"]
 [ext_resource type="AudioStream" uid="uid://di73g02ojbj3a" path="res://sounds/sfx/level_sfx/tiny_typing.wav" id="22_q4jiv"]
+[ext_resource type="AudioStream" uid="uid://oepcegf5gaao" path="res://sounds/sfx/level_sfx/elevatoropen.wav" id="23_i52af"]
 [ext_resource type="PackedScene" uid="uid://b4orio7wnqpoq" path="res://npc/skull_note.tscn" id="23_ykcbn"]
 [ext_resource type="PackedScene" uid="uid://dcticxd865koq" path="res://level/fade_out.tscn" id="24_sbh46"]
+[ext_resource type="AudioStream" uid="uid://cg8vyhec31uaq" path="res://sounds/sfx/level_sfx/elevatorclose.wav" id="24_v47dh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m7wlf"]
 animations = [{
@@ -164,6 +166,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(0.0253638, 0.0253638, 0.025363795, 1)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SFX/ElevatorOpen:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.3666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SFX/ElevatorClose:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.5666667, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_sbh46"]
 length = 0.001
@@ -250,6 +276,30 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SFX/ElevatorOpen:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SFX/ElevatorClose:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ccrhc"]
@@ -367,7 +417,7 @@ tile_set = ExtResource("3_ykcbn")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(2369, -1308)
+position = Vector2(544, 627)
 collision_layer = 1
 collision_mask = 1
 gravity = 1100
@@ -388,6 +438,7 @@ libraries/ = SubResource("AnimationLibrary_ccrhc")
 [node name="musik" type="AudioStreamPlayer" parent="." unique_id=1545390943]
 process_mode = 3
 stream = ExtResource("7_jnkt6")
+autoplay = true
 bus = &"Music"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1731960316]
@@ -493,6 +544,18 @@ autoplay = true
 max_distance = 500.0
 bus = &"Effects"
 
+[node name="ElevatorOpen" type="AudioStreamPlayer2D" parent="SFX" unique_id=779468939]
+position = Vector2(2371, -1307)
+stream = ExtResource("23_i52af")
+max_distance = 500.0
+bus = &"Effects"
+
+[node name="ElevatorClose" type="AudioStreamPlayer2D" parent="SFX" unique_id=1346457581]
+position = Vector2(2370, -1308)
+stream = ExtResource("24_v47dh")
+max_distance = 500.0
+bus = &"Effects"
+
 [node name="SkullNote" parent="." unique_id=1878760672 instance=ExtResource("23_ykcbn")]
 position = Vector2(10162, -1744)
 
@@ -500,6 +563,7 @@ position = Vector2(10162, -1744)
 layer = 500
 
 [node name="FadeOut" parent="CanvasLayer" unique_id=1458045915 instance=ExtResource("24_sbh46")]
+visible = false
 modulate = Color(1, 1, 1, 0)
 
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]

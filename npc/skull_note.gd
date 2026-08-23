@@ -9,3 +9,4 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		print("player entered skull area")
 		Dialogic.start("res://dialog/timelines/SkullNote_DontDie.dtl")
+		$Laugh.play()

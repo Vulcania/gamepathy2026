@@ -85,6 +85,12 @@
 [ext_resource type="Texture2D" uid="uid://bacsj8cfjvtd4" path="res://ui/opening_animatic/text_overlay/frame_10.png" id="82_i45ed"]
 [ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="83_gx6lv"]
 [ext_resource type="Texture2D" uid="uid://dttfvhp7rhes6" path="res://ui/ui_assets/menu tile.png" id="85_ryo7x"]
+[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="86_7ugab"]
+[ext_resource type="AudioStream" uid="uid://c2he0pqyogia8" path="res://sounds/sfx/animatic_sfx/animatic_writing.mp3" id="87_7phba"]
+[ext_resource type="AudioStream" uid="uid://coq5vcy5gbf0" path="res://sounds/sfx/animatic_sfx/animatic_ambience.wav" id="88_yqbci"]
+[ext_resource type="AudioStream" uid="uid://byoyxmj08y618" path="res://sounds/sfx/animatic_sfx/animatic_water.wav" id="89_b4r2b"]
+[ext_resource type="AudioStream" uid="uid://wctdvmnhdn70" path="res://sounds/sfx/animatic_sfx/animatic_clock.wav" id="90_i45ed"]
+[ext_resource type="AudioStream" uid="uid://dchmf1bdygisj" path="res://sounds/sfx/animatic_sfx/animatic_ghosts.wav" id="91_b4r2b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fcif3"]
 animations = [{
@@ -378,6 +384,90 @@ tracks/2/keys = {
 "update": 1,
 "values": [-1]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sound/sfx writing:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sound/music:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sound/music:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sound/sfx ambience:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sound/sfx water:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sound/sfx clock:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sound/sfx ghosts:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_dt60f"]
 resource_name = "animatic"
@@ -435,6 +525,90 @@ tracks/3/keys = {
 "method": &"enter_level_one"
 }]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sound/sfx writing:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.9333333, 3.6, 5.1666665, 6.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sound/music:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(15.433333, 22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sound/music:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(15.433333, 16.2, 17, 18, 18.733334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-9.998999999999995, -7.0, -6.728999999999999, -3.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sound/sfx ambience:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sound/sfx water:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(7.4666667, 12.466666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sound/sfx clock:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(8.633333, 12.966666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sound/sfx ghosts:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(12.733334, 20.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qp30b"]
 _data = {
@@ -457,7 +631,7 @@ script = ExtResource("1_b7ea4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=206193167]
 sprite_frames = SubResource("SpriteFrames_fcif3")
-frame = 72
+frame = 71
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=725800429]
 libraries/ = SubResource("AnimationLibrary_qp30b")
@@ -488,5 +662,40 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_hjg2e")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7ugab")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7phba")
 text = "skip"
+
+[node name="Sound" type="Node2D" parent="." unique_id=1596850192]
+
+[node name="music" type="AudioStreamPlayer" parent="Sound" unique_id=771203702]
+stream = ExtResource("86_7ugab")
+volume_db = -80.0
+bus = &"Music"
+
+[node name="sfx writing" type="AudioStreamPlayer" parent="Sound" unique_id=601615365]
+stream = ExtResource("87_7phba")
+bus = &"Effects"
+
+[node name="sfx ambience" type="AudioStreamPlayer" parent="Sound" unique_id=737187698]
+stream = ExtResource("88_yqbci")
+bus = &"Effects"
+
+[node name="sfx water" type="AudioStreamPlayer" parent="Sound" unique_id=1594247886]
+stream = ExtResource("89_b4r2b")
+bus = &"Effects"
+
+[node name="sfx clock" type="AudioStreamPlayer" parent="Sound" unique_id=986006386]
+stream = ExtResource("90_i45ed")
+bus = &"Effects"
+
+[node name="sfx ghosts" type="AudioStreamPlayer" parent="Sound" unique_id=2095533645]
+stream = ExtResource("91_b4r2b")
+volume_db = -5.233
+pitch_scale = 0.73
+bus = &"Effects"
+
+[node name="sfx6" type="AudioStreamPlayer" parent="Sound" unique_id=597009674]
+bus = &"Effects"
+
+[node name="sfx7" type="AudioStreamPlayer" parent="Sound" unique_id=806462425]
+bus = &"Effects"
 
 [connection signal="pressed" from="skip" to="." method="_on_skip_pressed"]

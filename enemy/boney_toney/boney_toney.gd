@@ -32,7 +32,7 @@ func _physics_process(delta):
 func take_damage():
 	health -= 5
 	print("boney_toney, take damage. Health:", health)
-	#$SFX/Hurt.play()
+	$SFX/Hurt.play()
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:

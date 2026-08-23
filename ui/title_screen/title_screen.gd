@@ -9,7 +9,7 @@ extends Control
 func _ready() -> void:
 	TimerOptions.timer_deactivated()
 	Global.in_game = false
-	BlocksContainer.hide()
+	#BlocksContainer.hide()
 	
 	menu_vbox.visible = true
 	options_vbox.visible = false

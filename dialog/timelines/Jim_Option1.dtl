@@ -1,4 +1,4 @@
-audio sfx -
+audio sfx "res://sounds/sfx/jimdreaper_sfx/jim_laugh.wav"
 "jim dreaper": Pfft. In your dreams. Be sure to tell me how it went!
 [signal arg="option1_selected"]
 [signal arg="exited_dialog"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4orio7wnqpoq"]
 
 [ext_resource type="Script" uid="uid://coa7pqm4hlgi8" path="res://npc/skull_note.gd" id="1_6gqmn"]
+[ext_resource type="AudioStream" uid="uid://c662rtoksqtqq" path="res://sounds/sfx/level_sfx/skull_laugh.wav" id="2_t0pro"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gqmn"]
 radius = 316.03955
@@ -13,5 +14,10 @@ shape = SubResource("CircleShape2D_6gqmn")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1117652800]
 position = Vector2(28, -10)
+
+[node name="Laugh" type="AudioStreamPlayer2D" parent="." unique_id=636833436]
+stream = ExtResource("2_t0pro")
+pitch_scale = 1.05
+bus = &"Effects"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
