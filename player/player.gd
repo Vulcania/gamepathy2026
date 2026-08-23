@@ -4,6 +4,7 @@ class_name Player
 var in_safe_room = true
 var pause_menu_open = false
 var can_move = true
+var next_attack = false
 
 @onready var camera: Camera2D = get_tree().get_first_node_in_group("Camera")
 
@@ -36,6 +37,7 @@ var coffee_refilling = false
 @onready var player_hitbox: HitBox = $HitBox
 @onready var health_component: HealthComponent = $HealthComponent
 
+@export var attack_cooldown: Timer
 
 # handlers
 @onready var input_handler: InputHandler = $Handlers/InputHandler
@@ -88,7 +90,8 @@ func _physics_process(delta: float) -> void:
 	is_blocking = Input.is_action_pressed("block")
 	is_jumping = input_handler.jump_input()
 	is_jump_released = input_handler.jump_released()
-	is_attacking = Input.is_action_pressed("attack")
+	if Input.is_action_just_pressed("attack"):
+		is_attacking = true
 	#is_interacting = Input.is_action_pressed("interact")
 	
 	_update_state()
@@ -121,6 +124,8 @@ func _get_state() -> State:
 			Global.player_blocking = true
 			if current_block_count > 0:
 				return State.BLOCK
+		if is_attacking:
+			return State.ATTACK
 		return State.JUMP if velocity.y < 0 else State.FALL
 	if is_interacting:
 		return State.INTERACTING
@@ -181,6 +186,8 @@ func _update_animation()->void:
 			return
 		State.ATTACK:
 			animation.play("Attack")
+			await animation.animation_finished
+			is_attacking = false
 			return
 		State.INTERACTING:
 			animation.play("Idle")
@@ -202,7 +209,7 @@ func _apply_movement(delta:float) -> void:
 		#var direction = move_input
 		velocity.x = base_speed * move_input.x #direction
 	match current_state:
-		State.IDLE, State.BLOCK, State.DUCK, State.INTERACTING:
+		State.IDLE, State.BLOCK, State.DUCK, State.INTERACTING, State.ATTACK:
 			target_speed = 0.0
 			velocity.x = move_toward(velocity.x, target_speed, friction)
 		State.BRAKING:
@@ -287,7 +294,6 @@ func _on_attack_box_area_entered(area: Area2D) -> void:
 	if area.get_parent() is RingBinder:
 		area.get_parent().take_damage()
 		print("player:attack area ringbinder entered")
-
 
 func in_elevator():
 	is_interacting = true
