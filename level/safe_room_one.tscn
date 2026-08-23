@@ -18,13 +18,16 @@
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="13_q4jiv"]
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="14_sbh46"]
 [ext_resource type="Texture2D" uid="uid://b1evak51qupla" path="res://items/door/Elevator/elevator-opened-frame.png" id="17_ykcbn"]
+[ext_resource type="PackedScene" uid="uid://cyefwpdlsxmdt" path="res://level/bigwindow.tscn" id="21_exeja"]
 [ext_resource type="PackedScene" uid="uid://b7bf03hbgbmga" path="res://bg/candle_light.tscn" id="21_p8hdo"]
 [ext_resource type="PackedScene" uid="uid://yxj5fm114kig" path="res://bg/lamp_light.tscn" id="21_sbh46"]
 [ext_resource type="Texture2D" uid="uid://dtqws3xlfh60" path="res://bg/window_lights.png" id="21_v47dh"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="21_ykcbn"]
 [ext_resource type="AudioStream" uid="uid://di73g02ojbj3a" path="res://sounds/sfx/level_sfx/tiny_typing.wav" id="22_q4jiv"]
+[ext_resource type="Texture2D" uid="uid://dbwe8nhy00c3q" path="res://bg/window_lights2.png" id="23_07oo5"]
 [ext_resource type="AudioStream" uid="uid://oepcegf5gaao" path="res://sounds/sfx/level_sfx/elevatoropen.wav" id="23_i52af"]
 [ext_resource type="PackedScene" uid="uid://b4orio7wnqpoq" path="res://npc/skull_note.tscn" id="23_ykcbn"]
+[ext_resource type="Texture2D" uid="uid://cg7senn6jnph2" path="res://bg/window_lights3.png" id="24_qc5qy"]
 [ext_resource type="PackedScene" uid="uid://dcticxd865koq" path="res://level/fade_out.tscn" id="24_sbh46"]
 [ext_resource type="AudioStream" uid="uid://cg8vyhec31uaq" path="res://sounds/sfx/level_sfx/elevatorclose.wav" id="24_v47dh"]
 
@@ -523,19 +526,8 @@ range_layer_max = 10
 
 [node name="WindowLight" type="Node2D" parent="Lights" unique_id=1631988509]
 
-[node name="bigwindow" type="PointLight2D" parent="Lights/WindowLight" unique_id=1491484119]
-light_mask = 3
-visibility_layer = 3
+[node name="bigwindow" parent="Lights/WindowLight" unique_id=897559571 instance=ExtResource("21_exeja")]
 position = Vector2(2732, 353)
-scale = Vector2(1, 1.0138888)
-energy = 0.47
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
-texture = ExtResource("21_v47dh")
-offset = Vector2(0, 250)
 
 [node name="bigwindow2" type="PointLight2D" parent="Lights/WindowLight" unique_id=726494435]
 light_mask = 3
@@ -619,6 +611,174 @@ shadow_filter = 1
 shadow_filter_smooth = 1.0
 shadow_item_cull_mask = 3
 texture = ExtResource("21_v47dh")
+offset = Vector2(0, 250)
+
+[node name="bigwindow8" type="PointLight2D" parent="Lights/WindowLight" unique_id=1974137586]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(10057, -1850)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("23_07oo5")
+offset = Vector2(0, 250)
+
+[node name="bigwindow9" type="PointLight2D" parent="Lights/WindowLight" unique_id=2090890972]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(9673, -1850)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("23_07oo5")
+offset = Vector2(0, 250)
+
+[node name="bigwindow10" type="PointLight2D" parent="Lights/WindowLight" unique_id=712039240]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(9289, -1850)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("23_07oo5")
+offset = Vector2(0, 250)
+
+[node name="bigwindow11" type="PointLight2D" parent="Lights/WindowLight" unique_id=488541149]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(8906, -1850)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("23_07oo5")
+offset = Vector2(0, 250)
+
+[node name="bigwindow12" type="PointLight2D" parent="Lights/WindowLight" unique_id=1488290049]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(3273, -1466)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("23_07oo5")
+offset = Vector2(0, 250)
+
+[node name="bigwindow13" type="PointLight2D" parent="Lights/WindowLight" unique_id=908325735]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(1481, -1466)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("23_07oo5")
+offset = Vector2(0, 250)
+
+[node name="bigwindow14" type="PointLight2D" parent="Lights/WindowLight" unique_id=301102946]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(2377, 581)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("23_07oo5")
+offset = Vector2(0, 250)
+
+[node name="bigwindow15" type="PointLight2D" parent="Lights/WindowLight" unique_id=1900436988]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(3145, 582)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("23_07oo5")
+offset = Vector2(0, 250)
+
+[node name="bigwindow16" type="PointLight2D" parent="Lights/WindowLight" unique_id=1283437685]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(8007, -2293)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("24_qc5qy")
+offset = Vector2(0, 250)
+
+[node name="bigwindow17" type="PointLight2D" parent="Lights/WindowLight" unique_id=945831425]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(8391, -2293)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("24_qc5qy")
+offset = Vector2(0, 250)
+
+[node name="bigwindow18" type="PointLight2D" parent="Lights/WindowLight" unique_id=270170867]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(10951, -2293)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("24_qc5qy")
+offset = Vector2(0, 250)
+
+[node name="bigwindow19" type="PointLight2D" parent="Lights/WindowLight" unique_id=1020007313]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(11336, -2293)
+scale = Vector2(1, 1.0138888)
+energy = 0.47
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("24_qc5qy")
 offset = Vector2(0, 250)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=286173373]
