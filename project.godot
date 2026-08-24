@@ -77,7 +77,7 @@ variables={
 "JimEnd": true,
 "OpeningAgathaEnd": true
 }
-layout/style_list=["res://dialog/style.tres"]
+layout/style_list=["res://dialog/style.tres", "res://resources/sir_death_dialog_box.tres"]
 layout/default_style="res://dialog/style.tres"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
