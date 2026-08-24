@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://budcvuts5vrhi"]
+
+[ext_resource type="Texture2D" uid="uid://dac7y16cw5k1g" path="res://bg/window_lights4.png" id="1_46tq2"]
+
+[node name="smallwindow" type="PointLight2D" unique_id=598419122]
+texture = ExtResource("1_46tq2")
