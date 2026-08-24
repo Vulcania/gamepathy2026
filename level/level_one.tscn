@@ -214,7 +214,6 @@ _data = {
 script = ExtResource("1_6k22j")
 
 [node name="Background" parent="." unique_id=792204034 instance=ExtResource("2_vj0se")]
-visible = false
 
 [node name="TileMap" type="TileMap" parent="." unique_id=699910190]
 tile_set = ExtResource("3_weswd")
