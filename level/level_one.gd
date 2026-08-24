@@ -25,7 +25,6 @@ func _on_door_area_area_entered(area: Area2D) -> void:
 		is_in_door_area = true
 		$Door/pressE.show()
 
-
 func _on_door_area_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		is_in_door_area = false

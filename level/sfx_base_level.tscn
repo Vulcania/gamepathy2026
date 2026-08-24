@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dj1omrf1s7yl2"]
+
+[ext_resource type="AudioStream" uid="uid://di73g02ojbj3a" path="res://sounds/sfx/level_sfx/tiny_typing.wav" id="1_vdarw"]
+[ext_resource type="AudioStream" uid="uid://oepcegf5gaao" path="res://sounds/sfx/level_sfx/elevatoropen.wav" id="2_l16ff"]
+[ext_resource type="AudioStream" uid="uid://cg8vyhec31uaq" path="res://sounds/sfx/level_sfx/elevatorclose.wav" id="3_f645m"]
+
+[node name="SFX Base level" type="Node2D" unique_id=2102336615]
+
+[node name="TinyTyping" type="AudioStreamPlayer2D" parent="." unique_id=1709819370]
+position = Vector2(5419, 1085)
+stream = ExtResource("1_vdarw")
+volume_db = 4.728
+autoplay = true
+max_distance = 500.0
+bus = &"Effects"
+
+[node name="TinyTyping2" type="AudioStreamPlayer2D" parent="." unique_id=4732227]
+position = Vector2(12848, -963)
+stream = ExtResource("1_vdarw")
+volume_db = 4.728
+autoplay = true
+max_distance = 500.0
+bus = &"Effects"
+
+[node name="ElevatorOpen" type="AudioStreamPlayer2D" parent="." unique_id=1669187469]
+position = Vector2(2371, -1307)
+stream = ExtResource("2_l16ff")
+max_distance = 500.0
+bus = &"Effects"
+
+[node name="ElevatorClose" type="AudioStreamPlayer2D" parent="." unique_id=1715415035]
+position = Vector2(2370, -1308)
+stream = ExtResource("3_f645m")
+max_distance = 500.0
+bus = &"Effects"
