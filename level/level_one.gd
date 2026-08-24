@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var animation = $Door/AnimationPlayer
+@onready var animation = $AnimationPlayer
 
 var door_unlocked = true
 #door_unlocked for when all enemies are defeated
@@ -15,7 +15,7 @@ func _ready() -> void:
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if is_in_door_area and door_unlocked:
-			animation.play("door_opened")
+			animation.play("")
 
 func enter_next_room():
 	get_tree().change_scene_to_file("res://level/kitchen.tscn")

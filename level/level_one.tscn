@@ -210,6 +210,25 @@ _data = {
 &"RESET": SubResource("Animation_vjef4")
 }
 
+[sub_resource type="Gradient" id="Gradient_vpyml"]
+offsets = PackedFloat32Array(0.0546875, 0.1171875, 0.2109375, 0.265625, 0.34375, 0.35546875, 0.44921875, 0.5, 0.5546875, 0.65625, 0.68359375, 0.734375, 0.8046875, 0.92578125)
+colors = PackedColorArray(0, 0, 0, 1, 0.114879936, 0.114879936, 0.114879936, 1, 0.20499304, 0.20499304, 0.20499304, 1, 0.21950102, 0.21950102, 0.21950108, 1, 0.45584702, 0.45584702, 0.45584702, 1, 0.5818982, 0.5818982, 0.5818982, 1, 1, 1, 1, 1, 0.9257319, 0.9257319, 0.9257319, 1, 0.85889065, 0.85889065, 0.85889065, 1, 0.43556258, 0.43556258, 0.43556258, 1, 0.2697678, 0.2697678, 0.2697678, 1, 0.15317324, 0.15317324, 0.15317324, 1, 0.087527566, 0.087527566, 0.087527566, 1, 0.011560246, 0.011560246, 0.011560246, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a5p04"]
+gradient = SubResource("Gradient_vpyml")
+fill_from = Vector2(0.15384616, 0.53846157)
+fill_to = Vector2(0.9444444, 0.53846157)
+
+[sub_resource type="Gradient" id="Gradient_a5p04"]
+offsets = PackedFloat32Array(0.0546875, 0.12890625, 0.19140625, 0.28515625, 0.390625, 0.5, 0.5390625, 0.59765625, 0.7421875, 0.875, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.85743314, 0.85743314, 0.85743314, 1, 0.7148663, 0.7148663, 0.7148663, 1, 0.575955, 0.575955, 0.575955, 1, 0.4301895, 0.4301895, 0.4301895, 1, 0.3939077, 0.3939077, 0.3939077, 1, 0.3546024, 0.3546024, 0.3546024, 1, 0.2170586, 0.2170586, 0.2170586, 1, 0.09813082, 0.09813082, 0.09813082, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b2tho"]
+gradient = SubResource("Gradient_a5p04")
+fill = 1
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.6495727, 0.30341882)
+
 [node name="LevelOne" type="Node2D" unique_id=129307988]
 script = ExtResource("1_6k22j")
 
@@ -426,6 +445,41 @@ position = Vector2(6092, 565)
 
 [node name="smallemptywindow4" parent="Lights" unique_id=1195277693 instance=ExtResource("19_vjef4")]
 position = Vector2(7627, 5427)
+
+[node name="OpeningLight" type="PointLight2D" parent="Lights" unique_id=1728861645]
+position = Vector2(3791.5, 541.50006)
+scale = Vector2(39.546875, 13.265627)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_a5p04")
+
+[node name="OpeningLight5" type="PointLight2D" parent="Lights" unique_id=1265674973]
+position = Vector2(3512.0002, -75.000015)
+scale = Vector2(39.546875, 6.0625)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_a5p04")
+
+[node name="OpeningLight2" type="PointLight2D" parent="Lights" unique_id=1968579932]
+position = Vector2(3758.9998, 1432.125)
+scale = Vector2(34.812496, 20.410156)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_a5p04")
+
+[node name="OpeningLight3" type="PointLight2D" parent="Lights" unique_id=2095030902]
+position = Vector2(5288, 4784)
+scale = Vector2(53.53125, 26.156252)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_a5p04")
+
+[node name="OpeningLight4" type="PointLight2D" parent="Lights" unique_id=1383887028]
+position = Vector2(3249.5, 6651)
+scale = Vector2(51.640625, 57.812496)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_a5p04")
+
+[node name="Corner" type="PointLight2D" parent="Lights" unique_id=385776029]
+position = Vector2(1530, 5378)
+scale = Vector2(8.171875, 8.171875)
+texture = SubResource("GradientTexture2D_b2tho")
 
 [node name="Sounds" type="Node2D" parent="." unique_id=298815636]
 
