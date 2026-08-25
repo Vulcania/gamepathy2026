@@ -4,19 +4,112 @@
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="1_e8s4c"]
 [ext_resource type="PackedScene" uid="uid://bfqhlqksjd4mu" path="res://items/coffee_maker.tscn" id="2_s473l"]
 [ext_resource type="TileSet" uid="uid://caeblaap8wmhj" path="res://level/kitchen_tile_set.tres" id="3_s473l"]
-[ext_resource type="Texture2D" uid="uid://b28idvq7mx85m" path="res://items/door/door.png" id="4_4we8e"]
-[ext_resource type="Texture2D" uid="uid://dpmbr146fscyk" path="res://items/door/door01.png" id="5_cgflk"]
-[ext_resource type="Texture2D" uid="uid://dyj4wscmmr02l" path="res://items/door/door02.png" id="6_2pfc2"]
-[ext_resource type="Texture2D" uid="uid://b3ulectw3sj4v" path="res://items/door/door03.png" id="7_1io5q"]
-[ext_resource type="Texture2D" uid="uid://dr7n4vl8bp2o" path="res://items/door/door04.png" id="8_omw66"]
-[ext_resource type="Texture2D" uid="uid://cphmsg04lj6cr" path="res://items/door/door05.png" id="9_4i32y"]
+[ext_resource type="Texture2D" uid="uid://b1evak51qupla" path="res://items/door/Elevator/elevator-opened-frame.png" id="8_1io5q"]
+[ext_resource type="PackedScene" uid="uid://dcticxd865koq" path="res://level/fade_out.tscn" id="9_4we8e"]
+[ext_resource type="Texture2D" uid="uid://dbgh5iy8m4pxf" path="res://items/door/Elevator/elevator-door-left.png" id="9_omw66"]
+[ext_resource type="Texture2D" uid="uid://dlq2ghiy34k6o" path="res://items/door/Elevator/elevator-door-right.png" id="10_4i32y"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="11_omw66"]
 [ext_resource type="TileSet" uid="uid://bvwbx8wttd2r1" path="res://level/kitchen_minus_x.tres" id="12_1io5q"]
 [ext_resource type="AudioStream" uid="uid://chtnk530b2lt0" path="res://sounds/music/kitchen_music.wav" id="12_omw66"]
+[ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="12_q6vxl"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6vxl"]
-radius = 216.0
-height = 576.0
+[sub_resource type="Animation" id="Animation_cgflk"]
+resource_name = "EnterLevelThree"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door/Left:z_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3533334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door/Right:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3533334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door/Right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Door/Left:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.9333334, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"in_elevator"
+}, {
+"args": [],
+"method": &"elevatorhide"
+}, {
+"args": [],
+"method": &"left_elevator"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"enter_level_three"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/FadeOut:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.3666666, 3.8666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.0253638, 0.0253638, 0.025363795, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_ec8dv"]
 resource_name = "door_opened"
@@ -24,34 +117,25 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
+tracks/0/path = NodePath("CanvasLayer/FadeOut:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.33333334, 0.46666667, 0.6666667, 0.85833335),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("4_4we8e"), ExtResource("5_cgflk"), ExtResource("6_2pfc2"), ExtResource("7_1io5q"), ExtResource("8_omw66"), ExtResource("9_4i32y")]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.9666667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"enter_level_three"
-}]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qj1uy"]
 _data = {
-&"door_opened": SubResource("Animation_ec8dv")
+&"EnterLevelThree": SubResource("Animation_cgflk"),
+&"EnteredKitchen": SubResource("Animation_ec8dv")
 }
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ec8dv"]
+radius = 181.0
+height = 734.0
 
 [node name="KitchenTwo" type="Node2D" unique_id=813772599]
 script = ExtResource("1_cgflk")
@@ -105,33 +189,46 @@ position = Vector2(1094, 616)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1711877924]
 position = Vector2(960, 540)
 
-[node name="Door" type="Sprite2D" parent="." unique_id=1567837628]
-z_index = -1
-position = Vector2(1720, 705)
-texture = ExtResource("4_4we8e")
-
-[node name="Area2D" type="Area2D" parent="Door" unique_id=1767408204]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D" unique_id=1122038878]
-shape = SubResource("CapsuleShape2D_q6vxl")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Door" unique_id=1368342356]
-libraries/ = SubResource("AnimationLibrary_qj1uy")
-
-[node name="pressE" type="Label" parent="Door" unique_id=171454009]
-z_index = 2
-offset_left = -30.0
-offset_top = -245.0
-offset_right = 29.0
-offset_bottom = -222.0
-text = "press E"
-label_settings = ExtResource("11_omw66")
-
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=791383808]
 process_mode = 3
 stream = ExtResource("12_omw66")
 autoplay = true
 bus = &"Music"
 
-[connection signal="area_entered" from="Door/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Door/Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1368342356]
+libraries/ = SubResource("AnimationLibrary_qj1uy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=900621863]
+layer = 500
+
+[node name="FadeOut" parent="CanvasLayer" unique_id=39670438 instance=ExtResource("9_4we8e")]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Door" type="Sprite2D" parent="." unique_id=1660162328]
+position = Vector2(3645, 541)
+texture = ExtResource("8_1io5q")
+
+[node name="Left" type="Sprite2D" parent="Door" unique_id=1279677039]
+position = Vector2(-76, 121)
+texture = ExtResource("9_omw66")
+
+[node name="Right" type="Sprite2D" parent="Door" unique_id=774050260]
+position = Vector2(75, 120)
+texture = ExtResource("10_4i32y")
+
+[node name="DoorArea" type="Area2D" parent="Door" unique_id=703632832]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DoorArea" unique_id=1220284924]
+position = Vector2(1, -2)
+shape = SubResource("CapsuleShape2D_ec8dv")
+
+[node name="pressE" type="Label" parent="Door" unique_id=1203533625]
+offset_left = 147.0
+offset_top = -231.0
+offset_right = 216.0
+offset_bottom = -205.0
+text = "press E"
+label_settings = ExtResource("11_omw66")
+
+[node name="WaypointMarkerEnemy" parent="Door" unique_id=1906790374 instance=ExtResource("12_q6vxl")]
+on_screen_offset = Vector2(0.5, -300)
