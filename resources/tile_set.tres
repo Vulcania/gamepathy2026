@@ -554,6 +554,15 @@ texture_region_size = Vector2i(128, 128)
 5:9/0 = 0
 1:7/0 = 0
 2:7/0 = 0
+8:7/animation_frame_0/duration = 1.0
+8:7/animation_frame_1/duration = 1.0
+8:7/0 = 0
+8:8/animation_frame_0/duration = 1.0
+8:8/animation_frame_1/duration = 1.0
+8:8/0 = 0
+8:9/animation_frame_0/duration = 1.0
+8:9/animation_frame_1/duration = 1.0
+8:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2t8fs"]
 texture = ExtResource("5_fv5xq")
