@@ -1,4 +1,8 @@
 [style name="sir_death_dialog_box"]
-"Sir Death": You're late
-"Sir Death": <Empty Text Event>
-"Sir Death": <Empty Text Event>
+Player: Um, excuse me....
+"Sir Death": "Excuse me?"
+"Sir Death": EXCUSE YOU, RIGHT!! FIRST YOU COME IN LATE AND THEN YOU WORK SLOWER THAN ALL YOUR OTHER COLLEGUES!!
+"Sir Death": WHAT ARE THESE NUMBERS, GRIMMY?!
+"Sir Death": I'M PUTTING YOU ON OVERTIME! NOW GO DO BETTER!
+"Sir Death": IF YOU DON'T GET BETTER I'LL PUT YOU ON CAFETERIA DUTY FOR 200 YEARS!!!
+[signal arg="kicked_out"]

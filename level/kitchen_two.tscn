@@ -5,14 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://bfqhlqksjd4mu" path="res://items/coffee_maker.tscn" id="2_s473l"]
 [ext_resource type="TileSet" uid="uid://ibpa23efrbig" path="res://resources/tile_set.tres" id="3_omw66"]
 [ext_resource type="TileSet" uid="uid://caeblaap8wmhj" path="res://level/kitchen_tile_set.tres" id="3_s473l"]
+[ext_resource type="AudioStream" uid="uid://cvy36din3odm0" path="res://sounds/music/kitchen_three_ambience.wav" id="6_omw66"]
 [ext_resource type="Texture2D" uid="uid://b1evak51qupla" path="res://items/door/Elevator/elevator-opened-frame.png" id="8_1io5q"]
 [ext_resource type="PackedScene" uid="uid://dcticxd865koq" path="res://level/fade_out.tscn" id="9_4we8e"]
 [ext_resource type="Texture2D" uid="uid://dbgh5iy8m4pxf" path="res://items/door/Elevator/elevator-door-left.png" id="9_omw66"]
 [ext_resource type="Texture2D" uid="uid://dlq2ghiy34k6o" path="res://items/door/Elevator/elevator-door-right.png" id="10_4i32y"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="11_omw66"]
-[ext_resource type="AudioStream" uid="uid://chtnk530b2lt0" path="res://sounds/music/kitchen_music.wav" id="12_omw66"]
 [ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="12_q6vxl"]
 [ext_resource type="PackedScene" uid="uid://b7bf03hbgbmga" path="res://bg/candle_light.tscn" id="13_4i32y"]
+[ext_resource type="Texture2D" uid="uid://cj2brkraqvwkh" path="res://bg/inside_elevators/lvlthree.png" id="13_q6vxl"]
 
 [sub_resource type="Animation" id="Animation_cgflk"]
 resource_name = "EnterLevelThree"
@@ -220,7 +221,7 @@ position = Vector2(960, 540)
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=791383808]
 process_mode = 3
-stream = ExtResource("12_omw66")
+stream = ExtResource("6_omw66")
 autoplay = true
 bus = &"Music"
 
@@ -239,11 +240,13 @@ position = Vector2(1666, 594)
 texture = ExtResource("8_1io5q")
 
 [node name="Left" type="Sprite2D" parent="Door" unique_id=1279677039]
-position = Vector2(-76, 121)
+z_index = 5
+position = Vector2(-217, 121)
 texture = ExtResource("9_omw66")
 
 [node name="Right" type="Sprite2D" parent="Door" unique_id=774050260]
-position = Vector2(75, 120)
+z_index = 5
+position = Vector2(218, 120)
 texture = ExtResource("10_4i32y")
 
 [node name="DoorArea" type="Area2D" parent="Door" unique_id=703632832]
@@ -262,6 +265,11 @@ label_settings = ExtResource("11_omw66")
 
 [node name="WaypointMarkerEnemy" parent="Door" unique_id=1906790374 instance=ExtResource("12_q6vxl")]
 on_screen_offset = Vector2(0.5, -300)
+
+[node name="Inside" type="Sprite2D" parent="Door" unique_id=2104099842]
+z_index = -4
+position = Vector2(0, 120)
+texture = ExtResource("13_q6vxl")
 
 [node name="Door2" type="Sprite2D" parent="." unique_id=737157691]
 z_index = -3
@@ -285,7 +293,7 @@ position = Vector2(823.0001, 246)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=35908549]
 position = Vector2(-430, -10)
-color = Color(0.24294707, 0.21533164, 0.1760922, 1)
+color = Color(0.5794031, 0.5297676, 0.45912093, 1)
 blend_mode = 1
 
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]

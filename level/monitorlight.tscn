@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://gcsc46mitxmu"]
+
+[ext_resource type="Texture2D" uid="uid://bwrt3ys1luugu" path="res://bg/monitor_lights.png" id="1_bu55q"]
+
+[node name="monitorlight" type="PointLight2D" unique_id=460941156]
+light_mask = 3
+visibility_layer = 3
+scale = Vector2(1, 1.0138888)
+color = Color(1, 0.20392157, 0.05490196, 1)
+energy = 3.31
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 3
+texture = ExtResource("1_bu55q")
+offset = Vector2(0, 250)

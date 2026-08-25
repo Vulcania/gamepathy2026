@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b6rb0uotis0mw"]
+[gd_scene format=4 uid="uid://b6rb0uotis0mw"]
 
 [ext_resource type="Script" uid="uid://ddf31xgi2vuje" path="res://enemy/boney_toney/boss_room.gd" id="1_3yi2a"]
 [ext_resource type="TileSet" uid="uid://ibpa23efrbig" path="res://resources/tile_set.tres" id="2_bnxeg"]
@@ -7,12 +7,208 @@
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="3_tu2fl"]
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="4_ub81y"]
 [ext_resource type="Texture2D" uid="uid://dtqws3xlfh60" path="res://bg/window_lights.png" id="7_bnxeg"]
+[ext_resource type="Texture2D" uid="uid://b1evak51qupla" path="res://items/door/Elevator/elevator-opened-frame.png" id="8_ny12n"]
+[ext_resource type="Texture2D" uid="uid://dbgh5iy8m4pxf" path="res://items/door/Elevator/elevator-door-left.png" id="9_5dfct"]
+[ext_resource type="Texture2D" uid="uid://dlq2ghiy34k6o" path="res://items/door/Elevator/elevator-door-right.png" id="10_jyhrr"]
+[ext_resource type="Texture2D" uid="uid://coq424qyhhqe3" path="res://bg/inside_elevators/placeholder.png" id="11_8pek0"]
+[ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="12_x05t2"]
+[ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="13_56gax"]
+[ext_resource type="PackedScene" uid="uid://dcticxd865koq" path="res://level/fade_out.tscn" id="14_5dfct"]
+[ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="15_jyhrr"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3yi2a"]
 size = Vector2(22, 1000)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svg7p"]
+radius = 181.0
+height = 734.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r7n7r"]
+polygon = PackedVector2Array(-161, -107, -162, -119, -161, -133, -161, -156, -160, -167, -157, -178, -152, -182, -146, -182, -141, -179, -138, -176, -130, -183, -137, -190, -138, -196, -132, -204, -126, -209, -120, -208, -116, -207, -114, -205, -113, -214, -111, -228, -106, -235, -101, -241, -95, -245, -92, -245, -88, -242, -86, -237, -85, -231, -85, -225, -84, -223, -81, -223, -75, -220, -70, -213, -68, -224, -66, -235, -64, -240, -60, -244, -57, -246, -54, -246, -50, -241, -46, -233, -44, -228, -43, -223, -43, -218, -62, -185, -61, -181, -56, -177, -53, -177, -42, -185, -36, -188, -28, -192, -33, -199, -37, -209, -38, -217, -24, -238, -23, -242, -26, -251, -27, -259, -25, -265, -19, -269, -15, -270, -11, -269, -12, -275, -10, -283, -9, -289, -11, -293, -11, -298, -7, -302, 0, -304, 7, -302, 11, -298, 11, -293, 9, -289, 11, -283, 12, -275, 12, -271, 11, -269, 15, -270, 21, -269, 26, -264, 28, -258, 28, -251, 25, -246, 24, -240, 37, -219, 38, -213, 37, -206, 32, -196, 29, -191, 40, -187, 55, -176, 59, -177, 65, -183, 65, -191, 64, -200, 50, -212, 45, -218, 44, -223, 47, -233, 51, -241, 56, -246, 60, -245, 65, -239, 70, -217, 70, -209, 73, -216, 79, -221, 82, -222, 85, -221, 86, -226, 86, -236, 90, -243, 93, -245, 96, -245, 104, -240, 112, -224, 114, -214, 114, -205, 118, -207, 125, -209, 130, -208, 138, -197, 139, -193, 135, -187, 131, -184, 127, -153, 125, -145, 134, -138, 140, -153, 135, -159, 133, -165, 136, -174, 142, -180, 152, -181, 158, -176, 161, -168, 162, -136, 162, -107, 166, -106, 175, -96, 174, -92, 160, -78, 170, -64, 162, -58, 164, 278, 144, 300, -144, 303, -162, 279, -163, -59, -170, -64, -160, -77, -175, -96)
+
+[sub_resource type="Animation" id="Animation_ny12n"]
+resource_name = "CallElevator"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.74),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2252, -1112), Vector2(2253, 1106)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NPCBoney")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"call_elevator"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5dfct"]
+resource_name = "EnterBossOffice"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door/Left:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.3533334, 1.5333333, 2.5333333, 2.7333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-76, 121), Vector2(-76, 121), Vector2(-217, 121), Vector2(-217, 121), Vector2(-76, 121), Vector2(-76, 121)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door/Right:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.3533334, 1.5333333, 2.5333333, 2.7333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(75, 120), Vector2(75, 120), Vector2(218, 120), Vector2(218, 120), Vector2(75, 120), Vector2(75, 120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door/Right:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.3533334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Door/Left:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.3533334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 5]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"enter_boss_office"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.9333334, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"in_elevator"
+}, {
+"args": [],
+"method": &"elevatorhide"
+}, {
+"args": [],
+"method": &"left_elevator"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/FadeOut:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.3333333, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Door:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.8666666, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2252, 1106), Vector2(2252, -1106)]
+}
+
+[sub_resource type="Animation" id="Animation_jyhrr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2252, -1112)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/FadeOut:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dfct"]
+_data = {
+&"CallElevator": SubResource("Animation_ny12n"),
+&"EnterBossOffice": SubResource("Animation_5dfct"),
+&"RESET": SubResource("Animation_jyhrr")
+}
+
 [node name="BossRoom" type="Node2D" unique_id=1287682240]
 script = ExtResource("1_3yi2a")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1657322331]
+z_index = -16
+offset_right = 4564.0
+offset_bottom = 980.0
+mouse_filter = 2
+color = Color(1, 0.29411766, 0.37254903, 1)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1954077884]
 tile_set = ExtResource("2_bnxeg")
@@ -34,21 +230,23 @@ texture = SubResource("PlaceholderTexture2D_3yi2a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CompanyBossDoor/BossDoorEnter" unique_id=1008406914]
 
 [node name="NPCBoney" parent="." unique_id=1981898663 instance=ExtResource("3_bnxeg")]
-visible = false
-position = Vector2(1397, 884)
+position = Vector2(2210, 1172)
+scale = Vector2(-1, 1)
 
 [node name="BoneyToney" parent="." unique_id=1276564800 instance=ExtResource("2_tu2fl")]
 visible = false
-position = Vector2(1475, 846)
+position = Vector2(2145, 1160)
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_tu2fl")]
+z_index = 1
 position = Vector2(234, 906)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=131549846 groups=["Camera"]]
+zoom = Vector2(0.7, 0.7)
 limit_left = -128
 limit_top = -500
 limit_right = 4500
-limit_bottom = 1250
+limit_bottom = 1650
 script = ExtResource("4_ub81y")
 
 [node name="Lights" type="Node2D" parent="." unique_id=1970974923]
@@ -266,3 +464,66 @@ shadow_filter_smooth = 1.0
 shadow_item_cull_mask = 3
 texture = ExtResource("7_bnxeg")
 offset = Vector2(0, 250)
+
+[node name="Door" type="Sprite2D" parent="." unique_id=1607408279]
+position = Vector2(2252, -1112)
+texture = ExtResource("8_ny12n")
+
+[node name="Left" type="Sprite2D" parent="Door" unique_id=944937123]
+position = Vector2(-76, 121)
+texture = ExtResource("9_5dfct")
+
+[node name="Right" type="Sprite2D" parent="Door" unique_id=510768237]
+position = Vector2(75, 120)
+texture = ExtResource("10_jyhrr")
+
+[node name="Inside" type="Sprite2D" parent="Door" unique_id=1645451459]
+z_index = -3
+z_as_relative = false
+position = Vector2(-2, 120)
+texture = ExtResource("11_8pek0")
+
+[node name="DoorArea" type="Area2D" parent="Door" unique_id=1960021661]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DoorArea" unique_id=1020125421]
+position = Vector2(1, -2)
+shape = SubResource("CapsuleShape2D_svg7p")
+
+[node name="pressE" type="Label" parent="Door" unique_id=1865909843]
+offset_left = 147.0
+offset_top = -231.0
+offset_right = 216.0
+offset_bottom = -205.0
+text = "press E"
+label_settings = ExtResource("12_x05t2")
+
+[node name="WaypointMarkerEnemy" parent="Door" unique_id=1906790374 instance=ExtResource("13_56gax")]
+on_screen_offset = Vector2(0.5, -300)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Door" unique_id=1077656292]
+occluder = SubResource("OccluderPolygon2D_r7n7r")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Door" unique_id=1733545662]
+position = Vector2(64, -44)
+tile_map_data = PackedByteArray("AAD///3/AAAHAAkAAAD///z/AAAHAAkAAAD///v/AAAHAAkAAAD///r/AAAHAAkAAAD///n/AAAHAAkAAAD///j/AAAHAAkAAAD///f/AAAHAAkAAAD///b/AAAHAAkAAAD///X/AAAHAAkAAAD///T/AAAHAAkAAAD///P/AAAHAAkAAAD///L/AAAHAAkAAAD///H/AAAHAAkAAAD///D/AAAHAAkAAAA=")
+tile_set = ExtResource("2_bnxeg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=434499514]
+libraries/ = SubResource("AnimationLibrary_5dfct")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1232345754]
+layer = 500
+
+[node name="FadeOut" parent="CanvasLayer" unique_id=39670438 instance=ExtResource("14_5dfct")]
+modulate = Color(1, 1, 1, 0)
+mouse_filter = 2
+
+[node name="musik" type="AudioStreamPlayer" parent="." unique_id=966775129]
+stream = ExtResource("15_jyhrr")
+volume_db = 2.616
+pitch_scale = 0.7
+autoplay = true
+bus = &"Music"
+
+[connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
+[connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]

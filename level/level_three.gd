@@ -16,7 +16,7 @@ func _input(event):
 			animation.play("EnterBossRoom")
 
 func enter_next_room():
-	get_tree().change_scene_to_file("res://level/ending.tscn")
+	get_tree().change_scene_to_file("res://level/kitchen_two.tscn")
 
 func _on_door_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:

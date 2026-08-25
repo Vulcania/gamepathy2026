@@ -10,26 +10,28 @@ func _ready() -> void:
 
 func talking_with_boss():
 	if gamescom and TimerOptions.you_are_late:
-		Dialogic.start()
+		Dialogic.start("res://dialog/timelines/Boss_Gamescom_Ending_Late.dtl")
 	if gamescom:
 		Dialogic.start("res://dialog/timelines/Boss_Gamescom_Ending.dtl")
-	if Global.round_one:
-		if TimerOptions.you_are_late:
-			Dialogic.start("res://dialog/timelines/Boss_Bad_End_Round_1.dtl")
-		else:
-			Dialogic.start("res://dialog/timelines/Boss_End1_Round_1.dtl")
-	if Global.round_two:
-		if TimerOptions.you_are_late:
-			Dialogic.start("res://dialog/timelines/Boss_Bad_End_Round_2.dtl")
-		else:
-			Dialogic.start("res://dialog/timelines/Boss_End1_Round_2.dtl")
-	if Global.round_three:
-		if TimerOptions.you_are_late:
-			Dialogic.start("res://dialog/timelines/Boss_Bad_End_Round_3.dtl")
-		else:
-			Dialogic.start("res://dialog/timelines/Boss_End1_Round_3.dtl")
+#	if Global.round_one:
+#		if TimerOptions.you_are_late:
+#			Dialogic.start("res://dialog/timelines/Boss_Bad_End_Round_1.dtl")
+#		else:
+#			Dialogic.start("res://dialog/timelines/Boss_End1_Round_1.dtl")
+#	if Global.round_two:
+#		if TimerOptions.you_are_late:
+#			Dialogic.start("res://dialog/timelines/Boss_Bad_End_Round_2.dtl")
+#		else:
+#			Dialogic.start("res://dialog/timelines/Boss_End1_Round_2.dtl")
+#	if Global.round_three:
+#		if TimerOptions.you_are_late:
+#			Dialogic.start("res://dialog/timelines/Boss_Bad_End_Round_3.dtl")
+#		else:
+#			Dialogic.start("res://dialog/timelines/Boss_End1_Round_3.dtl")
 
 func _on_dialogic_signal(argument: String):
+	if argument == "kicked_out":
+		get_tree().change_scene_to_file("res://ui/title_screen/title_screen.tscn")
 	if argument == "end_round_one":
 		if argument == "kicked_out":
 			$AnimationPlayer.play("kicked_out_of_office")

@@ -1,7 +1,125 @@
 [gd_scene format=3 uid="uid://cte4y4nchebs6"]
 
-[ext_resource type="Texture2D" uid="uid://di310h508e4y0" path="res://npc/JimDreaper/frame_04.png" id="1_ni8kt"]
+[ext_resource type="Texture2D" uid="uid://oy6xobrvldvo" path="res://enemy/boney_toney/assets/boney-tony-spritesheet.png" id="1_ni8kt"]
 [ext_resource type="Script" uid="uid://cs0qs67d8ovnp" path="res://enemy/boney_toney/boney_npc/boney.gd" id="1_tisdm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni8kt"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(2500, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqm30"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(3000, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_secd0"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(3500, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti3ja"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(4000, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrjfn"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(4500, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvsu0"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(0, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpm64"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(500, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvxu2"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(1000, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f5jb"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(1500, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0m6y"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bh36"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvt5r"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1t5g"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4hu6"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_552jq"]
+atlas = ExtResource("1_ni8kt")
+region = Rect2(2500, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oqm30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni8kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqm30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_secd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti3ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrjfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvsu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpm64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvxu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f5jb")
+}],
+"loop": false,
+"name": &"call elevator",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0m6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bh36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvt5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1t5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4hu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_552jq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y0m6y"]
 radius = 244.0
@@ -15,8 +133,12 @@ _data = {
 &"boney_idle": SubResource("Animation_2i8w7")
 }
 
-[node name="Boney" type="Sprite2D" unique_id=1981898663]
-texture = ExtResource("1_ni8kt")
+[node name="Boney" type="AnimatedSprite2D" unique_id=1112182384]
+sprite_frames = SubResource("SpriteFrames_oqm30")
+animation = &"call elevator"
+autoplay = "default"
+frame = 8
+frame_progress = 1.0
 script = ExtResource("1_tisdm")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1976000067]

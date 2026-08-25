@@ -2,7 +2,8 @@
 "boney toney": Oh?
 "boney toney": Who do we have here?
 "boney toney": You finally decided to show your little peak, Grimmy?
-"boney toney": <Empty Text Event>
+"boney toney": Looking for the elevator?
+"boney toney": Show me you are worthy of my elevator and I might call it for you.
 [signal arg="exited_dialog"]
 [signal arg="start_boss_battle"]
 [signal arg="boss_battle_1"]

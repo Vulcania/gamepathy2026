@@ -1,2 +1,7 @@
 [signal arg="entered_dialog"]
+"boney toney": Heh...
+"boney toney": Seems like I underestimated you.
+"boney toney": I deem you worthy of the elevator.
+"boney toney": Here you go.
+[signal arg="unlock_boss_door"]
 [signal arg="exited_dialog"]

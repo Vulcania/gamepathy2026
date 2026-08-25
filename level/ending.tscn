@@ -63,11 +63,6 @@ script = ExtResource("1_xpvqc")
 position = Vector2(961, 541)
 texture = ExtResource("1_g8lik")
 
-[node name="music" type="AudioStreamPlayer" parent="." unique_id=1660220083]
-stream = ExtResource("3_qwt3v")
-autoplay = true
-bus = &"Music"
-
 [node name="BuffSelectionBoss" parent="." unique_id=323398453 instance=ExtResource("4_ry2es")]
 visible = false
 
@@ -77,3 +72,10 @@ libraries/ = SubResource("AnimationLibrary_waj5r")
 [node name="kickedoutanimation" type="Sprite2D" parent="." unique_id=1974655097]
 position = Vector2(961, 541)
 texture = ExtResource("5_ma55n")
+
+[node name="musik" type="AudioStreamPlayer" parent="." unique_id=1183857860]
+stream = ExtResource("3_qwt3v")
+volume_db = 2.616
+pitch_scale = 0.7
+autoplay = true
+bus = &"Music"
