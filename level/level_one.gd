@@ -8,9 +8,10 @@ var door_unlocked = true
 var is_in_door_area = false
 
 func _ready() -> void:
-	$Door/pressE.hide()
 	TimerOptions.timer_unpaused()
 	TimerOptions.timer_activated()
+	TimerOptions.entered_level_one = true
+	$Door/pressE.hide()
 
 func _input(event):
 	if event.is_action_pressed("interact"):

@@ -2,13 +2,17 @@ extends CanvasLayer
 
 @onready var timelabel = $TimeLeft
 @onready var thetimer = $Timer
+var entered_level_one = false
 
 var you_are_late = false
 
 func _ready() -> void:
 #	BuffSelectionOne.option_one.connect(_on_option_3)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	
+
+func start_time():
+	timer_unpaused()
+	timer_activated()
 
 func rounds():
 	if Global.round_two:
@@ -31,7 +35,7 @@ func time_left_until_late():
 func _on_timer_timeout() -> void:
 	you_are_late = true
 
-func _process(delta):
+func _process(_delta):
 	timelabel.text = "%02d:%02d" % time_left_until_late()
 
 func timer_paused():
