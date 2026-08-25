@@ -272,12 +272,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 774.0
-offset_top = 746.0
+offset_top = 785.0
 offset_right = 1159.0
 offset_bottom = 1064.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 17
+theme_override_constants/separation = 5
 
 [node name="ThxForPlayingLabel" type="Label" parent="Credits/CreditsVBox" unique_id=99909993]
 layout_mode = 2
@@ -297,17 +297,6 @@ text = "Special Thanks to:
 - Gamescom
 - Marion & Benni"
 horizontal_alignment = 1
-
-[node name="CreditsLabel" type="Label" parent="Credits/CreditsVBox" unique_id=1124701771]
-visible = false
-layout_mode = 2
-text = "GRL PWR
-- Elena Speier
-- artisticrow
-- Imke Schrigten
-- Níke
-- Kimi
-- Anastasia Haberling"
 
 [node name="BackButton2" type="Button" parent="Credits/CreditsVBox" unique_id=1042725106]
 layout_mode = 2
@@ -462,7 +451,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.81957304, 0.7372073, 0.72544104, 1)
 theme_override_fonts/font = ExtResource("2_72buf")
 theme_override_font_sizes/font_size = 36
-text = "Art"
+text = "Art
+Animation"
 horizontal_alignment = 1
 
 [node name="niki" type="VBoxContainer" parent="Credits/Portraits" unique_id=299855353]

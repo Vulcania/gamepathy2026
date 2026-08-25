@@ -71,6 +71,7 @@ directories/dtl_directory={
 }
 layout/style_directory={
 "": "res://dialog/style.tres",
+"sir_death_dialog_box": "res://resources/sir_death_dialog_box.tres",
 "style": "res://dialog/style.tres"
 }
 variables={

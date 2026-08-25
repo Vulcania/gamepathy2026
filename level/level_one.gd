@@ -15,7 +15,7 @@ func _ready() -> void:
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if is_in_door_area and door_unlocked:
-			animation.play("")
+			animation.play("EnterKitchen")
 
 func enter_next_room():
 	get_tree().change_scene_to_file("res://level/kitchen.tscn")

@@ -673,11 +673,13 @@ max_health = 5
 script = ExtResource("67_b2j0d")
 
 [node name="HudControls" type="Sprite2D" parent="HUD" unique_id=1970883575]
+light_mask = 0
 position = Vector2(1756.2, 1029)
 scale = Vector2(0.8666666, 0.8666667)
 texture = ExtResource("70_8rogd")
 
 [node name="HeartsContainer" parent="HUD" unique_id=1877649860 instance=ExtResource("70_j3r50")]
+light_mask = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -689,6 +691,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="BlocksContainer" parent="HUD" unique_id=263776662 instance=ExtResource("72_do7qw")]
+light_mask = 0
 offset_left = 34.0
 offset_top = 24.0
 offset_right = 120.0
