@@ -448,6 +448,7 @@ libraries/ = SubResource("AnimationLibrary_ccrhc")
 [node name="musik" type="AudioStreamPlayer" parent="." unique_id=1545390943]
 process_mode = 3
 stream = ExtResource("7_jnkt6")
+autoplay = true
 bus = &"Music"
 
 [node name="Lights" type="Node2D" parent="." unique_id=1942401457]
