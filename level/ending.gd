@@ -1,5 +1,7 @@
 extends Node2D
 
+var gamescom = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -7,6 +9,10 @@ func _ready() -> void:
 	talking_with_boss()
 
 func talking_with_boss():
+	if gamescom and TimerOptions.you_are_late:
+		Dialogic.start()
+	if gamescom:
+		Dialogic.start("res://dialog/timelines/Boss_Gamescom_Ending.dtl")
 	if Global.round_one:
 		if TimerOptions.you_are_late:
 			Dialogic.start("res://dialog/timelines/Boss_Bad_End_Round_1.dtl")

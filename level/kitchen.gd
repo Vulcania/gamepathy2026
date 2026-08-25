@@ -3,7 +3,7 @@ extends Node2D
 var is_in_area = false
 
 func _ready() -> void:
-	$Door/pressE.hide()
+	$Door2/pressE.hide()
 	TimerOptions.timer_paused()
 	$AnimationPlayer.play("EnteredKitchen")
 
@@ -18,9 +18,9 @@ func enter_level_two():
 func _on_door_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		is_in_area = true
-		$Door/pressE.show()
+		$Door2/pressE.show()
 
 func _on_door_area_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		is_in_area = false
-		$Door/pressE.hide()
+		$Door2/pressE.hide()
