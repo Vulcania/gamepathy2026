@@ -255,6 +255,7 @@ func die():
 func _on_dialogic_signal(argument: String):
 	if argument == "entered_dialog":
 		is_interacting = true
+		$Sounds/Talk.play()
 	if argument == "exited_dialog":
 		is_interacting = false
 	if argument == "option1_selected":

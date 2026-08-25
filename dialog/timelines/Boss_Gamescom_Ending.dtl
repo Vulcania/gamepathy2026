@@ -5,9 +5,11 @@ Player: Um, excuse me....
 "Sir Death": What do you think?
 "Sir Death": Were you any good?
 - Uh.... yes?
+	audio sfx "res://sounds/sfx/player_sfx/playerv_block.wav"
 	"Sir Death": "Yes", you say?
 	"Sir Death": Quite the confident answer.
 - I don't know....
+	audio sfx "res://sounds/sfx/player_sfx/playerv_hurt.wav"
 	"Sir Death": You don't know, huh?
 	"Sir Death": You seem scared, Grimmy.
 	You don't have to be.

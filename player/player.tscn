@@ -74,7 +74,18 @@
 [ext_resource type="PackedScene" uid="uid://cmifa1p6oqh71" path="res://player/blocks_container.tscn" id="72_do7qw"]
 [ext_resource type="Script" uid="uid://cw7ryewcmoul3" path="res://enemy/Handlers/flip_handler.gd" id="73_2h6tc"]
 [ext_resource type="Script" uid="uid://g3ca5an7h1wt" path="res://input_handler.gd" id="73_do7qw"]
+[ext_resource type="AudioStream" uid="uid://bwe3jfvk76pri" path="res://sounds/sfx/player_sfx/player_walk.wav" id="73_j420s"]
+[ext_resource type="AudioStream" uid="uid://bxj15enbm08ij" path="res://sounds/sfx/player_sfx/player_jump.wav" id="74_kcq4v"]
 [ext_resource type="Script" path="res://player/jump_handler.gd" id="75_8rogd"]
+[ext_resource type="AudioStream" uid="uid://cih3hlqhvh4vd" path="res://sounds/sfx/player_sfx/player_attack.wav" id="75_qavcc"]
+[ext_resource type="AudioStream" uid="uid://cgpi6bfsk7anl" path="res://sounds/sfx/player_sfx/player_attack2.wav" id="76_bd26m"]
+[ext_resource type="AudioStream" uid="uid://pvgvgvtlvrc7" path="res://sounds/sfx/player_sfx/playerv_attack.wav" id="76_gci7n"]
+[ext_resource type="AudioStream" uid="uid://cwxifd0ajaiue" path="res://sounds/sfx/player_sfx/player_block.wav" id="77_qavcc"]
+[ext_resource type="AudioStream" uid="uid://b3n5bfr0nutq5" path="res://sounds/sfx/player_sfx/playerv_dead.wav" id="78_bd26m"]
+[ext_resource type="AudioStream" uid="uid://uj2ryp7dxa3t" path="res://sounds/sfx/player_sfx/playerv_talk.wav" id="78_lufic"]
+[ext_resource type="AudioStream" uid="uid://bswwpqc88l533" path="res://sounds/sfx/player_sfx/playerv_hurt.wav" id="78_nxclr"]
+[ext_resource type="AudioStream" uid="uid://cxmxvhfiboh1a" path="res://sounds/sfx/player_sfx/playerv_attack2.wav" id="78_tcwf7"]
+[ext_resource type="AudioStream" uid="uid://k2cqx1rl41p3" path="res://sounds/sfx/player_sfx/playerv_block.wav" id="80_20bc7"]
 
 [sub_resource type="Animation" id="Animation_rnncm"]
 resource_name = "Attack"
@@ -123,6 +134,54 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds/Attack:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.36666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/Attack2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/AttackV:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.26666668),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds/AttackV2:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.8666667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -190,6 +249,30 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/Block:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds/BlockV:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.56666666),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -274,6 +357,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds/Dead:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_nxclr"]
 length = 0.53333336
@@ -324,6 +419,18 @@ tracks/1/path = NodePath("AttackBox/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/Hurt:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -409,6 +516,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/Jump:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_hrakr"]
 length = 0.001
@@ -484,9 +603,129 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/Attack:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds/Attack2:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sounds/Block:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sounds/Dead:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sounds/AttackV:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sounds/AttackV2:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sounds/BlockV:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sounds/Hurt:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Sounds/Walk:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Sounds/Jump:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_wsa1w"]
-length = 1.0666667
+length = 0.9
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -523,6 +762,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/Walk:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 
 [sub_resource type="Animation" id="Animation_2s0vo"]
@@ -700,24 +951,50 @@ offset_bottom = 93.0
 [node name="Sounds" type="Node" parent="." unique_id=1379984318]
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1847908572]
+stream = ExtResource("73_j420s")
+volume_db = -9.533
 bus = &"Effects"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1247237844]
+stream = ExtResource("74_kcq4v")
 bus = &"Effects"
 
 [node name="Attack" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1434482597]
+stream = ExtResource("75_qavcc")
+bus = &"Effects"
+
+[node name="AttackV" type="AudioStreamPlayer2D" parent="Sounds" unique_id=153682557]
+stream = ExtResource("76_gci7n")
+volume_db = -1.734
 bus = &"Effects"
 
 [node name="Attack2" type="AudioStreamPlayer2D" parent="Sounds" unique_id=751804219]
+stream = ExtResource("76_bd26m")
+bus = &"Effects"
+
+[node name="AttackV2" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1627528168]
+stream = ExtResource("78_tcwf7")
 bus = &"Effects"
 
 [node name="Block" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1745908090]
+stream = ExtResource("77_qavcc")
+volume_db = -2.6
+bus = &"Effects"
+
+[node name="BlockV" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1704148184]
+stream = ExtResource("80_20bc7")
 bus = &"Effects"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1976824101]
+stream = ExtResource("78_nxclr")
 bus = &"Effects"
 
 [node name="Talk" type="AudioStreamPlayer2D" parent="Sounds" unique_id=397134613]
+stream = ExtResource("78_lufic")
+bus = &"Effects"
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1433578370]
+stream = ExtResource("78_bd26m")
 bus = &"Effects"
 
 [node name="Handlers" type="Node2D" parent="." unique_id=921333397]
