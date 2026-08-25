@@ -16,7 +16,7 @@ func _input(event):
 			$AnimationPlayer.play("EnterLevelThree")
 
 func enter_level_three():
-	get_tree().change_scene_to_file("res://level/level_three.tscn")
+	get_tree().change_scene_to_file("res://enemy/boney_toney/boss_room.tscn")
 
 
 func _on_door_area_area_entered(area: Area2D) -> void:

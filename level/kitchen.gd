@@ -13,7 +13,7 @@ func _input(event):
 			$AnimationPlayer.play("EnterLevelTwo")
 
 func enter_level_two():
-	get_tree().change_scene_to_file("res://level/level_two.tscn")
+	get_tree().change_scene_to_file("res://level/level_three.tscn")
 
 func _on_door_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:

@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://d6kuforo5e73" path="res://sounds/music/mittelguter game song.mp3" id="9_84ti7"]
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="10_ekjd4"]
 [ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="11_weswd"]
+[ext_resource type="Texture2D" uid="uid://dy1tca6t2rbj3" path="res://bg/inside_elevators/kitchenone.png" id="13_a5p04"]
 [ext_resource type="PackedScene" uid="uid://dcticxd865koq" path="res://level/fade_out.tscn" id="14_1owxw"]
 [ext_resource type="PackedScene" uid="uid://dda1fdf4h4ysw" path="res://enemy/paper_clip_deer/buggy_paper_clip_deer/yet_another_paper_clip_deer.tscn" id="14_6jd0m"]
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="14_weswd"]
@@ -159,6 +160,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/FadeOut:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.9666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_6jd0m"]
 resource_name = "EnterLevelOne"
@@ -174,6 +187,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.0253638, 0.0253638, 0.025363795, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/FadeOut:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_vjef4"]
@@ -201,6 +226,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-76, 121)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/FadeOut:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4frlm"]
@@ -352,14 +389,22 @@ position = Vector2(-575, 6096)
 texture = ExtResource("17_vjef4")
 
 [node name="Left" type="Sprite2D" parent="Door" unique_id=76684211]
+z_index = 5
 position = Vector2(-76, 121)
 texture = ExtResource("18_h3vvp")
 
 [node name="Right" type="Sprite2D" parent="Door" unique_id=2023245528]
+z_index = 5
 position = Vector2(75, 120)
 texture = ExtResource("19_vpyml")
 
+[node name="Inside" type="Sprite2D" parent="Door" unique_id=47890217]
+z_index = -3
+position = Vector2(-2, 121)
+texture = ExtResource("13_a5p04")
+
 [node name="DoorArea" type="Area2D" parent="Door" unique_id=1323221329]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DoorArea" unique_id=1631186400]
 position = Vector2(1, -2)
@@ -380,7 +425,8 @@ on_screen_offset = Vector2(0.5, -300)
 layer = 500
 
 [node name="FadeOut" parent="CanvasLayer" unique_id=39670438 instance=ExtResource("14_1owxw")]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0.0253638, 0.0253638, 0.025363795, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=826467497]
 libraries/ = SubResource("AnimationLibrary_4frlm")

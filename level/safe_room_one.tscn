@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://djseq43ja7gho" path="res://ui/buffs/buff_selection.tscn" id="11_6je0e"]
 [ext_resource type="PackedScene" uid="uid://dit7w6w0uac1a" path="res://ui/door_marker.tscn" id="11_v47dh"]
 [ext_resource type="Texture2D" uid="uid://dlq2ghiy34k6o" path="res://items/door/Elevator/elevator-door-right.png" id="11_ykcbn"]
+[ext_resource type="Texture2D" uid="uid://bt3h84xit067y" path="res://bg/inside_elevators/lvlone.png" id="12_xainf"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="13_q4jiv"]
 [ext_resource type="Script" uid="uid://drj54yp0jw613" path="res://resources/camera_shake.gd" id="14_sbh46"]
 [ext_resource type="Texture2D" uid="uid://b1evak51qupla" path="res://items/door/Elevator/elevator-opened-frame.png" id="17_ykcbn"]
@@ -402,6 +403,11 @@ texture = ExtResource("10_q4jiv")
 [node name="Right" type="Sprite2D" parent="Door" unique_id=1416545026]
 position = Vector2(75, 120)
 texture = ExtResource("11_ykcbn")
+
+[node name="Inside" type="Sprite2D" parent="Door" unique_id=1144617240]
+z_index = -4
+position = Vector2(-4, 119)
+texture = ExtResource("12_xainf")
 
 [node name="DoorArea" type="Area2D" parent="Door" unique_id=1455456263]
 
