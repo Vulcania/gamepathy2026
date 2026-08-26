@@ -34,7 +34,7 @@
 
 [sub_resource type="Animation" id="Animation_vo5ka"]
 resource_name = "Attack"
-length = 1.4333333
+length = 1.7333333
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -434,7 +434,7 @@ script = ExtResource("1_iau0b")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1214464403]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1672212411]
-polygon = PackedVector2Array(0, 12, -8, 29, -32, 75, -32, 98, 141, 98, 152, 44, 141, 8, 117, -25, 78, -54, 36, -78, 22, -81, 8, -62, -10, -16, -16, -4)
+polygon = PackedVector2Array(0, 12, -8, 29, -32, 75, -32, 95, 141, 95, 152, 44, 141, 8, 117, -25, 78, -54, 36, -78, 22, -81, 8, -62, -10, -16, -16, -4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1302543764]
 libraries/ = SubResource("AnimationLibrary_pbst5")

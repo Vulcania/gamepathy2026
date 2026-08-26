@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dqrflkr7hssvw" path="res://enemy/boney_toney/boney_toney.gd" id="1_4v46i"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="1_50u07"]
 [ext_resource type="Texture2D" uid="uid://oy6xobrvldvo" path="res://enemy/boney_toney/assets/boney-tony-spritesheet.png" id="2_mwff5"]
+[ext_resource type="FontFile" uid="uid://cc8kvats48m0n" path="res://ui/font/Maragsâ-Display.otf" id="3_e1gf0"]
 [ext_resource type="AudioStream" uid="uid://8yseoyfurvny" path="res://sounds/sfx/boney_sfx/boney_idle.wav" id="11_5cnx6"]
 [ext_resource type="AudioStream" uid="uid://bgnvf68uaq1gq" path="res://sounds/sfx/boney_sfx/boney_attack1.mp3" id="11_i654c"]
 [ext_resource type="AudioStream" uid="uid://2wisj3jjc3b7" path="res://sounds/sfx/boney_sfx/boney_attack2.mp3" id="12_pryqo"]
@@ -804,6 +805,7 @@ tracks/14/keys = {
 
 [sub_resource type="Animation" id="Animation_50u07"]
 resource_name = "attack_1"
+length = 1.5
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -824,7 +826,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"times": PackedFloat32Array(0, 0.033333335, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
@@ -836,7 +838,7 @@ tracks/2/path = NodePath("SFX/Attack1:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.125),
+"times": PackedFloat32Array(0.625),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -848,7 +850,7 @@ tracks/3/path = NodePath("AttackArea/CollisionShape2D2:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.23, 0.5),
+"times": PackedFloat32Array(0, 0.73, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -868,7 +870,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_svqh0"]
 resource_name = "attack_2"
-length = 1.7500125
+length = 2.25
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -889,7 +891,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875, 2, 2.125),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
@@ -901,7 +903,7 @@ tracks/2/path = NodePath("SFX/Attack2:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.375),
+"times": PackedFloat32Array(0.75),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -913,7 +915,7 @@ tracks/3/path = NodePath("AttackArea/CollisionShape2D2:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.65, 0.89),
+"times": PackedFloat32Array(0, 1.025, 1.265),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -925,7 +927,7 @@ tracks/4/path = NodePath("AttackArea/CollisionShape2D3:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.235, 1.625),
+"times": PackedFloat32Array(1.61, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -937,7 +939,7 @@ tracks/5/path = NodePath("SFX/Attack3:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.125),
+"times": PackedFloat32Array(1.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -1348,6 +1350,9 @@ height = 206.0
 radius = 49.0
 height = 425.0122
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1miu"]
+bg_color = Color(0.42195696, 0.05628199, 0.09275117, 1)
+
 [node name="BoneyToney" type="CharacterBody2D" unique_id=1276564800]
 collision_layer = 4
 collision_mask = 7
@@ -1410,7 +1415,11 @@ offset_right = 335.0
 offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 0
-value = 100.0
+theme_override_fonts/font = ExtResource("3_e1gf0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k1miu")
+max_value = 50.0
+value = 50.0
+show_percentage = false
 
 [node name="BossName" type="Label" parent="UI/ProgressBar" unique_id=1166066767]
 layout_mode = 1
@@ -1429,6 +1438,7 @@ text = "Boney Toney"
 label_settings = ExtResource("1_50u07")
 
 [node name="debug" type="Label" parent="." unique_id=1910378102]
+visible = false
 offset_left = -21.0
 offset_top = -136.0
 offset_right = 28.0

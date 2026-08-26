@@ -5,3 +5,4 @@
 "boney toney": Here you go.
 [signal arg="unlock_boss_door"]
 [signal arg="exited_dialog"]
+[signal arg="kill_npc_boney"]

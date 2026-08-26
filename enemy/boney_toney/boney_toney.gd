@@ -6,7 +6,7 @@ extends CharacterBody2D
  
 var direction : Vector2
  
-var health: = 100:
+var health: = 50:
 	set(value):
 		health = value
 		progress_bar.value = value
@@ -16,7 +16,13 @@ var health: = 100:
  
 func _ready():
 	set_physics_process(false)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	$UI/ProgressBar.hide()
  
+func _on_dialogic_signal(argument: String):
+	if argument == "start_boss_battle":
+		$UI/ProgressBar.show()
+
 func _process(_delta):
 	direction = player.position - position
  

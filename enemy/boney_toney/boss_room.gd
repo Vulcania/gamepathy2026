@@ -12,7 +12,7 @@ func _ready() -> void:
 	$BoneyToney.visible = false
 
 func _input(event: InputEvent) -> void:
-	if boss_door_area and in_elevator:
+	if in_elevator:
 		print("boss room: is in boss door area")
 		if event.is_action_pressed("interact"):
 			$AnimationPlayer.play("EnterBossOffice")
@@ -30,9 +30,11 @@ func _on_dialogic_signal(argument: String):
 		$AnimationPlayer.play("CallElevator")
 	if argument == "lock_boss_door":
 		boss_door_area = false
+	if argument == "kill_npc_boney":
+		$NPCBoney.queue_free()
 
 func _on_door_area_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Player and boss_door_area:
+	if area.get_parent() is Player:
 		$Door/pressE.show()
 		in_elevator = true
 

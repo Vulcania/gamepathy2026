@@ -4,9 +4,8 @@ var is_in_door_area = false
 
 func ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	$Door2/pressE.hide()
+	$Door/pressE.hide()
 	TimerOptions.timer_deactivated()
-
 
 func rounds():
 	if Global.round_one:
@@ -39,14 +38,13 @@ func _input(event):
 
 func _on_door_area_area_entered(area):
 	if area.get_parent() is Player:
-		$Door2/pressE.show()
+		$Door/pressE.show()
 		is_in_door_area = true
 
 func _on_door_area_area_exited(area):
 	if area.get_parent() is Player:
-		$Door2/pressE.hide()
+		$Door/pressE.hide()
 		is_in_door_area = false
-
 
 func _on_dialogic_signal(argument: String):
 	if argument == "":

@@ -186,7 +186,8 @@ func _update_animation()->void:
 			return
 		State.ATTACK:
 			animation.play("Attack")
-			await animation.animation_finished
+			#await animation.animation_finished
+			await get_tree().create_timer(1.5).timeout
 			is_attacking = false
 			return
 		State.INTERACTING:

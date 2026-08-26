@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://oy6xobrvldvo" path="res://enemy/boney_toney/assets/boney-tony-spritesheet.png" id="1_ni8kt"]
 [ext_resource type="Script" uid="uid://cs0qs67d8ovnp" path="res://enemy/boney_toney/boney_npc/boney.gd" id="1_tisdm"]
+[ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="3_y0m6y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ni8kt"]
 atlas = ExtResource("1_ni8kt")
@@ -150,8 +151,12 @@ shape = SubResource("CapsuleShape2D_y0m6y")
 libraries/ = SubResource("AnimationLibrary_tisdm")
 
 [node name="pressE" type="Label" parent="." unique_id=644861900]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -77.0
+offset_top = -85.0
+offset_right = -8.0
+offset_bottom = -59.0
+text = "press E"
+label_settings = ExtResource("3_y0m6y")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=910826563]
 position = Vector2(82, -104)

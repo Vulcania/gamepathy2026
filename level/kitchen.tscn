@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dqu1i03enuje5" path="res://player/player.tscn" id="5_4av7d"]
 [ext_resource type="LabelSettings" uid="uid://tb4fxovetwee" path="res://resources/pressE_label_settings.tres" id="12_5q01i"]
 [ext_resource type="PackedScene" uid="uid://chqwe0yjmhbef" path="res://ui/buffs/buff_selection_two.tscn" id="13_tgev6"]
+[ext_resource type="Texture2D" uid="uid://coq424qyhhqe3" path="res://bg/inside_elevators/placeholder.png" id="13_xmv33"]
 [ext_resource type="AudioStream" uid="uid://chtnk530b2lt0" path="res://sounds/music/kitchen_music.wav" id="14_tgev6"]
 [ext_resource type="Texture2D" uid="uid://b1evak51qupla" path="res://items/door/Elevator/elevator-opened-frame.png" id="16_p2r34"]
 [ext_resource type="PackedScene" uid="uid://dcticxd865koq" path="res://level/fade_out.tscn" id="16_xkn4g"]
@@ -289,7 +290,8 @@ texture = ExtResource("18_dv2do")
 
 [node name="Inside" type="Sprite2D" parent="Door2" unique_id=544947999]
 z_index = -3
-position = Vector2(-3741, -466)
+position = Vector2(-2, 121)
+texture = ExtResource("13_xmv33")
 
 [node name="DoorArea" type="Area2D" parent="Door2" unique_id=1220376168]
 

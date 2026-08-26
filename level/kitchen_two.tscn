@@ -240,13 +240,11 @@ position = Vector2(1666, 594)
 texture = ExtResource("8_1io5q")
 
 [node name="Left" type="Sprite2D" parent="Door" unique_id=1279677039]
-z_index = 5
-position = Vector2(-217, 121)
+position = Vector2(-76, 121)
 texture = ExtResource("9_omw66")
 
 [node name="Right" type="Sprite2D" parent="Door" unique_id=774050260]
-z_index = 5
-position = Vector2(218, 120)
+position = Vector2(75, 120)
 texture = ExtResource("10_4i32y")
 
 [node name="DoorArea" type="Area2D" parent="Door" unique_id=703632832]

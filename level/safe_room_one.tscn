@@ -72,7 +72,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.8666666),
+"times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -433,7 +433,7 @@ tile_set = ExtResource("3_ykcbn")
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_fdjj2")]
 z_index = 2
-position = Vector2(229, 641)
+position = Vector2(205, 640)
 collision_layer = 1
 collision_mask = 1
 gravity = 1100
@@ -658,6 +658,7 @@ layer = 500
 [node name="FadeOut" parent="CanvasLayer" unique_id=1458045915 instance=ExtResource("24_sbh46")]
 visible = false
 modulate = Color(1, 1, 1, 0)
+mouse_filter = 2
 
 [connection signal="area_entered" from="Door/DoorArea" to="." method="_on_door_area_area_entered"]
 [connection signal="area_exited" from="Door/DoorArea" to="." method="_on_door_area_area_exited"]
