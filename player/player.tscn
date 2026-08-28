@@ -97,7 +97,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.36666667, 0.4666667, 0.56666666, 0.6666667, 0.76666665, 0.8666667, 0.9666667, 1.0666667, 1.1666666, 1.2666667, 1.3666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_8pxes"), ExtResource("3_fmu53"), ExtResource("4_w7j2h"), ExtResource("5_n0b8q"), ExtResource("6_jfgyi"), ExtResource("7_237xx"), ExtResource("8_wpyo2"), ExtResource("9_7crtr"), ExtResource("10_vgvch"), ExtResource("11_a1u5o"), ExtResource("12_3dxkp"), ExtResource("13_6wior"), ExtResource("14_p5tca"), ExtResource("15_jbx34"), ExtResource("16_s3g0c"), ExtResource("17_35wys")]
@@ -109,7 +109,7 @@ tracks/1/path = NodePath("AttackBox:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.3666667),
+"times": PackedFloat32Array(0, 0.36666667, 1.4333333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -121,7 +121,7 @@ tracks/2/path = NodePath("AttackBox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.53333336, 1.3666667),
+"times": PackedFloat32Array(0, 0.40000004, 1.4333333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -145,7 +145,7 @@ tracks/4/path = NodePath("Sounds/Attack:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.36666667),
+"times": PackedFloat32Array(0.23333333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -157,7 +157,7 @@ tracks/5/path = NodePath("Sounds/Attack2:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.8666667),
+"times": PackedFloat32Array(0.73333335),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -169,7 +169,7 @@ tracks/6/path = NodePath("Sounds/AttackV:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.26666668),
+"times": PackedFloat32Array(0.13333334),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -181,10 +181,22 @@ tracks/7/path = NodePath("Sounds/AttackV2:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.8666667),
+"times": PackedFloat32Array(0.73333335),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:is_attacking")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.033333335, 1.3666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_2h6tc"]
@@ -718,6 +730,18 @@ tracks/15/path = NodePath("Sounds/Jump:playing")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath(".:is_attacking")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,

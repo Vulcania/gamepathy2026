@@ -231,7 +231,6 @@ texture = SubResource("PlaceholderTexture2D_3yi2a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CompanyBossDoor/BossDoorEnter" unique_id=1008406914]
 
 [node name="NPCBoney" parent="." unique_id=1981898663 instance=ExtResource("3_bnxeg")]
-visible = false
 position = Vector2(2222, 1266)
 
 [node name="BoneyToney" parent="." unique_id=1276564800 instance=ExtResource("2_tu2fl")]
@@ -240,7 +239,7 @@ position = Vector2(2221, 1248)
 
 [node name="Player" parent="." unique_id=1980571954 instance=ExtResource("3_tu2fl")]
 z_index = 1
-position = Vector2(4353, 1229)
+position = Vector2(183, 194)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=131549846 groups=["Camera"]]
 zoom = Vector2(0.7, 0.7)

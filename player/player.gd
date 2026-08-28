@@ -54,7 +54,7 @@ var is_ducking_just_pressed: bool = false
 var is_blocking: bool = false
 var is_jumping: bool = false
 var is_jump_released : bool = false
-var is_attacking: bool = false
+@export var is_attacking: bool = false
 var is_interacting: bool = false
 var gravity_vector: Vector2 = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 
@@ -186,9 +186,10 @@ func _update_animation()->void:
 			return
 		State.ATTACK:
 			animation.play("Attack")
+			print(current_state)
 			#await animation.animation_finished
-			await get_tree().create_timer(1.5).timeout
-			is_attacking = false
+			#await get_tree().create_timer(1.5).timeout
+			#is_attacking = false
 			return
 		State.INTERACTING:
 			animation.play("Idle")

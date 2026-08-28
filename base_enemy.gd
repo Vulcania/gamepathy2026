@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var attack_box: AttackBox = $AttackBox
 
 var max_health = 1
+var current_health = 3
 var direction : Vector2
 var is_flying : bool
 
@@ -31,7 +32,7 @@ func take_damage(damage_amount):
 	print("Deer Taking damage")
 
 func _on_health_component_health_changed(current_health: int) -> void:
-	healthbar.update_healthbar(current_health, max_health)
+	#healthbar.update_healthbar(current_health, max_health)
 	print("Deer Health is Updated")
 
 func _on_health_component_depleted_health() -> void:
@@ -49,6 +50,8 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		print("hitbox area Deer Is getting hit")
 		enemy_ai_handler.is_targeted = true
 		take_damage(1)
+		current_health -= 1
+		get_node("Healthbar").update_healthbar(current_health, max_health)
 		await get_tree().create_timer(1.0).timeout
 		enemy_ai_handler.is_targeted = false
 
